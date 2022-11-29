@@ -2,7 +2,10 @@ package io.github.originalenhancementsmain.item;
 
 import io.github.originalenhancementsmain.OriginalEnhancementsMain;
 import io.github.originalenhancementsmain.entity.OEEntitiers;
+import io.github.originalenhancementsmain.item.items.DeathKnightScepter;
+import io.github.originalenhancementsmain.item.items.Frostmourne;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
 import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -17,6 +20,7 @@ public class OEItems {
 
     public static RegistryObject<Item> DEATH_KNIGHT_SCEPTER = register("death_knight_scepter", DeathKnightScepter::new);
 
+    public  static  RegistryObject<Item> FROSTMOURNE = register("frostmourne", Frostmourne::new);
     private static <T extends Item> RegistryObject<T> register(final String name, final Supplier<T> item)
     {
         return ITEMS.register(name, item);
