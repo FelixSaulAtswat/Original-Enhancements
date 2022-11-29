@@ -1,0 +1,8 @@
+{
+  "entity.originalenhancementsmain.deathknightimi": "死亡骑士",
+
+  "item.originalenhancementsmain.death_knight_scepter":"死亡骑士权杖",
+  "item.originalenhancementsmain.death_knight_spawn_egg": "死亡骑士怪物蛋",
+
+  "oe.scepter_charges": "剩余使用次数： %d"
+}

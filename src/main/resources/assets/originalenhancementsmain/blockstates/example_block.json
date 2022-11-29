@@ -1,0 +1,7 @@
+﻿{
+	"variants": {
+		"": {
+			"model": "originalenhancementsmain:block/example_block"
+		}
+	}
+}
