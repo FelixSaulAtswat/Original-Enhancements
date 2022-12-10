@@ -9,8 +9,11 @@ import java.util.function.Supplier;
 
 public enum CustomItemTier implements Tier {
 
-    PreciseAttack(4, 6000, 10.0F, 10.0F, 100, () -> Ingredient
-            .of(Items.NETHERITE_INGOT));
+    MythologicalTools(4, 6000, 10.0F, 10.0F, 100, () ->
+            Ingredient.of(Items.NETHERITE_INGOT)),
+    RareTools(2,250,6.0F,2.0F,20,() ->
+            Ingredient.of(Items.IRON_INGOT));
+
 
 
     private final int level;

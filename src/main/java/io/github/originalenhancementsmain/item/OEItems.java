@@ -4,6 +4,7 @@ import io.github.originalenhancementsmain.OriginalEnhancementsMain;
 import io.github.originalenhancementsmain.entity.OEEntitiers;
 import io.github.originalenhancementsmain.item.items.DeathKnightScepter;
 import io.github.originalenhancementsmain.item.items.Frostmourne;
+import io.github.originalenhancementsmain.item.items.KnightMetalSwordItemY;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.registries.DeferredRegister;
@@ -21,6 +22,7 @@ public class OEItems {
     public static RegistryObject<Item> DEATH_KNIGHT_SCEPTER = register("death_knight_scepter", DeathKnightScepter::new);
 
     public  static  RegistryObject<Item> FROSTMOURNE = register("frostmourne", Frostmourne::new);
+    public static  RegistryObject<Item> KNIGHTMETAL_SWORD_ITEMY = register("knightmetal_sword_twilighthomology", KnightMetalSwordItemY::new);
     private static <T extends Item> RegistryObject<T> register(final String name, final Supplier<T> item)
     {
         return ITEMS.register(name, item);

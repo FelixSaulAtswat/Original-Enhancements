@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients":[
+    {"item": "twilightforest:knightmetal_sword"},
+    {"item": "twilightforest:hydra_trophy"},
+    {"item": "twilightforest:naga_trophy"},
+    {"item": "twilightforest:minoshroom_trophy"},
+    {"item": "twilightforest:knight_phantom_trophy"},
+    {"item": "twilightforest:lich_trophy"},
+    {"item": "twilightforest:ur_ghast_trophy"},
+    {"item": "twilightforest:snow_queen_trophy"},
+    {"item": "twilightforest:alpha_yeti_trophy"}
+  ],
+  "result":
+  {
+    "item": "originalenhancementsmain:knightmetal_sword_twilighthomology",
+    "count": 1
+  }
+}
