@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":[
+    "BDB",
+    "DAD",
+    "BDB"
+  ],
+  "key": {
+    "B": {"item": "minecraft:blue_ice"},
+    "D": {"item": "originalenhancementsmain:demon_ice"},
+    "A": {"item": "minecraft:amethyst_shard"}
+  },
+  "result": {
+    "item": "originalenhancementsmain:magic_icecrystal",
+    "count": 3
+  }
+}

@@ -1,6 +1,7 @@
 {
   "entity.originalenhancementsmain.deathknightimi": "死亡骑士",
 
+  "item.originalenhancementsmain.magic_icecrystal": "魔能冰晶",
   "item.originalenhancementsmain.death_knight_scepter": "死亡骑士权杖",
   "item.originalenhancementsmain.death_knight_spawn_egg": "死亡骑士怪物蛋",
   "item.originalenhancementsmain.frostmourne": "(伪)霜之哀伤",
@@ -12,6 +13,8 @@
   "item.originalenhancementsmain.frostmourne.lore2": "霜之哀伤是一把可以操控使用者的心智并腐化使用者的武器，不可能也不应该出现在平常人的手中。这一把乃是霜之哀伤的仿制品，剑身上的符文赋予了其强大的力量和窃取敌人灵魂的能力，这使得其任然是一件邪恶的武器",
   "item.originalenhancementsmain.knightmetal_sword_twilighthomology.lore1": "平凡",
   "item.originalenhancementsmain.knightmetal_sword_twilighthomology.lore2": "对有护甲目标造成更高的额外伤害",
+  "item.originalenhancementsmain.magic_icecrystal.lore1": "珍奇",
+  "item.originalenhancementsmain.magic_icecrystal.lore2": "充满魔力的冰之结晶",
 
   "oe.scepter_charges": "剩余使用次数： %d"
 }

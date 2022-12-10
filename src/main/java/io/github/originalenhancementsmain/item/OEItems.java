@@ -19,6 +19,8 @@ import java.util.function.Supplier;
 public class OEItems {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, OriginalEnhancementsMain.MOD_ID);
 
+    public static final RegistryObject<Item> MAGIC_ICECRYSTAL = register("magic_icecrystal", DeathKnightScepter::new);
+
     public static RegistryObject<Item> DEATH_KNIGHT_SCEPTER = register("death_knight_scepter", DeathKnightScepter::new);
 
     public  static  RegistryObject<Item> FROSTMOURNE = register("frostmourne", Frostmourne::new);
