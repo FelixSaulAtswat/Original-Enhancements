@@ -23,9 +23,9 @@ public class OEBlocks {
     public static final DeferredRegister<Item> ITEMS = OEItems.ITEMS;
 
     //定义一个属于我们的方块
-    public static final RegistryObject<Block> EXAMPLE_BLOCK = register("example_block",
-            () -> new Block(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.COLOR_PURPLE).strength(3.0f)
-                    .sound(SoundType.METAL).requiresCorrectToolForDrops()),
+    public static final RegistryObject<Block> EXAMPLE_BLOCK = register("demon_ice",
+            () -> new Block(BlockBehaviour.Properties.of(Material.ICE, MaterialColor.COLOR_PURPLE).strength(10.0f, 3.0f)
+                    .sound(SoundType.GLASS).requiresCorrectToolForDrops()),
             object -> () -> new BlockItem(object.get(), new Item.Properties().tab(OriginalEnhancementsMain.OETab)));
 
 
