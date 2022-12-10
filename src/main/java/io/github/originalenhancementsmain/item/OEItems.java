@@ -5,12 +5,12 @@ import io.github.originalenhancementsmain.entity.OEEntitiers;
 import io.github.originalenhancementsmain.item.items.DeathKnightScepter;
 import io.github.originalenhancementsmain.item.items.Frostmourne;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.Items;
 import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
+import javax.annotation.Nullable;
 import java.util.function.Supplier;
 
 
@@ -28,6 +28,5 @@ public class OEItems {
 
     public static final RegistryObject<Item> OE_EGG = ITEMS.register("death_knight_spawn_egg",
             () -> new ForgeSpawnEggItem(OEEntitiers.DEATH_KNIGHT_IMI, 0, 88749, new Item.Properties().tab(OriginalEnhancementsMain.OETab)));
-
 
 }

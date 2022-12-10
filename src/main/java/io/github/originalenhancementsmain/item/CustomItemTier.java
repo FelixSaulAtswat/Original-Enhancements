@@ -9,7 +9,7 @@ import java.util.function.Supplier;
 
 public enum CustomItemTier implements Tier {
 
-    PreciseAttack(4, 2031, 10.0F, 10.0F, 100, () -> Ingredient
+    PreciseAttack(4, 6000, 10.0F, 10.0F, 100, () -> Ingredient
             .of(Items.NETHERITE_INGOT));
 
 
