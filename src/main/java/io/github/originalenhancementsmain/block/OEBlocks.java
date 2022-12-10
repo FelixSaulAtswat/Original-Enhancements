@@ -24,7 +24,7 @@ public class OEBlocks {
 
     //定义一个属于我们的方块
     public static final RegistryObject<Block> EXAMPLE_BLOCK = register("demon_ice",
-            () -> new Block(BlockBehaviour.Properties.of(Material.ICE, MaterialColor.COLOR_PURPLE).strength(10.0f, 3.0f)
+            () -> new Block(BlockBehaviour.Properties.of(Material.ICE, MaterialColor.COLOR_PURPLE).strength(10.0f, 3.0f).speedFactor(0.4F)
                     .sound(SoundType.GLASS).requiresCorrectToolForDrops()),
             object -> () -> new BlockItem(object.get(), new Item.Properties().tab(OriginalEnhancementsMain.OETab)));
 

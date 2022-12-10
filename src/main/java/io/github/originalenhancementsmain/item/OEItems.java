@@ -5,6 +5,7 @@ import io.github.originalenhancementsmain.entity.OEEntitiers;
 import io.github.originalenhancementsmain.item.items.DeathKnightScepter;
 import io.github.originalenhancementsmain.item.items.Frostmourne;
 import io.github.originalenhancementsmain.item.items.KnightMetalSwordItemY;
+import io.github.originalenhancementsmain.item.items.MagicIcecrystal;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.registries.DeferredRegister;
@@ -19,7 +20,7 @@ import java.util.function.Supplier;
 public class OEItems {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, OriginalEnhancementsMain.MOD_ID);
 
-    public static final RegistryObject<Item> MAGIC_ICECRYSTAL = register("magic_icecrystal", DeathKnightScepter::new);
+    public static final RegistryObject<Item> MAGIC_ICECRYSTAL = register("magic_icecrystal", MagicIcecrystal::new);
 
     public static RegistryObject<Item> DEATH_KNIGHT_SCEPTER = register("death_knight_scepter", DeathKnightScepter::new);
 
