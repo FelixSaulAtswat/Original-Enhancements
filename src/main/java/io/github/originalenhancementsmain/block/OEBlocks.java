@@ -2,9 +2,12 @@ package io.github.originalenhancementsmain.block;
 
 import io.github.originalenhancementsmain.OriginalEnhancementsMain;
 import io.github.originalenhancementsmain.item.OEItems;
+import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.OreBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.Material;
@@ -17,16 +20,22 @@ import java.util.function.Function;
 import java.util.function.Supplier;
 
 public class OEBlocks {
-    //注册机
+
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS,
             OriginalEnhancementsMain.MOD_ID);
     public static final DeferredRegister<Item> ITEMS = OEItems.ITEMS;
 
-    //定义一个属于我们的方块
     public static final RegistryObject<Block> EXAMPLE_BLOCK = register("demon_ice",
             () -> new Block(BlockBehaviour.Properties.of(Material.ICE, MaterialColor.COLOR_PURPLE).strength(10.0f, 3.0f).speedFactor(0.4F)
                     .sound(SoundType.GLASS).requiresCorrectToolForDrops()),
             object -> () -> new BlockItem(object.get(), new Item.Properties().tab(OriginalEnhancementsMain.OETab)));
+
+
+    public static final RegistryObject<Block> LADIA_ORE = registerBlock("ladia_ore",() -> new OreBlock(BlockBehaviour.Properties.of(Material.STONE)
+            .strength(12.0f,3.0f).sound(SoundType.STONE).requiresCorrectToolForDrops(),UniformInt.of(10,20)), OriginalEnhancementsMain.OETab);
+
+    public static final RegistryObject<Block> DEEPSLATE_LADIA_ORE = registerBlock("deepslate_ladia_ore",() -> new OreBlock(BlockBehaviour.Properties.of(Material.STONE,MaterialColor.DEEPSLATE)
+            .strength(12.0f,3.0f).sound(SoundType.DEEPSLATE).requiresCorrectToolForDrops(),UniformInt.of(10,20)), OriginalEnhancementsMain.OETab);
 
 
     private static <T extends Block> RegistryObject<T> registerBlock(final String name, final Supplier<? extends T> block) {
@@ -39,4 +48,17 @@ public class OEBlocks {
         ITEMS.register(name, item.apply(obj));
         return obj;
     }
+
+    private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block, CreativeModeTab tab) {
+        RegistryObject<T> toReturn = BLOCKS.register(name, block);
+        registerBlockItem(name, toReturn, tab);
+        return toReturn;
+    }
+
+    private static <T extends Block> RegistryObject<Item> registerBlockItem(String name, RegistryObject<T> block, CreativeModeTab tab) {
+        return OEItems.ITEMS.register(name, () -> new BlockItem(block.get(),
+                new Item.Properties().tab(tab)));
+    }
+
+
 }

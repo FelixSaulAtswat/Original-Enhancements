@@ -1,4 +1,4 @@
-package io.github.originalenhancementsmain.item.items;
+package io.github.originalenhancementsmain.item.items.material;
 
 import io.github.originalenhancementsmain.OriginalEnhancementsMain;
 import net.minecraft.ChatFormatting;

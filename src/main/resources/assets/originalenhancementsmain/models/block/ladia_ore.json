@@ -1,0 +1,6 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "originalenhancementsmain:block/ladia_ore"
+  }
+}

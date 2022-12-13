@@ -1,4 +1,4 @@
-package io.github.originalenhancementsmain.item.items;
+package io.github.originalenhancementsmain.item.items.weapons;
 
 import io.github.originalenhancementsmain.OriginalEnhancementsMain;
 import io.github.originalenhancementsmain.item.CustomItemTier;
@@ -19,7 +19,7 @@ import java.util.List;
 
 public class Frostmourne extends SwordItem {
     public Frostmourne() {
-        super(CustomItemTier.MythologicalTools,49,-1,new Item.Properties().tab(OriginalEnhancementsMain.OETab).rarity(Rarity.EPIC));
+        super(CustomItemTier.MythologicalTools,169,-1,new Item.Properties().tab(OriginalEnhancementsMain.OETab).rarity(Rarity.EPIC));
     }
 
     @Override

@@ -2,17 +2,17 @@ package io.github.originalenhancementsmain.item;
 
 import io.github.originalenhancementsmain.OriginalEnhancementsMain;
 import io.github.originalenhancementsmain.entity.OEEntitiers;
-import io.github.originalenhancementsmain.item.items.DeathKnightScepter;
-import io.github.originalenhancementsmain.item.items.Frostmourne;
-import io.github.originalenhancementsmain.item.items.KnightMetalSwordItemY;
-import io.github.originalenhancementsmain.item.items.MagicIcecrystal;
+import io.github.originalenhancementsmain.item.items.material.LadiaCrystal;
+import io.github.originalenhancementsmain.item.items.weapons.DeathKnightScepter;
+import io.github.originalenhancementsmain.item.items.weapons.Frostmourne;
+import io.github.originalenhancementsmain.item.items.weapons.KnightMetalSwordItemY;
+import io.github.originalenhancementsmain.item.items.material.MagicIcecrystal;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
-import javax.annotation.Nullable;
 import java.util.function.Supplier;
 
 
@@ -21,6 +21,7 @@ public class OEItems {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, OriginalEnhancementsMain.MOD_ID);
 
     public static final RegistryObject<Item> MAGIC_ICECRYSTAL = register("magic_icecrystal", MagicIcecrystal::new);
+    public static final RegistryObject<Item> LADIA_CRYSTASL = register("ladia_crystal", LadiaCrystal::new);
 
     public static RegistryObject<Item> DEATH_KNIGHT_SCEPTER = register("death_knight_scepter", DeathKnightScepter::new);
 
