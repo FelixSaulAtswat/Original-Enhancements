@@ -7,6 +7,7 @@ import net.minecraft.Util;
 import net.minecraft.network.chat.TextComponent;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.api.distmarker.Dist;
@@ -40,6 +41,14 @@ public class OriginalEnhancementsMain {
         public @NotNull ItemStack makeIcon(){
 
             return new ItemStack(OEBlocks.EXAMPLE_BLOCK.get());
+        }
+    };
+
+    public static final CreativeModeTab OE3D = new CreativeModeTab(OriginalEnhancementsMain.MOD_ID) {
+        @Override
+        @OnlyIn(Dist.CLIENT)
+        public @NotNull ItemStack makeIcon() {
+            return new ItemStack(OEItems.DEATH_KNIGHT_SCEPTER.get());
         }
     };
     

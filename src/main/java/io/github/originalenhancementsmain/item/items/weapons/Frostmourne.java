@@ -19,7 +19,7 @@ import java.util.List;
 
 public class Frostmourne extends SwordItem {
     public Frostmourne() {
-        super(CustomItemTier.MythologicalTools,169,-1,new Item.Properties().tab(OriginalEnhancementsMain.OETab).rarity(Rarity.EPIC));
+        super(CustomItemTier.MythologicalTools,169,-1,new Item.Properties().tab(OriginalEnhancementsMain.OE3D).rarity(Rarity.EPIC));
     }
 
     @Override

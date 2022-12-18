@@ -3,6 +3,7 @@ package io.github.originalenhancementsmain.item;
 import io.github.originalenhancementsmain.OriginalEnhancementsMain;
 import io.github.originalenhancementsmain.entity.OEEntitiers;
 import io.github.originalenhancementsmain.item.items.material.LadiaCrystal;
+import io.github.originalenhancementsmain.item.items.material.LadiaCrystalMax;
 import io.github.originalenhancementsmain.item.items.weapons.DeathKnightScepter;
 import io.github.originalenhancementsmain.item.items.weapons.Frostmourne;
 import io.github.originalenhancementsmain.item.items.weapons.KnightMetalSwordItemY;
@@ -22,6 +23,7 @@ public class OEItems {
 
     public static final RegistryObject<Item> MAGIC_ICECRYSTAL = register("magic_icecrystal", MagicIcecrystal::new);
     public static final RegistryObject<Item> LADIA_CRYSTASL = register("ladia_crystal", LadiaCrystal::new);
+    public static final RegistryObject<Item> LADA_CRYSTASL_MAX = register("ladia_crystal_max", LadiaCrystalMax::new);
 
     public static RegistryObject<Item> DEATH_KNIGHT_SCEPTER = register("death_knight_scepter", DeathKnightScepter::new);
 
