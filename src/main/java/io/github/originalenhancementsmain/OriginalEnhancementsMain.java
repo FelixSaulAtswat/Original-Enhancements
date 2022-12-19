@@ -60,6 +60,8 @@ public class OriginalEnhancementsMain {
         OESounds.SOUNDS.register(bus);
         OEEntitiers.ENTITY_TYPES.register(bus);
         GeckoLib.initialize();
+        OEEffect.EFFECTS.register(bus);
+
 
         MinecraftForge.EVENT_BUS.register(this);
 
