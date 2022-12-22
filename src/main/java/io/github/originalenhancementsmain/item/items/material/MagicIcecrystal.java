@@ -17,7 +17,7 @@ import java.util.List;
 
 public class MagicIcecrystal extends Item {
     public MagicIcecrystal(){
-        super(new Item.Properties().tab(OriginalEnhancementsMain.OETab).rarity(Rarity.UNCOMMON));
+        super(new Item.Properties().tab(OriginalEnhancementsMain.OETab).rarity(Rarity.create("ladia_crystal", ChatFormatting.GOLD)));
     }
 
     @Override

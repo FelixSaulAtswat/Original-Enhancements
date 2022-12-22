@@ -1,4 +1,4 @@
-package io.github.originalenhancementsmain.item.items.weapons;
+package io.github.originalenhancementsmain.item.items.weapon;
 
 import io.github.originalenhancementsmain.OESounds;
 import io.github.originalenhancementsmain.OriginalEnhancementsMain;

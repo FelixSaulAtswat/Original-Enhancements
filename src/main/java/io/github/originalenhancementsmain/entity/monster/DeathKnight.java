@@ -60,7 +60,7 @@ public class DeathKnight extends TamableAnimal {
 
     public static AttributeSupplier.Builder registerAttributes() {
         return Mob.createMobAttributes()
-                .add(Attributes.MAX_HEALTH, 120.0D)
+                .add(Attributes.MAX_HEALTH, 300.0D)
                 .add(Attributes.MOVEMENT_SPEED, 0.4D)
                 .add(Attributes.ARMOR, 8.0D)
                 .add(Attributes.ATTACK_DAMAGE, 20.0D);
@@ -82,7 +82,7 @@ public class DeathKnight extends TamableAnimal {
 
         if (!this.getLevel().isClientSide() && this.getEffect(MobEffects.DAMAGE_BOOST) == null) {
             if(this.tickCount % 20 == 0) {
-                this.hurt(new DamageSource(OEDamageSources.tfSource("expired")).bypassArmor().bypassMagic().bypassInvul().setMagic(), 2);
+                this.hurt(new DamageSource(OEDamageSources.tfSource("expired")).bypassArmor().bypassMagic().bypassInvul().setMagic(), 30);
             }
         }
 

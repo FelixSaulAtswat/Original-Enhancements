@@ -1,4 +1,4 @@
-package io.github.originalenhancementsmain.item.items.weapons;
+package io.github.originalenhancementsmain.item.items.weapon;
 
 import io.github.originalenhancementsmain.OriginalEnhancementsMain;
 import io.github.originalenhancementsmain.item.CustomItemTier;

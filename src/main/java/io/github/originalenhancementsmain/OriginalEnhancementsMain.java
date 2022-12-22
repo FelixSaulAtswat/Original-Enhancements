@@ -1,13 +1,13 @@
 package io.github.originalenhancementsmain;
 
 import io.github.originalenhancementsmain.block.OEBlocks;
+import io.github.originalenhancementsmain.effects.OEEffect;
 import io.github.originalenhancementsmain.entity.OEEntitiers;
 import io.github.originalenhancementsmain.item.OEItems;
 import net.minecraft.Util;
 import net.minecraft.network.chat.TextComponent;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.CreativeModeTab;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.api.distmarker.Dist;
