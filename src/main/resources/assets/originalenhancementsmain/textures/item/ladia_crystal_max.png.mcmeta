@@ -1,12 +1,5 @@
 {
- "animation": {
-    "interpolate": true,
-    "frametime": 10
-  },
-  "ctm": {
-    "ctm_version": 1,
-    "extra": {
-      "light": 15
-    }
-  }
+	"animation": {
+		"frametime": 10
+	}
 }
