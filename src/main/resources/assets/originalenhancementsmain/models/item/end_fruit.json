@@ -3,7 +3,7 @@
 	"textures": {
 		"0": "originalenhancementsmain:item/end_fruit",
 		"1": "originalenhancementsmain:item/end_fruit_e",
-		"particle": "originalenhancementsmain:item/end_fruit"
+		"particle": "originalenhancementsmain:item/end_fruit_particle"
 	},
 	"elements": [
 		{
