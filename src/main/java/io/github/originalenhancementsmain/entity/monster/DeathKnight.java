@@ -1,7 +1,7 @@
 package io.github.originalenhancementsmain.entity.monster;
 
 import io.github.originalenhancementsmain.OESounds;
-import io.github.originalenhancementsmain.rander.OEDamageSources;
+import io.github.originalenhancementsmain.render.OEDamageSources;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
@@ -82,7 +82,7 @@ public class DeathKnight extends TamableAnimal {
 
         if (!this.getLevel().isClientSide() && this.getEffect(MobEffects.DAMAGE_BOOST) == null) {
             if(this.tickCount % 20 == 0) {
-                this.hurt(new DamageSource(OEDamageSources.tfSource("expired")).bypassArmor().bypassMagic().bypassInvul().setMagic(), 30);
+                this.hurt(new DamageSource(OEDamageSources.oeSource("expired")).bypassArmor().bypassMagic().bypassInvul().setMagic(), 30);
             }
         }
 

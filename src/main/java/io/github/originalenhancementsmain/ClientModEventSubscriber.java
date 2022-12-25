@@ -3,7 +3,7 @@ package io.github.originalenhancementsmain;
 import io.github.originalenhancementsmain.client.model.entity.DeathKnightModel;
 import io.github.originalenhancementsmain.entity.OEEntitiers;
 import io.github.originalenhancementsmain.entity.monster.DeathKnight;
-import io.github.originalenhancementsmain.rander.DeathKnightRander;
+import io.github.originalenhancementsmain.render.DeathKnightRender;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
@@ -22,7 +22,7 @@ public class ClientModEventSubscriber {
     //将所有的生物的渲染信息写在这个函数里，有几个写几个
     @SubscribeEvent
     public static void onRegisterRenderer(EntityRenderersEvent.RegisterRenderers event) {
-        event.registerEntityRenderer(OEEntitiers.DEATH_KNIGHT_IMI.get(), DeathKnightRander::new);
+        event.registerEntityRenderer(OEEntitiers.DEATH_KNIGHT_IMI.get(), DeathKnightRender::new);
     }
 
     //将所有的生物的属性信息写在这个函数里，有几个写几个

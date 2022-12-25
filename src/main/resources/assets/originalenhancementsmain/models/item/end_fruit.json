@@ -3,7 +3,7 @@
 	"textures": {
 		"0": "originalenhancementsmain:item/end_fruit",
 		"1": "originalenhancementsmain:item/end_fruit_e",
-		"particle": "originalenhancementsmain:item/end_fruit_particle"
+		"particle": "originalenhancementsmain:item/end_fruit_e_particle"
 	},
 	"elements": [
 		{
@@ -296,8 +296,8 @@
 			}
 		},
 		{
-			"from": [7.49, 19.55921, 8.9044],
-			"to": [8.51, 19.75921, 9.1444],
+			"from": [7.49, 19.55921, 8.8934],
+			"to": [8.51, 19.75921, 9.1434],
 			"rotation": {"angle": 22.5, "axis": "x", "origin": [8, 21.45921, 9.44441]},
 			"faces": {
 				"north": {"uv": [7, 8.625, 7.125, 8.75], "texture": "#1"},
