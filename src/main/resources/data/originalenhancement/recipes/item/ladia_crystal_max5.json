@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients":[
+    {"type": "forge:nbt",
+      "item": "originalenhancement:ladia_crystal_max",
+      "count": 1,
+      "nbt": "{Damage:1}"},
+    {"item": "minecraft:dragon_head"}
+  ],
+  "result":
+  {
+    "item": "originalenhancement:ladia_crystal_max"
+  }
+}

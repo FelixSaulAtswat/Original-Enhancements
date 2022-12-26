@@ -1,0 +1,131 @@
+{
+  "item.originalenhancementsmain.scepter.drain": {
+    "subtitle": "subtitles.originalenhancementsmain.item.scepter.drain",
+    "sounds": [
+      "damage/fallbig"
+    ]
+  },
+  "item.originalenhancementsmain.scepter.pearl": {
+    "subtitle": "subtitles.originalenhancementsmain.item.scepter.pearl",
+    "sounds": [
+      "mob/ghast/fireball4"
+    ]
+  },
+  "item.zombie_scepter_twilight_cohomology_use": {
+    "subtitle": "item.zombie_scepter_twilight_cohomology_use",
+    "sounds": [
+      {
+        "name": "originalenhancement:item/zombie_scepter_twilight_cohomology_use",
+        "stream": true
+      }
+    ]
+  },
+  "entity.deathknight.deathknightsay1": {
+    "subtitle": "entity.deathknight.deathknightsay1.sub",
+    "sounds": [
+      {
+        "name": "originalenhancement:entity/deathknight/deathknightsay1",
+        "stream": true
+      }
+    ]
+  },
+  "entity.deathknight.deathknightsay2": {
+    "subtitle": "entity.deathknight.deathknightsay2.sub",
+    "sounds": [
+      {
+        "name": "originalenhancement:entity/deathknight/deathknightsay2",
+        "stream": true
+      }
+    ]
+  },
+  "entity.deathknight.deathknightsay3": {
+    "subtitle": "entity.deathknight.deathknightsay3.sub",
+    "sounds": [
+      {
+        "name": "originalenhancement:entity/deathknight/deathknightsay3",
+        "stream": true
+      }
+    ]
+  },
+  "entity.deathknight.deathknightdeath": {
+    "subtitle": "entity.deathknight.deathknightdeath.sub",
+    "sounds": [
+      {
+        "name": "originalenhancement:entity/deathknight/deathknightdeath",
+        "stream": true
+      }
+    ]
+  },
+  "entity.deathknight.deathknighthit1": {
+    "subtitle": "entity.deathknight.deathknighthit1.sub",
+    "sounds": [
+      {
+        "name": "originalenhancement:entity/deathknight/deathknighthit1",
+        "stream": true
+      }
+    ]
+  },
+  "entity.deathknight.deathknighthit2": {
+    "subtitle": "entity.deathknight.deathknighthit2.sub",
+    "sounds": [
+      {
+        "name": "originalenhancement:entity/deathknight/deathknighthit2",
+        "stream": true
+      }
+    ]
+  },
+  "entity.deathknight.deathknightstep1": {
+    "subtitle": "entity.deathknight.deathknightstep1.sub",
+    "sounds": [
+      {
+        "name": "originalenhancement:entity/deathknight/deathknightstep1",
+        "stream": true
+      }
+    ]
+  },
+  "entity.deathknight.deathknightstep2": {
+    "subtitle": "entity.deathknight.deathknightstep2.sub",
+    "sounds": [
+      {
+        "name": "originalenhancement:entity/deathknight/deathknightstep2",
+        "stream": true
+      }
+    ]
+  },
+  "entity.deathknight.deathknightstep3": {
+    "subtitle": "entity.deathknight.deathknightstep3.sub",
+    "sounds": [
+      {
+        "name": "originalenhancement:entity/deathknight/deathknightstep3",
+        "stream": true
+      }
+    ]
+  },
+  "entity.deathknight.deathknightstep4": {
+    "subtitle": "entity.deathknight.deathknightstep4.sub",
+    "sounds": [
+      {
+        "name": "originalenhancement:entity/deathknight/deathknighttep4",
+        "stream": true
+      }
+    ]
+  },
+  "entity.deathknight.deathknightstep5": {
+    "subtitle": "entity.deathknight.deathknightstep5.sub",
+    "sounds": [
+      {
+        "name": "originalenhancement:entity/deathknight/deathknightstep5",
+        "stream": true
+      }
+    ]
+  },
+  "entity.deathknight.deathknightsummon": {
+    "subtitle": "entity.deathknight.deathknightsummon.sub",
+    "sounds": [
+      {
+        "name": "originalenhancement:entity/deathknight/deathknightsummon",
+        "stream": true
+      }
+    ]
+  }
+}

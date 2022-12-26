@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients":[
+    {"type": "forge:nbt",
+      "item": "originalenhancement:ladia_crystal_max",
+      "count": 1,
+      "nbt": "{Damage:2}"},
+    {"item": "minecraft:wither_skeleton_skull"}
+  ],
+  "result":
+  {
+    "type": "forge:nbt",
+    "item": "originalenhancement:ladia_crystal_max",
+    "count": 1,
+    "nbt": "{Damage:1}"
+  }
+}
