@@ -1,6 +1,8 @@
 package io.github.originalenhancementsmain;
 
 import io.github.originalenhancementsmain.block.OEBlocks;
+import io.github.originalenhancementsmain.data.OEConfiguredFeatures;
+import io.github.originalenhancementsmain.data.OEPlacedFeatures;
 import io.github.originalenhancementsmain.effects.OEEffect;
 import io.github.originalenhancementsmain.entity.OEEntitiers;
 import io.github.originalenhancementsmain.item.OEItems;
@@ -61,6 +63,8 @@ public class OriginalEnhancementsMain {
         OEEntitiers.ENTITY_TYPES.register(bus);
         GeckoLib.initialize();
         OEEffect.EFFECTS.register(bus);
+        OEConfiguredFeatures.register(bus);
+        OEPlacedFeatures.register(bus);
 
 
         MinecraftForge.EVENT_BUS.register(this);
