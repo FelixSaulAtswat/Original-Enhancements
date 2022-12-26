@@ -22,11 +22,4 @@ public abstract class DeferredRegisterSettings<T> {
         register.register(bus);
     }
 
-    protected ResourceLocation resoure(String name) {
-        return new ResourceLocation(id, name);
-    }
-
-    protected String resoureId(String name) {
-        return id + ":" + name;
-    }
 }
