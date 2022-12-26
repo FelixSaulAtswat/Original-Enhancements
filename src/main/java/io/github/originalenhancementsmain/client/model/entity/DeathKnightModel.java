@@ -17,7 +17,7 @@ import net.minecraft.world.entity.Entity;
 
 public class DeathKnightModel<T extends Entity> extends EntityModel<T> {
 	// This layer location should be baked with EntityRendererProvider.Context in the entity renderer and passed into this model's constructor
-	public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(new ResourceLocation(OriginalEnhancementsMain.MOD_ID, "death_knight_model"), "originalenhancementsmain");
+	public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(new ResourceLocation(OriginalEnhancementsMain.MOD_ID, "death_knight_model"), "originalenhancement");
 	private final ModelPart leftleg;
 	private final ModelPart leftarm;
 	private final ModelPart rightarm;

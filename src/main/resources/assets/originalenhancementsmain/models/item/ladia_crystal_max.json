@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "originalenhancementsmain:item/ladia_crystal_max"
-  }
-}

@@ -1,7 +1,0 @@
-﻿{
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "originalenhancementsmain:item/death_knight_scepter",
-    "layer1": "originalenhancementsmain:item/death_knight_scepter_e"
-  }
-}

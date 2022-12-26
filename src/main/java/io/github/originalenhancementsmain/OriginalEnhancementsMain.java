@@ -27,7 +27,7 @@ import software.bernie.geckolib3.GeckoLib;
 @Mod(OriginalEnhancementsMain.MOD_ID)
 
 public class OriginalEnhancementsMain {
-    public static final String MOD_ID = "originalenhancementsmain";
+    public static final String MOD_ID = "originalenhancement";
 
     @SubscribeEvent
     public static void playJoinWorld(PlayerEvent.PlayerLoggedInEvent event) {
