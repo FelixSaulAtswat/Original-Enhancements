@@ -79,7 +79,7 @@ public class EndFruit extends Item {
     @OnlyIn(Dist.CLIENT)
     public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> lore, TooltipFlag flag) {
         super.appendHoverText(stack, level, lore, flag);
-        lore.add(new TranslatableComponent(getDescriptionId() + ".lore1").withStyle(ChatFormatting.WHITE));
-        lore.add(new TranslatableComponent(getDescriptionId()+".lore2").withStyle(ChatFormatting.GRAY));
+        lore.add(new TranslatableComponent(getDescriptionId() + ".lore1").withStyle(ChatFormatting.DARK_BLUE));
+        lore.add(new TranslatableComponent(getDescriptionId()+".lore2").withStyle(ChatFormatting.RED));
     }
 }

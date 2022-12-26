@@ -7,7 +7,7 @@ import net.minecraft.core.Registry;
 import net.minecraft.data.worldgen.features.OreFeatures;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
-import net.minecraft.world.level.levelgen.feature.configurations.OreConfiguration;
+import net.minecraft.world.level.levelgen.feature.configurations.*;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
@@ -22,7 +22,7 @@ public class OEConfiguredFeatures {
             OreConfiguration.target(OreFeatures.STONE_ORE_REPLACEABLES, OEBlocks.LADIA_ORE.get().defaultBlockState()),
             OreConfiguration.target(OreFeatures.DEEPSLATE_ORE_REPLACEABLES, OEBlocks.DEEPSLATE_LADIA_ORE.get().defaultBlockState())));
 
-    public static final RegistryObject<ConfiguredFeature<?, ?>> LADIA_ORES = CONFIGURED_FEATURE.register("laida_ore", ()-> new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(WORLD_LADIA_ORE.get(), 7)));
+    public static final RegistryObject<ConfiguredFeature<?, ?>> LADIA_ORES = CONFIGURED_FEATURE.register("laida_ores", ()-> new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(WORLD_LADIA_ORE.get(), 7)));
 
     public static void register(IEventBus bus) {
         CONFIGURED_FEATURE.register(bus);
