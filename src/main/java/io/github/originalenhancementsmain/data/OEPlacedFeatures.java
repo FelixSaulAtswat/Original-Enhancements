@@ -13,7 +13,7 @@ public class OEPlacedFeatures {
     public static final DeferredRegisterPlacedFeature PLACED_FEATURE = new DeferredRegisterPlacedFeature(OriginalEnhancementsMain.MOD_ID) {
     };
 
-    public static final RegistryObject<PlacedFeature> LADIA_ORE_PLACED = PLACED_FEATURE.register("ladia_ore_placed", OEConfiguredFeatures.LADIA_ORES, commonOrePlacement(30, HeightRangePlacement.triangle(VerticalAnchor.aboveBottom(-63), VerticalAnchor.aboveBottom(30))));
+    public static final RegistryObject<PlacedFeature> LADIA_ORE_PLACED = PLACED_FEATURE.register("ladia_ore_placed", OEConfiguredFeatures.LADIA_ORES, commonOrePlacement(1, HeightRangePlacement.triangle(VerticalAnchor.aboveBottom(-63), VerticalAnchor.aboveBottom(90))));
 
     public static void register(IEventBus bus){
 
