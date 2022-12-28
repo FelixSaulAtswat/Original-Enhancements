@@ -41,8 +41,8 @@ public class Frostmourne extends SwordItem {
         LivingEntity entity = event.getEntityLiving();
         MobType type = entity.getMobType();
 
-        if(!entity.level.isClientSide && event.getSource().getDirectEntity() instanceof LivingEntity living) {
-            ItemStack stack = living.getMainHandItem();
+        if(!entity.level.isClientSide && event.getSource().getDirectEntity() instanceof LivingEntity player) {
+            ItemStack stack = player.getMainHandItem();
 
             if (!stack.isEmpty()){
                 if ((stack.is(OEItems.FROSTMOURNE.get()))) {
@@ -60,13 +60,13 @@ public class Frostmourne extends SwordItem {
         LivingEntity death = deathEvent.getEntityLiving();
         MobType type = death.getMobType();
 
-        if(!death.level.isClientSide && deathEvent.getSource().getDirectEntity() instanceof LivingEntity living){
-            ItemStack item = living.getMainHandItem();
+        if(!death.level.isClientSide && deathEvent.getSource().getDirectEntity() instanceof LivingEntity player){
+            ItemStack item = player.getMainHandItem();
 
             if (!item.isEmpty()) {
                 if ((item.is(OEItems.FROSTMOURNE.get()))) {
                     if (type != MobType.UNDEAD) {
-                        living.heal(30);
+                        player.heal(30);
                     }
                 }
             }
