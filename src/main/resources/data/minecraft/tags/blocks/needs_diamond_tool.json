@@ -1,7 +1,9 @@
 {
   "replace": false,
   "values": [
-    "originalenhancement:demon_ice"
+    "originalenhancement:demon_ice",
+    "originalenhancement:deepslate_ladia_ore",
+    "originalenhancement:ladia_ore"
 
   ]
 }
