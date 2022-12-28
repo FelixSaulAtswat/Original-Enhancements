@@ -1,6 +1,7 @@
 package io.github.originalenhancementsmain.block;
 
 import io.github.originalenhancementsmain.OriginalEnhancementsMain;
+import io.github.originalenhancementsmain.block.blocks.LadiaOreBlock;
 import io.github.originalenhancementsmain.item.OEItems;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;
@@ -31,10 +32,10 @@ public class OEBlocks {
             object -> () -> new BlockItem(object.get(), new Item.Properties().tab(OriginalEnhancementsMain.OETab)));
 
 
-    public static final RegistryObject<Block> LADIA_ORE = registerBlock("ladia_ore",() -> new OreBlock(BlockBehaviour.Properties.of(Material.STONE)
+    public static final RegistryObject<Block> LADIA_ORE = registerBlock("ladia_ore",() -> new LadiaOreBlock(BlockBehaviour.Properties.of(Material.STONE)
             .strength(12.0f,3.0f).sound(SoundType.STONE).requiresCorrectToolForDrops(),UniformInt.of(10,20)), OriginalEnhancementsMain.OETab);
 
-    public static final RegistryObject<Block> DEEPSLATE_LADIA_ORE = registerBlock("deepslate_ladia_ore",() -> new OreBlock(BlockBehaviour.Properties.of(Material.STONE,MaterialColor.DEEPSLATE)
+    public static final RegistryObject<Block> DEEPSLATE_LADIA_ORE = registerBlock("deepslate_ladia_ore",() -> new LadiaOreBlock(BlockBehaviour.Properties.of(Material.STONE,MaterialColor.DEEPSLATE)
             .strength(12.0f,3.0f).sound(SoundType.DEEPSLATE).requiresCorrectToolForDrops(),UniformInt.of(10,20)), OriginalEnhancementsMain.OETab);
 
 

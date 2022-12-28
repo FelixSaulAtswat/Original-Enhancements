@@ -15,6 +15,7 @@ import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.MobType;
 import net.minecraft.world.item.*;
+import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
@@ -85,6 +86,21 @@ public class Frostmourne extends SwordItem {
 
         }
         return result;
+    }
+
+    @Override
+    public boolean isEnchantable (@NotNull ItemStack pStack){
+        return false;
+    }
+
+    @Override
+    public boolean isBookEnchantable (ItemStack stack, ItemStack book){
+        return false;
+    }
+
+    @Override
+    public boolean canApplyAtEnchantingTable (ItemStack stack, Enchantment enchantment){
+        return false;
     }
 
     @Override

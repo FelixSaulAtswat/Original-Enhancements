@@ -22,6 +22,7 @@ import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.HitResult;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 
@@ -31,7 +32,7 @@ public class DeathKnightScepter extends Item {
     }
 
     @Override
-    public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
+    public @NotNull InteractionResultHolder<ItemStack> use(@NotNull Level level, Player player, @NotNull InteractionHand hand) {
 
         ItemStack stack = player.getItemInHand(hand);
 
@@ -40,11 +41,11 @@ public class DeathKnightScepter extends Item {
         }
 
         if (!level.isClientSide()) {
-            // what block is the player pointing at?
             BlockHitResult result = getPlayerPOVHitResult(level, player, ClipContext.Fluid.NONE);
 
             if (result.getType() != HitResult.Type.MISS) {
                 DeathKnight zombie = OEEntitiers.DEATH_KNIGHT_IMI.get().create(level);
+                assert zombie != null;
                 zombie.moveTo(result.getLocation());
                 if (!level.noCollision(zombie, zombie.getBoundingBox())) {
                     return InteractionResultHolder.pass(stack);
@@ -64,7 +65,7 @@ public class DeathKnightScepter extends Item {
         return InteractionResultHolder.sidedSuccess(stack, level.isClientSide());
     }
     @Override
-    public boolean isEnchantable (ItemStack pStack){
+    public boolean isEnchantable (@NotNull ItemStack pStack){
         return false;
     }
 
@@ -80,7 +81,7 @@ public class DeathKnightScepter extends Item {
 
     @Override
     @OnlyIn(Dist.CLIENT)
-    public void appendHoverText (ItemStack stack, Level world, List< Component > tooltip, TooltipFlag flags){
+    public void appendHoverText (@NotNull ItemStack stack, Level world, @NotNull List< Component > tooltip, @NotNull TooltipFlag flags){
         super.appendHoverText(stack, world, tooltip, flags);
         tooltip.add(new TranslatableComponent("oe.scepter_charges", stack.getMaxDamage() - stack.getDamageValue()).withStyle(ChatFormatting.GRAY));
         }

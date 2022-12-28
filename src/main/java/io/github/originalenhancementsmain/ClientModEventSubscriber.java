@@ -31,4 +31,6 @@ public class ClientModEventSubscriber {
         event.put(OEEntitiers.DEATH_KNIGHT_IMI.get(), DeathKnight.registerAttributes().build());
     }
 
+
+
 }
