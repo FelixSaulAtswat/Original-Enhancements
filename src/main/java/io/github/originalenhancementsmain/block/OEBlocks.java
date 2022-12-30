@@ -26,17 +26,15 @@ public class OEBlocks {
             OriginalEnhancementsMain.MOD_ID);
     public static final DeferredRegister<Item> ITEMS = OEItems.ITEMS;
 
-    public static final RegistryObject<Block> EXAMPLE_BLOCK = register("demon_ice",
-            () -> new Block(BlockBehaviour.Properties.of(Material.ICE, MaterialColor.COLOR_PURPLE).strength(10.0f, 3.0f).speedFactor(0.4F)
-                    .sound(SoundType.GLASS).requiresCorrectToolForDrops()),
-            object -> () -> new BlockItem(object.get(), new Item.Properties().tab(OriginalEnhancementsMain.OETab)));
+    public static final RegistryObject<Block> EXAMPLE_BLOCK = register("demon_ice", () -> new Block(BlockBehaviour.Properties.of(Material.ICE, MaterialColor.COLOR_PURPLE)
+            .strength(10.0f, 3.0f).speedFactor(0.4F).sound(SoundType.GLASS).requiresCorrectToolForDrops()), object -> () -> new BlockItem(object.get(), new Item.Properties().tab(OriginalEnhancementsMain.OETab)));
 
 
     public static final RegistryObject<Block> LADIA_ORE = registerBlock("ladia_ore",() -> new LadiaOreBlock(BlockBehaviour.Properties.of(Material.STONE)
-            .strength(12.0f,3.0f).sound(SoundType.STONE).requiresCorrectToolForDrops(),UniformInt.of(10,20)), OriginalEnhancementsMain.OETab);
+            .strength(15.0f,300.0f).sound(SoundType.STONE).requiresCorrectToolForDrops().noOcclusion(),UniformInt.of(10,20)), OriginalEnhancementsMain.OETab);
 
     public static final RegistryObject<Block> DEEPSLATE_LADIA_ORE = registerBlock("deepslate_ladia_ore",() -> new LadiaOreBlock(BlockBehaviour.Properties.of(Material.STONE,MaterialColor.DEEPSLATE)
-            .strength(12.0f,3.0f).sound(SoundType.DEEPSLATE).requiresCorrectToolForDrops(),UniformInt.of(10,20)), OriginalEnhancementsMain.OETab);
+            .strength(15.0f,300.0f).sound(SoundType.DEEPSLATE).requiresCorrectToolForDrops().noOcclusion(),UniformInt.of(10,20)), OriginalEnhancementsMain.OETab);
 
 
     private static <T extends Block> RegistryObject<T> registerBlock(final String name, final Supplier<? extends T> block) {
