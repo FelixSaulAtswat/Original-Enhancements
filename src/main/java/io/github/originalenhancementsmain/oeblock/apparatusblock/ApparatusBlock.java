@@ -8,6 +8,7 @@ import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
 
+
 public abstract class ApparatusBlock extends BaseApparatusBlock{
 
     public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
