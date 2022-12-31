@@ -1,7 +1,7 @@
 package io.github.originalenhancementsmain;
 
 
-import io.github.originalenhancementsmain.data.OEPlacedFeatures;
+import io.github.originalenhancementsmain.data.placement.OEPlacedFeatures;
 import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;

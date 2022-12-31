@@ -1,4 +1,4 @@
-package io.github.originalenhancementsmain.data;
+package io.github.originalenhancementsmain.data.placement;
 
 import com.google.common.base.Suppliers;
 import io.github.originalenhancementsmain.OriginalEnhancementsMain;

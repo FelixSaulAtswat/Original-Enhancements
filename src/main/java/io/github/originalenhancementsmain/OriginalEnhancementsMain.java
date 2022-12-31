@@ -1,8 +1,8 @@
 package io.github.originalenhancementsmain;
 
 import io.github.originalenhancementsmain.oeblock.OEBlocks;
-import io.github.originalenhancementsmain.data.OEConfiguredFeatures;
-import io.github.originalenhancementsmain.data.OEPlacedFeatures;
+import io.github.originalenhancementsmain.data.placement.OEConfiguredFeatures;
+import io.github.originalenhancementsmain.data.placement.OEPlacedFeatures;
 import io.github.originalenhancementsmain.effects.OEEffect;
 import io.github.originalenhancementsmain.entity.OEEntitiers;
 import io.github.originalenhancementsmain.item.OEItems;

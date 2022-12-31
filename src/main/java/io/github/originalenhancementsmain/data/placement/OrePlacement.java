@@ -1,4 +1,4 @@
-package io.github.originalenhancementsmain.data;
+package io.github.originalenhancementsmain.data.placement;
 
 import net.minecraft.world.level.levelgen.placement.*;
 

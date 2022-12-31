@@ -1,4 +1,4 @@
-package io.github.originalenhancementsmain.data;
+package io.github.originalenhancementsmain.data.placement;
 
 import io.github.originalenhancementsmain.OriginalEnhancementsMain;
 import net.minecraft.world.level.levelgen.VerticalAnchor;
@@ -7,7 +7,7 @@ import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.RegistryObject;
 
-import static io.github.originalenhancementsmain.data.OrePlacement.rareOrePlacement;
+import static io.github.originalenhancementsmain.data.placement.OrePlacement.rareOrePlacement;
 
 public class OEPlacedFeatures {
     public static final DeferredRegisterPlacedFeature PLACED_FEATURE = new DeferredRegisterPlacedFeature(OriginalEnhancementsMain.MOD_ID) {
