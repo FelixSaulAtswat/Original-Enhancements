@@ -2,7 +2,7 @@ package io.github.originalenhancementsmain.data;
 
 import com.google.common.base.Suppliers;
 import io.github.originalenhancementsmain.OriginalEnhancementsMain;
-import io.github.originalenhancementsmain.block.OEBlocks;
+import io.github.originalenhancementsmain.oeblock.OEBlocks;
 import net.minecraft.core.Registry;
 import net.minecraft.data.worldgen.features.OreFeatures;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;

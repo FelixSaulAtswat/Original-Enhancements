@@ -1,14 +1,13 @@
-package io.github.originalenhancementsmain.block;
+package io.github.originalenhancementsmain.oeblock;
 
 import io.github.originalenhancementsmain.OriginalEnhancementsMain;
-import io.github.originalenhancementsmain.block.blocks.LadiaOreBlock;
+import io.github.originalenhancementsmain.oeblock.blocks.LadiaOreBlock;
 import io.github.originalenhancementsmain.item.OEItems;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.OreBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.Material;

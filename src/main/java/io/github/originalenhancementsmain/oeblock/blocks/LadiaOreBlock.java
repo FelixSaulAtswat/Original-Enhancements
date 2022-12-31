@@ -1,4 +1,4 @@
-package io.github.originalenhancementsmain.block.blocks;
+package io.github.originalenhancementsmain.oeblock.blocks;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.util.valueproviders.UniformInt;
@@ -22,6 +22,7 @@ public class LadiaOreBlock extends Block {
         this.xp = uniformInt;
     }
 
+    @SuppressWarnings("deprecation")
     @Override
     public float getDestroyProgress(@NotNull BlockState state, @NotNull Player player, @NotNull BlockGetter getter, @NotNull BlockPos pos) {
         float progress = isCorrectToolForDrops(state, player) ? 30 : 100;
