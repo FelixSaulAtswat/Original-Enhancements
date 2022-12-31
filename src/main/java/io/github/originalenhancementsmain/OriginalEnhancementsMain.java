@@ -1,5 +1,6 @@
 package io.github.originalenhancementsmain;
 
+import io.github.originalenhancementsmain.data.tags.StringProvider;
 import io.github.originalenhancementsmain.oeblock.OEBlocks;
 import io.github.originalenhancementsmain.data.placement.OEConfiguredFeatures;
 import io.github.originalenhancementsmain.data.placement.OEPlacedFeatures;
@@ -7,7 +8,10 @@ import io.github.originalenhancementsmain.effects.OEEffect;
 import io.github.originalenhancementsmain.entity.OEEntitiers;
 import io.github.originalenhancementsmain.item.OEItems;
 import net.minecraft.Util;
+import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.network.chat.TextComponent;
+import net.minecraft.network.chat.TranslatableComponent;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
@@ -72,6 +76,18 @@ public class OriginalEnhancementsMain {
     }
     public static void setup() {
         IEventBus bus = MinecraftForge.EVENT_BUS;
+    }
+
+    public static ResourceLocation getLocationResource(String name){
+        return new ResourceLocation(MOD_ID, name);
+    }
+
+    public static MutableComponent getTranslationWay(String base, String name) {
+        return new TranslatableComponent(getTranslationKey(base, name));
+    }
+
+    public static String getTranslationKey(String base, String name) {
+        return StringProvider.getTranslationKey(base, getLocationResource(name));
     }
 
 }

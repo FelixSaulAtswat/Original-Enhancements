@@ -1,7 +1,9 @@
 package io.github.originalenhancementsmain.oeblock.apparatusblock;
 
+import io.github.originalenhancementsmain.oeblock.apparatusblock.blockmenu.BaseOEMenu;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.world.Containers;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.MenuProvider;
@@ -15,6 +17,8 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
+import net.minecraftforge.items.CapabilityItemHandler;
+import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.network.NetworkHooks;
 
 public abstract class BaseApparatusBlock extends Block implements EntityBlock {
@@ -63,5 +67,42 @@ public abstract class BaseApparatusBlock extends Block implements EntityBlock {
             BlockEntity blockEntity = level.getBlockEntity(pos);
 
         }
+    }
+
+    @SuppressWarnings("deprecation")
+    @Deprecated
+    @Override
+    public void onRemove(BlockState state, Level worldIn, BlockPos pos, BlockState newState, boolean isMoving) {
+        if (state.getBlock() != newState.getBlock()) {
+            BlockEntity te = worldIn.getBlockEntity(pos);
+            if (te != null) {
+                te.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY).ifPresent(inventory -> dropInventoryItems(state, worldIn, pos, inventory));
+                worldIn.updateNeighbourForOutputSignal(pos, this);
+            }
+        }
+
+        super.onRemove(state, worldIn, pos, newState, isMoving);
+    }
+
+    protected void dropInventoryItems(BlockState state, Level level, BlockPos pos, IItemHandler inventory) {
+        dropInventoryItems(level, pos, inventory);
+    }
+
+    public static void dropInventoryItems(Level level, BlockPos pos, IItemHandler inventory) {
+        double x = pos.getX();
+        double y = pos.getY();
+        double z = pos.getZ();
+        for(int i = 0; i < inventory.getSlots(); ++i) {
+            Containers.dropItemStack(level, x, y, z, inventory.getStackInSlot(i));
+        }
+    }
+
+    @SuppressWarnings("deprecation")
+    @Deprecated
+    @Override
+    public boolean triggerEvent(BlockState state, Level worldIn, BlockPos pos, int id, int param) {
+        super.triggerEvent(state, worldIn, pos, id, param);
+        BlockEntity be = worldIn.getBlockEntity(pos);
+        return be != null && be.triggerEvent(id, param);
     }
 }
