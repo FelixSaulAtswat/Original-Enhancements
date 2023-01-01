@@ -5,9 +5,11 @@ import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelReader;
-import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraft.world.level.block.entity.BlockEntityTicker;
+import net.minecraft.world.level.block.entity.BlockEntityType;
 
 import javax.annotation.Nullable;
 import java.util.Optional;
@@ -47,5 +49,17 @@ public class BlockEntityGetter {
             return ((LevelReader) getter).hasChunkAt(pos);
         }
         return true;
+    }
+
+    @SuppressWarnings("unchecked")
+    @Nullable
+    public static <HAVE extends BlockEntity, RET extends BlockEntity> BlockEntityTicker<RET> castTicker(BlockEntityType<RET> expected, BlockEntityType<HAVE> have, BlockEntityTicker<? super HAVE> ticker) {
+        return have == expected ? (BlockEntityTicker<RET>)ticker : null;
+    }
+
+    /** Handles the unchecked cast for a block entity ticker */
+    @Nullable
+    public static <HAVE extends BlockEntity, RET extends BlockEntity> BlockEntityTicker<RET> serverTicker(Level level, BlockEntityType<RET> expected, BlockEntityType<HAVE> have, BlockEntityTicker<? super HAVE> ticker) {
+        return level.isClientSide ? null : castTicker(expected, have, ticker);
     }
 }

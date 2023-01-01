@@ -8,6 +8,7 @@ import io.github.originalenhancementsmain.data.placement.OEPlacedFeatures;
 import io.github.originalenhancementsmain.effects.OEEffect;
 import io.github.originalenhancementsmain.entity.OEEntitiers;
 import io.github.originalenhancementsmain.item.OEItems;
+import io.github.originalenhancementsmain.recipe.OERecipes;
 import net.minecraft.Util;
 import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.network.chat.TextComponent;
@@ -74,6 +75,7 @@ public class OriginalEnhancementsMain {
         OEConfiguredFeatures.register(bus);
         OEPlacedFeatures.register(bus);
         OEBlockEntities.register(bus);
+        OERecipes.register(bus);
 
         MinecraftForge.EVENT_BUS.register(this);
 
