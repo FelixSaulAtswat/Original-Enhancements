@@ -4,7 +4,7 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.world.MenuProvider;
 import net.minecraft.world.Nameable;
 
-public interface INameableProvider extends MenuProvider, Nameable {
+public interface INameableMenuProvider extends MenuProvider, Nameable {
 
     @Override
     Component getCustomName();

@@ -30,5 +30,8 @@
   "effect.originalenhancement.frostmourne_effect": "魔剑侵袭（霜）",
 
   "oe.scepter_charges": "剩余使用次数： %d",
-  "oe.crystal_charges": "充能等级: %d"
+  "oe.crystal_charges": "充能等级: %d",
+
+  "itemGroup.originalenhancement.conventional": "原始增强: 常规物品",
+  "itemGroup.originalenhancement.3d": "原始增强: 3D物品"
 }

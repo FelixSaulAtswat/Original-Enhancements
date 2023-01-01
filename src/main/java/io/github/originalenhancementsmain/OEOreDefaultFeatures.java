@@ -27,7 +27,7 @@ public class OEOreDefaultFeatures {
     }
 
     @SubscribeEvent
-    public static void saS(BiomeLoadingEvent event) {
+    public static void oreGenerate(BiomeLoadingEvent event) {
         BiomeGenerationSettingsBuilder builder = event.getGeneration();
         Biome.BiomeCategory category = event.getCategory();
         ResourceLocation name = event.getName();

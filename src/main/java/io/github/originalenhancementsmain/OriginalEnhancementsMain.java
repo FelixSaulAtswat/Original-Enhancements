@@ -1,6 +1,7 @@
 package io.github.originalenhancementsmain;
 
-import io.github.originalenhancementsmain.data.tags.StringProvider;
+import io.github.originalenhancementsmain.data.util.UtilProvider;
+import io.github.originalenhancementsmain.oeblock.OEBlockEntities;
 import io.github.originalenhancementsmain.oeblock.OEBlocks;
 import io.github.originalenhancementsmain.data.placement.OEConfiguredFeatures;
 import io.github.originalenhancementsmain.data.placement.OEPlacedFeatures;
@@ -24,6 +25,8 @@ import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import software.bernie.geckolib3.GeckoLib;
 
@@ -32,6 +35,7 @@ import software.bernie.geckolib3.GeckoLib;
 
 public class OriginalEnhancementsMain {
     public static final String MOD_ID = "originalenhancement";
+    public static final Logger LOG = LogManager.getLogger(MOD_ID);
 
     @SubscribeEvent
     public static void playJoinWorld(PlayerEvent.PlayerLoggedInEvent event) {
@@ -40,7 +44,7 @@ public class OriginalEnhancementsMain {
 
         player.sendMessage(new TextComponent("Be careful, once you complete certain levels, some monsters' abilities will increase dramatically., "+player.getDisplayName().getString()+"From "+(level.isClientSide?"CLIENT":"SERVER"+".")), Util.NIL_UUID);
     }
-    public static final CreativeModeTab OETab = new CreativeModeTab(OriginalEnhancementsMain.MOD_ID) {
+    public static final CreativeModeTab OETab = new CreativeModeTab(OriginalEnhancementsMain.MOD_ID + ".conventional") {
 
         @Override
         @OnlyIn(Dist.CLIENT)
@@ -50,7 +54,7 @@ public class OriginalEnhancementsMain {
         }
     };
 
-    public static final CreativeModeTab OE3D = new CreativeModeTab(OriginalEnhancementsMain.MOD_ID) {
+    public static final CreativeModeTab OE3D = new CreativeModeTab(OriginalEnhancementsMain.MOD_ID + ".3d") {
         @Override
         @OnlyIn(Dist.CLIENT)
         public @NotNull ItemStack makeIcon() {
@@ -69,7 +73,7 @@ public class OriginalEnhancementsMain {
         OEEffect.EFFECTS.register(bus);
         OEConfiguredFeatures.register(bus);
         OEPlacedFeatures.register(bus);
-
+        OEBlockEntities.register(bus);
 
         MinecraftForge.EVENT_BUS.register(this);
 
@@ -87,7 +91,7 @@ public class OriginalEnhancementsMain {
     }
 
     public static String getTranslationKey(String base, String name) {
-        return StringProvider.getTranslationKey(base, getLocationResource(name));
+        return UtilProvider.getTranslationKey(base, getLocationResource(name));
     }
 
 }

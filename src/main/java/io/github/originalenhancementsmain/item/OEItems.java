@@ -37,7 +37,7 @@ public class OEItems {
         return ITEMS.register(name, item);
     }
 
-    public static final RegistryObject<Item> OE_EGG = ITEMS.register("death_knight_spawn_egg",
+    public static final RegistryObject<Item> DEATH_KNIGHT_SPAWN_EGG = ITEMS.register("death_knight_spawn_egg",
             () -> new ForgeSpawnEggItem(OEEntitiers.DEATH_KNIGHT_IMI, 0, 88749, new Item.Properties().tab(OriginalEnhancementsMain.OETab)));
 
 }

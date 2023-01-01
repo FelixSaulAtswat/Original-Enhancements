@@ -1,4 +1,4 @@
-package io.github.originalenhancementsmain.data;
+package io.github.originalenhancementsmain.data.util;
 
 import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceKey;

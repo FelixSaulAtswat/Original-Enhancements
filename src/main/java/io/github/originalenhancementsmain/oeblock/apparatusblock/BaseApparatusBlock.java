@@ -1,6 +1,7 @@
 package io.github.originalenhancementsmain.oeblock.apparatusblock;
 
 import io.github.originalenhancementsmain.oeblock.apparatusblock.blockmenu.BaseOEMenu;
+import io.github.originalenhancementsmain.oeblock.apparatusblock.interfaceprovider.INameableMenuProvider;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.Containers;
@@ -65,7 +66,9 @@ public abstract class BaseApparatusBlock extends Block implements EntityBlock {
 
         if (stack.hasCustomHoverName()){
             BlockEntity blockEntity = level.getBlockEntity(pos);
-
+            if (blockEntity instanceof INameableMenuProvider provider){
+                provider.setCustomName(stack.getHoverName());
+            }
         }
     }
 

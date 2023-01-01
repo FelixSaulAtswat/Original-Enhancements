@@ -1,6 +1,6 @@
 package io.github.originalenhancementsmain.data.placement;
 
-import io.github.originalenhancementsmain.data.DeferredRegisterSettings;
+import io.github.originalenhancementsmain.data.util.DeferredRegisterSettings;
 import net.minecraft.core.Holder;
 import net.minecraft.core.Registry;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
