@@ -3,9 +3,13 @@ package io.github.originalenhancementsmain;
 import io.github.originalenhancementsmain.client.model.entity.DeathKnightModel;
 import io.github.originalenhancementsmain.entity.OEEntitiers;
 import io.github.originalenhancementsmain.entity.monster.DeathKnight;
+import io.github.originalenhancementsmain.recipe.OERecipes;
 import io.github.originalenhancementsmain.render.DeathKnightRender;
+import net.minecraft.advancements.CriteriaTriggers;
+import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
+import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -31,6 +35,8 @@ public class ClientModEventSubscriber {
         event.put(OEEntitiers.DEATH_KNIGHT_IMI.get(), DeathKnight.registerAttributes().build());
     }
 
-
-
+    @SubscribeEvent
+    public static void onRegisterRecipeSerializers(RegistryEvent.Register<RecipeSerializer<?>> event){
+        CriteriaTriggers.register(OERecipes.OPENED_TRIGGER);
+    }
 }

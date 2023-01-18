@@ -1,7 +1,6 @@
 package io.github.originalenhancementsmain.oeblock.apparatusblock;
 
 import io.github.originalenhancementsmain.OriginalEnhancementsMain;
-import io.github.originalenhancementsmain.data.tags.OETags;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.network.chat.Component;
@@ -10,6 +9,7 @@ import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraftforge.common.Tags;
 
 public abstract class ApparatusMultiBlockControllerBlock extends ApparatusControllerBlock {
 
@@ -20,7 +20,7 @@ public abstract class ApparatusMultiBlockControllerBlock extends ApparatusContro
     }
 
     protected boolean isValidEnergySource(BlockState state){
-        return state.is(OETags.Blocks.FULL_STRUCTURE);
+        return state.is(Tags.Blocks.STORAGE_BLOCKS_AMETHYST);
     }
     @Override
     public BlockState getStateForPlacement(BlockPlaceContext context){
@@ -37,7 +37,8 @@ public abstract class ApparatusMultiBlockControllerBlock extends ApparatusContro
     @Override
     public BlockState updateShape(BlockState state, Direction direction, BlockState sideState, LevelAccessor levelAccessor, BlockPos pos, BlockPos sidePos) {
         if (direction == Direction.DOWN) {
-            return state.setValue(STRUCTURE_COMPOSITION, isValidEnergySource(sideState));
+                return state.setValue(STRUCTURE_COMPOSITION, isValidEnergySource(sideState));
+
         }
         return state;
     }

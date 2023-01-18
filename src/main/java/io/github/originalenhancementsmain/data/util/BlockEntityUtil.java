@@ -15,7 +15,7 @@ import javax.annotation.Nullable;
 import java.util.Optional;
 
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
-public class BlockEntityGetter {
+public class BlockEntityUtil {
 
     public static <T>Optional<T> get(Class<T> tClass, @Nullable BlockGetter getter, BlockPos pos) {
         return get(tClass, getter, pos, false);
@@ -57,7 +57,6 @@ public class BlockEntityGetter {
         return have == expected ? (BlockEntityTicker<RET>)ticker : null;
     }
 
-    /** Handles the unchecked cast for a block entity ticker */
     @Nullable
     public static <HAVE extends BlockEntity, RET extends BlockEntity> BlockEntityTicker<RET> serverTicker(Level level, BlockEntityType<RET> expected, BlockEntityType<HAVE> have, BlockEntityTicker<? super HAVE> ticker) {
         return level.isClientSide ? null : castTicker(expected, have, ticker);

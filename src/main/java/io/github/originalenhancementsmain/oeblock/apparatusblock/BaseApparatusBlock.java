@@ -1,6 +1,5 @@
 package io.github.originalenhancementsmain.oeblock.apparatusblock;
 
-import io.github.originalenhancementsmain.oeblock.apparatusblock.blockmenu.BaseOEMenu;
 import io.github.originalenhancementsmain.oeblock.apparatusblock.interfaceprovider.INameableMenuProvider;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerPlayer;
@@ -40,8 +39,8 @@ public abstract class BaseApparatusBlock extends Block implements EntityBlock {
             MenuProvider provider = this.getMenuProvider(level.getBlockState(pos), level, pos);
             if (provider != null && player instanceof ServerPlayer serverPlayer){
                 NetworkHooks.openGui(serverPlayer, provider, pos);
-                if (player.containerMenu instanceof BaseOEMenu menu){
-                    menu.openNatureApparatusMenu(serverPlayer);
+                if (player.containerMenu instanceof BaseApparatusMenu<?> menu){
+                    menu.openApparatusMenu(serverPlayer);
                 }
             }
         }

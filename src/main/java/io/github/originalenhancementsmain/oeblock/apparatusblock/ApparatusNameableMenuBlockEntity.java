@@ -7,12 +7,12 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 
-public abstract class OENameableMenuBlockEntity extends BaseOEBlockEntity implements INameableMenuProvider {
+public abstract class ApparatusNameableMenuBlockEntity extends BaseApparatusBlockEntity implements INameableMenuProvider {
     private static final String TAG_CUSTOM_NAME = "CustomName";
     private final Component defaultName;
     private Component customName;
 
-    public OENameableMenuBlockEntity(BlockEntityType<?> type, BlockPos pos, BlockState state, Component defaultName){
+    public ApparatusNameableMenuBlockEntity(BlockEntityType<?> type, BlockPos pos, BlockState state, Component defaultName){
         super(type, pos, state);
         this.defaultName = defaultName;
     }

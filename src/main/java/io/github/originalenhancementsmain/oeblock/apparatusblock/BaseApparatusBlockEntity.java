@@ -9,9 +9,9 @@ import net.minecraft.world.level.block.state.BlockState;
 
 import javax.annotation.Nullable;
 
-public class BaseOEBlockEntity extends BlockEntity {
+public class BaseApparatusBlockEntity extends BlockEntity {
 
-    public BaseOEBlockEntity(BlockEntityType<?> entityType, BlockPos pos, BlockState state){
+    public BaseApparatusBlockEntity(BlockEntityType<?> entityType, BlockPos pos, BlockState state){
         super(entityType, pos, state);
     }
 
