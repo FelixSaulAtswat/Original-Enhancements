@@ -14,6 +14,10 @@ public class NatureRealNameReconfigurableApparatusMenu extends ApparatusControll
 
     public NatureRealNameReconfigurableApparatusMenu(int id, Inventory inventory, NatureRealNameReconfigurableApparatusBlockEntity natureApparatus){
         super(id, OEMenus.NATURE_APPARATUS_MENU.get(), inventory, natureApparatus);
+
+        if (natureApparatus != null){
+            this.addInventorySlots();
+        }
     }
 
     public NatureRealNameReconfigurableApparatusMenu(int id, Inventory inventory, FriendlyByteBuf buf){
