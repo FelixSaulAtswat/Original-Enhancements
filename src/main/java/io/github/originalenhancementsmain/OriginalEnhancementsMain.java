@@ -1,5 +1,6 @@
 package io.github.originalenhancementsmain;
 
+import io.github.originalenhancementsmain.client.seen.NatureApparatusScreen;
 import io.github.originalenhancementsmain.data.util.UtilProvider;
 import io.github.originalenhancementsmain.oeblock.OEBlockEntities;
 import io.github.originalenhancementsmain.oeblock.OEBlocks;
@@ -11,6 +12,7 @@ import io.github.originalenhancementsmain.item.OEItems;
 import io.github.originalenhancementsmain.oeblock.apparatusblock.OEMenus;
 import io.github.originalenhancementsmain.recipe.OERecipes;
 import net.minecraft.Util;
+import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.network.chat.TextComponent;
 import net.minecraft.network.chat.TranslatableComponent;
@@ -26,6 +28,7 @@ import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -82,8 +85,15 @@ public class OriginalEnhancementsMain {
         MinecraftForge.EVENT_BUS.register(this);
 
     }
+
+    @SubscribeEvent
     public static void setup() {
         IEventBus bus = MinecraftForge.EVENT_BUS;
+    }
+
+    @SubscribeEvent
+    private void clientRegister(final FMLClientSetupEvent event){
+        MenuScreens.register(OEMenus.NATURE_APPARATUS_MENU.get(), NatureApparatusScreen :: new);
     }
 
     public static ResourceLocation getLocationResource(String name){

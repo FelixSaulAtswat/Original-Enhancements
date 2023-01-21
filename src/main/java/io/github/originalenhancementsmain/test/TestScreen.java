@@ -1,20 +1,19 @@
 package io.github.originalenhancementsmain.test;
 
-import com.joy187.re8joymod.Main;
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.PoseStack;
+import io.github.originalenhancementsmain.OriginalEnhancementsMain;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.client.renderer.GameRenderer;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 
-public class VirusGeneratorScreen extends AbstractContainerScreen<TestMenu> {
+public class TestScreen extends AbstractContainerScreen<TestMenu> {
     //指明我们材质的位置
-    private static final ResourceLocation TEXTURE =
-            new ResourceLocation(Main.MOD_ID, "textures/gui/virus_generator.png");
+    private static final ResourceLocation TEXTURE = new ResourceLocation(OriginalEnhancementsMain.MOD_ID, "textures/gui/virus_generator.png");
 
-    public VirusGeneratorScreen(TestMenu pMenu, Inventory pPlayerInventory, Component pTitle) {
+    public TestScreen(TestMenu pMenu, Inventory pPlayerInventory, Component pTitle) {
         super(pMenu, pPlayerInventory, pTitle);
     }
 

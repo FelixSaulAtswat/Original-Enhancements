@@ -70,7 +70,7 @@ minecraft {
             property 'forge.enabledGameTestNamespaces', 'examplemod'
 
             mods {
-                examplemod {
+                originalenhancement {
                     source sourceSets.main
                 }
             }
@@ -87,7 +87,7 @@ minecraft {
             property 'forge.enabledGameTestNamespaces', 'examplemod'
 
             mods {
-                examplemod {
+                originalenhancement {
                     source sourceSets.main
                 }
             }
@@ -115,7 +115,7 @@ minecraft {
             property 'forge.enabledGameTestNamespaces', 'examplemod'
 
             mods {
-                examplemod {
+                originalenhancement {
                     source sourceSets.main
                 }
             }
@@ -132,7 +132,7 @@ minecraft {
             args '--mod', 'examplemod', '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/')
 
             mods {
-                examplemod {
+                originalenhancement {
                     source sourceSets.main
                 }
             }
@@ -164,7 +164,7 @@ dependencies {
     // Specify the version of Minecraft to use. If this is any group other than 'net.minecraft', it is assumed
     // that the dep is a ForgeGradle 'patcher' dependency, and its patches will be applied.
     // The userdev artifact is a special name and will get all sorts of transformations applied to it.
-    minecraft 'net.minecraftforge:forge:1.18.2-40.1.0'
+    minecraft 'net.minecraftforge:forge:1.18.2-40.1.86'
 
     implementation fg.deobf("team.chisel.ctm:CTM:${ctm_version}")
 
@@ -185,7 +185,7 @@ dependencies {
 jar {
     manifest {
         attributes([
-                "Specification-Title"     : "Original Enhancements",
+                "Specification-Title"     : "Original Enhancement",
                 "Specification-Vendor"    : "Dragon",
                 "Specification-Version"   : "1", // We are version 1 of ourselves
                 "Implementation-Title"    : project.name,
