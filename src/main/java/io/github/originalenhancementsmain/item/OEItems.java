@@ -1,6 +1,6 @@
 package io.github.originalenhancementsmain.item;
 
-import io.github.originalenhancementsmain.OriginalEnhancementsMain;
+import io.github.originalenhancementsmain.OriginalEnhancementMain;
 import io.github.originalenhancementsmain.entity.OEEntitiers;
 import io.github.originalenhancementsmain.item.items.food.EndFruit;
 import io.github.originalenhancementsmain.item.items.material.LadiaCrystal;
@@ -20,7 +20,7 @@ import java.util.function.Supplier;
 
 
 public class OEItems {
-    public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, OriginalEnhancementsMain.MOD_ID);
+    public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, OriginalEnhancementMain.MOD_ID);
 
     public static final RegistryObject<Item> MAGIC_ICECRYSTAL = register("magic_icecrystal", MagicIcecrystal::new);
     public static final RegistryObject<Item> LADIA_CRYSTASL = register("ladia_crystal", LadiaCrystal::new);
@@ -38,6 +38,6 @@ public class OEItems {
     }
 
     public static final RegistryObject<Item> DEATH_KNIGHT_SPAWN_EGG = ITEMS.register("death_knight_spawn_egg",
-            () -> new ForgeSpawnEggItem(OEEntitiers.DEATH_KNIGHT_IMI, 0, 88749, new Item.Properties().tab(OriginalEnhancementsMain.OETab)));
+            () -> new ForgeSpawnEggItem(OEEntitiers.DEATH_KNIGHT_IMI, 0, 88749, new Item.Properties().tab(OriginalEnhancementMain.OETab)));
 
 }

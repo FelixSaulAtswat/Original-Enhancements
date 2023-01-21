@@ -1,6 +1,6 @@
 package io.github.originalenhancementsmain.oeblock.apparatusblock.blockentity;
 
-import io.github.originalenhancementsmain.OriginalEnhancementsMain;
+import io.github.originalenhancementsmain.OriginalEnhancementMain;
 import io.github.originalenhancementsmain.oeblock.OEBlockEntities;
 import io.github.originalenhancementsmain.oeblock.apparatusblock.ApparatusControllerBlock;
 import io.github.originalenhancementsmain.oeblock.apparatusblock.ApparatusNameableMenuBlockEntity;
@@ -31,7 +31,7 @@ import java.util.Optional;
 
 public class NatureRealNameReconfigurableApparatusBlockEntity extends ApparatusNameableMenuBlockEntity {
 
-    public static final Component NAME = OriginalEnhancementsMain.getTranslationWay("gui", "nature");
+    public static final Component NAME = OriginalEnhancementMain.getTranslationWay("gui", "nature");
 
     private int progress = 0;
 

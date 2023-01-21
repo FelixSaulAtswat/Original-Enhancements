@@ -1,7 +1,7 @@
 package io.github.originalenhancementsmain.client.seen;
 
 import com.mojang.blaze3d.vertex.PoseStack;
-import io.github.originalenhancementsmain.OriginalEnhancementsMain;
+import io.github.originalenhancementsmain.OriginalEnhancementMain;
 import io.github.originalenhancementsmain.data.util.GuiUtil;
 import io.github.originalenhancementsmain.oeblock.apparatusblock.blockmenu.NatureRealNameReconfigurableApparatusMenu;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
@@ -11,7 +11,7 @@ import net.minecraft.world.entity.player.Inventory;
 
 public class NatureApparatusScreen extends AbstractContainerScreen<NatureRealNameReconfigurableApparatusMenu> {
 
-    private static final ResourceLocation TEXTURES = OriginalEnhancementsMain.getLocationResource("textures/gui/nature_apparatus.png");
+    private static final ResourceLocation TEXTURES = OriginalEnhancementMain.getLocationResource("textures/gui/nature_apparatus.png");
 
     public NatureApparatusScreen(NatureRealNameReconfigurableApparatusMenu menu, Inventory inventory, Component name){
         super(menu, inventory, name);

@@ -7,7 +7,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
 public class OESounds {
-    public static final DeferredRegister<SoundEvent> SOUNDS = DeferredRegister.create(ForgeRegistries.SOUND_EVENTS, OriginalEnhancementsMain.MOD_ID);
+    public static final DeferredRegister<SoundEvent> SOUNDS = DeferredRegister.create(ForgeRegistries.SOUND_EVENTS, OriginalEnhancementMain.MOD_ID);
     public static final RegistryObject<SoundEvent> DEATH_KNIGHTAMBIENT1 = build("entity.deathknight.deathknightsay1");
     public static final RegistryObject<SoundEvent> DEATH_KNIGHTAMBIENT2 = build("entity.deathknight.deathknightsay2");
     public static final RegistryObject<SoundEvent> DEATH_KNIGHTAMBIENT3 = build("entity.deathknight.deathknightsay3");
@@ -28,7 +28,7 @@ public class OESounds {
 
     private static RegistryObject<SoundEvent> build(String id)
     {
-        return SOUNDS.register(id, () -> new SoundEvent(new ResourceLocation(OriginalEnhancementsMain.MOD_ID, id)));
+        return SOUNDS.register(id, () -> new SoundEvent(new ResourceLocation(OriginalEnhancementMain.MOD_ID, id)));
     }
 
 }

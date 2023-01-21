@@ -2,7 +2,7 @@ package io.github.originalenhancementsmain.data.util;
 
 import com.google.gson.JsonObject;
 import com.google.gson.JsonSyntaxException;
-import io.github.originalenhancementsmain.OriginalEnhancementsMain;
+import io.github.originalenhancementsmain.OriginalEnhancementMain;
 import net.minecraft.advancements.critereon.*;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
@@ -17,7 +17,7 @@ import java.util.Objects;
 
 public class BlockEntityOpenedTrigger extends SimpleCriterionTrigger<BlockEntityOpenedTrigger.Instance> {
 
-    private static final ResourceLocation ID = OriginalEnhancementsMain.getLocationResource("block_container_opened");
+    private static final ResourceLocation ID = OriginalEnhancementMain.getLocationResource("block_container_opened");
 
     @Override
     public ResourceLocation getId() {

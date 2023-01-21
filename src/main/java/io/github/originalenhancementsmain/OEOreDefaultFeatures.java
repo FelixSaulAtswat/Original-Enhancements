@@ -13,7 +13,7 @@ import net.minecraftforge.event.world.BiomeLoadingEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
-@Mod.EventBusSubscriber(modid = OriginalEnhancementsMain.MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE)
+@Mod.EventBusSubscriber(modid = OriginalEnhancementMain.MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class OEOreDefaultFeatures {
 
     private static boolean condition(boolean notHasTyp, ResourceKey<Biome> resourceKey, Biome.BiomeCategory category, Biome.BiomeCategory comparison, BiomeDictionary.Type type){

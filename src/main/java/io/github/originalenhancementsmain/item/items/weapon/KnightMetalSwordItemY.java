@@ -1,6 +1,6 @@
 package io.github.originalenhancementsmain.item.items.weapon;
 
-import io.github.originalenhancementsmain.OriginalEnhancementsMain;
+import io.github.originalenhancementsmain.OriginalEnhancementMain;
 import io.github.originalenhancementsmain.item.CustomItemTier;
 import io.github.originalenhancementsmain.item.OEItems;
 import net.minecraft.ChatFormatting;
@@ -23,10 +23,10 @@ import net.minecraftforge.fml.common.Mod;
 import javax.annotation.Nullable;
 import java.util.List;
 
-@Mod.EventBusSubscriber(modid = OriginalEnhancementsMain.MOD_ID)
+@Mod.EventBusSubscriber(modid = OriginalEnhancementMain.MOD_ID)
 public class KnightMetalSwordItemY extends SwordItem {
     public KnightMetalSwordItemY() {
-        super(CustomItemTier.RareTools,14,-3, new Item.Properties().tab(OriginalEnhancementsMain.OETab));
+        super(CustomItemTier.RareTools,14,-3, new Item.Properties().tab(OriginalEnhancementMain.OETab));
     }
 
     private static final int BONUS_DAMAGE = 10;

@@ -1,6 +1,6 @@
 package io.github.originalenhancementsmain.item.items.material;
 
-import io.github.originalenhancementsmain.OriginalEnhancementsMain;
+import io.github.originalenhancementsmain.OriginalEnhancementMain;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TranslatableComponent;
@@ -17,7 +17,7 @@ import java.util.List;
 
 public class MagicIcecrystal extends Item {
     public MagicIcecrystal(){
-        super(new Item.Properties().tab(OriginalEnhancementsMain.OETab).rarity(Rarity.create("ladia_crystal", ChatFormatting.GOLD)));
+        super(new Item.Properties().tab(OriginalEnhancementMain.OETab).rarity(Rarity.create("ladia_crystal", ChatFormatting.GOLD)));
     }
 
     @Override

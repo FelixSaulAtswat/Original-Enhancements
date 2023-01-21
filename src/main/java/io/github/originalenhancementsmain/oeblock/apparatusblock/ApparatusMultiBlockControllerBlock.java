@@ -1,6 +1,6 @@
 package io.github.originalenhancementsmain.oeblock.apparatusblock;
 
-import io.github.originalenhancementsmain.OriginalEnhancementsMain;
+import io.github.originalenhancementsmain.OriginalEnhancementMain;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.network.chat.Component;
@@ -13,7 +13,7 @@ import net.minecraftforge.common.Tags;
 
 public abstract class ApparatusMultiBlockControllerBlock extends ApparatusControllerBlock {
 
-    private static final Component CAN_NOT_DETECTION_STRUCTURE = OriginalEnhancementsMain .getTranslationWay("multiblock", "apparatus.can_not_detection_structure");
+    private static final Component CAN_NOT_DETECTION_STRUCTURE = OriginalEnhancementMain.getTranslationWay("multiblock", "apparatus.can_not_detection_structure");
 
     protected ApparatusMultiBlockControllerBlock(Properties properties){
         super(properties);

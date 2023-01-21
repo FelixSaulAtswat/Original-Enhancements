@@ -1,6 +1,6 @@
 package io.github.originalenhancementsmain.item.items.material;
 
-import io.github.originalenhancementsmain.OriginalEnhancementsMain;
+import io.github.originalenhancementsmain.OriginalEnhancementMain;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TranslatableComponent;
@@ -15,7 +15,7 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 import java.util.List;
 
 public class LadiaCrystalMax extends Item {
-    public LadiaCrystalMax(){super(new Item.Properties().durability(5).tab(OriginalEnhancementsMain.OETab).rarity(Rarity.UNCOMMON));}
+    public LadiaCrystalMax(){super(new Item.Properties().durability(5).tab(OriginalEnhancementMain.OETab).rarity(Rarity.UNCOMMON));}
 
     @Override
     @OnlyIn(Dist.CLIENT)

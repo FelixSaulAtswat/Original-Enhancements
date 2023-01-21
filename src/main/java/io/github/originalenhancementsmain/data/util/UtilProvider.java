@@ -1,6 +1,6 @@
 package io.github.originalenhancementsmain.data.util;
 
-import io.github.originalenhancementsmain.OriginalEnhancementsMain;
+import io.github.originalenhancementsmain.OriginalEnhancementMain;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.resources.ResourceLocation;
@@ -19,7 +19,7 @@ public class UtilProvider {
                 return direction;
             }
         }
-        OriginalEnhancementsMain.LOG.error("No direction for position {} and neighbor {}", pos, neighbor);
+        OriginalEnhancementMain.LOG.error("No direction for position {} and neighbor {}", pos, neighbor);
         return Direction.DOWN;
     }
 }

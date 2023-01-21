@@ -1,6 +1,6 @@
 package io.github.originalenhancementsmain.oeblock;
 
-import io.github.originalenhancementsmain.OriginalEnhancementsMain;
+import io.github.originalenhancementsmain.OriginalEnhancementMain;
 import io.github.originalenhancementsmain.oeblock.apparatusblock.blockentity.NatureRealNameReconfigurableApparatusBlockEntity;
 import net.minecraft.Util;
 import net.minecraft.util.datafix.fixes.References;
@@ -17,7 +17,7 @@ import java.util.function.Supplier;
 
 public class OEBlockEntities {
 
-    public static final DeferredRegister<BlockEntityType<?>> BLOCK_ENTITIES = DeferredRegister.create(ForgeRegistries.BLOCK_ENTITIES, OriginalEnhancementsMain.MOD_ID);
+    public static final DeferredRegister<BlockEntityType<?>> BLOCK_ENTITIES = DeferredRegister.create(ForgeRegistries.BLOCK_ENTITIES, OriginalEnhancementMain.MOD_ID);
 
     public static final RegistryObject<BlockEntityType<NatureRealNameReconfigurableApparatusBlockEntity>> NATURE_APPARATUS_CONTROLLER_BLOCK_ENTITY = registryBlockEntity("nature_real_name_reconfigurable_apparatus_block_entity",
             NatureRealNameReconfigurableApparatusBlockEntity :: new, OEBlocks.NATURE_REAL_NAME_RECONFIGURABLE_APPARATUS_BLOCK);
@@ -35,6 +35,6 @@ public class OEBlockEntities {
     }
 
     protected static String resourceLocationName(String name){
-        return OriginalEnhancementsMain.MOD_ID + ":" + name;
+        return OriginalEnhancementMain.MOD_ID + ":" + name;
     }
 }

@@ -1,6 +1,6 @@
 package io.github.originalenhancementsmain.data.util;
 
-import io.github.originalenhancementsmain.OriginalEnhancementsMain;
+import io.github.originalenhancementsmain.OriginalEnhancementMain;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 import net.minecraft.core.BlockPos;
@@ -33,7 +33,7 @@ public class BlockEntityUtil {
         if (tClass.isInstance(tile)) {
             return Optional.of(tClass.cast(tile));
         } else if (logWrongType) {
-        OriginalEnhancementsMain.LOG.warn("Unexpected TileEntity class at {}, expected {}, but found: {}", pos, tClass, tile.getClass());
+        OriginalEnhancementMain.LOG.warn("Unexpected TileEntity class at {}, expected {}, but found: {}", pos, tClass, tile.getClass());
         }
 
         return Optional.empty();

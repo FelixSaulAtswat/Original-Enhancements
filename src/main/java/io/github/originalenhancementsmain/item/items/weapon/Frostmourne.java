@@ -1,6 +1,6 @@
 package io.github.originalenhancementsmain.item.items.weapon;
 
-import io.github.originalenhancementsmain.OriginalEnhancementsMain;
+import io.github.originalenhancementsmain.OriginalEnhancementMain;
 import io.github.originalenhancementsmain.effects.OEEffect;
 import io.github.originalenhancementsmain.item.CustomItemTier;
 import io.github.originalenhancementsmain.item.OEItems;
@@ -28,12 +28,12 @@ import org.jetbrains.annotations.NotNull;
 import javax.annotation.Nullable;
 import java.util.List;
 
-@Mod.EventBusSubscriber(modid = OriginalEnhancementsMain.MOD_ID)
+@Mod.EventBusSubscriber(modid = OriginalEnhancementMain.MOD_ID)
 public class Frostmourne extends SwordItem {
 
     public static final int EXTRA_DAMAGE = 100;
     public Frostmourne() {
-        super(CustomItemTier.MythologicalTools,169,-1,new Item.Properties().tab(OriginalEnhancementsMain.OE3D).rarity(Rarity.EPIC));
+        super(CustomItemTier.MythologicalTools,169,-1,new Item.Properties().tab(OriginalEnhancementMain.OE3D).rarity(Rarity.EPIC));
     }
 
     @SubscribeEvent

@@ -36,9 +36,9 @@ import org.jetbrains.annotations.NotNull;
 import software.bernie.geckolib3.GeckoLib;
 
 
-@Mod(OriginalEnhancementsMain.MOD_ID)
+@Mod(OriginalEnhancementMain.MOD_ID)
 
-public class OriginalEnhancementsMain {
+public class OriginalEnhancementMain {
     public static final String MOD_ID = "originalenhancement";
     public static final Logger LOG = LogManager.getLogger(MOD_ID);
 
@@ -49,7 +49,7 @@ public class OriginalEnhancementsMain {
 
         player.sendMessage(new TextComponent("Be careful, once you complete certain levels, some monsters' abilities will increase dramatically., "+player.getDisplayName().getString()+"From "+(level.isClientSide?"CLIENT":"SERVER"+".")), Util.NIL_UUID);
     }
-    public static final CreativeModeTab OETab = new CreativeModeTab(OriginalEnhancementsMain.MOD_ID + ".conventional") {
+    public static final CreativeModeTab OETab = new CreativeModeTab(OriginalEnhancementMain.MOD_ID + ".conventional") {
 
         @Override
         @OnlyIn(Dist.CLIENT)
@@ -59,7 +59,7 @@ public class OriginalEnhancementsMain {
         }
     };
 
-    public static final CreativeModeTab OE3D = new CreativeModeTab(OriginalEnhancementsMain.MOD_ID + ".3d") {
+    public static final CreativeModeTab OE3D = new CreativeModeTab(OriginalEnhancementMain.MOD_ID + ".3d") {
         @Override
         @OnlyIn(Dist.CLIENT)
         public @NotNull ItemStack makeIcon() {
@@ -67,7 +67,7 @@ public class OriginalEnhancementsMain {
         }
     };
     
-    public OriginalEnhancementsMain() {
+    public OriginalEnhancementMain() {
         final IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
 
         OEItems.ITEMS.register(bus);

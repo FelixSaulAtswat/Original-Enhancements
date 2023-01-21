@@ -5,7 +5,7 @@ package io.github.originalenhancementsmain.client.model.entity;// Made with Bloc
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
-import io.github.originalenhancementsmain.OriginalEnhancementsMain;
+import io.github.originalenhancementsmain.OriginalEnhancementMain;
 import net.minecraft.client.model.EntityModel;
 import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.model.geom.ModelPart;
@@ -17,7 +17,7 @@ import net.minecraft.world.entity.Entity;
 
 public class DeathKnightModel<T extends Entity> extends EntityModel<T> {
 	// This layer location should be baked with EntityRendererProvider.Context in the entity renderer and passed into this model's constructor
-	public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(new ResourceLocation(OriginalEnhancementsMain.MOD_ID, "death_knight_model"), "originalenhancement");
+	public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(new ResourceLocation(OriginalEnhancementMain.MOD_ID, "death_knight_model"), "originalenhancement");
 	private final ModelPart leftleg;
 	private final ModelPart leftarm;
 	private final ModelPart rightarm;

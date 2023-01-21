@@ -1,6 +1,6 @@
 package io.github.originalenhancementsmain.oeblock.apparatusblock.blockmenu;
 
-import io.github.originalenhancementsmain.OriginalEnhancementsMain;
+import io.github.originalenhancementsmain.OriginalEnhancementMain;
 import io.github.originalenhancementsmain.oeblock.apparatusblock.ApparatusControllerMenu;
 import io.github.originalenhancementsmain.oeblock.apparatusblock.OEMenus;
 import io.github.originalenhancementsmain.oeblock.apparatusblock.blockentity.NatureRealNameReconfigurableApparatusBlockEntity;
@@ -10,7 +10,7 @@ import net.minecraft.world.entity.player.Inventory;
 
 public class NatureRealNameReconfigurableApparatusMenu extends ApparatusControllerMenu<NatureRealNameReconfigurableApparatusBlockEntity> {
 
-    public static final ResourceLocation APPARATUS_FORMAT = OriginalEnhancementsMain.getLocationResource("nature_apparatus");
+    public static final ResourceLocation APPARATUS_FORMAT = OriginalEnhancementMain.getLocationResource("nature_apparatus");
 
     public NatureRealNameReconfigurableApparatusMenu(int id, Inventory inventory, NatureRealNameReconfigurableApparatusBlockEntity natureApparatus){
         super(id, OEMenus.NATURE_APPARATUS_MENU.get(), inventory, natureApparatus);

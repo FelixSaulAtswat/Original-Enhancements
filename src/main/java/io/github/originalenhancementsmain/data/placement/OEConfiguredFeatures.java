@@ -1,7 +1,7 @@
 package io.github.originalenhancementsmain.data.placement;
 
 import com.google.common.base.Suppliers;
-import io.github.originalenhancementsmain.OriginalEnhancementsMain;
+import io.github.originalenhancementsmain.OriginalEnhancementMain;
 import io.github.originalenhancementsmain.oeblock.OEBlocks;
 import net.minecraft.core.Registry;
 import net.minecraft.data.worldgen.features.OreFeatures;
@@ -16,7 +16,7 @@ import java.util.List;
 import java.util.function.Supplier;
 
 public class OEConfiguredFeatures {
-    public static final DeferredRegister<ConfiguredFeature<?, ?>> CONFIGURED_FEATURE = DeferredRegister.create(Registry.CONFIGURED_FEATURE_REGISTRY, OriginalEnhancementsMain.MOD_ID);
+    public static final DeferredRegister<ConfiguredFeature<?, ?>> CONFIGURED_FEATURE = DeferredRegister.create(Registry.CONFIGURED_FEATURE_REGISTRY, OriginalEnhancementMain.MOD_ID);
 
     public static final Supplier<List<OreConfiguration.TargetBlockState>> WORLD_LADIA_ORE = Suppliers.memoize(() -> List.of(
             OreConfiguration.target(OreFeatures.STONE_ORE_REPLACEABLES, OEBlocks.LADIA_ORE.get().defaultBlockState()),

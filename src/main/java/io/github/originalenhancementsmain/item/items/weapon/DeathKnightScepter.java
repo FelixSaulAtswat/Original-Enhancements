@@ -1,7 +1,7 @@
 package io.github.originalenhancementsmain.item.items.weapon;
 
 import io.github.originalenhancementsmain.OESounds;
-import io.github.originalenhancementsmain.OriginalEnhancementsMain;
+import io.github.originalenhancementsmain.OriginalEnhancementMain;
 import io.github.originalenhancementsmain.entity.OEEntitiers;
 import io.github.originalenhancementsmain.entity.monster.DeathKnight;
 import net.minecraft.ChatFormatting;
@@ -28,7 +28,7 @@ import java.util.List;
 
 public class DeathKnightScepter extends Item {
     public DeathKnightScepter() {
-        super(new Item.Properties().durability(4).tab(OriginalEnhancementsMain.OETab));
+        super(new Item.Properties().durability(4).tab(OriginalEnhancementMain.OETab));
     }
 
     @Override

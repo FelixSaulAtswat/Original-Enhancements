@@ -4,7 +4,7 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 
 
-import io.github.originalenhancementsmain.OriginalEnhancementsMain;
+import io.github.originalenhancementsmain.OriginalEnhancementMain;
 import net.minecraft.core.NonNullList;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
@@ -78,7 +78,7 @@ public class NatureRealNameReconfigurableApparatusRecipes implements Recipe<Simp
 
     public static class Serializer implements RecipeSerializer<NatureRealNameReconfigurableApparatusRecipes>{
         public static final Serializer INSTANCE = new Serializer();
-        public static final ResourceLocation ID = new ResourceLocation(OriginalEnhancementsMain.MOD_ID, "nature_apparatus");
+        public static final ResourceLocation ID = new ResourceLocation(OriginalEnhancementMain.MOD_ID, "nature_apparatus");
 
         @Override
         public @NotNull NatureRealNameReconfigurableApparatusRecipes fromJson(@NotNull ResourceLocation id, @NotNull JsonObject json){

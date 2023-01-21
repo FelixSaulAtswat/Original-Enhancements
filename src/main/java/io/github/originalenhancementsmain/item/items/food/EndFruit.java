@@ -1,6 +1,6 @@
 package io.github.originalenhancementsmain.item.items.food;
 
-import io.github.originalenhancementsmain.OriginalEnhancementsMain;
+import io.github.originalenhancementsmain.OriginalEnhancementMain;
 import io.github.originalenhancementsmain.item.OEItems;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
@@ -26,12 +26,12 @@ import javax.annotation.Nullable;
 import java.util.List;
 import java.util.Objects;
 
-@Mod.EventBusSubscriber(modid = OriginalEnhancementsMain.MOD_ID)
+@Mod.EventBusSubscriber(modid = OriginalEnhancementMain.MOD_ID)
 public class EndFruit extends Item {
 
 
     public EndFruit (){
-        super(new Item.Properties().tab(OriginalEnhancementsMain.OETab).food(new FoodProperties.Builder().nutrition(1).saturationMod(1).alwaysEat().alwaysEat().build())
+        super(new Item.Properties().tab(OriginalEnhancementMain.OETab).food(new FoodProperties.Builder().nutrition(1).saturationMod(1).alwaysEat().alwaysEat().build())
                 .rarity(Rarity.create("end_fruit", ChatFormatting.GOLD)));
     }
 
