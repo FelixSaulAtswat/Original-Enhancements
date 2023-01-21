@@ -54,7 +54,6 @@ public class OriginalEnhancementMain {
         @Override
         @OnlyIn(Dist.CLIENT)
         public @NotNull ItemStack makeIcon(){
-
             return new ItemStack(OEBlocks.EXAMPLE_BLOCK.get());
         }
     };
@@ -86,14 +85,8 @@ public class OriginalEnhancementMain {
 
     }
 
-    @SubscribeEvent
     public static void setup() {
         IEventBus bus = MinecraftForge.EVENT_BUS;
-    }
-
-    @SubscribeEvent
-    private void clientRegister(final FMLClientSetupEvent event){
-        MenuScreens.register(OEMenus.NATURE_APPARATUS_MENU.get(), NatureApparatusScreen :: new);
     }
 
     public static ResourceLocation getLocationResource(String name){
