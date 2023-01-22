@@ -15,10 +15,10 @@ public class OEMenus {
 
     public static final DeferredRegister<MenuType<?>> MENUS = DeferredRegister.create(ForgeRegistries.CONTAINERS, OriginalEnhancementMain.MOD_ID);
 
-    public static final RegistryObject<MenuType<NatureRealNameReconfigurableApparatusMenu>> NATURE_APPARATUS_MENU = registryMenu("nature_apparatus_menu", NatureRealNameReconfigurableApparatusMenu :: new);
+    public static final RegistryObject<MenuType<NatureRealNameReconfigurableApparatusMenu>> NATURE_APPARATUS_MENU = registerMenu("nature_apparatus_menu", NatureRealNameReconfigurableApparatusMenu :: new);
 
-    private static <T extends AbstractContainerMenu>RegistryObject<MenuType<T>> registryMenu(String  name, IContainerFactory<T> factory){
-        return MENUS.register(name, ()-> IForgeMenuType.create(factory));
+    private static <T extends AbstractContainerMenu>RegistryObject<MenuType<T>> registerMenu(String name, IContainerFactory<T> factory) {
+        return MENUS.register(name, () -> IForgeMenuType.create(factory));
     }
 
     public static void register(IEventBus bus){

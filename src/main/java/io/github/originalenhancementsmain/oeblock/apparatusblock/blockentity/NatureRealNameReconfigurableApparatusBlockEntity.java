@@ -91,7 +91,7 @@ public class NatureRealNameReconfigurableApparatusBlockEntity extends ApparatusN
     @Nullable
     @Override
     public AbstractContainerMenu createMenu(int id, Inventory inv, Player playerEntity) {
-        return new NatureRealNameReconfigurableApparatusMenu(id, inv, this);
+        return new NatureRealNameReconfigurableApparatusMenu(id, inv, this, this.data);
     }
 
     public void neighborChanged(Direction direction){

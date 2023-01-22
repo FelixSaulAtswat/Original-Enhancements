@@ -9,6 +9,7 @@ import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
+import net.minecraft.world.inventory.ContainerData;
 import net.minecraft.world.inventory.MenuType;
 import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.ItemStack;
@@ -23,12 +24,27 @@ public class BaseApparatusMenu<T extends BlockEntity> extends AbstractContainerM
 
     private final T oeb;
     private final Inventory inventory;
+    private final ContainerData data;
 
-    protected BaseApparatusMenu(int containerId , MenuType<?> menuType, Inventory inventory, T oeb){
+    protected BaseApparatusMenu(int containerId , MenuType<?> menuType, Inventory inventory, T oeb, ContainerData data){
         super(menuType, containerId);
         this.oeb = oeb;
         this.inventory = inventory;
+        this.data = data;
     }
+
+    public boolean canWork(){
+        return data.get(0) > 0;
+    }
+
+    public int getFusionProgress(){
+        int originalProgress = data.get(0);
+        int maxProgress = data.get(1);
+        int progressBarSize = 73;
+
+        return originalProgress != 0 && maxProgress != 0 ? originalProgress * progressBarSize / maxProgress : 0;
+    }
+
     //Prevents the instrument from remaining running after the chunk is unloaded
     @Override
     public boolean stillValid(Player player) {

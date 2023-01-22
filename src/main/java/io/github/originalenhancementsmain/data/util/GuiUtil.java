@@ -5,6 +5,10 @@ import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 import net.minecraft.client.renderer.GameRenderer;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraftforge.items.IItemHandler;
+import net.minecraftforge.items.SlotItemHandler;
+
+import javax.swing.plaf.basic.BasicComboBoxUI;
 
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public final class GuiUtil {
@@ -21,5 +25,11 @@ public final class GuiUtil {
     public static void textureSetting(ResourceLocation texture){
         RenderSystem.setShader(GameRenderer :: getPositionTexShader);
         RenderSystem.setShaderTexture(0, texture);
+    }
+
+    public static class outputSlot extends SlotItemHandler{
+        public outputSlot(IItemHandler handler, int index, int xPos, int yPos){
+            super(handler, index, xPos, yPos);
+        }
     }
 }

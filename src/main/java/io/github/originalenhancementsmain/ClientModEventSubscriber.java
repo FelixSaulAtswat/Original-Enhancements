@@ -21,29 +21,29 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 @Mod.EventBusSubscriber(modid = OriginalEnhancementMain.MOD_ID, value = Dist.CLIENT, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class ClientModEventSubscriber {
 
-    //将所有的生物的皮肤贴图信息写在这个函数里，有几个写几个
+    //Mob's texture
     @SubscribeEvent
     public static void onRegisterLayers(EntityRenderersEvent.RegisterLayerDefinitions event) {
         event.registerLayerDefinition(DeathKnightModel.LAYER_LOCATION, DeathKnightModel::createBodyLayer);
     }
 
-    //将所有的生物的渲染信息写在这个函数里，有几个写几个
+    //Mob's render
     @SubscribeEvent
     public static void onRegisterRenderer(EntityRenderersEvent.RegisterRenderers event) {
         event.registerEntityRenderer(OEEntitiers.DEATH_KNIGHT_IMI.get(), DeathKnightRender::new);
     }
 
-    //将所有的生物的属性信息写在这个函数里，有几个写几个
+    //Mob's attribute
     @SubscribeEvent
     public static void onAttributeCreate(EntityAttributeCreationEvent event) {
         event.put(OEEntitiers.DEATH_KNIGHT_IMI.get(), DeathKnight.registerAttributes().build());
     }
-
+    //Register recipe
     @SubscribeEvent
     public static void onRegisterRecipeSerializers(RegistryEvent.Register<RecipeSerializer<?>> event){
         CriteriaTriggers.register(OERecipes.OPENED_TRIGGER);
     }
-
+    //Register screen
     @SubscribeEvent
     private void clientRegister(final FMLClientSetupEvent event){
         MenuScreens.register(OEMenus.NATURE_APPARATUS_MENU.get(), NatureApparatusScreen:: new);
