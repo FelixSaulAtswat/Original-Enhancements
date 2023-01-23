@@ -20,6 +20,7 @@ import net.minecraft.world.phys.BlockHitResult;
 import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.network.NetworkHooks;
+import org.jetbrains.annotations.Nullable;
 
 public abstract class BaseApparatusBlock extends Block implements EntityBlock {
     protected BaseApparatusBlock(BlockBehaviour.Properties properties){
@@ -27,6 +28,7 @@ public abstract class BaseApparatusBlock extends Block implements EntityBlock {
     }
 
     @SuppressWarnings("deprecation")
+    @Nullable
     @Override
     public MenuProvider getMenuProvider(BlockState state, Level level, BlockPos pos){
         BlockEntity blockEntity = level.getBlockEntity(pos);

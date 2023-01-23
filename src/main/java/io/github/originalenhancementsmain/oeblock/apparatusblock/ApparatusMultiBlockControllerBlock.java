@@ -4,11 +4,15 @@ import io.github.originalenhancementsmain.OriginalEnhancementMain;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.network.chat.Component;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.phys.BlockHitResult;
 import net.minecraftforge.common.Tags;
 
 public abstract class ApparatusMultiBlockControllerBlock extends ApparatusControllerBlock {
@@ -41,6 +45,19 @@ public abstract class ApparatusMultiBlockControllerBlock extends ApparatusContro
 
         }
         return state;
+    }
+
+    @Override
+    public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult result) {
+
+        if (!level.isClientSide){
+            BlockEntity entity = level.getBlockEntity(pos);
+
+            if (entity instanceof ApparatusNameableMenuBlockEntity){
+                return InteractionResult.SUCCESS;
+            }
+        }
+        return super.use(state, level, pos, player, hand, result);
     }
 
     @Override

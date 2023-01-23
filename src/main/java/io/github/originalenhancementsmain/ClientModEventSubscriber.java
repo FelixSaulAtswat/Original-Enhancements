@@ -6,9 +6,11 @@ import io.github.originalenhancementsmain.entity.OEEntitiers;
 import io.github.originalenhancementsmain.entity.monster.DeathKnight;
 import io.github.originalenhancementsmain.oeblock.apparatusblock.OEMenus;
 import io.github.originalenhancementsmain.recipe.OERecipes;
+import io.github.originalenhancementsmain.recipe.apparatusrecipes.NatureRealNameReconfigurableApparatusRecipes;
 import io.github.originalenhancementsmain.render.DeathKnightRender;
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.client.gui.screens.MenuScreens;
+import net.minecraft.core.Registry;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
@@ -40,12 +42,8 @@ public class ClientModEventSubscriber {
     }
     //Register recipe
     @SubscribeEvent
-    public static void onRegisterRecipeSerializers(RegistryEvent.Register<RecipeSerializer<?>> event){
-        CriteriaTriggers.register(OERecipes.OPENED_TRIGGER);
+    public static void onRegisterRecipeSerializers(final RegistryEvent.Register<RecipeSerializer<?>> event){
+        Registry.register(Registry.RECIPE_TYPE, NatureRealNameReconfigurableApparatusRecipes.Type.ID, NatureRealNameReconfigurableApparatusRecipes.Type.INSTANCE);
     }
-    //Register screen
-    @SubscribeEvent
-    private void clientRegister(final FMLClientSetupEvent event){
-        MenuScreens.register(OEMenus.NATURE_APPARATUS_MENU.get(), NatureApparatusScreen:: new);
-    }
+
 }

@@ -1,9 +1,8 @@
 package io.github.originalenhancementsmain.oeblock.apparatusblock.blockmenu;
 
 import io.github.originalenhancementsmain.OriginalEnhancementMain;
-import io.github.originalenhancementsmain.data.util.GuiUtil;
 import io.github.originalenhancementsmain.data.util.GuiUtil.outputSlot;
-import io.github.originalenhancementsmain.oeblock.apparatusblock.ApparatusControllerMenu;
+import io.github.originalenhancementsmain.oeblock.apparatusblock.BaseApparatusMenu;
 import io.github.originalenhancementsmain.oeblock.apparatusblock.OEMenus;
 import io.github.originalenhancementsmain.oeblock.apparatusblock.blockentity.NatureRealNameReconfigurableApparatusBlockEntity;
 import lombok.Getter;
@@ -18,7 +17,7 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.SlotItemHandler;
 
-public class NatureRealNameReconfigurableApparatusMenu extends ApparatusControllerMenu<NatureRealNameReconfigurableApparatusBlockEntity> {
+public class NatureRealNameReconfigurableApparatusMenu extends BaseApparatusMenu<NatureRealNameReconfigurableApparatusBlockEntity> {
 
     public static final ResourceLocation APPARATUS_FORMAT = OriginalEnhancementMain.getLocationResource("nature_apparatus");
 

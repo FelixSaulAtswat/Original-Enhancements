@@ -80,9 +80,15 @@ public class OriginalEnhancementMain {
         OEBlockEntities.register(bus);
         OERecipes.register(bus);
         OEMenus.register(bus);
+        bus.addListener(this::clientSetup);
 
         MinecraftForge.EVENT_BUS.register(this);
 
+    }
+
+    //Register screen
+    private void clientSetup(final FMLClientSetupEvent event){
+        MenuScreens.register(OEMenus.NATURE_APPARATUS_MENU.get(), NatureApparatusScreen :: new);
     }
 
     public static void setup() {
