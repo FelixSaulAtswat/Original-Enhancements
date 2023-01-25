@@ -33,5 +33,7 @@
   "oe.crystal_charges": "charge rank: %d",
 
   "itemGroup.originalenhancement.conventional": "Original Enhancement: Conventional Items",
-  "itemGroup.originalenhancement.3d": "Original Enhancement: 3d Items"
+  "itemGroup.originalenhancement.3d": "Original Enhancement: 3d Items",
+
+  "container.virus_generator":"Virus Analyser"
 }

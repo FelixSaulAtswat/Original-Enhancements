@@ -37,7 +37,7 @@ public abstract class BaseApparatusBlock extends Block implements EntityBlock {
 
     protected boolean onPlayerClick(BlockPos pos, Level level, Player player){
 
-        if (!level.isClientSide){
+        if (!level.isClientSide()){
             MenuProvider provider = this.getMenuProvider(level.getBlockState(pos), level, pos);
             if (provider != null && player instanceof ServerPlayer serverPlayer){
                 NetworkHooks.openGui(serverPlayer, provider, pos);
@@ -52,7 +52,7 @@ public abstract class BaseApparatusBlock extends Block implements EntityBlock {
     @SuppressWarnings("deprecation")
     @Override
     public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult result){
-        if (!player.isSuppressingBounce()){
+        if (player.isSuppressingBounce()){
             return InteractionResult.PASS;
         }
         if (!level.isClientSide){

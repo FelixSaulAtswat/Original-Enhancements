@@ -4,6 +4,7 @@ import io.github.originalenhancementsmain.OriginalEnhancementMain;
 import io.github.originalenhancementsmain.oeblock.apparatusblock.blocks.NatureRealNameReconfigurableApparatusBlock;
 import io.github.originalenhancementsmain.oeblock.blocks.LadiaOreBlock;
 import io.github.originalenhancementsmain.item.OEItems;
+import io.github.originalenhancementsmain.test.TestBlock;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
@@ -36,6 +37,9 @@ public class OEBlocks {
 
     public static final RegistryObject<Block> NATURE_REAL_NAME_RECONFIGURABLE_APPARATUS_BLOCK = registerBlock("nature_real_name_reconfigurable_apparatus_block", ()-> new NatureRealNameReconfigurableApparatusBlock(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.COLOR_GRAY)
             .strength(3.0f, 3.0f).sound(SoundType.DEEPSLATE).requiresCorrectToolForDrops().noOcclusion()), OriginalEnhancementMain.OETab);
+
+    public static final RegistryObject<Block> TEXT_BLOCK = registerBlock("test_block", ()-> new TestBlock(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.COLOR_GRAY)
+            .strength(3.0f, 3.0f).sound(SoundType.STONE).requiresCorrectToolForDrops()), OriginalEnhancementMain.OETab);
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block, CreativeModeTab tab) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);

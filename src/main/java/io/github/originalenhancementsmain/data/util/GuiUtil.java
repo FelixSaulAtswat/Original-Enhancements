@@ -5,6 +5,7 @@ import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 import net.minecraft.client.renderer.GameRenderer;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.SlotItemHandler;
 
@@ -30,6 +31,11 @@ public final class GuiUtil {
     public static class outputSlot extends SlotItemHandler{
         public outputSlot(IItemHandler handler, int index, int xPos, int yPos){
             super(handler, index, xPos, yPos);
+        }
+
+        @Override
+        public boolean mayPlace(ItemStack stack){
+            return false;
         }
     }
 }

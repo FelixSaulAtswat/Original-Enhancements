@@ -147,24 +147,26 @@ public class NatureRealNameReconfigurableApparatusBlockEntity extends ApparatusN
 
     private void tick(Level level, BlockPos pos, BlockState state, NatureRealNameReconfigurableApparatusBlockEntity entity) {
 
-        if (isFormed()) {
-            if (hasRecipe(entity)) {
+        if (!isFormed()) {
+            return;
+        }
+        if (hasRecipe(entity)) {
 
-                    if (!state.getValue(ApparatusControllerBlock.ACTIVE)) {
-                        level.setBlockAndUpdate(pos, state.setValue(ApparatusControllerBlock.ACTIVE, true));
-                        entity.progress ++;
-                        setChanged(level, pos, state);
-                        if (entity.progress > entity.maxProgress){
-                            materialItem(entity);
-                        }
-                    }else {
-
-                        level.setBlockAndUpdate(pos,state.setValue(ApparatusControllerBlock.ACTIVE, false));
-                        entity.resetProgress();
-                        setChanged(level, pos, state);
+            if (!state.getValue(ApparatusControllerBlock.ACTIVE)) {
+                level.setBlockAndUpdate(pos, state.setValue(ApparatusControllerBlock.ACTIVE, true));
+                entity.progress++;
+                setChanged(level, pos, state);
+                if (entity.progress > entity.maxProgress) {
+                    materialItem(entity);
                 }
+            } else {
+
+                level.setBlockAndUpdate(pos, state.setValue(ApparatusControllerBlock.ACTIVE, false));
+                entity.resetProgress();
+                setChanged(level, pos, state);
             }
         }
+
     }
 
     @Override

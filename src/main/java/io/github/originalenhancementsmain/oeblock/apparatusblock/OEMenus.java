@@ -2,6 +2,7 @@ package io.github.originalenhancementsmain.oeblock.apparatusblock;
 
 import io.github.originalenhancementsmain.OriginalEnhancementMain;
 import io.github.originalenhancementsmain.oeblock.apparatusblock.blockmenu.NatureRealNameReconfigurableApparatusMenu;
+import io.github.originalenhancementsmain.test.TestMenu;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.MenuType;
 import net.minecraftforge.common.extensions.IForgeMenuType;
@@ -16,6 +17,8 @@ public class OEMenus {
     public static final DeferredRegister<MenuType<?>> MENUS = DeferredRegister.create(ForgeRegistries.CONTAINERS, OriginalEnhancementMain.MOD_ID);
 
     public static final RegistryObject<MenuType<NatureRealNameReconfigurableApparatusMenu>> NATURE_APPARATUS_MENU = registerMenu("nature_apparatus_menu", NatureRealNameReconfigurableApparatusMenu :: new);
+
+    public static final RegistryObject<MenuType<TestMenu>> TEST_MENU = registerMenu("test_menu", TestMenu::new);
 
     private static <T extends AbstractContainerMenu>RegistryObject<MenuType<T>> registerMenu(String name, IContainerFactory<T> factory) {
         return MENUS.register(name, () -> IForgeMenuType.create(factory));

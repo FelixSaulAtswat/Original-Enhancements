@@ -50,10 +50,10 @@ public abstract class ApparatusMultiBlockControllerBlock extends ApparatusContro
     @Override
     public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult result) {
 
-        if (!level.isClientSide){
+        if (!level.isClientSide()){
             BlockEntity entity = level.getBlockEntity(pos);
 
-            if (entity instanceof ApparatusNameableMenuBlockEntity){
+            if (entity instanceof BaseApparatusBlockEntity){
                 return InteractionResult.SUCCESS;
             }
         }
@@ -61,7 +61,7 @@ public abstract class ApparatusMultiBlockControllerBlock extends ApparatusContro
     }
 
     @Override
-    protected boolean showState(BlockState state, BlockPos pos, Level world, Player player) {
+    protected boolean showStatus(BlockState state, BlockPos pos, Level world, Player player) {
         if (!world.isClientSide && !state.getValue(STRUCTURE_COMPOSITION)) {
             player.displayClientMessage(CAN_NOT_DETECTION_STRUCTURE, true);
         }

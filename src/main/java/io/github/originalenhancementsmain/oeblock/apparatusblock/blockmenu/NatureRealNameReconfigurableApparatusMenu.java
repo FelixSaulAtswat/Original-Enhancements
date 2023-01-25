@@ -30,7 +30,6 @@ public class NatureRealNameReconfigurableApparatusMenu extends BaseApparatusMenu
         super(id, OEMenus.NATURE_APPARATUS_MENU.get(), inventory, natureApparatus, data);
 
         if (natureApparatus != null){
-            this.addInventorySlots();
             Level level = natureApparatus.getLevel();
             BlockPos west = natureApparatus.getBlockPos().west();
             BlockPos east = natureApparatus.getBlockPos().east();
@@ -55,7 +54,7 @@ public class NatureRealNameReconfigurableApparatusMenu extends BaseApparatusMenu
                     this.addSlot(new outputSlot(handler, 4, 95, 15));
                 });
             }
-
+            this.addInventorySlots();
             this.addDataSlots(data);
         }
     }

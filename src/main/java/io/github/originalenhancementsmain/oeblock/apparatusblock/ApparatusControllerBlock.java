@@ -64,7 +64,7 @@ public abstract class ApparatusControllerBlock extends BaseApparatusBlock{
         return  state.getValue(STRUCTURE_COMPOSITION);
     }
 
-    protected boolean showState(BlockState state, BlockPos pos, Level level, Player player){
+    protected boolean showStatus(BlockState state, BlockPos pos, Level level, Player player){
         return false;
     }
 
@@ -76,7 +76,7 @@ public abstract class ApparatusControllerBlock extends BaseApparatusBlock{
             if (canClickToOpen(state)){
                 return super.onPlayerClick(pos, level, player);
             }else {
-                return showState(state, pos, level, player);
+                return showStatus(state, pos, level, player);
             }
         }
         return false;

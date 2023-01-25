@@ -1,6 +1,7 @@
 package io.github.originalenhancementsmain.oeblock.apparatusblock;
 
 import io.github.originalenhancementsmain.oeblock.apparatusblock.interfaceprovider.INameableMenuProvider;
+import io.github.originalenhancementsmain.test.TestBlockEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
@@ -32,15 +33,15 @@ public abstract class ApparatusNameableMenuBlockEntity extends BaseApparatusBloc
     public void saveSynced(CompoundTag tags) {
         super.saveSynced(tags);
         if (this.hasCustomName()) {
-            tags.putString("CustomName", Component.Serializer.toJson(this.customName));
+            tags.putString(TAG_CUSTOM_NAME, Component.Serializer.toJson(this.customName));
         }
 
     }
 
     public void load(CompoundTag tags) {
         super.load(tags);
-        if (tags.contains("CustomName", 8)) {
-            this.customName = Component.Serializer.fromJson(tags.getString("CustomName"));
+        if (tags.contains(TAG_CUSTOM_NAME, 8)) {
+            this.customName = Component.Serializer.fromJson(tags.getString(TAG_CUSTOM_NAME));
         }
 
     }
