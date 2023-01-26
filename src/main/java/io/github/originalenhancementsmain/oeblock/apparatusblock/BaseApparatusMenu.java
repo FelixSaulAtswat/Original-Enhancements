@@ -99,7 +99,7 @@ public class BaseApparatusMenu<T extends BlockEntity> extends AbstractContainerM
         return 8;
     }
 
-    public static int BASE_Y_OFFSET = 84;
+    public static int BASE_Y_OFFSET = 140;
 
     protected int getInventoryYOffset() {
         return BASE_Y_OFFSET;

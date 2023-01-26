@@ -1,17 +1,16 @@
 package io.github.originalenhancementsmain;
 
 import io.github.originalenhancementsmain.client.seen.NatureApparatusScreen;
-import io.github.originalenhancementsmain.data.util.UtilProvider;
-import io.github.originalenhancementsmain.oeblock.OEBlockEntities;
-import io.github.originalenhancementsmain.oeblock.OEBlocks;
 import io.github.originalenhancementsmain.data.placement.OEConfiguredFeatures;
 import io.github.originalenhancementsmain.data.placement.OEPlacedFeatures;
+import io.github.originalenhancementsmain.data.util.UtilProvider;
 import io.github.originalenhancementsmain.effects.OEEffect;
 import io.github.originalenhancementsmain.entity.OEEntitiers;
 import io.github.originalenhancementsmain.item.OEItems;
+import io.github.originalenhancementsmain.oeblock.OEBlockEntities;
+import io.github.originalenhancementsmain.oeblock.OEBlocks;
 import io.github.originalenhancementsmain.oeblock.apparatusblock.OEMenus;
 import io.github.originalenhancementsmain.recipe.OERecipes;
-import io.github.originalenhancementsmain.test.TestScreen;
 import net.minecraft.Util;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.network.chat.MutableComponent;
@@ -90,7 +89,6 @@ public class OriginalEnhancementMain {
     //Register screen
     private void clientSetup(final FMLClientSetupEvent event){
         MenuScreens.register(OEMenus.NATURE_APPARATUS_MENU.get(), NatureApparatusScreen :: new);
-        MenuScreens.register(OEMenus.TEST_MENU.get(), TestScreen::new);
     }
 
     public static void setup() {

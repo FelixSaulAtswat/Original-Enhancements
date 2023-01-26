@@ -44,7 +44,7 @@ public class NatureRealNameReconfigurableApparatusBlockEntity extends ApparatusN
 
     private LazyOptional<IItemHandler> lazyItemHandler = LazyOptional.empty();
 
-    private final ItemStackHandler itemHandler = new ItemStackHandler(4){
+    private final ItemStackHandler itemHandler = new ItemStackHandler(5){
         @Override
         protected void onContentsChanged(int slot) {
             setChanged();
@@ -152,11 +152,11 @@ public class NatureRealNameReconfigurableApparatusBlockEntity extends ApparatusN
     }
 
     private static boolean canInsertAmountIntoOutputSlot(SimpleContainer inventory) {
-        return inventory.getItem(3).getMaxStackSize() > inventory.getItem(3).getCount();
+        return inventory.getItem(3).getMaxStackSize() > inventory.getItem(3).getCount() && inventory.getItem(4).getMaxStackSize() > inventory.getItem(4).getCount();
     }
 
     private static boolean canInsertItemIntoOutputSlot(SimpleContainer inventory, ItemStack output) {
-        return inventory.getItem(3).getItem() == output.getItem() || inventory.getItem(3).isEmpty();
+        return (inventory.getItem(3).getItem() == output.getItem() || inventory.getItem(3).isEmpty()) && (inventory.getItem(4).getItem() == output.getItem() || inventory.getItem(4).isEmpty());
     }
 
     private void tick(Level level, BlockPos pos, BlockState state, NatureRealNameReconfigurableApparatusBlockEntity entity) {
