@@ -38,7 +38,7 @@ import software.bernie.geckolib3.GeckoLib;
 
 
 @Mod(OriginalEnhancementMain.MOD_ID)
-
+@Mod.EventBusSubscriber
 public class OriginalEnhancementMain {
     public static final String MOD_ID = "originalenhancement";
     public static final Logger LOG = LogManager.getLogger(MOD_ID);
@@ -48,7 +48,7 @@ public class OriginalEnhancementMain {
         Player player = event.getPlayer();
         Level level = player.level;
 
-        player.sendMessage(new TextComponent("Be careful, once you complete certain levels, some monsters' abilities will increase dramatically., "+player.getDisplayName().getString()+"From "+(level.isClientSide?"CLIENT":"SERVER"+".")), Util.NIL_UUID);
+        player.sendMessage(new TextComponent("Be careful, once you complete certain levels, some monsters' abilities will increase dramatically., "+player.getDisplayName().getString()+". From "+(level.isClientSide?"CLIENT":"SERVER"+".")), Util.NIL_UUID);
     }
     public static final CreativeModeTab OETab = new CreativeModeTab(OriginalEnhancementMain.MOD_ID + ".conventional") {
 

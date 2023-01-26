@@ -21,11 +21,14 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntityTicker;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.util.LazyOptional;
+import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.ItemStackHandler;
 import org.jetbrains.annotations.NotNull;
 
+import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import java.util.Optional;
 
@@ -59,7 +62,7 @@ public class NatureRealNameReconfigurableApparatusBlockEntity extends ApparatusN
         return state.hasProperty(NatureRealNameReconfigurableApparatusBlock.STRUCTURE_COMPOSITION) && state.getValue(NatureRealNameReconfigurableApparatusBlock.STRUCTURE_COMPOSITION);
     }
 
-    public NatureRealNameReconfigurableApparatusBlockEntity(BlockEntityType<?> type, BlockPos pos, BlockState state){
+    protected NatureRealNameReconfigurableApparatusBlockEntity(BlockEntityType<?> type, BlockPos pos, BlockState state){
         super(type, pos, state, NAME);
 
         this.data = new ContainerData() {
@@ -92,6 +95,15 @@ public class NatureRealNameReconfigurableApparatusBlockEntity extends ApparatusN
     @Override
     public AbstractContainerMenu createMenu(int id, Inventory inv, Player playerEntity) {
         return new NatureRealNameReconfigurableApparatusMenu(id, inv, this, this.data);
+    }
+
+    @Nonnull
+    @Override
+    public <T> LazyOptional<T> getCapability(@Nonnull Capability<T> capability, @Nullable Direction side){
+        if (capability == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY){
+            return lazyItemHandler.cast();
+        }
+        return super.getCapability(capability, side);
     }
 
     public void neighborChanged(Direction direction){
@@ -129,6 +141,8 @@ public class NatureRealNameReconfigurableApparatusBlockEntity extends ApparatusN
 
             entity.itemHandler.setStackInSlot(3, new ItemStack(match.get().getResultItem().getItem(),
                     entity.itemHandler.getStackInSlot(3).getCount() + 1));
+            entity.itemHandler.setStackInSlot(4, new ItemStack(match.get().getResultItem().getItem(),
+                    entity.itemHandler.getStackInSlot(4).getCount() + 1));
             entity.resetProgress();
         }
     }

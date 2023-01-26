@@ -35,5 +35,7 @@
   "itemGroup.originalenhancement.conventional": "Original Enhancement: Conventional Items",
   "itemGroup.originalenhancement.3d": "Original Enhancement: 3d Items",
 
-  "container.virus_generator":"Virus Analyser"
+  "container.virus_generator":"Virus Analyser",
+
+  "multiblock.originalenhancement.apparatus.can_not_detection_structure": "The apparatus lacks the correct source of energy"
 }

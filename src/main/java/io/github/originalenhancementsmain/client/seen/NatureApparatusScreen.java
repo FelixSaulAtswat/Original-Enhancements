@@ -1,11 +1,13 @@
 package io.github.originalenhancementsmain.client.seen;
 
+import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.PoseStack;
 import io.github.originalenhancementsmain.OriginalEnhancementMain;
 import io.github.originalenhancementsmain.data.util.GuiUtil;
 import io.github.originalenhancementsmain.data.util.ModuleScreenUtil;
 import io.github.originalenhancementsmain.oeblock.apparatusblock.blockmenu.NatureRealNameReconfigurableApparatusMenu;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
+import net.minecraft.client.renderer.GameRenderer;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
@@ -25,14 +27,14 @@ public class NatureApparatusScreen extends AbstractContainerScreen<NatureRealNam
         GuiUtil.settings(TEXTURES);
         this.blit(poseStack, leftPos, topPos, 0, 0, imageWidth, imageHeight);
 
+        if (menu.canWork()){
+            blit(poseStack, leftPos + 64, topPos + 33, 176, 45, 46, menu.getFusionProgress());
+        }
         if (menu.isHasCoreSlot()){
             MODULE_SLOT.show(poseStack, leftPos + 11, topPos + 89);
         }
         if (menu.isHasCrystalSlot()){
             MODULE_SLOT.show(poseStack, leftPos + 147, topPos + 89);
-        }
-        if (menu.canWork()){
-            blit(poseStack, leftPos + 64, topPos + 33, 176, 45, 46, menu.getFusionProgress());
         }
     }
 

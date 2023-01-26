@@ -33,5 +33,7 @@
   "oe.crystal_charges": "充能等级: %d",
 
   "itemGroup.originalenhancement.conventional": "原始增强: 常规物品",
-  "itemGroup.originalenhancement.3d": "原始增强: 3D物品"
+  "itemGroup.originalenhancement.3d": "原始增强: 3D物品",
+
+  "multiblock.originalenhancement.apparatus.can_not_detection_structure": "仪器缺少正确的能量来源"
 }

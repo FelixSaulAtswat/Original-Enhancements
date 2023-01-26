@@ -1,7 +1,6 @@
 package io.github.originalenhancementsmain.oeblock.apparatusblock;
 
 import io.github.originalenhancementsmain.oeblock.apparatusblock.interfaceprovider.INameableMenuProvider;
-import io.github.originalenhancementsmain.test.TestBlockEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;

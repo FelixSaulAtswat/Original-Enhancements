@@ -1,7 +1,9 @@
 package io.github.originalenhancementsmain.oeblock.apparatusblock;
 
 import io.github.originalenhancementsmain.oeblock.apparatusblock.interfaceprovider.INameableMenuProvider;
+import net.minecraft.Util;
 import net.minecraft.core.BlockPos;
+import net.minecraft.network.chat.TextComponent;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.Containers;
 import net.minecraft.world.InteractionHand;
@@ -21,7 +23,7 @@ import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.network.NetworkHooks;
 import org.jetbrains.annotations.Nullable;
-
+@SuppressWarnings("WeakerAccess")
 public abstract class BaseApparatusBlock extends Block implements EntityBlock {
     protected BaseApparatusBlock(BlockBehaviour.Properties properties){
         super(properties);

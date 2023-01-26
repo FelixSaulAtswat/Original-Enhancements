@@ -54,10 +54,10 @@ public abstract class ApparatusMultiBlockControllerBlock extends ApparatusContro
             BlockEntity entity = level.getBlockEntity(pos);
 
             if (entity instanceof BaseApparatusBlockEntity){
-                return InteractionResult.SUCCESS;
+                return super.use(state, level, pos, player, hand, result);
             }
         }
-        return super.use(state, level, pos, player, hand, result);
+        return InteractionResult.SUCCESS;
     }
 
     @Override
