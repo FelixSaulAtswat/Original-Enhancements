@@ -14,7 +14,7 @@ public class NatureApparatusScreen extends AbstractContainerScreen<NatureRealNam
 
     private static final ResourceLocation TEXTURES = OriginalEnhancementMain.getLocationResource("textures/gui/nature_apparatus.png");
 
-    private static final ModuleScreenUtil MODULE_SLOT = new ModuleScreenUtil(176, 118, 18, 18, 256, 256);
+    private static final ModuleScreenUtil MODULE_SLOT = new ModuleScreenUtil(176, 118, 18, 19, 256, 256);
 
     public NatureApparatusScreen(NatureRealNameReconfigurableApparatusMenu menu, Inventory inventory, Component name){
         super(menu, inventory, name);

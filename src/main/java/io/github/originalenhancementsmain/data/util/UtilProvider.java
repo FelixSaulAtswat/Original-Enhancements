@@ -7,9 +7,11 @@ import net.minecraft.resources.ResourceLocation;
 
 import javax.annotation.Nullable;
 
+import static net.minecraft.Util.makeDescriptionId;
+
 public class UtilProvider {
     public static String getTranslationKey(String base, @Nullable ResourceLocation name) {
-        return net.minecraft.Util.makeDescriptionId(base, name);
+        return makeDescriptionId(base, name);
     }
 
     public static Direction directionFromOffset(BlockPos pos, BlockPos neighbor) {
