@@ -45,4 +45,9 @@ public class NatureApparatusScreen extends AbstractContainerScreen<NatureRealNam
         super.render(poseStack, mouseX, mouseY, partialTick);
         this.renderTooltip(poseStack, mouseX, mouseY);
     }
+
+    @Override
+    protected void renderLabels(PoseStack poseStack, int mouseX, int mouseY){
+        GuiUtil.drawApparatusName(poseStack, this, this.font, this.playerInventoryTitle);
+    }
 }
