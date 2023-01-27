@@ -38,21 +38,21 @@ public class NatureRealNameReconfigurableApparatusMenu extends BaseApparatusMenu
             if (level != null){
                 if (level.getBlockState(west).is(Blocks.DIRT)) {
                     hasCoreSlot = natureApparatus.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY).filter(handler -> {
-                        this.addSlot(new SlotItemHandler(handler, 0, 12, 90));
+                        this.addSlot(new SlotItemHandler(handler, 0, 12, 62));
                         return true;
                     }).isPresent();
                 }
                 if (level.getBlockState(east).is(Blocks.STONE)) {
                     hasCrystalSlot = natureApparatus.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY).filter(handler -> {
-                        this.addSlot(new SlotItemHandler(handler, 1, 148, 90));
+                        this.addSlot(new SlotItemHandler(handler, 1, 148, 62));
                         return true;
                     }).isPresent();
                 }
                 natureApparatus.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY).ifPresent(handler -> {
-                    this.addSlot(new SlotItemHandler(handler, 2, 90, 109));
+                    this.addSlot(new SlotItemHandler(handler, 2, 81, 81));
 
-                    this.addSlot(new outputSlot(handler, 3, 64, 16));
-                    this.addSlot(new outputSlot(handler, 4, 96, 16));
+                    this.addSlot(new outputSlot(handler, 3, 64, -12));
+                    this.addSlot(new outputSlot(handler, 4, 96, -12));
                 });
             }
 
