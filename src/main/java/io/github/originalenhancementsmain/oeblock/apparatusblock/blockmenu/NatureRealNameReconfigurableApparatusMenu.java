@@ -49,7 +49,7 @@ public class NatureRealNameReconfigurableApparatusMenu extends BaseApparatusMenu
                     }).isPresent();
                 }
                 natureApparatus.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY).ifPresent(handler -> {
-                    this.addSlot(new SlotItemHandler(handler, 2, 81, 81));
+                    this.addSlot(new SlotItemHandler(handler, 2, 80, 81));
 
                     this.addSlot(new outputSlot(handler, 3, 64, -12));
                     this.addSlot(new outputSlot(handler, 4, 96, -12));
