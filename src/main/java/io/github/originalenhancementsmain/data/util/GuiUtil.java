@@ -21,9 +21,9 @@ public final class GuiUtil {
 
     public static final int appImageWidth = 176;
     public static final int appImageHeight = 222;
-    public static final int appLArrowX = 93;
-    public static final int appRArrowX = 19;
-    public static final int appArrowY = 65;
+    public static final int appLArrowX = 92;
+    public static final int appRArrowX = 18;
+    public static final int appArrowY = 64;
 
 
     public static void setApparatusGuiLocation(PoseStack poseStack, AbstractContainerScreen<?> screen){

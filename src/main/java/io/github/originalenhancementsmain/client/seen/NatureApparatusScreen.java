@@ -16,7 +16,7 @@ public class NatureApparatusScreen extends AbstractContainerScreen<NatureRealNam
     private static final ResourceLocation TEXTURES = OriginalEnhancementMain.getLocationResource("textures/gui/nature_apparatus.png");
 
     private static final ScreenComponentUtil ITEM_SLOT1 = new ScreenComponentUtil(176, 73, 18, 18, 256, 256);
-    private static final ScreenComponentUtil ITEM_SLOT2 = new ScreenComponentUtil(194, 73, 18, 18, 156, 256);
+    private static final ScreenComponentUtil ITEM_SLOT2 = new ScreenComponentUtil(194, 73, 18, 18, 256, 256);
 
     public NatureApparatusScreen(NatureRealNameReconfigurableApparatusMenu menu, Inventory inventory, Component name){
         super(menu, inventory, name);
