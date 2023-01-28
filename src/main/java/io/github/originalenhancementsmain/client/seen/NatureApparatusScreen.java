@@ -35,11 +35,13 @@ public class NatureApparatusScreen extends AbstractContainerScreen<NatureRealNam
         }
         if (menu.isHasCoreSlot()){
             ITEM_SLOT1.draw(poseStack, x + 11, y + 88);
-            GuiUtil.drawAppComponents(poseStack, ApparatusGuiComponents.forestLeftArrow, GuiUtil.appLArrowX, GuiUtil.appArrowY);
+            GuiUtil.drawAppComponents(poseStack, ApparatusGuiComponents.forestRightArrow, x + GuiUtil.appLArrowX, y + GuiUtil.appArrowY);
         }
+
+        GuiUtil.settings(TEXTURES);
         if (menu.isHasCrystalSlot()){
             ITEM_SLOT2.draw(poseStack, x + 147, y + 88);
-            GuiUtil.drawAppComponents(poseStack, ApparatusGuiComponents.forestRightArrow, x + GuiUtil.appRArrowX, x + GuiUtil.appArrowY);
+            GuiUtil.drawAppComponents(poseStack, ApparatusGuiComponents.forestLeftArrow, x + GuiUtil.appRArrowX, y + GuiUtil.appArrowY);
         }
     }
 
