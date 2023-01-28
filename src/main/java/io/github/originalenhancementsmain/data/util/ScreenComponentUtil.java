@@ -3,7 +3,7 @@ package io.github.originalenhancementsmain.data.util;
 import com.mojang.blaze3d.vertex.PoseStack;
 import net.minecraft.client.gui.screens.Screen;
 
-public class ModuleScreenUtil {
+public class ScreenComponentUtil {
 
     public final int x;
     public final int y;
@@ -16,7 +16,7 @@ public class ModuleScreenUtil {
     public static int originalTextureW = 256;
     public static int originalTextureH = 256;
 
-    public ModuleScreenUtil(int x, int y, int w, int h, int textureW, int textureH){
+    public ScreenComponentUtil(int x, int y, int w, int h, int textureW, int textureH){
         this(x, y, w, h);
 
         this.getTextureOnGui(textureW, textureH);
@@ -25,7 +25,7 @@ public class ModuleScreenUtil {
         originalTextureW = textureW;
     }
 
-    public ModuleScreenUtil(int x, int y, int w, int h){
+    public ScreenComponentUtil(int x, int y, int w, int h){
         this.x = x;
         this.y = y;
         this.w = w;
@@ -38,7 +38,7 @@ public class ModuleScreenUtil {
         this.textureH = h;
     }
 
-    public int show(PoseStack poseStack, int poseX, int poseY){
+    public int draw(PoseStack poseStack, int poseX, int poseY){
         Screen.blit(poseStack, poseX, poseY, this.x, this.y, this.w, this.h, this.textureW, this.textureH);
         return this.w;
     }

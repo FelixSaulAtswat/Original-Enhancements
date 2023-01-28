@@ -2,6 +2,7 @@ package io.github.originalenhancementsmain.data.util;
 
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.PoseStack;
+import io.github.originalenhancementsmain.client.component.ApparatusGuiComponents;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 import net.minecraft.client.gui.Font;
@@ -20,6 +21,10 @@ public final class GuiUtil {
 
     public static final int appImageWidth = 176;
     public static final int appImageHeight = 222;
+    public static final int appLArrowX = 93;
+    public static final int appRArrowX = 19;
+    public static final int appArrowY = 10;
+
 
     public static void setApparatusGuiLocation(PoseStack poseStack, AbstractContainerScreen<?> screen){
         screen.blit(poseStack, (screen.width - appImageWidth) / 2, (screen.height - appImageHeight) / 2, 0, 0, appImageWidth, appImageHeight);
@@ -54,5 +59,10 @@ public final class GuiUtil {
         String apparatusName = screen.getTitle().getString();
         font.draw(poseStack, apparatusName, appImageWidth / 2f - font.width(apparatusName) / 2f, -22.0F,4210752);
         font.draw(poseStack, inventoryName, 8.0F, 100.0F, 4210752);
+    }
+
+    public static void drawAppComponents(PoseStack poseStack, ScreenComponentUtil componentUtil, int posX, int posY){
+        RenderSystem.setShaderTexture(0, ApparatusGuiComponents.Component);
+        componentUtil.draw(poseStack, posX, posY);
     }
 }

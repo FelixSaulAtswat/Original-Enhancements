@@ -36,13 +36,13 @@ public class NatureRealNameReconfigurableApparatusMenu extends BaseApparatusMenu
             BlockPos east = natureApparatus.getBlockPos().east();
 
             if (level != null){
-                if (level.getBlockState(west).is(Blocks.DIRT)) {
+                if (level.getBlockState(east).is(Blocks.DIRT)) {
                     hasCoreSlot = natureApparatus.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY).filter(handler -> {
                         this.addSlot(new SlotItemHandler(handler, 0, 12, 62));
                         return true;
                     }).isPresent();
                 }
-                if (level.getBlockState(east).is(Blocks.STONE)) {
+                if (level.getBlockState(west).is(Blocks.STONE)) {
                     hasCrystalSlot = natureApparatus.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY).filter(handler -> {
                         this.addSlot(new SlotItemHandler(handler, 1, 148, 62));
                         return true;
