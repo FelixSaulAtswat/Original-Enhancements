@@ -23,7 +23,6 @@ import java.util.function.Supplier;
 public class OEBlocks {
 
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, OriginalEnhancementMain.MOD_ID);
-    public static final DeferredRegister<Item> ITEMS = OEItems.ITEMS;
 
     public static final RegistryObject<Block> EXAMPLE_BLOCK = registerBlock("demon_ice", () -> new Block(BlockBehaviour.Properties.of(Material.ICE, MaterialColor.COLOR_PURPLE)
             .strength(10.0f, 3.0f).speedFactor(0.4F).sound(SoundType.GLASS).requiresCorrectToolForDrops()), OriginalEnhancementMain.OETab);
@@ -35,7 +34,7 @@ public class OEBlocks {
     public static final RegistryObject<Block> DEEPSLATE_LADIA_ORE = registerBlock("deepslate_ladia_ore",() -> new LadiaOreBlock(BlockBehaviour.Properties.of(Material.STONE,MaterialColor.DEEPSLATE)
             .strength(15.0f,300.0f).sound(SoundType.DEEPSLATE).requiresCorrectToolForDrops().noOcclusion(),UniformInt.of(10,20)), OriginalEnhancementMain.OETab);
 
-    public static final RegistryObject<Block> NATURE_REAL_NAME_RECONFIGURABLE_APPARATUS_BLOCK = registerBlock("nature_real_name_reconfigurable_apparatus_block", ()-> new NatureRealNameReconfigurableApparatusBlock(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.COLOR_GRAY)
+    public static final RegistryObject<Block> NATURE_REAL_NAME_RECONFIGURABLE_APPARATUS_BLOCK = registerBlock("nature_real_name_reconfigurable_apparatus", ()-> new NatureRealNameReconfigurableApparatusBlock(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.COLOR_GRAY)
             .strength(3.0f, 3.0f).sound(SoundType.DEEPSLATE).requiresCorrectToolForDrops().noOcclusion()), OriginalEnhancementMain.OETab);
 
     public static final RegistryObject<Block> TEXT_BLOCK = registerBlock("test_block", ()-> new TestBlock(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.COLOR_GRAY)
