@@ -2,7 +2,6 @@ package io.github.originalenhancementsmain.data.util;
 
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.PoseStack;
-import io.github.originalenhancementsmain.client.component.ApparatusGuiComponents;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 import net.minecraft.client.gui.Font;
@@ -13,8 +12,6 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.SlotItemHandler;
-
-import javax.swing.plaf.basic.BasicComboBoxUI;
 
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public final class GuiUtil {
@@ -59,10 +56,5 @@ public final class GuiUtil {
         String apparatusName = screen.getTitle().getString();
         font.draw(poseStack, apparatusName, appImageWidth / 2f - font.width(apparatusName) / 2f, -22.0F,4210752);
         font.draw(poseStack, inventoryName, 8.0F, 100.0F, 4210752);
-    }
-
-    public static void drawAppComponents(PoseStack poseStack, ScreenComponentUtil componentUtil, int posX, int posY){
-        RenderSystem.setShaderTexture(0, ApparatusGuiComponents.Component);
-        componentUtil.draw(poseStack, posX, posY);
     }
 }

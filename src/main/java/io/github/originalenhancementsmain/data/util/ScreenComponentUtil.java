@@ -3,7 +3,7 @@ package io.github.originalenhancementsmain.data.util;
 import com.mojang.blaze3d.vertex.PoseStack;
 import net.minecraft.client.gui.screens.Screen;
 
-public class ScreenComponentUtil {
+public final class ScreenComponentUtil {
 
     public final int x;
     public final int y;

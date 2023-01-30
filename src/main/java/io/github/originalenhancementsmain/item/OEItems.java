@@ -14,6 +14,7 @@ import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
+import org.lwjgl.system.CallbackI;
 
 import java.util.function.Supplier;
 
@@ -32,6 +33,10 @@ public class OEItems {
 
     public  static final RegistryObject<Item> FROSTMOURNE = register("frostmourne", Frostmourne::new);
     public static final RegistryObject<Item> KNIGHTMETAL_SWORD_ITEMY = register("knightmetal_sword_twilighthomology", KnightMetalSwordItemY::new);
+
+    public static final RegistryObject<Item> LEFT_ARROW_FOREST = register("left_arrow_forest", ()-> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> RIGHT_ARROW_FOREST = register("right_arrow_forest", ()-> new Item(new Item.Properties()));
+
     private static <T extends Item> RegistryObject<T> register(final String name, final Supplier<T> item)
     {
         return ITEMS.register(name, item);

@@ -9,7 +9,7 @@ import javax.annotation.Nullable;
 
 import static net.minecraft.Util.makeDescriptionId;
 
-public class UtilProvider {
+public final class Util {
     public static String getTranslationKey(String base, @Nullable ResourceLocation name) {
         return makeDescriptionId(base, name);
     }

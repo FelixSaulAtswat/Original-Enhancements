@@ -106,9 +106,7 @@ public class NatureRealNameReconfigurableApparatusBlockEntity extends ApparatusN
         return super.getCapability(capability, side);
     }
 
-    public void neighborChanged(Direction direction){
-
-    }
+    public void neighborChanged(Direction direction){}
 
     private static boolean hasRecipe(NatureRealNameReconfigurableApparatusBlockEntity entity) {
         Level level = entity.level;
@@ -209,7 +207,7 @@ public class NatureRealNameReconfigurableApparatusBlockEntity extends ApparatusN
     @Override
     public void saveSynced(CompoundTag tag){
         tag.put("inventory", itemHandler.serializeNBT());
-        tag.putInt("virus_generator.progress", progress);
+        tag.putInt("nature_apparatus.progress", progress);
     }
 
     @Override

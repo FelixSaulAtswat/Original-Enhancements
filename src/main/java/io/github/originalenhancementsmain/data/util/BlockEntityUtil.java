@@ -15,7 +15,7 @@ import javax.annotation.Nullable;
 import java.util.Optional;
 
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
-public class BlockEntityUtil {
+public final class BlockEntityUtil {
 
     public static <T>Optional<T> get(Class<T> tClass, @Nullable BlockGetter getter, BlockPos pos) {
         return get(tClass, getter, pos, false);

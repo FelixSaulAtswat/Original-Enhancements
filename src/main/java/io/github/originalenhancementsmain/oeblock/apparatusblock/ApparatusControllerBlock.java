@@ -35,12 +35,6 @@ public abstract class ApparatusControllerBlock extends BaseApparatusBlock{
         builder.add(FACING, ACTIVE, STRUCTURE_COMPOSITION);
     }
 
-    @Nullable
-    @Override
-    public BlockPathTypes getAiPathNodeType(BlockState state, BlockGetter world, BlockPos pos, @Nullable Mob entity) {
-        return state.getValue(STRUCTURE_COMPOSITION) ? BlockPathTypes.DAMAGE_FIRE : BlockPathTypes.OPEN;
-    }
-
     @Override
     public BlockState getStateForPlacement(BlockPlaceContext context){
         return this.defaultBlockState().setValue(FACING, context.getHorizontalDirection().getOpposite());

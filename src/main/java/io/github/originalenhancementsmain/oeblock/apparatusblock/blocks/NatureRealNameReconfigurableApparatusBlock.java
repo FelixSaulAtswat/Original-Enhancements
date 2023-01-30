@@ -1,7 +1,7 @@
 package io.github.originalenhancementsmain.oeblock.apparatusblock.blocks;
 
 import io.github.originalenhancementsmain.data.util.BlockEntityUtil;
-import io.github.originalenhancementsmain.data.util.UtilProvider;
+import io.github.originalenhancementsmain.data.util.Util;
 import io.github.originalenhancementsmain.oeblock.OEBlockEntities;
 import io.github.originalenhancementsmain.oeblock.apparatusblock.ApparatusMultiBlockControllerBlock;
 import io.github.originalenhancementsmain.oeblock.apparatusblock.blockentity.NatureRealNameReconfigurableApparatusBlockEntity;
@@ -50,7 +50,7 @@ public class NatureRealNameReconfigurableApparatusBlock extends ApparatusMultiBl
     @SuppressWarnings("deprecation")
     @Override
     public void neighborChanged(BlockState state, Level level, BlockPos pos, Block block, BlockPos fromPos, boolean isMoving){
-        Direction direction = UtilProvider.directionFromOffset(pos, fromPos);
+        Direction direction = Util.directionFromOffset(pos, fromPos);
 
         if (direction != Direction.DOWN){
             BlockEntityUtil.get(NatureRealNameReconfigurableApparatusBlockEntity.class, level, pos).ifPresent(nbe -> nbe.neighborChanged(direction));
