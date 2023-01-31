@@ -14,6 +14,6 @@ public class OEBlockTagsProvider extends BlockTagsProvider {
 
     @Override
     protected void addTags() {
-        tag(OETags.Blocks.ENERGY_CRYSTAL).add(OEBlocks.NATURE_ENERGY_Conductor.get());
+        tag(OETags.Blocks.ENERGY_CRYSTAL).add(OEBlocks.NATURE_ENERGY_CONDUCTOR.get());
     }
 }

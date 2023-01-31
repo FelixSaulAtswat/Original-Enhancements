@@ -1,6 +1,8 @@
 package io.github.originalenhancementsmain.oeblock.apparatusblock;
 
 import io.github.originalenhancementsmain.OriginalEnhancementMain;
+import io.github.originalenhancementsmain.data.tags.OETags;
+import io.github.originalenhancementsmain.oeblock.apparatusblock.Components.EnergyConductorBlock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.network.chat.Component;
@@ -24,7 +26,7 @@ public abstract class ApparatusMultiBlockControllerBlock extends ApparatusContro
     }
 
     protected boolean isValidEnergySource(BlockState state){
-        return state.is(Tags.Blocks.STORAGE_BLOCKS_AMETHYST);
+        return state.is(OETags.Blocks.ENERGY_CRYSTAL) && state.getValue(EnergyConductorBlock.READY);
     }
     @Override
     public BlockState getStateForPlacement(BlockPlaceContext context){
