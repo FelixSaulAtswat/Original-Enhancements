@@ -54,7 +54,7 @@ public final class GuiUtil {
 
     public static void drawApparatusName(PoseStack poseStack, AbstractContainerScreen<?> screen, Font font, Component inventoryName){
         String apparatusName = screen.getTitle().getString();
-        font.draw(poseStack, apparatusName, appImageWidth / 2f - font.width(apparatusName) / 2f, -22.0F,4210752);
+        font.draw(poseStack, apparatusName, appImageWidth / 2f - font.width(apparatusName) / 2f, -23.0F,4210752);
         font.draw(poseStack, inventoryName, 8.0F, 100.0F, 4210752);
     }
 }

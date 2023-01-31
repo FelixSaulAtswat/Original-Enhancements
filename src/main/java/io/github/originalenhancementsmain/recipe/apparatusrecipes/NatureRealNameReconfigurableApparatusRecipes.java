@@ -22,23 +22,23 @@ import javax.annotation.Nullable;
 public class NatureRealNameReconfigurableApparatusRecipes implements Recipe<SimpleContainer> {
 
     private final ResourceLocation resourceId;
-    private final ItemStack putItem;
+    private final ItemStack output;
     private final NonNullList<Ingredient> recipeItem;
 
-    private NatureRealNameReconfigurableApparatusRecipes(ResourceLocation resourceId, ItemStack putItem, NonNullList<Ingredient> recipeItem){
+    private NatureRealNameReconfigurableApparatusRecipes(ResourceLocation resourceId, ItemStack output, NonNullList<Ingredient> recipeItem){
         this.resourceId = resourceId;
-        this.putItem = putItem;
+        this.output = output;
         this.recipeItem = recipeItem;
     }
 
     @Override
     public boolean matches(SimpleContainer container, Level level) {
-        return recipeItem.get(0).test(container.getItem(1)) && recipeItem.get(1).test(container.getItem(0));
+        return recipeItem.get(0).test(container.getItem(0)) && recipeItem.get(1).test(container.getItem(1)) && recipeItem.get(2).test(container.getItem(2));
     }
 
     @Override
     public ItemStack assemble(SimpleContainer container) {
-        return putItem;
+        return output;
     }
 
     @Override
@@ -52,7 +52,7 @@ public class NatureRealNameReconfigurableApparatusRecipes implements Recipe<Simp
 
     @Override
     public ItemStack getResultItem(){
-        return putItem.copy();
+        return output.copy();
     }
 
     @Override
@@ -82,11 +82,11 @@ public class NatureRealNameReconfigurableApparatusRecipes implements Recipe<Simp
 
         @Override
         public @NotNull NatureRealNameReconfigurableApparatusRecipes fromJson(@NotNull ResourceLocation id, @NotNull JsonObject json){
-            ItemStack putItem = ShapedRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(json, "putItem"));
+            ItemStack putItem = ShapedRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(json, "output"));
             JsonArray ingredients = GsonHelper.getAsJsonArray(json, "ingredients");
 
             NonNullList<Ingredient> inputs = NonNullList.withSize(3, Ingredient.EMPTY);
-            for (int value = 0; value < inputs.size();){
+            for (int value = 0; value < inputs.size(); value ++){
                 inputs.set(value, Ingredient.fromJson(ingredients.get(value)));
             }
             return new NatureRealNameReconfigurableApparatusRecipes(id, putItem, inputs);
@@ -124,12 +124,12 @@ public class NatureRealNameReconfigurableApparatusRecipes implements Recipe<Simp
 
         @Override
         public Class<RecipeSerializer<?>> getRegistryType() {
-            return Serializer.castClass();
+            return Serializer.castClass(RecipeSerializer.class);
         }
 
         @SuppressWarnings("unchecked")
-        private static <G> Class<G> castClass() {
-            return (Class<G>) RecipeSerializer.class;
+        private static <G> Class<G> castClass(Class<?> cls) {
+            return (Class<G>)cls;
         }
 
     }

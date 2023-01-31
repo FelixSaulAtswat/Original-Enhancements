@@ -1,8 +1,8 @@
 package io.github.originalenhancementsmain.oeblock;
 
+import com.mojang.datafixers.types.Type;
 import io.github.originalenhancementsmain.OriginalEnhancementMain;
 import io.github.originalenhancementsmain.oeblock.apparatusblock.blockentity.NatureRealNameReconfigurableApparatusBlockEntity;
-import io.github.originalenhancementsmain.test.TestBlockEntity;
 import net.minecraft.Util;
 import net.minecraft.util.datafix.fixes.References;
 import net.minecraft.world.level.block.Block;
@@ -12,7 +12,6 @@ import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
-import com.mojang.datafixers.types.Type;
 
 import java.util.function.Supplier;
 
@@ -22,9 +21,6 @@ public class OEBlockEntities {
 
     public static final RegistryObject<BlockEntityType<NatureRealNameReconfigurableApparatusBlockEntity>> NATURE_APPARATUS_CONTROLLER_BLOCK_ENTITY = registryBlockEntity("nature_real_name_reconfigurable_apparatus_block_entity",
             NatureRealNameReconfigurableApparatusBlockEntity :: new, OEBlocks.NATURE_REAL_NAME_RECONFIGURABLE_APPARATUS_BLOCK);
-
-    public static final RegistryObject<BlockEntityType<TestBlockEntity>> TEST_BLOCK_ENTITY = registryBlockEntity("test_block_entity",
-            TestBlockEntity::new, OEBlocks.TEXT_BLOCK);
 
     public static <T extends BlockEntity> RegistryObject<BlockEntityType<T>> registryBlockEntity(String name, BlockEntityType.BlockEntitySupplier<? extends T> blockEntity, Supplier<? extends Block> block){
         return BLOCK_ENTITIES.register(name, () ->  BlockEntityType.Builder.<T>of(blockEntity, block.get()).build(getType(name)));

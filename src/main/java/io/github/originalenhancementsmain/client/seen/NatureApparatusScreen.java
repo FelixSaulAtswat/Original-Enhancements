@@ -27,16 +27,16 @@ public class NatureApparatusScreen extends BaseApparatusScreen<NatureRealNameRec
         int y = (height - GuiUtil.appImageHeight) / 2;
 
         if (menu.canWork()){
-            blit(poseStack, x + 64, y - 41, 176, 45, 46, menu.getFusionProgress());
+            blit(poseStack, x + 64, y + 33, 176, 0, 46, menu.getFusionProgress());
         }
         if (menu.isHasCoreSlot()){
             ITEM_SLOT1.draw(poseStack, x + 11, y + 89);
-            itemRenderer.renderAndDecorateItem(new ItemStack(OEItems.RIGHT_ARROW_FOREST.get()), x + rightArrowPosX + 23, y + arrowPosY + 26);
+            itemRenderer.renderAndDecorateItem(new ItemStack(OEItems.RIGHT_ARROW_FOREST.get()), x + rightArrowPosX + 24, y + arrowPosY + 26);
         }
         GuiUtil.settings(TEXTURES);
         if (menu.isHasCrystalSlot()){
             ITEM_SLOT2.draw(poseStack, x + 147, y + 89);
-            itemRenderer.renderAndDecorateItem( new ItemStack(OEItems.LEFT_ARROW_FOREST.get()), x + leftArrowPosX + 27, y + arrowPosY + 27);
+            itemRenderer.renderAndDecorateItem( new ItemStack(OEItems.LEFT_ARROW_FOREST.get()), x + leftArrowPosX + 24, y + arrowPosY + 27);
         }
     }
 

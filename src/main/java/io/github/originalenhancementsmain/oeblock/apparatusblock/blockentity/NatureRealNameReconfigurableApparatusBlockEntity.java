@@ -51,15 +51,8 @@ public class NatureRealNameReconfigurableApparatusBlockEntity extends ApparatusN
         }
     };
 
-    public static final BlockEntityTicker<NatureRealNameReconfigurableApparatusBlockEntity> TICKER = (level, pso , state, self) -> self.tick(level, pso, state, self);
-
     public NatureRealNameReconfigurableApparatusBlockEntity(BlockPos pos, BlockState state){
         this(OEBlockEntities.NATURE_APPARATUS_CONTROLLER_BLOCK_ENTITY.get(), pos, state);
-    }
-
-    private boolean isFormed(){
-        BlockState state = this.getBlockState();
-        return state.hasProperty(NatureRealNameReconfigurableApparatusBlock.STRUCTURE_COMPOSITION) && state.getValue(NatureRealNameReconfigurableApparatusBlock.STRUCTURE_COMPOSITION);
     }
 
     protected NatureRealNameReconfigurableApparatusBlockEntity(BlockEntityType<?> type, BlockPos pos, BlockState state){
@@ -119,7 +112,7 @@ public class NatureRealNameReconfigurableApparatusBlockEntity extends ApparatusN
 
         Optional<NatureRealNameReconfigurableApparatusRecipes> match = level.getRecipeManager().getRecipeFor(NatureRealNameReconfigurableApparatusRecipes.Type.INSTANCE, inventory, level);
 
-        return match.isPresent() && canInsertAmountIntoOutputSlot(inventory) && canInsertItemIntoOutputSlot(inventory, match.get().getResultItem());
+        return match.isPresent() && canInsertAmountIntoOutputSlot3(inventory) && canInsertItemIntoOutputSlot3(inventory, match.get().getResultItem());
 
     }
 
@@ -149,35 +142,39 @@ public class NatureRealNameReconfigurableApparatusBlockEntity extends ApparatusN
         this.progress = 0;
     }
 
-    private static boolean canInsertAmountIntoOutputSlot(SimpleContainer inventory) {
-        return inventory.getItem(3).getMaxStackSize() > inventory.getItem(3).getCount() && inventory.getItem(4).getMaxStackSize() > inventory.getItem(4).getCount();
+    private static boolean canInsertAmountIntoOutputSlot3(SimpleContainer inventory) {
+        return inventory.getItem(3).getMaxStackSize() > inventory.getItem(3).getCount();
     }
 
-    private static boolean canInsertItemIntoOutputSlot(SimpleContainer inventory, ItemStack output) {
-        return (inventory.getItem(3).getItem() == output.getItem() || inventory.getItem(3).isEmpty()) && (inventory.getItem(4).getItem() == output.getItem() || inventory.getItem(4).isEmpty());
+    private static boolean canInsertItemIntoOutputSlot3(SimpleContainer inventory, ItemStack output) {
+        return inventory.getItem(3).getItem() == output.getItem() || inventory.getItem(3).isEmpty();
     }
 
-    private void tick(Level level, BlockPos pos, BlockState state, NatureRealNameReconfigurableApparatusBlockEntity entity) {
+    private static boolean canInsertAmountIntoOutputSlot4(SimpleContainer inventory) {
+        return inventory.getItem(4).getMaxStackSize() > inventory.getItem(4).getCount();
+    }
 
-        if (!isFormed()) {
-            return;
-        }
+    private static boolean canInsertItemIntoOutputSlot4(SimpleContainer inventory, ItemStack output) {
+        return inventory.getItem(4).getItem() == output.getItem() || inventory.getItem(4).isEmpty();
+    }
+
+    public static void tick(Level level, BlockPos pos, BlockState state, NatureRealNameReconfigurableApparatusBlockEntity entity) {
+
         if (hasRecipe(entity)) {
 
-            if (!state.getValue(ApparatusControllerBlock.ACTIVE)) {
-                level.setBlockAndUpdate(pos, state.setValue(ApparatusControllerBlock.ACTIVE, true));
-                entity.progress++;
-                setChanged(level, pos, state);
-                if (entity.progress > entity.maxProgress) {
-                    materialItem(entity);
-                }
-            } else {
-
-                level.setBlockAndUpdate(pos, state.setValue(ApparatusControllerBlock.ACTIVE, false));
-                entity.resetProgress();
-                setChanged(level, pos, state);
+            level.setBlockAndUpdate(pos, state.setValue(ApparatusControllerBlock.ACTIVE, true));
+            entity.progress++;
+            setChanged(level, pos, state);
+            if (entity.progress > entity.maxProgress) {
+                materialItem(entity);
             }
+        } else {
+
+            level.setBlockAndUpdate(pos, state.setValue(ApparatusControllerBlock.ACTIVE, false));
+            entity.resetProgress();
+            setChanged(level, pos, state);
         }
+
 
     }
 

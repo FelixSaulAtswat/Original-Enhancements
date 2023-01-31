@@ -44,7 +44,7 @@ public class NatureRealNameReconfigurableApparatusBlock extends ApparatusMultiBl
     @Nullable
     @Override
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level pLevel, BlockState pState, BlockEntityType<T> wanted) {
-        return pLevel.isClientSide ? null : BlockEntityUtil.castTicker(wanted, OEBlockEntities.NATURE_APPARATUS_CONTROLLER_BLOCK_ENTITY.get(), NatureRealNameReconfigurableApparatusBlockEntity.TICKER);
+        return pLevel.isClientSide ? null : BlockEntityUtil.castTicker(wanted, OEBlockEntities.NATURE_APPARATUS_CONTROLLER_BLOCK_ENTITY.get(), NatureRealNameReconfigurableApparatusBlockEntity::tick);
     }
 
     @SuppressWarnings("deprecation")
