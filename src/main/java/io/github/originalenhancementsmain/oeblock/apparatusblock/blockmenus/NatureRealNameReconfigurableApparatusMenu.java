@@ -1,10 +1,10 @@
-package io.github.originalenhancementsmain.oeblock.apparatusblock.blockmenu;
+package io.github.originalenhancementsmain.oeblock.apparatusblock.blockmenus;
 
 import io.github.originalenhancementsmain.OriginalEnhancementMain;
 import io.github.originalenhancementsmain.data.util.GuiUtil.outputSlot;
 import io.github.originalenhancementsmain.oeblock.apparatusblock.BaseApparatusMenu;
 import io.github.originalenhancementsmain.oeblock.apparatusblock.OEMenus;
-import io.github.originalenhancementsmain.oeblock.apparatusblock.blockentity.NatureRealNameReconfigurableApparatusBlockEntity;
+import io.github.originalenhancementsmain.oeblock.apparatusblock.blockentities.NatureRealNameReconfigurableApparatusBlockEntity;
 import lombok.Getter;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.FriendlyByteBuf;

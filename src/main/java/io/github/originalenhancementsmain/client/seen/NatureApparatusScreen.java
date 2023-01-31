@@ -4,7 +4,7 @@ import com.mojang.blaze3d.vertex.PoseStack;
 import io.github.originalenhancementsmain.OriginalEnhancementMain;
 import io.github.originalenhancementsmain.data.util.GuiUtil;
 import io.github.originalenhancementsmain.item.OEItems;
-import io.github.originalenhancementsmain.oeblock.apparatusblock.blockmenu.NatureRealNameReconfigurableApparatusMenu;
+import io.github.originalenhancementsmain.oeblock.apparatusblock.blockmenus.NatureRealNameReconfigurableApparatusMenu;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;

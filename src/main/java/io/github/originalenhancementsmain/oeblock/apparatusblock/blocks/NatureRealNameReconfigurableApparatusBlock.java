@@ -4,7 +4,7 @@ import io.github.originalenhancementsmain.data.util.BlockEntityUtil;
 import io.github.originalenhancementsmain.data.util.Util;
 import io.github.originalenhancementsmain.oeblock.OEBlockEntities;
 import io.github.originalenhancementsmain.oeblock.apparatusblock.ApparatusMultiBlockControllerBlock;
-import io.github.originalenhancementsmain.oeblock.apparatusblock.blockentity.NatureRealNameReconfigurableApparatusBlockEntity;
+import io.github.originalenhancementsmain.oeblock.apparatusblock.blockentities.NatureRealNameReconfigurableApparatusBlockEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.level.BlockGetter;

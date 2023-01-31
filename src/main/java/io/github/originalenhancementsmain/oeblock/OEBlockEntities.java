@@ -2,7 +2,7 @@ package io.github.originalenhancementsmain.oeblock;
 
 import com.mojang.datafixers.types.Type;
 import io.github.originalenhancementsmain.OriginalEnhancementMain;
-import io.github.originalenhancementsmain.oeblock.apparatusblock.blockentity.NatureRealNameReconfigurableApparatusBlockEntity;
+import io.github.originalenhancementsmain.oeblock.apparatusblock.blockentities.NatureRealNameReconfigurableApparatusBlockEntity;
 import net.minecraft.Util;
 import net.minecraft.util.datafix.fixes.References;
 import net.minecraft.world.level.block.Block;

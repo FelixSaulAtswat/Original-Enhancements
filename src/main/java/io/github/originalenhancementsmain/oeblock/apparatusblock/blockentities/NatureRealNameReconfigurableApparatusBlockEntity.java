@@ -1,11 +1,10 @@
-package io.github.originalenhancementsmain.oeblock.apparatusblock.blockentity;
+package io.github.originalenhancementsmain.oeblock.apparatusblock.blockentities;
 
 import io.github.originalenhancementsmain.OriginalEnhancementMain;
 import io.github.originalenhancementsmain.oeblock.OEBlockEntities;
 import io.github.originalenhancementsmain.oeblock.apparatusblock.ApparatusControllerBlock;
 import io.github.originalenhancementsmain.oeblock.apparatusblock.ApparatusNameableMenuBlockEntity;
-import io.github.originalenhancementsmain.oeblock.apparatusblock.blockmenu.NatureRealNameReconfigurableApparatusMenu;
-import io.github.originalenhancementsmain.oeblock.apparatusblock.blocks.NatureRealNameReconfigurableApparatusBlock;
+import io.github.originalenhancementsmain.oeblock.apparatusblock.blockmenus.NatureRealNameReconfigurableApparatusMenu;
 import io.github.originalenhancementsmain.recipe.apparatusrecipes.NatureRealNameReconfigurableApparatusRecipes;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -18,7 +17,6 @@ import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.ContainerData;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.entity.BlockEntityTicker;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.common.capabilities.Capability;
