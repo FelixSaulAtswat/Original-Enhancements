@@ -37,7 +37,6 @@ public abstract class ApparatusMultiBlockControllerBlock extends ApparatusContro
     }
 
     @SuppressWarnings("deprecation")
-    @Deprecated
     @Override
     public BlockState updateShape(BlockState state, Direction direction, BlockState sideState, LevelAccessor levelAccessor, BlockPos pos, BlockPos sidePos) {
         if (direction == Direction.DOWN) {
