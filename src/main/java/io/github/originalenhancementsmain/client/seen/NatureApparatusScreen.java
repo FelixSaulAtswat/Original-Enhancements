@@ -27,7 +27,7 @@ public class NatureApparatusScreen extends BaseApparatusScreen<NatureRealNameRec
         int y = (height - GuiUtil.appImageHeight) / 2;
 
         if (menu.canWork()){
-            blit(poseStack, x + 64, y + 33, 176, 0, 46, menu.getFusionProgress());
+            blit(poseStack, x + 64, y + 106 - menu.getFusionProgress(), 176, 73 - menu.getFusionProgress(), 46, menu.getFusionProgress());
         }
         if (menu.isHasCoreSlot()){
             ITEM_SLOT1.draw(poseStack, x + 11, y + 89);

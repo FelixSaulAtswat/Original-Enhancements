@@ -38,7 +38,7 @@ public class NatureRealNameReconfigurableApparatusBlockEntity extends ApparatusN
 
     private int progress = 0;
 
-    private int maxProgress = 20 * 10;
+    private int maxProgress = 20 * 100;
 
     protected final ContainerData data;
 
