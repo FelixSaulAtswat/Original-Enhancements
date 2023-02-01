@@ -52,7 +52,7 @@ public class ClientModEventSubscriber {
     }
 
     @SubscribeEvent
-    public static void setGatherData(GatherDataEvent event){
+    public static void setGatherData(final GatherDataEvent event){
         DataGenerator generator = event.getGenerator();
         ExistingFileHelper helper = event.getExistingFileHelper();
         OEBlockTagsProvider blockTagsProvider = new OEBlockTagsProvider(generator, helper);

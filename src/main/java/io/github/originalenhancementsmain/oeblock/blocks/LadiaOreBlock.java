@@ -22,22 +22,6 @@ public class LadiaOreBlock extends Block {
         this.xp = uniformInt;
     }
 
-    @SuppressWarnings("deprecation")
-    @Override
-    public float getDestroyProgress(@NotNull BlockState state, @NotNull Player player, @NotNull BlockGetter getter, @NotNull BlockPos pos) {
-        float progress = isCorrectToolForDrops(state, player) ? 30 : 100;
-        float speed = state.getDestroySpeed(getter, pos);
-
-        Item item = player.getMainHandItem().getItem();
-
-        if (item instanceof TieredItem tieredItem) {
-            if (tieredItem.getTier() != Tiers.NETHERITE) {
-                return player.getDigSpeed(state,pos) / speed / progress * 0.009F;
-            }
-        }
-        return player.getDigSpeed(state, pos) / speed / progress;
-    }
-
     @Override
     public int getExpDrop(BlockState state, net.minecraft.world.level.LevelReader reader, BlockPos pos, int fortune, int silktouch) {
         return silktouch == 0 ? this.xp.sample(RANDOM) : 0;

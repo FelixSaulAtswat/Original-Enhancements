@@ -10,4 +10,8 @@ public class OEItemTagProvider extends ItemTagsProvider {
     public OEItemTagProvider(DataGenerator generator, OEBlockTagsProvider tagsProvider, ExistingFileHelper existingFileHelper){
         super(generator, tagsProvider, OriginalEnhancementMain.MOD_ID, existingFileHelper);
     }
+
+    @Override
+    public void addTags(){
+    }
 }

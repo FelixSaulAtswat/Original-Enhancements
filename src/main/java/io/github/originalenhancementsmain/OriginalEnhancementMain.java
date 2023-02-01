@@ -3,6 +3,7 @@ package io.github.originalenhancementsmain;
 import io.github.originalenhancementsmain.client.seen.NatureApparatusScreen;
 import io.github.originalenhancementsmain.data.placement.OEConfiguredFeatures;
 import io.github.originalenhancementsmain.data.placement.OEPlacedFeatures;
+import io.github.originalenhancementsmain.data.tags.OETags;
 import io.github.originalenhancementsmain.data.util.Util;
 import io.github.originalenhancementsmain.effects.OEEffect;
 import io.github.originalenhancementsmain.entity.OEEntitiers;
@@ -33,6 +34,8 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import software.bernie.geckolib3.GeckoLib;
+
+import java.util.Locale;
 
 
 @Mod(OriginalEnhancementMain.MOD_ID)
@@ -90,13 +93,10 @@ public class OriginalEnhancementMain {
         MenuScreens.register(OEMenus.NATURE_APPARATUS_MENU.get(), NatureApparatusScreen :: new);
     }
 
-    public static void setup() {
-        IEventBus bus = MinecraftForge.EVENT_BUS;
-    }
-
     public static ResourceLocation getLocationResource(String name){
         return new ResourceLocation(MOD_ID, name);
     }
+
 
     public static MutableComponent getTranslationWay(String base, String name) {
         return new TranslatableComponent(getTranslationKey(base, name));
