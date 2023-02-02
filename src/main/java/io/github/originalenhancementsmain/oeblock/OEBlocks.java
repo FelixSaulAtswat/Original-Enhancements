@@ -24,7 +24,7 @@ public class OEBlocks {
 
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, OriginalEnhancementMain.MOD_ID);
 
-    public static final RegistryObject<Block> EXAMPLE_BLOCK = registerBlock("demon_ice", () -> new Block(BlockBehaviour.Properties.of(Material.ICE, MaterialColor.COLOR_PURPLE)
+    public static final RegistryObject<Block> DEMON_ICE = registerBlock("demon_ice", () -> new Block(BlockBehaviour.Properties.of(Material.ICE, MaterialColor.COLOR_PURPLE)
             .strength(10.0f, 3.0f).speedFactor(0.4F).sound(SoundType.GLASS).requiresCorrectToolForDrops()), OriginalEnhancementMain.OETab);
 
 

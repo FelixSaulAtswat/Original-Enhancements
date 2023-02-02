@@ -15,14 +15,15 @@ public class OEBlockTagsProvider extends BlockTagsProvider {
         super(generator, OriginalEnhancementMain.MOD_ID, existingFileHelper);
     }
 
-    @SuppressWarnings("unchecked")
     @Override
     protected void addTags() {
         tag(OETags.Blocks.ENERGY_CRYSTAL).add(OEBlocks.NATURE_ENERGY_CONDUCTOR.get());
         tag(Tags.Blocks.NEEDS_NETHERITE_TOOL).add(OEBlocks.LADIA_ORE.get(), OEBlocks.DEEPSLATE_LADIA_ORE.get());
-        tag(Tags.Blocks.NEEDS_GOLD_TOOL).add(OEBlocks.NATURE_ENERGY_CONDUCTOR.get());
+        tag(Tags.Blocks.NEEDS_GOLD_TOOL).add(OEBlocks.NATURE_ENERGY_CONDUCTOR.get(), OEBlocks.NATURE_REAL_NAME_RECONFIGURABLE_APPARATUS_BLOCK.get());
+        tag(BlockTags.NEEDS_DIAMOND_TOOL).add(OEBlocks.DEMON_ICE.get());
 
     }
+
     @Override
     @NotNull
     public String getName(){

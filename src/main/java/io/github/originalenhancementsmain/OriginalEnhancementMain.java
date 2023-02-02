@@ -3,7 +3,6 @@ package io.github.originalenhancementsmain;
 import io.github.originalenhancementsmain.client.seen.NatureApparatusScreen;
 import io.github.originalenhancementsmain.data.placement.OEConfiguredFeatures;
 import io.github.originalenhancementsmain.data.placement.OEPlacedFeatures;
-import io.github.originalenhancementsmain.data.tags.OETags;
 import io.github.originalenhancementsmain.data.util.Util;
 import io.github.originalenhancementsmain.effects.OEEffect;
 import io.github.originalenhancementsmain.entity.OEEntitiers;
@@ -35,8 +34,6 @@ import org.apache.logging.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import software.bernie.geckolib3.GeckoLib;
 
-import java.util.Locale;
-
 
 @Mod(OriginalEnhancementMain.MOD_ID)
 @Mod.EventBusSubscriber
@@ -56,7 +53,7 @@ public class OriginalEnhancementMain {
         @Override
         @OnlyIn(Dist.CLIENT)
         public @NotNull ItemStack makeIcon(){
-            return new ItemStack(OEBlocks.EXAMPLE_BLOCK.get());
+            return new ItemStack(OEBlocks.DEMON_ICE.get());
         }
     };
 
