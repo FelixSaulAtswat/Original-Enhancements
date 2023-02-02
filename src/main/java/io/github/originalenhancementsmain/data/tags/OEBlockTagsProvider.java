@@ -5,9 +5,13 @@ import io.github.originalenhancementsmain.oeblock.OEBlocks;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.tags.BlockTagsProvider;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.tags.TagKey;
+import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.NotNull;
+
+import java.util.function.Supplier;
 
 public class OEBlockTagsProvider extends BlockTagsProvider {
 
@@ -17,11 +21,19 @@ public class OEBlockTagsProvider extends BlockTagsProvider {
 
     @Override
     protected void addTags() {
-        tag(OETags.Blocks.ENERGY_CRYSTAL).add(OEBlocks.NATURE_ENERGY_CONDUCTOR.get());
-        tag(Tags.Blocks.NEEDS_NETHERITE_TOOL).add(OEBlocks.LADIA_ORE.get(), OEBlocks.DEEPSLATE_LADIA_ORE.get());
-        tag(Tags.Blocks.NEEDS_GOLD_TOOL).add(OEBlocks.NATURE_ENERGY_CONDUCTOR.get(), OEBlocks.NATURE_REAL_NAME_RECONFIGURABLE_APPARATUS_BLOCK.get());
-        tag(BlockTags.NEEDS_DIAMOND_TOOL).add(OEBlocks.DEMON_ICE.get());
+        addBlocksTag(BlockTags.MINEABLE_WITH_PICKAXE, OEBlocks.DEMON_ICE, OEBlocks.LADIA_ORE, OEBlocks.DEEPSLATE_LADIA_ORE,OEBlocks.NATURE_REAL_NAME_RECONFIGURABLE_APPARATUS_BLOCK,
+                OEBlocks.NATURE_ENERGY_CONDUCTOR);
+        addBlocksTag(OETags.Blocks.ENERGY_CRYSTAL, OEBlocks.NATURE_ENERGY_CONDUCTOR);
+        addBlocksTag(Tags.Blocks.NEEDS_NETHERITE_TOOL, OEBlocks.LADIA_ORE, OEBlocks.DEEPSLATE_LADIA_ORE);
+        addBlocksTag(Tags.Blocks.NEEDS_GOLD_TOOL, OEBlocks.NATURE_ENERGY_CONDUCTOR, OEBlocks.NATURE_REAL_NAME_RECONFIGURABLE_APPARATUS_BLOCK);
+        addBlocksTag(BlockTags.NEEDS_DIAMOND_TOOL, OEBlocks.DEMON_ICE);
+    }
 
+    @SafeVarargs
+    private void addBlocksTag(TagKey<Block> tag, Supplier<? extends Block>... blocks){
+        for (Supplier<? extends Block> block : blocks){
+            tag(tag).add(block.get());
+        }
     }
 
     @Override
