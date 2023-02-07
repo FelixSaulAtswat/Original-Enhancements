@@ -1,9 +1,7 @@
 package io.github.originalenhancementsmain.oeblock.apparatusblock;
 
 import io.github.originalenhancementsmain.oeblock.apparatusblock.interfaceprovider.INameableMenuProvider;
-import net.minecraft.Util;
 import net.minecraft.core.BlockPos;
-import net.minecraft.network.chat.TextComponent;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.Containers;
 import net.minecraft.world.InteractionHand;
@@ -16,16 +14,15 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.EntityBlock;
 import net.minecraft.world.level.block.entity.BlockEntity;
-import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
-import net.minecraftforge.items.CapabilityItemHandler;
+import net.minecraftforge.common.capabilities.ForgeCapabilities;
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.network.NetworkHooks;
 import org.jetbrains.annotations.Nullable;
 @SuppressWarnings("WeakerAccess")
 public abstract class BaseApparatusBlock extends Block implements EntityBlock {
-    protected BaseApparatusBlock(BlockBehaviour.Properties properties){
+    protected BaseApparatusBlock(Properties properties){
         super(properties);
     }
 
@@ -42,7 +39,7 @@ public abstract class BaseApparatusBlock extends Block implements EntityBlock {
         if (!level.isClientSide()){
             MenuProvider provider = this.getMenuProvider(level.getBlockState(pos), level, pos);
             if (provider != null && player instanceof ServerPlayer serverPlayer){
-                NetworkHooks.openGui(serverPlayer, provider, pos);
+                NetworkHooks.openScreen(serverPlayer, provider, pos);
                 if (player.containerMenu instanceof BaseApparatusMenu<?> menu){
                     menu.openApparatusMenu(serverPlayer);
                 }
@@ -82,7 +79,7 @@ public abstract class BaseApparatusBlock extends Block implements EntityBlock {
         if (state.getBlock() != newState.getBlock()) {
             BlockEntity te = worldIn.getBlockEntity(pos);
             if (te != null) {
-                te.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY).ifPresent(inventory -> dropInventoryItems(state, worldIn, pos, inventory));
+                te.getCapability(ForgeCapabilities.ITEM_HANDLER).ifPresent(inventory -> dropInventoryItems(state, worldIn, pos, inventory));
                 worldIn.updateNeighbourForOutputSignal(pos, this);
             }
         }

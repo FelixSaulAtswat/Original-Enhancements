@@ -4,7 +4,6 @@ import io.github.originalenhancementsmain.OriginalEnhancementMain;
 import io.github.originalenhancementsmain.item.OEItems;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.player.Player;
@@ -31,13 +30,13 @@ public class EndFruit extends Item {
 
 
     public EndFruit (){
-        super(new Item.Properties().tab(OriginalEnhancementMain.OETab).food(new FoodProperties.Builder().nutrition(1).saturationMod(1).alwaysEat().alwaysEat().build())
+        super(new Properties().tab(OriginalEnhancementMain.OETab).food(new FoodProperties.Builder().nutrition(1).saturationMod(1).alwaysEat().alwaysEat().build())
                 .rarity(Rarity.create("end_fruit", ChatFormatting.GOLD)));
     }
 
     @SubscribeEvent
     public static void onEatFinish(LivingEntityUseItemEvent.Finish event) {
-        LivingEntity player = event.getEntityLiving();
+        LivingEntity player = event.getEntity();
 
         if (!player.level.isClientSide) {
             if (event.getItem().getItem() == OEItems.END_FRUIT.get()) {
@@ -50,7 +49,7 @@ public class EndFruit extends Item {
 
     @SubscribeEvent
     public  static  void onDeath(LivingDeathEvent event){
-        LivingEntity entity = event.getEntityLiving();
+        LivingEntity entity = event.getEntity();
 
         if (entity instanceof Player player && player.getMaxHealth() == 300 && !player.getTags().contains("hp_up")){
             player.addTag("hp_up");
@@ -62,7 +61,7 @@ public class EndFruit extends Item {
 
     @SubscribeEvent
     public static void foreverUpHealth(PlayerEvent.PlayerRespawnEvent event) {
-        Player pyr = event.getPlayer();
+        Player pyr = event.getEntity();
 
 
         if (!pyr.level.isClientSide) {
@@ -79,7 +78,7 @@ public class EndFruit extends Item {
     @OnlyIn(Dist.CLIENT)
     public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> lore, TooltipFlag flag) {
         super.appendHoverText(stack, level, lore, flag);
-        lore.add(new TranslatableComponent(getDescriptionId() + ".lore1").withStyle(ChatFormatting.DARK_BLUE));
-        lore.add(new TranslatableComponent(getDescriptionId()+".lore2").withStyle(ChatFormatting.RED));
+        lore.add(Component.translatable(getDescriptionId() + ".lore1").withStyle(ChatFormatting.DARK_BLUE));
+        lore.add(Component.translatable(getDescriptionId()+".lore2").withStyle(ChatFormatting.RED));
     }
 }

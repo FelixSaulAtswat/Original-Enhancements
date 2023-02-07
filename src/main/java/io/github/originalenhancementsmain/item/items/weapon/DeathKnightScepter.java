@@ -7,13 +7,14 @@ import io.github.originalenhancementsmain.entity.monster.DeathKnight;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.*;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.level.ClipContext;
 import net.minecraft.world.level.Level;
@@ -28,7 +29,7 @@ import java.util.List;
 
 public class DeathKnightScepter extends Item {
     public DeathKnightScepter() {
-        super(new Item.Properties().durability(4).tab(OriginalEnhancementMain.OETab));
+        super(new Properties().durability(4).tab(OriginalEnhancementMain.OETab));
     }
 
     @Override
@@ -83,7 +84,7 @@ public class DeathKnightScepter extends Item {
     @OnlyIn(Dist.CLIENT)
     public void appendHoverText (@NotNull ItemStack stack, Level world, @NotNull List< Component > tooltip, @NotNull TooltipFlag flags){
         super.appendHoverText(stack, world, tooltip, flags);
-        tooltip.add(new TranslatableComponent("oe.scepter_charges", stack.getMaxDamage() - stack.getDamageValue()).withStyle(ChatFormatting.GRAY));
+        tooltip.add(Component.translatable("oe.scepter_charges", stack.getMaxDamage() - stack.getDamageValue()).withStyle(ChatFormatting.GRAY));
         }
     }
 

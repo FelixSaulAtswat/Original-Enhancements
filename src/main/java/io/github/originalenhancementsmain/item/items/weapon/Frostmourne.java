@@ -1,14 +1,13 @@
 package io.github.originalenhancementsmain.item.items.weapon;
 
 import io.github.originalenhancementsmain.OriginalEnhancementMain;
-import io.github.originalenhancementsmain.effects.OEEffect;
+import io.github.originalenhancementsmain.effect.OEEffects;
 import io.github.originalenhancementsmain.item.CustomItemTier;
 import io.github.originalenhancementsmain.item.OEItems;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.NonNullList;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.network.protocol.game.ClientboundAnimatePacket;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -33,12 +32,12 @@ public class Frostmourne extends SwordItem {
 
     public static final int EXTRA_DAMAGE = 100;
     public Frostmourne() {
-        super(CustomItemTier.MythologicalTools,169,-1,new Item.Properties().tab(OriginalEnhancementMain.OE3D).rarity(Rarity.EPIC));
+        super(CustomItemTier.MythologicalTools,169,-1,new Properties().tab(OriginalEnhancementMain.OE3D).rarity(Rarity.create("frostmourne", ChatFormatting.LIGHT_PURPLE)));
     }
 
     @SubscribeEvent
     public static void extraDamage(LivingHurtEvent event) {
-        LivingEntity entity = event.getEntityLiving();
+        LivingEntity entity = event.getEntity();
         MobType type = entity.getMobType();
 
         if(!entity.level.isClientSide && event.getSource().getDirectEntity() instanceof LivingEntity player) {
@@ -57,7 +56,7 @@ public class Frostmourne extends SwordItem {
 
     @SubscribeEvent
     public static void extraHeal(LivingDeathEvent deathEvent){
-        LivingEntity death = deathEvent.getEntityLiving();
+        LivingEntity death = deathEvent.getEntity();
         MobType type = death.getMobType();
 
         if(!death.level.isClientSide && deathEvent.getSource().getDirectEntity() instanceof LivingEntity player){
@@ -79,7 +78,7 @@ public class Frostmourne extends SwordItem {
 
         if (result){
             if (entity.getMobType() != MobType.UNDEAD) {
-                entity.addEffect(new MobEffectInstance(OEEffect.FROSTMOURNE_EFFECT.get(), 20 * 5, 1));
+                entity.addEffect(new MobEffectInstance(OEEffects.FROSTMOURNE_EFFECT.get(), 20 * 5, 1));
                 ((ServerLevel) entity.level).getChunkSource().broadcastAndSend(entity, new ClientboundAnimatePacket(entity, 5));
             }
 
@@ -107,23 +106,21 @@ public class Frostmourne extends SwordItem {
     @OnlyIn(Dist.CLIENT)
     public void appendHoverText(@NotNull ItemStack stack, @Nullable Level level, @NotNull List<Component> lore, @NotNull TooltipFlag flag) {
         super.appendHoverText(stack, level, lore, flag);
-        lore.add(new TranslatableComponent(getDescriptionId() + ".lore").withStyle(ChatFormatting.GOLD));
-        lore.add(new TranslatableComponent(getDescriptionId()+".lore2").withStyle(ChatFormatting.RED));
+        lore.add(Component.translatable(getDescriptionId() + ".lore").withStyle(ChatFormatting.GOLD));
+        lore.add(Component.translatable(getDescriptionId()+".lore2").withStyle(ChatFormatting.RED));
 
-        lore.add(new TranslatableComponent(getDescriptionId()+".lore3").withStyle(ChatFormatting.GRAY));
+        lore.add(Component.translatable(getDescriptionId()+".lore3").withStyle(ChatFormatting.GRAY));
     }
 
     @Override
     public void fillItemCategory(@NotNull CreativeModeTab tab, @NotNull NonNullList<ItemStack> items) {
 
-        if (allowdedIn(tab)) {
-            ItemStack stack = new ItemStack(this);
-            CompoundTag tags = new CompoundTag();
-            tags.putBoolean("Unbreakable", true);
+        ItemStack stack = new ItemStack(this);
+        CompoundTag tags = new CompoundTag();
+        tags.putBoolean("Unbreakable", true);
 
-            stack.setTag(tags);
-            items.add(stack);
-        }
+        stack.setTag(tags);
+        items.add(stack);
+
     }
-
 }

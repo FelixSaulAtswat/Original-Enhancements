@@ -14,7 +14,7 @@ import net.minecraft.world.inventory.ContainerData;
 import net.minecraft.world.inventory.SimpleContainerData;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
-import net.minecraftforge.items.CapabilityItemHandler;
+import net.minecraftforge.common.capabilities.ForgeCapabilities;
 import net.minecraftforge.items.SlotItemHandler;
 
 public class NatureRealNameReconfigurableApparatusMenu extends BaseApparatusMenu<NatureRealNameReconfigurableApparatusBlockEntity> {
@@ -37,18 +37,18 @@ public class NatureRealNameReconfigurableApparatusMenu extends BaseApparatusMenu
 
             if (level != null){
                 if (level.getBlockState(east).is(Blocks.DIRT)) {
-                    hasCoreSlot = natureApparatus.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY).filter(handler -> {
+                    hasCoreSlot = natureApparatus.getCapability(ForgeCapabilities.ITEM_HANDLER).filter(handler -> {
                         this.addSlot(new SlotItemHandler(handler, 0, 12, 62));
                         return true;
                     }).isPresent();
                 }
                 if (level.getBlockState(west).is(Blocks.STONE)) {
-                    hasCrystalSlot = natureApparatus.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY).filter(handler -> {
+                    hasCrystalSlot = natureApparatus.getCapability(ForgeCapabilities.ITEM_HANDLER).filter(handler -> {
                         this.addSlot(new SlotItemHandler(handler, 1, 148, 62));
                         return true;
                     }).isPresent();
                 }
-                natureApparatus.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY).ifPresent(handler -> {
+                natureApparatus.getCapability(ForgeCapabilities.ITEM_HANDLER).ifPresent(handler -> {
                     this.addSlot(new SlotItemHandler(handler, 2, 80, 81));
 
                     this.addSlot(new outputSlot(handler, 3, 64, -12));

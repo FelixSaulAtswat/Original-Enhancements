@@ -1,17 +1,11 @@
 package io.github.originalenhancementsmain.oeblock.blocks;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.util.RandomSource;
 import net.minecraft.util.valueproviders.UniformInt;
-import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.TieredItem;
-import net.minecraft.world.item.Tiers;
-import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
-import org.jetbrains.annotations.NotNull;
-
-import static net.minecraftforge.common.ForgeHooks.isCorrectToolForDrops;
 
 
 public class LadiaOreBlock extends Block {
@@ -23,7 +17,7 @@ public class LadiaOreBlock extends Block {
     }
 
     @Override
-    public int getExpDrop(BlockState state, net.minecraft.world.level.LevelReader reader, BlockPos pos, int fortune, int silktouch) {
-        return silktouch == 0 ? this.xp.sample(RANDOM) : 0;
+    public int getExpDrop(BlockState state, LevelReader reader, RandomSource source, BlockPos pos, int fortune, int silktouch) {
+        return silktouch == 0 ? this.xp.sample(source) : 0;
     }
 }

@@ -9,7 +9,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
-public class OEEntitiers {public static final DeferredRegister<EntityType<?>> ENTITY_TYPES = DeferredRegister.create(ForgeRegistries.ENTITIES,
+public class OEEntitiers {public static final DeferredRegister<EntityType<?>> ENTITY_TYPES = DeferredRegister.create(ForgeRegistries.ENTITY_TYPES,
         OriginalEnhancementMain.MOD_ID);
 
     //我们的生物类型为MONSTER(怪物)，你可以定义其他类型MOB等，两个字符串要一样比如"re8dimi"

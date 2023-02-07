@@ -2,8 +2,6 @@ package io.github.originalenhancementsmain.recipe.apparatusrecipes;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
-
-
 import io.github.originalenhancementsmain.OriginalEnhancementMain;
 import net.minecraft.core.NonNullList;
 import net.minecraft.network.FriendlyByteBuf;
@@ -13,11 +11,7 @@ import net.minecraft.world.SimpleContainer;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.Level;
-
 import org.jetbrains.annotations.NotNull;
-
-
-import javax.annotation.Nullable;
 
 public class NatureRealNameReconfigurableApparatusRecipes implements Recipe<SimpleContainer> {
 
@@ -109,27 +103,6 @@ public class NatureRealNameReconfigurableApparatusRecipes implements Recipe<Simp
                 ing.toNetwork(buf);
             }
             buf.writeItemStack(recipe.getResultItem(), false);
-        }
-
-        @Override
-        public RecipeSerializer<?> setRegistryName(ResourceLocation name) {
-            return INSTANCE;
-        }
-
-        @Nullable
-        @Override
-        public ResourceLocation getRegistryName() {
-            return ID;
-        }
-
-        @Override
-        public Class<RecipeSerializer<?>> getRegistryType() {
-            return Serializer.castClass(RecipeSerializer.class);
-        }
-
-        @SuppressWarnings("unchecked")
-        private static <G> Class<G> castClass(Class<?> cls) {
-            return (Class<G>)cls;
         }
 
     }

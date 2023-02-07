@@ -1,12 +1,14 @@
-package io.github.originalenhancementsmain.effects;
+package io.github.originalenhancementsmain.effect.effects;
 
-import io.github.originalenhancementsmain.OEMobEffect;
+import io.github.originalenhancementsmain.effect.OEMobEffect;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraft.world.entity.LivingEntity;
+
 import java.util.Random;
 
 public class FrostmourneEffect extends OEMobEffect {
+
     public FrostmourneEffect(MobEffectCategory type, int color, boolean isInstant) {
         super(type, color, isInstant);
     }

@@ -1,7 +1,7 @@
 package io.github.originalenhancementsmain.entity.monster;
 
 import io.github.originalenhancementsmain.OESounds;
-import io.github.originalenhancementsmain.render.OEDamageSources;
+import io.github.originalenhancementsmain.mobrender.OEDamageSources;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;

@@ -10,10 +10,9 @@ import net.minecraftforge.registries.RegistryObject;
 
 public class OERecipes {
 
-    public static final DeferredRegister<RecipeSerializer<?>> SERIALIZERS =
-            DeferredRegister.create(ForgeRegistries.RECIPE_SERIALIZERS, OriginalEnhancementMain.MOD_ID);
+    public static final DeferredRegister<RecipeSerializer<?>> SERIALIZERS = DeferredRegister.create(ForgeRegistries.RECIPE_SERIALIZERS, OriginalEnhancementMain.MOD_ID);
 
-    public static final RegistryObject<RecipeSerializer<NatureRealNameReconfigurableApparatusRecipes>> NATURE_APPARATUS_RECIPES =
+    public static final RegistryObject<RecipeSerializer<NatureRealNameReconfigurableApparatusRecipes>> NATURE_APPARATUS_RECIPE =
             SERIALIZERS.register("nature_apparatus", ()-> NatureRealNameReconfigurableApparatusRecipes.Serializer.INSTANCE);
 
 

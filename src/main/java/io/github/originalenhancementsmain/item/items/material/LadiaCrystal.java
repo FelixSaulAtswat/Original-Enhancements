@@ -5,6 +5,6 @@ import net.minecraft.world.item.Item;
 
 public class LadiaCrystal extends Item{
     public LadiaCrystal(){
-        super(new Item.Properties().tab(OriginalEnhancementMain.OETab));
+        super(new Properties().tab(OriginalEnhancementMain.OETab));
     }
 }

@@ -1,4 +1,4 @@
-package io.github.originalenhancementsmain.render;
+package io.github.originalenhancementsmain.mobrender;
 
 public class OEDamageSources {
     public static String oeSource(String name) {

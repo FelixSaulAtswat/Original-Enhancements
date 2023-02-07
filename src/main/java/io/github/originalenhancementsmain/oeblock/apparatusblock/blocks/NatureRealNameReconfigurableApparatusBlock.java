@@ -13,13 +13,12 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityTicker;
 import net.minecraft.world.level.block.entity.BlockEntityType;
-import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 
 import javax.annotation.Nullable;
 
 public class NatureRealNameReconfigurableApparatusBlock extends ApparatusMultiBlockControllerBlock {
-    public NatureRealNameReconfigurableApparatusBlock(BlockBehaviour.Properties properties){
+    public NatureRealNameReconfigurableApparatusBlock(Properties properties){
         super(properties);
     }
 

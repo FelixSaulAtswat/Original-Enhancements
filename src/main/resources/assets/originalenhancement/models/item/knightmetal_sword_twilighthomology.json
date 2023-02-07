@@ -1,8 +1,7 @@
 {
-	"parent": "minecraft:item/handheld",
-	"textures": {
-		"layer0": "originalenhancement:item/knightmetal_sword_twilighthomology",
-		"layer1": "originalenhancement:item/knightmetal_sword_twilighthomology_e"
-	}
-
+  "parent": "item/handheld",
+  "gui_light": "front",
+  "textures": {
+    "layer0": "originalenhancement:item/knightmetal_sword"
+  }
 }

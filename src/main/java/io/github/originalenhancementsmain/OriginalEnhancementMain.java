@@ -4,22 +4,21 @@ import io.github.originalenhancementsmain.client.seen.NatureApparatusScreen;
 import io.github.originalenhancementsmain.data.placement.OEConfiguredFeatures;
 import io.github.originalenhancementsmain.data.placement.OEPlacedFeatures;
 import io.github.originalenhancementsmain.data.util.Util;
-import io.github.originalenhancementsmain.effects.OEEffect;
+import io.github.originalenhancementsmain.effect.OEEffects;
 import io.github.originalenhancementsmain.entity.OEEntitiers;
 import io.github.originalenhancementsmain.item.OEItems;
 import io.github.originalenhancementsmain.oeblock.OEBlockEntities;
 import io.github.originalenhancementsmain.oeblock.OEBlocks;
 import io.github.originalenhancementsmain.oeblock.apparatusblock.OEMenus;
+import io.github.originalenhancementsmain.recipe.OERecipeTypes;
 import io.github.originalenhancementsmain.recipe.OERecipes;
 import net.minecraft.client.gui.screens.MenuScreens;
+import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
-import net.minecraft.network.chat.TextComponent;
-import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.level.Level;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.common.MinecraftForge;
@@ -43,10 +42,9 @@ public class OriginalEnhancementMain {
 
     @SubscribeEvent
     public static void playJoinWorld(PlayerEvent.PlayerLoggedInEvent event) {
-        Player player = event.getPlayer();
-        Level level = player.level;
+        Player player = event.getEntity();
 
-        player.sendMessage(new TextComponent("Be careful, once you complete certain levels, some monsters' abilities will increase dramatically., "+player.getDisplayName().getString()+". From "+(level.isClientSide?"CLIENT":"SERVER"+".")), net.minecraft.Util.NIL_UUID);
+        player.sendSystemMessage(Component.translatable("Be careful, once you complete certain levels, some monsters' abilities will increase dramatically."));
     }
     public static final CreativeModeTab OETab = new CreativeModeTab(OriginalEnhancementMain.MOD_ID + ".conventional") {
 
@@ -73,11 +71,12 @@ public class OriginalEnhancementMain {
         OESounds.SOUNDS.register(bus);
         OEEntitiers.ENTITY_TYPES.register(bus);
         GeckoLib.initialize();
-        OEEffect.EFFECTS.register(bus);
+        OEEffects.EFFECTS.register(bus);
         OEConfiguredFeatures.register(bus);
         OEPlacedFeatures.register(bus);
         OEBlockEntities.register(bus);
         OERecipes.register(bus);
+        OERecipeTypes.register(bus);
         OEMenus.register(bus);
         bus.addListener(this::clientSetup);
 
@@ -96,7 +95,7 @@ public class OriginalEnhancementMain {
 
 
     public static MutableComponent getTranslationWay(String base, String name) {
-        return new TranslatableComponent(getTranslationKey(base, name));
+        return Component.translatable(getTranslationKey(base, name));
     }
 
     public static String getTranslationKey(String base, String name) {
