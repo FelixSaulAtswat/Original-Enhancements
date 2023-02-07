@@ -12,6 +12,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
+import net.minecraftforge.common.Tags;
 
 public class EnergyConductorBlock extends Block {
 
@@ -32,7 +33,7 @@ public class EnergyConductorBlock extends Block {
         return this.E && this.N && this.S && this.W;
     }
     protected boolean hasEnergySource(BlockState state){
-        return state.is(BlockTags.BEACON_BASE_BLOCKS);
+        return state.is(Tags.Blocks.STORAGE_BLOCKS_AMETHYST);
     }
 
     @Override

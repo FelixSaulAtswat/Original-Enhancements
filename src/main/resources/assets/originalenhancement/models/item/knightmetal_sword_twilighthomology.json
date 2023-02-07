@@ -1,8 +1,11 @@
 {
-	"parent": "minecraft:item/handheld",
-	"textures": {
-		"layer0": "originalenhancement:item/knightmetal_sword_twilighthomology",
-		"layer1": "originalenhancement:item/knightmetal_sword_twilighthomology_e"
-	}
-
+  "loader": "forge:separate-perspective",
+  "base": {
+    "parent": "originalenhancement:item/knightmetal_sword_twilighthomology_other"
+  },
+  "perspectives": {
+    "gui": {
+      "parent": "originalenhancement:item/knightmetal_sword_twilighthomology_gui"
+    }
+  }
 }

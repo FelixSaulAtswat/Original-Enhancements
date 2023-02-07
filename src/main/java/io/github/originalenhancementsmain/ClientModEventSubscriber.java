@@ -1,29 +1,18 @@
 package io.github.originalenhancementsmain;
 
-import io.github.originalenhancementsmain.client.model.entity.DeathKnightModel;
-import io.github.originalenhancementsmain.client.seen.NatureApparatusScreen;
-import io.github.originalenhancementsmain.data.tags.OEBlockTagsProvider;
-import io.github.originalenhancementsmain.data.tags.OEItemTagProvider;
 import io.github.originalenhancementsmain.entity.OEEntitiers;
+import io.github.originalenhancementsmain.entity.models.DeathKnightModel;
 import io.github.originalenhancementsmain.entity.monster.DeathKnight;
-import io.github.originalenhancementsmain.oeblock.apparatusblock.OEMenus;
-import io.github.originalenhancementsmain.recipe.OERecipes;
+import io.github.originalenhancementsmain.mobrender.DeathKnightRender;
 import io.github.originalenhancementsmain.recipe.apparatusrecipes.NatureRealNameReconfigurableApparatusRecipes;
-import io.github.originalenhancementsmain.render.DeathKnightRender;
-import net.minecraft.advancements.CriteriaTriggers;
-import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.core.Registry;
-import net.minecraft.data.DataGenerator;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
-import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
-import net.minecraftforge.forge.event.lifecycle.GatherDataEvent;
 
 @Mod.EventBusSubscriber(modid = OriginalEnhancementMain.MOD_ID, value = Dist.CLIENT, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class ClientModEventSubscriber {
@@ -48,16 +37,23 @@ public class ClientModEventSubscriber {
     //Register recipe
     @SubscribeEvent
     public static void onRegisterRecipeSerializers(final RegistryEvent.Register<RecipeSerializer<?>> event){
+
         Registry.register(Registry.RECIPE_TYPE, NatureRealNameReconfigurableApparatusRecipes.Type.ID, NatureRealNameReconfigurableApparatusRecipes.Type.INSTANCE);
     }
 
-    @SubscribeEvent
-    public static void setGatherData(final GatherDataEvent event){
-        DataGenerator generator = event.getGenerator();
-        ExistingFileHelper helper = event.getExistingFileHelper();
-        OEBlockTagsProvider blockTagsProvider = new OEBlockTagsProvider(generator, helper);
 
-        generator.addProvider(blockTagsProvider);
-        generator.addProvider(new OEItemTagProvider(generator, blockTagsProvider, helper));
-    }
+//    @SubscribeEvent
+//    public static void onModelBaked(ModelBakeEvent event){
+//        Map<ResourceLocation, BakedModel> modelRegistry = event.getModelRegistry();
+//       ModelResourceLocation resource = new ModelResourceLocation(Objects.requireNonNull(OEItems.FROSTMOURNE.get().getRegistryName()), "inventory");
+//        BakedModel model = modelRegistry.get(resource);
+//       if (model == null){
+//            throw new RuntimeException("Did not find model in register");
+//        }else if (model instanceof OEBakeModel){
+//            throw new RuntimeException("Attempt to replace the item model twice is hidden");
+//        }else {
+//            OEBakeModel newModel = new OEBakeModel(model);
+//            event.getModelRegistry().put(resource, newModel);
+//        }
+//    }
 }

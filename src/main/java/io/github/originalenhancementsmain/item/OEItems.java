@@ -5,16 +5,15 @@ import io.github.originalenhancementsmain.entity.OEEntitiers;
 import io.github.originalenhancementsmain.item.items.food.EndFruit;
 import io.github.originalenhancementsmain.item.items.material.LadiaCrystal;
 import io.github.originalenhancementsmain.item.items.material.LadiaCrystalMax;
+import io.github.originalenhancementsmain.item.items.material.MagicIcecrystal;
 import io.github.originalenhancementsmain.item.items.weapon.DeathKnightScepter;
 import io.github.originalenhancementsmain.item.items.weapon.Frostmourne;
 import io.github.originalenhancementsmain.item.items.weapon.KnightMetalSwordItemY;
-import io.github.originalenhancementsmain.item.items.material.MagicIcecrystal;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
-import org.lwjgl.system.CallbackI;
 
 import java.util.function.Supplier;
 

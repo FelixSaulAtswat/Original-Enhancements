@@ -1,10 +1,12 @@
 package io.github.originalenhancementsmain.item.items.weapon;
 
 import io.github.originalenhancementsmain.OriginalEnhancementMain;
-import io.github.originalenhancementsmain.effects.OEEffect;
+import io.github.originalenhancementsmain.client.render.items.ItemStackTileEntityRenderer;
+import io.github.originalenhancementsmain.effect.OEEffects;
 import io.github.originalenhancementsmain.item.CustomItemTier;
 import io.github.originalenhancementsmain.item.OEItems;
 import net.minecraft.ChatFormatting;
+import net.minecraft.client.renderer.BlockEntityWithoutLevelRenderer;
 import net.minecraft.core.NonNullList;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
@@ -19,6 +21,7 @@ import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
+import net.minecraftforge.client.IItemRenderProperties;
 import net.minecraftforge.event.entity.living.LivingDeathEvent;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -27,13 +30,14 @@ import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.Nullable;
 import java.util.List;
+import java.util.function.Consumer;
 
 @Mod.EventBusSubscriber(modid = OriginalEnhancementMain.MOD_ID)
 public class Frostmourne extends SwordItem {
 
     public static final int EXTRA_DAMAGE = 100;
     public Frostmourne() {
-        super(CustomItemTier.MythologicalTools,169,-1,new Item.Properties().tab(OriginalEnhancementMain.OE3D).rarity(Rarity.EPIC));
+        super(CustomItemTier.MythologicalTools,169,-1,new Item.Properties().tab(OriginalEnhancementMain.OE3D).rarity(Rarity.create("frostmourne", ChatFormatting.LIGHT_PURPLE)));
     }
 
     @SubscribeEvent
@@ -79,7 +83,7 @@ public class Frostmourne extends SwordItem {
 
         if (result){
             if (entity.getMobType() != MobType.UNDEAD) {
-                entity.addEffect(new MobEffectInstance(OEEffect.FROSTMOURNE_EFFECT.get(), 20 * 5, 1));
+                entity.addEffect(new MobEffectInstance(OEEffects.FROSTMOURNE_EFFECT.get(), 20 * 5, 1));
                 ((ServerLevel) entity.level).getChunkSource().broadcastAndSend(entity, new ClientboundAnimatePacket(entity, 5));
             }
 
@@ -104,6 +108,18 @@ public class Frostmourne extends SwordItem {
     }
 
     @Override
+    public void initializeClient(Consumer<IItemRenderProperties> consumer) {
+        consumer.accept(new IItemRenderProperties() {
+
+            @Override
+            public BlockEntityWithoutLevelRenderer getItemStackRenderer() {
+                return new ItemStackTileEntityRenderer();
+            }
+        });
+    }
+
+
+    @Override
     @OnlyIn(Dist.CLIENT)
     public void appendHoverText(@NotNull ItemStack stack, @Nullable Level level, @NotNull List<Component> lore, @NotNull TooltipFlag flag) {
         super.appendHoverText(stack, level, lore, flag);
@@ -116,14 +132,11 @@ public class Frostmourne extends SwordItem {
     @Override
     public void fillItemCategory(@NotNull CreativeModeTab tab, @NotNull NonNullList<ItemStack> items) {
 
-        if (allowdedIn(tab)) {
-            ItemStack stack = new ItemStack(this);
-            CompoundTag tags = new CompoundTag();
-            tags.putBoolean("Unbreakable", true);
+        ItemStack stack = new ItemStack(this);
+        CompoundTag tags = new CompoundTag();
+        tags.putBoolean("Unbreakable", true);
 
-            stack.setTag(tags);
-            items.add(stack);
-        }
+        stack.setTag(tags);
+        items.add(stack);
     }
-
 }

@@ -8,6 +8,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.levelgen.GenerationStep.Decoration;
 import net.minecraftforge.common.BiomeDictionary;
+import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.world.BiomeGenerationSettingsBuilder;
 import net.minecraftforge.event.world.BiomeLoadingEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -39,6 +40,4 @@ public class OEOreDefaultFeatures {
             OEPlacedFeatures.LADIA_ORE_PLACED.getHolder().ifPresent(holder -> builder.addFeature(Decoration.UNDERGROUND_ORES, holder));
         }
     }
-
-
 }

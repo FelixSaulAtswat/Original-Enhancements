@@ -4,7 +4,7 @@ import io.github.originalenhancementsmain.client.seen.NatureApparatusScreen;
 import io.github.originalenhancementsmain.data.placement.OEConfiguredFeatures;
 import io.github.originalenhancementsmain.data.placement.OEPlacedFeatures;
 import io.github.originalenhancementsmain.data.util.Util;
-import io.github.originalenhancementsmain.effects.OEEffect;
+import io.github.originalenhancementsmain.effect.OEEffects;
 import io.github.originalenhancementsmain.entity.OEEntitiers;
 import io.github.originalenhancementsmain.item.OEItems;
 import io.github.originalenhancementsmain.oeblock.OEBlockEntities;
@@ -73,7 +73,7 @@ public class OriginalEnhancementMain {
         OESounds.SOUNDS.register(bus);
         OEEntitiers.ENTITY_TYPES.register(bus);
         GeckoLib.initialize();
-        OEEffect.EFFECTS.register(bus);
+        OEEffects.EFFECTS.register(bus);
         OEConfiguredFeatures.register(bus);
         OEPlacedFeatures.register(bus);
         OEBlockEntities.register(bus);

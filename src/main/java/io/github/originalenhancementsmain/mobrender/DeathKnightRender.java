@@ -1,7 +1,7 @@
-package io.github.originalenhancementsmain.render;
+package io.github.originalenhancementsmain.mobrender;
 
 import io.github.originalenhancementsmain.OriginalEnhancementMain;
-import io.github.originalenhancementsmain.client.model.entity.DeathKnightModel;
+import io.github.originalenhancementsmain.entity.models.DeathKnightModel;
 import io.github.originalenhancementsmain.entity.monster.DeathKnight;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.MobRenderer;
