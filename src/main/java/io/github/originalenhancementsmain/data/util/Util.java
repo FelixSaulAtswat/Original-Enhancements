@@ -3,6 +3,7 @@ package io.github.originalenhancementsmain.data.util;
 import io.github.originalenhancementsmain.OriginalEnhancementMain;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.core.Holder;
 import net.minecraft.resources.ResourceLocation;
 
 import javax.annotation.Nullable;

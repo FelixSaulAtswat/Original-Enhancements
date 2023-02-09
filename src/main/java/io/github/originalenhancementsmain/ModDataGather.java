@@ -1,5 +1,6 @@
 package io.github.originalenhancementsmain;
 
+import io.github.originalenhancementsmain.client.render.items.OEItemModelProvider;
 import io.github.originalenhancementsmain.data.tags.OEBlockTagsProvider;
 import io.github.originalenhancementsmain.data.tags.OEItemTagProvider;
 import net.minecraft.data.DataGenerator;
@@ -19,5 +20,6 @@ public class ModDataGather {
 
         generator.addProvider(event.includeClient(), blockTagsProvider);
         generator.addProvider(event.includeClient(), new OEItemTagProvider(generator, blockTagsProvider, helper));
+        generator.addProvider(event.includeClient(), new OEItemModelProvider(generator, helper));
     }
 }

@@ -1,7 +1,0 @@
-{
-  "parent": "item/handheld",
-  "gui_light": "front",
-  "textures": {
-    "layer0": "originalenhancement:item/knightmetal_sword"
-  }
-}

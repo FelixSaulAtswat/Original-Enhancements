@@ -1,10 +1,12 @@
 package io.github.originalenhancementsmain.item.items.weapon;
 
 import io.github.originalenhancementsmain.OriginalEnhancementMain;
+import io.github.originalenhancementsmain.client.render.items.ItemStackTileEntityRenderer;
 import io.github.originalenhancementsmain.effect.OEEffects;
 import io.github.originalenhancementsmain.item.CustomItemTier;
 import io.github.originalenhancementsmain.item.OEItems;
 import net.minecraft.ChatFormatting;
+import net.minecraft.client.renderer.BlockEntityWithoutLevelRenderer;
 import net.minecraft.core.NonNullList;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
@@ -18,6 +20,7 @@ import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
+import net.minecraftforge.client.extensions.common.IClientItemExtensions;
 import net.minecraftforge.event.entity.living.LivingDeathEvent;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -26,6 +29,7 @@ import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.Nullable;
 import java.util.List;
+import java.util.function.Consumer;
 
 @Mod.EventBusSubscriber(modid = OriginalEnhancementMain.MOD_ID)
 public class Frostmourne extends SwordItem {
@@ -33,6 +37,16 @@ public class Frostmourne extends SwordItem {
     public static final int EXTRA_DAMAGE = 100;
     public Frostmourne() {
         super(CustomItemTier.MythologicalTools,169,-1,new Properties().tab(OriginalEnhancementMain.OE3D).rarity(Rarity.create("frostmourne", ChatFormatting.LIGHT_PURPLE)));
+    }
+
+    @Override
+    public void initializeClient(Consumer<IClientItemExtensions> consumer) {
+        consumer.accept(new IClientItemExtensions() {
+            @Override
+            public BlockEntityWithoutLevelRenderer getCustomRenderer() {
+                return new ItemStackTileEntityRenderer();
+            }
+        });
     }
 
     @SubscribeEvent
@@ -114,13 +128,13 @@ public class Frostmourne extends SwordItem {
 
     @Override
     public void fillItemCategory(@NotNull CreativeModeTab tab, @NotNull NonNullList<ItemStack> items) {
+        if (tab == OriginalEnhancementMain.OE3D) {
+            ItemStack stack = new ItemStack(this);
+            CompoundTag tags = new CompoundTag();
+            tags.putBoolean("Unbreakable", true);
 
-        ItemStack stack = new ItemStack(this);
-        CompoundTag tags = new CompoundTag();
-        tags.putBoolean("Unbreakable", true);
-
-        stack.setTag(tags);
-        items.add(stack);
-
+            stack.setTag(tags);
+            items.add(stack);
+        }
     }
 }

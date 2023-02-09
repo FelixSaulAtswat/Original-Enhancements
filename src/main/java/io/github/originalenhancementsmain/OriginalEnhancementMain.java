@@ -51,7 +51,7 @@ public class OriginalEnhancementMain {
         @Override
         @OnlyIn(Dist.CLIENT)
         public @NotNull ItemStack makeIcon(){
-            return new ItemStack(OEBlocks.DEMON_ICE.get());
+            return new ItemStack(OEItems.LADA_CRYSTASL_MAX.get());
         }
     };
 
@@ -59,7 +59,7 @@ public class OriginalEnhancementMain {
         @Override
         @OnlyIn(Dist.CLIENT)
         public @NotNull ItemStack makeIcon() {
-            return new ItemStack(OEItems.DEATH_KNIGHT_SCEPTER.get());
+            return new ItemStack(OEItems.FROSTMOURNE.get());
         }
     };
     
