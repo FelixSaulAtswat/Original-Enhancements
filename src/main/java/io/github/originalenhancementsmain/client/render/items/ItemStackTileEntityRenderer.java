@@ -1,20 +1,15 @@
 package io.github.originalenhancementsmain.client.render.items;
 
 import com.mojang.blaze3d.vertex.PoseStack;
-import io.github.originalenhancementsmain.item.OE3DItem;
 import io.github.originalenhancementsmain.item.OEItems;
-import io.github.originalenhancementsmain.item.items.weapon.Frostmourne;
-import io.github.originalenhancementsmain.oeblock.OEBlocks;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.BlockEntityWithoutLevelRenderer;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.block.model.ItemTransforms;
 import net.minecraft.client.renderer.entity.ItemRenderer;
 import net.minecraft.client.resources.model.BakedModel;
-import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.level.block.Block;
 import net.minecraftforge.registries.RegistryObject;
 
 public class ItemStackTileEntityRenderer extends BlockEntityWithoutLevelRenderer {

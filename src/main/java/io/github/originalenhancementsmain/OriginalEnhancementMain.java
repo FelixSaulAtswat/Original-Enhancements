@@ -21,6 +21,7 @@ import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
+import net.minecraftforge.client.RenderTypeHelper;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -87,6 +88,7 @@ public class OriginalEnhancementMain {
     //Register screen
     private void clientSetup(final FMLClientSetupEvent event){
         MenuScreens.register(OEMenus.NATURE_APPARATUS_MENU.get(), NatureApparatusScreen :: new);
+
     }
 
     public static ResourceLocation getLocationResource(String name){

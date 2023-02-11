@@ -12,6 +12,7 @@ public class OETags {
     public static class Blocks {
 
         public static final TagKey<Block> ENERGY_CRYSTAL = tag("energy_crystal");
+        public static final TagKey<Block> ENERGY_BLOCK = tag("energy_block");
 
         public static TagKey<Block> tag(String name) {
             return BlockTags.create(OriginalEnhancementMain.getLocationResource(name));

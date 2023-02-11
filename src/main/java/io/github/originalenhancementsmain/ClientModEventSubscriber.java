@@ -1,7 +1,6 @@
 package io.github.originalenhancementsmain;
 
 import io.github.originalenhancementsmain.client.bakemodel.OEBakeModel;
-import io.github.originalenhancementsmain.data.tags.OETags;
 import io.github.originalenhancementsmain.entity.OEEntitiers;
 import io.github.originalenhancementsmain.entity.models.DeathKnightModel;
 import io.github.originalenhancementsmain.entity.monster.DeathKnight;
@@ -11,7 +10,6 @@ import net.minecraft.client.resources.model.BakedModel;
 import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.client.event.ModelEvent;

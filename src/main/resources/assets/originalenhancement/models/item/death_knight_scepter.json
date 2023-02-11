@@ -1,5 +1,9 @@
 ﻿{
   "parent": "minecraft:item/generated",
+  "emissive_layers": [
+    1
+  ],
+  "loader": "forge:item_layers",
   "textures": {
     "layer0": "originalenhancement:item/death_knight_scepter",
     "layer1": "originalenhancement:item/death_knight_scepter_e"

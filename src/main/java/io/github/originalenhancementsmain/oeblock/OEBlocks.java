@@ -5,6 +5,7 @@ import io.github.originalenhancementsmain.item.OEItems;
 import io.github.originalenhancementsmain.oeblock.apparatusblock.Components.EnergyConductorBlock;
 import io.github.originalenhancementsmain.oeblock.apparatusblock.blocks.NatureRealNameReconfigurableApparatusBlock;
 import io.github.originalenhancementsmain.oeblock.blocks.LadiaOreBlock;
+import io.github.originalenhancementsmain.oeblock.blocks.TestBlocks;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
@@ -39,12 +40,13 @@ public class OEBlocks {
 
     public static final RegistryObject<Block> NATURE_ENERGY_CONDUCTOR = registerBlock("nature_energy_conductor", ()-> new EnergyConductorBlock(BlockBehaviour.Properties.of(Material.AMETHYST, MaterialColor.COLOR_GREEN)
             .strength(10.0f, 30.0f).sound(SoundType.AMETHYST).requiresCorrectToolForDrops().noOcclusion()), OriginalEnhancementMain.OETab);
+
+    public static final RegistryObject<Block> TEST_BLOCK = registerBlock("test_block", ()-> new TestBlocks(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.COLOR_GRAY).strength(3.0f, 3.0f).requiresCorrectToolForDrops().sound(SoundType.AMETHYST)), OriginalEnhancementMain.OETab);
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block, CreativeModeTab tab) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
         registerBlockItem(name, toReturn, tab);
         return toReturn;
     }
-
     private static <T extends Block> void registerBlockItem(String name, RegistryObject<T> block, CreativeModeTab tab) {
         OEItems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties().tab(tab)));
     }

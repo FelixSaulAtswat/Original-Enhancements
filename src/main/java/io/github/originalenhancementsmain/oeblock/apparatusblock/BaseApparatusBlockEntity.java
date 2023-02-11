@@ -19,15 +19,6 @@ public class BaseApparatusBlockEntity extends BlockEntity {
         return this.getLevel() != null && this.getLevel().isClientSide;
     }
 
-    @SuppressWarnings("deprecation")
-    public void setChangedFast() {
-        if (level != null) {
-            if (level.hasChunkAt(worldPosition)) {
-                level.getChunkAt(worldPosition).setUnsaved(true);
-            }
-        }
-    }
-
     protected boolean shouldSyncOnUpdate() {
         return false;
     }

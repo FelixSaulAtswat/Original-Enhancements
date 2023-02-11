@@ -1,6 +1,6 @@
 {
 	"credit": "Made with Blockbench",
-	"texture_size": [67, 67],
+	"texture_size": [128, 128],
 	"textures": {
 		"1": "originalenhancement:gui/apparatus_components/left_arrow_forest_x",
 		"particle": "originalenhancement:gui/apparatus_components/left_arrow_forest_x",
@@ -12,9 +12,9 @@
 			"to": [16.75, 16.75, 8],
 			"rotation": {"angle": 0, "axis": "y", "origin": [8.375, 8.375, 8]},
 			"faces": {
-				"north": {"uv": [0, 0, 16, 16], "texture": "#1"},
+				"north": {"uv": [7.625, 0, 16, 8.375], "texture": "#1"},
 				"east": {"uv": [0, 0, 2, 2], "texture": "#missing"},
-				"south": {"uv": [0, 0, 16, 16], "texture": "#layer0"},
+				"south": {"uv": [0, 0, 8.375, 8.375], "texture": "#layer0"},
 				"west": {"uv": [0, 0, 2, 2], "texture": "#missing"},
 				"up": {"uv": [0, 0, 2, 2], "texture": "#missing"},
 				"down": {"uv": [0, 0, 2, 2], "texture": "#missing"}
@@ -43,11 +43,11 @@
 			"scale": [4, 4, 4]
 		},
 		"head": {
-			"translation": [0, -9.25, 0],
+			"translation": [0, -8.25, 0],
 			"scale": [2, 2, 1]
 		},
 		"fixed": {
-			"translation": [0, -11.7, -1],
+			"translation": [0, -11.75, -1],
 			"scale": [2, 2, 1]
 		}
 	}

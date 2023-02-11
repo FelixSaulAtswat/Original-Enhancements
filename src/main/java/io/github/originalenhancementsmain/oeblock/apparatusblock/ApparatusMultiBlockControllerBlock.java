@@ -25,7 +25,7 @@ public abstract class ApparatusMultiBlockControllerBlock extends ApparatusContro
     }
 
     protected boolean isValidEnergySource(BlockState state){
-        return state.is(OETags.Blocks.ENERGY_CRYSTAL) && state.getValue(EnergyConductorBlock.READY);
+        return state.is(OETags.Blocks.ENERGY_CRYSTAL) && state.getValue(EnergyConductorBlock.NORTH) && state.getValue(EnergyConductorBlock.EAST) && state.getValue(EnergyConductorBlock.SOUTH) && state.getValue(EnergyConductorBlock.WEST);
     }
     @Override
     public BlockState getStateForPlacement(BlockPlaceContext context){

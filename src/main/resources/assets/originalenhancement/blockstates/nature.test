@@ -1,0 +1,267 @@
+{
+  "variants": {
+    "facing=north,ready=false,nor=false,sou=false,wes=false,eas=false": {
+      "model": "originalenhancement:block/apparatus/nature_energy_conductor_original"
+    },
+    "facing=east,ready=false,nor=false,sou=false,wes=false,eas=false": {
+      "model": "originalenhancement:block/apparatus/nature_energy_conductor_original"
+    },
+    "facing=south,ready=false,nor=false,sou=false,wes=false,eas=false": {
+      "model": "originalenhancement:block/apparatus/nature_energy_conductor_original"
+    },
+    "facing=west,ready=false,nor=false,sou=false,wes=false,eas=false": {
+      "model": "originalenhancement:block/apparatus/nature_energy_conductor_original"
+    },
+
+    "facing=north,ready=false,nor=ture,sou=false,wes=false,eas=false": {
+      "model": "originalenhancement:block/apparatus/nature_energy_conductor_1",
+      "y": 0
+    },
+    "facing=east,ready=false,nor=ture,sou=false,wes=false,eas=false": {
+      "model": "originalenhancement:block/apparatus/nature_energy_conductor_1",
+      "y": 0
+    },
+    "facing=south,ready=false,nor=ture,sou=false,wes=false,eas=false": {
+      "model": "originalenhancement:block/apparatus/nature_energy_conductor_1",
+      "y": 0
+    },
+    "facing=west,ready=false,nor=ture,sou=false,wes=false,eas=false": {
+      "model": "originalenhancement:block/apparatus/nature_energy_conductor_1",
+      "y": 0
+    },
+
+    "facing=north,ready=false,nor=false,sou=ture,wes=false,eas=false": {
+      "model": "originalenhancement:block/apparatus/nature_energy_conductor_1",
+      "y": 180
+    },
+    "facing=east,ready=false,nor=false,sou=ture,wes=false,eas=false": {
+      "model": "originalenhancement:block/apparatus/nature_energy_conductor_1",
+      "y": 180
+    },
+    "facing=south,ready=false,nor=false,sou=ture,wes=false,eas=false": {
+      "model": "originalenhancement:block/apparatus/nature_energy_conductor_1",
+      "y": 180
+    },
+    "facing=west,ready=false,nor=false,sou=ture,wes=false,eas=false": {
+      "model": "originalenhancement:block/apparatus/nature_energy_conductor_1",
+      "y": 180
+    },
+
+    "facing=north,ready=false,nor=false,sou=false,wes=ture,eas=false": {
+      "model": "originalenhancement:block/apparatus/nature_energy_conductor_1",
+      "y": 270
+    },
+    "facing=east,ready=false,nor=false,sou=false,wes=ture,eas=false": {
+      "model": "originalenhancement:block/apparatus/nature_energy_conductor_1",
+      "y": 270
+    },
+    "facing=south,ready=false,nor=false,sou=false,wes=ture,eas=false": {
+      "model": "originalenhancement:block/apparatus/nature_energy_conductor_1",
+      "y": 270
+    },
+    "facing=west,ready=false,nor=false,sou=false,wes=ture,eas=false": {
+      "model": "originalenhancement:block/apparatus/nature_energy_conductor_1",
+      "y": 270
+    },
+
+    "facing=north,ready=false,nor=false,sou=false,wes=false,eas=ture": {
+      "model": "originalenhancement:block/apparatus/nature_energy_conductor_1",
+      "y": 90
+    },
+    "facing=east,ready=false,nor=false,sou=false,wes=false,eas=ture": {
+      "model": "originalenhancement:block/apparatus/nature_energy_conductor_1",
+      "y": 90
+    },
+    "facing=south,ready=false,nor=false,sou=false,wes=false,eas=ture": {
+      "model": "originalenhancement:block/apparatus/nature_energy_conductor_1",
+      "y": 90
+    },
+    "facing=west,ready=false,nor=false,sou=false,wes=false,eas=ture": {
+      "model": "originalenhancement:block/apparatus/nature_energy_conductor_1",
+      "y": 90
+    },
+
+    "facing=north,ready=false,nor=ture,sou=ture,wes=false,eas=false": {
+      "model": "originalenhancement:block/apparatus/nature_energy_conductor_2-2",
+      "y": 0
+    },
+    "facing=east,ready=false,nor=ture,sou=ture,wes=false,eas=false": {
+      "model": "originalenhancement:block/apparatus/nature_energy_conductor_2-2",
+      "y": 0
+    },
+    "facing=south,ready=false,nor=ture,sou=ture,wes=false,eas=false": {
+      "model": "originalenhancement:block/apparatus/nature_energy_conductor_2-2",
+      "y": 0
+    },
+    "facing=west,ready=false,nor=ture,sou=ture,wes=false,eas=false": {
+      "model": "originalenhancement:block/apparatus/nature_energy_conductor_2-2",
+      "y": 0
+    },
+
+    "facing=north,ready=false,nor=ture,sou=false,wes=ture,eas=false": {
+      "model": "originalenhancement:block/apparatus/nature_energy_conductor_2-1",
+      "y": 270
+    },
+    "facing=east,ready=false,nor=ture,sou=false,wes=ture,eas=false": {
+      "model": "originalenhancement:block/apparatus/nature_energy_conductor_2-1",
+      "y": 270
+    },
+    "facing=south,ready=false,nor=ture,sou=false,wes=ture,eas=false": {
+      "model": "originalenhancement:block/apparatus/nature_energy_conductor_2-1",
+      "y": 270
+    },
+    "facing=west,ready=false,nor=ture,sou=false,wes=ture,eas=false": {
+      "model": "originalenhancement:block/apparatus/nature_energy_conductor_2-1",
+      "y": 270
+    },
+
+    "facing=north,ready=false,nor=ture,sou=false,wes=false,eas=ture": {
+      "model": "originalenhancement:block/apparatus/nature_energy_conductor_2-1",
+      "y": 0
+    },
+    "facing=east,ready=false,nor=ture,sou=false,wes=false,eas=ture": {
+      "model": "originalenhancement:block/apparatus/nature_energy_conductor_2-1",
+      "y": 0
+    },
+    "facing=south,ready=false,nor=ture,sou=false,wes=false,eas=ture": {
+      "model": "originalenhancement:block/apparatus/nature_energy_conductor_2-1",
+      "y": 0
+    },
+    "facing=west,ready=false,nor=ture,sou=false,wes=false,eas=ture": {
+      "model": "originalenhancement:block/apparatus/nature_energy_conductor_2-1",
+      "y": 0
+    },
+
+    "facing=north,ready=false,nor=false,sou=ture,wes=ture,eas=false": {
+      "model": "originalenhancement:block/apparatus/nature_energy_conductor_2-1",
+      "y": 90
+    },
+    "facing=east,ready=false,nor=false,sou=ture,wes=ture,eas=false": {
+      "model": "originalenhancement:block/apparatus/nature_energy_conductor_2-1",
+      "y": 90
+    },
+    "facing=south,ready=false,nor=false,sou=ture,wes=ture,eas=false": {
+      "model": "originalenhancement:block/apparatus/nature_energy_conductor_2-1",
+      "y": 90
+    },
+    "facing=west,ready=false,nor=false,sou=ture,wes=ture,eas=false": {
+      "model": "originalenhancement:block/apparatus/nature_energy_conductor_2-1",
+      "y": 90
+    },
+
+    "facing=north,ready=false,nor=false,sou=ture,wes=false,eas=ture": {
+      "model": "originalenhancement:block/apparatus/nature_energy_conductor_2-1",
+      "y": 180
+    },
+    "facing=east,ready=false,nor=false,sou=ture,wes=false,eas=ture": {
+      "model": "originalenhancement:block/apparatus/nature_energy_conductor_2-1",
+      "y": 180
+    },
+    "facing=south,ready=false,nor=false,sou=ture,wes=false,eas=ture": {
+      "model": "originalenhancement:block/apparatus/nature_energy_conductor_2-1",
+      "y": 180
+    },
+    "facing=west,ready=false,nor=false,sou=ture,wes=false,eas=ture": {
+      "model": "originalenhancement:block/apparatus/nature_energy_conductor_2-1",
+      "y": 180
+    },
+
+    "facing=north,ready=false,nor=false,sou=false,wes=ture,eas=ture": {
+      "model": "originalenhancement:block/apparatus/nature_energy_conductor_2-2",
+      "y": 90
+    },
+    "facing=east,ready=false,nor=false,sou=false,wes=ture,eas=ture": {
+      "model": "originalenhancement:block/apparatus/nature_energy_conductor_2-2",
+      "y": 90
+    },
+    "facing=south,ready=false,nor=false,sou=false,wes=ture,eas=ture": {
+      "model": "originalenhancement:block/apparatus/nature_energy_conductor_2-2",
+      "y": 90
+    },
+    "facing=west,ready=false,nor=false,sou=false,wes=ture,eas=ture": {
+      "model": "originalenhancement:block/apparatus/nature_energy_conductor_2-2",
+      "y": 90
+    },
+
+    "facing=north,ready=false,nor=false,sou=ture,wes=ture,eas=ture": {
+      "model": "originalenhancement:block/apparatus/nature_energy_conductor_3",
+      "y": 90
+    },
+    "facing=east,ready=false,nor=false,sou=ture,wes=ture,eas=ture": {
+      "model": "originalenhancement:block/apparatus/nature_energy_conductor_3",
+      "y": 90
+    },
+    "facing=south,ready=false,nor=false,sou=ture,wes=ture,eas=ture": {
+      "model": "originalenhancement:block/apparatus/nature_energy_conductor_3",
+      "y": 90
+    },
+    "facing=west,ready=false,nor=false,sou=ture,wes=ture,eas=ture": {
+      "model": "originalenhancement:block/apparatus/nature_energy_conductor_3",
+      "y": 90
+    },
+
+    "facing=north,ready=false,nor=ture,sou=false,wes=ture,eas=ture": {
+      "model": "originalenhancement:block/apparatus/nature_energy_conductor_3",
+      "y": 180
+    },
+    "facing=east,ready=false,nor=ture,sou=false,wes=ture,eas=ture": {
+      "model": "originalenhancement:block/apparatus/nature_energy_conductor_3",
+      "y": 180
+    },
+    "facing=south,ready=false,nor=ture,sou=false,wes=ture,eas=ture": {
+      "model": "originalenhancement:block/apparatus/nature_energy_conductor_3",
+      "y": 180
+    },
+    "facing=west,ready=false,nor=ture,sou=false,wes=ture,eas=ture": {
+      "model": "originalenhancement:block/apparatus/nature_energy_conductor_3",
+      "y": 180
+    },
+
+    "facing=north,ready=false,nor=ture,sou=ture,wes=false,eas=ture": {
+      "model": "originalenhancement:block/apparatus/nature_energy_conductor_3",
+      "y": 270
+    },
+    "facing=east,ready=false,nor=ture,sou=ture,wes=false,eas=ture": {
+      "model": "originalenhancement:block/apparatus/nature_energy_conductor_3",
+      "y": 270
+    },
+    "facing=south,ready=false,nor=ture,sou=ture,wes=false,eas=ture": {
+      "model": "originalenhancement:block/apparatus/nature_energy_conductor_3",
+      "y": 270
+    },
+    "facing=west,ready=false,nor=ture,sou=ture,wes=false,eas=ture": {
+      "model": "originalenhancement:block/apparatus/nature_energy_conductor_3",
+      "y": 270
+    },
+
+    "facing=north,ready=false,nor=ture,sou=ture,wes=ture,eas=false": {
+      "model": "originalenhancement:block/apparatus/nature_energy_conductor_3",
+      "y": 0
+    },
+    "facing=east,ready=false,nor=ture,sou=ture,wes=ture,eas=false": {
+      "model": "originalenhancement:block/apparatus/nature_energy_conductor_3",
+      "y": 0
+    },
+    "facing=south,ready=false,nor=ture,sou=ture,wes=ture,eas=false": {
+      "model": "originalenhancement:block/apparatus/nature_energy_conductor_3",
+      "y": 0
+    },
+    "facing=west,ready=false,nor=ture,sou=ture,wes=ture,eas=false": {
+      "model": "originalenhancement:block/apparatus/nature_energy_conductor_3",
+      "y": 0
+    },
+
+    "facing=north,ready=ture,nor=ture,sou=ture,wes=ture,eas=ture": {
+      "model": "originalenhancement:block/apparatus/nature_energy_conductor_ready"
+    },
+    "facing=east,ready=ture,nor=ture,sou=ture,wes=ture,eas=ture": {
+      "model": "originalenhancement:block/apparatus/nature_energy_conductor_ready"
+    },
+    "facing=south,ready=ture,nor=ture,sou=ture,wes=ture,eas=ture": {
+      "model": "originalenhancement:block/apparatus/nature_energy_conductor_ready"
+    },
+    "facing=west,ready=ture,nor=ture,sou=ture,wes=ture,eas=ture": {
+      "model": "originalenhancement:block/apparatus/nature_energy_conductor_ready"
+    }
+  }
+}
