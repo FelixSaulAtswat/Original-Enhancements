@@ -74,12 +74,15 @@ public class EnergyConductorBlock extends TransferBlock implements SimpleWaterlo
     public BlockState getStateForPlacement(BlockPlaceContext context) {
         Level level = context.getLevel();
         BlockPos chickPos = context.getClickedPos();
+        FluidState fluidState = level.getFluidState(context.getClickedPos());
+
 
         return this.defaultBlockState().setValue(NORTH, hasEnergySource(level.getBlockState(chickPos.north())))
                 .setValue(EAST, hasEnergySource(level.getBlockState(chickPos.east())))
                 .setValue(SOUTH, hasEnergySource(level.getBlockState(chickPos.south())))
                 .setValue(WEST, hasEnergySource(level.getBlockState(chickPos.west())))
-                .setValue(FACING, context.getHorizontalDirection().getOpposite());
+                .setValue(FACING, context.getHorizontalDirection().getOpposite())
+                .setValue(WATERLOGGED, fluidState.getType() == Fluids.WATER);
     }
 
     @Override
