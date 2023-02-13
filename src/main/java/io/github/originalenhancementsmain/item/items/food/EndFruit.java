@@ -3,7 +3,13 @@ package io.github.originalenhancementsmain.item.items.food;
 import io.github.originalenhancementsmain.OriginalEnhancementMain;
 import io.github.originalenhancementsmain.item.OEItems;
 import net.minecraft.ChatFormatting;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.multiplayer.chat.report.ReportEnvironment;
+import net.minecraft.core.Registry;
 import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.server.MinecraftServer;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.player.Player;
@@ -15,6 +21,7 @@ import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
+import net.minecraftforge.common.ForgeConfig;
 import net.minecraftforge.event.entity.living.LivingDeathEvent;
 import net.minecraftforge.event.entity.living.LivingEntityUseItemEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent;
@@ -40,37 +47,13 @@ public class EndFruit extends Item {
 
         if (!player.level.isClientSide) {
             if (event.getItem().getItem() == OEItems.END_FRUIT.get()) {
-                if (player.getMaxHealth() < 300){
+                MinecraftServer server = player.getServer();
+                ResourceLocation advancement = new ResourceLocation("minecraft:end/kill_dragon");
+                if (player.getMaxHealth() < 300 && player instanceof ServerPlayer && ((ServerPlayer) player).getAdvancements().getOrStartProgress(server.getAdvancements().getAdvancement(advancement)).isDone()){
                     Objects.requireNonNull(player.getAttribute(Attributes.MAX_HEALTH)).setBaseValue(300);
+
                 }
             }
-        }
-    }
-
-    @SubscribeEvent
-    public  static  void onDeath(LivingDeathEvent event){
-        LivingEntity entity = event.getEntity();
-
-        if (entity instanceof Player player && player.getMaxHealth() == 300 && !player.getTags().contains("hp_up")){
-            player.addTag("hp_up");
-        }
-        else {
-            entity.getTags().remove("hp_up");
-        }
-    }
-
-    @SubscribeEvent
-    public static void foreverUpHealth(PlayerEvent.PlayerRespawnEvent event) {
-        Player pyr = event.getEntity();
-
-
-        if (!pyr.level.isClientSide) {
-
-           if (pyr.getTags().contains("hp_up")){
-               pyr.getTags().remove("hp_up");
-               Objects.requireNonNull(pyr.getAttribute(Attributes.MAX_HEALTH)).setBaseValue(300);
-           }
-
         }
     }
 
