@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "item": "originalenhancement:end_fruit"
+    },
+    "title": {
+      "translate":"advancement.originalenhancement.root.title"
+    },
+    "description":{
+      "translate": "advancement.originalenhancement.root.desc"
+    },
+    "background": "originalenhancement:textures/advancement/advancement_background.png",
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "originalenhancement:end_fruit"
+          ]
+        }
+      }
+    }
+  }
+}

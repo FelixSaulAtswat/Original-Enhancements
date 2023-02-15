@@ -49,8 +49,8 @@ public class EndFruit extends Item {
             if (event.getItem().getItem() == OEItems.END_FRUIT.get()) {
                 MinecraftServer server = player.getServer();
                 ResourceLocation advancement = new ResourceLocation("minecraft:end/kill_dragon");
-                if (player.getMaxHealth() < 300 && player instanceof ServerPlayer && ((ServerPlayer) player).getAdvancements().getOrStartProgress(server.getAdvancements().getAdvancement(advancement)).isDone()){
-                    Objects.requireNonNull(player.getAttribute(Attributes.MAX_HEALTH)).setBaseValue(300);
+                if (player.getMaxHealth() < 300.0f && player instanceof ServerPlayer && ((ServerPlayer) player).getAdvancements().getOrStartProgress(server.getAdvancements().getAdvancement(advancement)).isDone()){
+                    Objects.requireNonNull(player.getAttribute(Attributes.MAX_HEALTH)).setBaseValue(300.0d);
 
                 }
             }
