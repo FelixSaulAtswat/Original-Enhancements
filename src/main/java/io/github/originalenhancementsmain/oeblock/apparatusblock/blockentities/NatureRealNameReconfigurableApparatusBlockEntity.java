@@ -17,24 +17,41 @@ import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.ContainerData;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.capabilities.ForgeCapabilities;
 import net.minecraftforge.common.util.LazyOptional;
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.ItemStackHandler;
 import org.jetbrains.annotations.NotNull;
+import org.openjdk.nashorn.api.tree.LoopTree;
+import software.bernie.geckolib3.core.IAnimatable;
+import software.bernie.geckolib3.core.PlayState;
+import software.bernie.geckolib3.core.builder.AnimationBuilder;
+import software.bernie.geckolib3.core.builder.ILoopType;
+import software.bernie.geckolib3.core.controller.AnimationController;
+import software.bernie.geckolib3.core.event.predicate.AnimationEvent;
+import software.bernie.geckolib3.core.manager.AnimationData;
+import software.bernie.geckolib3.core.manager.AnimationFactory;
+import software.bernie.geckolib3.util.GeckoLibUtil;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import java.util.Optional;
 
-public class NatureRealNameReconfigurableApparatusBlockEntity extends ApparatusNameableMenuBlockEntity {
+public class NatureRealNameReconfigurableApparatusBlockEntity extends ApparatusNameableMenuBlockEntity implements IAnimatable {
+
+    private static final BooleanProperty STRUCTURE_COMPOSITION = ApparatusControllerBlock.STRUCTURE_COMPOSITION;
+    private static final BooleanProperty ACTIVE = ApparatusControllerBlock.ACTIVE;
+    private final AnimationFactory manager = GeckoLibUtil.createFactory(this);
 
     public static final Component NAME = OriginalEnhancementMain.getTranslationWay("gui", "nature");
 
     private int progress = 0;
+    private int AnimationProgress = 0;
 
     private int maxProgress = 20 * 100;
 
@@ -48,6 +65,33 @@ public class NatureRealNameReconfigurableApparatusBlockEntity extends ApparatusN
             setChanged();
         }
     };
+
+    private <E extends IAnimatable>PlayState predicate (AnimationEvent<E> event){
+        BlockState state = this.getBlockState();
+
+        AnimationBuilder builder;
+        if (state.getValue(STRUCTURE_COMPOSITION) && !state.getValue(ACTIVE)) {
+            builder = new AnimationBuilder().addAnimation("animation.nature_apparatus_booting", ILoopType.EDefaultLoopTypes.HOLD_ON_LAST_FRAME);
+            this.AnimationProgress++;
+
+            if (AnimationProgress > 13*20){
+                builder = new AnimationBuilder().addAnimation("animation.nature_apparatus_standby", ILoopType.EDefaultLoopTypes.LOOP);
+            }
+
+        }else if (state.getValue(ACTIVE)){
+            builder = new AnimationBuilder().addAnimation("animation.nature_apparatus_activiting", ILoopType.EDefaultLoopTypes.PLAY_ONCE);
+        } else {
+            builder = new AnimationBuilder().addAnimation("animation.nature_apparatus_original", ILoopType.EDefaultLoopTypes.HOLD_ON_LAST_FRAME);
+            this.resetAnimation();
+        }
+
+        event.getController().setAnimation(builder);
+        return PlayState.CONTINUE;
+    }
+
+    private void resetAnimation(){
+        this.AnimationProgress = 0;
+    }
 
     public NatureRealNameReconfigurableApparatusBlockEntity(BlockPos pos, BlockState state){
         this(OEBlockEntities.NATURE_APPARATUS_CONTROLLER_BLOCK_ENTITY.get(), pos, state);
@@ -110,7 +154,7 @@ public class NatureRealNameReconfigurableApparatusBlockEntity extends ApparatusN
 
         Optional<NatureRealNameReconfigurableApparatusRecipes> match = level.getRecipeManager().getRecipeFor(NatureRealNameReconfigurableApparatusRecipes.Type.INSTANCE, inventory, level);
 
-        return match.isPresent() && canInsertAmountIntoOutputSlot3(inventory) && canInsertItemIntoOutputSlot3(inventory, match.get().getResultItem());
+        return match.isPresent() && canInsertAmountIntoOutputSlot3(inventory) && canInsertItemIntoOutputSlot3(inventory, match.get().getResultItem()) && canInsertAmountIntoOutputSlot4(inventory) && canInsertItemIntoOutputSlot4(inventory, match.get().getResultItem());
 
     }
 
@@ -156,9 +200,14 @@ public class NatureRealNameReconfigurableApparatusBlockEntity extends ApparatusN
         return inventory.getItem(4).getItem() == output.getItem() || inventory.getItem(4).isEmpty();
     }
 
-    public static void tick(Level level, BlockPos pos, BlockState state, NatureRealNameReconfigurableApparatusBlockEntity entity) {
 
-        if (hasRecipe(entity)) {
+    public static void tick(Level level, BlockPos pos, BlockState state, NatureRealNameReconfigurableApparatusBlockEntity entity) {
+        BlockPos west = pos.west();
+        BlockPos east = pos.east();
+        BlockState westState = level.getBlockState(west);
+        BlockState eastState = level.getBlockState(east);
+
+        if (hasRecipe(entity) && state.getValue(STRUCTURE_COMPOSITION) && westState.is(Blocks.STONE) && eastState.is(Blocks.DIRT)) {
 
             level.setBlockAndUpdate(pos, state.setValue(ApparatusControllerBlock.ACTIVE, true));
             entity.progress++;
@@ -208,5 +257,15 @@ public class NatureRealNameReconfigurableApparatusBlockEntity extends ApparatusN
     @Override
     public void saveAdditional(@NotNull CompoundTag tag) {
         super.saveAdditional(tag);
+    }
+
+    @Override
+    public void registerControllers(AnimationData data) {
+        data.addAnimationController(new AnimationController(this, "controller", 0, this::predicate));
+    }
+
+    @Override
+    public AnimationFactory getFactory() {
+        return this.manager;
     }
 }

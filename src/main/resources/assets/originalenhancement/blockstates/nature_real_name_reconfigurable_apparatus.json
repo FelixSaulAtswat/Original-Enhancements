@@ -1,0 +1,35 @@
+{
+  "variants": {
+    "facing=north,structure_composition=false": {
+      "model": "originalenhancement:block/apparatus/nature/nature_apparatus_original_geo"
+    },
+    "facing=east,structure_composition=false": {
+      "model": "originalenhancement:block/apparatus/nature/nature_apparatus_original_geo",
+      "y": 90
+    },
+    "facing=south,structure_composition=false": {
+      "model": "originalenhancement:block/apparatus/nature/nature_apparatus_original_geo",
+      "y": 180
+    },
+    "facing=west,structure_composition=false": {
+      "model": "originalenhancement:block/apparatus/nature/nature_apparatus_original_geo",
+      "y": 270
+    },
+
+    "facing=north,structure_composition=true": {
+      "model": "originalenhancement:block/apparatus/nature/nature_apparatus_booting"
+    },
+    "facing=east,structure_composition=true": {
+      "model": "originalenhancement:block/apparatus/nature/nature_apparatus_booting",
+      "y": 90
+    },
+    "facing=south,structure_composition=true": {
+      "model": "originalenhancement:block/apparatus/nature/nature_apparatus_booting",
+      "y": 180
+    },
+    "facing=west,structure_composition=true": {
+      "model": "originalenhancement:block/apparatus/nature/nature_apparatus_booting",
+      "y": 270
+    }
+  }
+}

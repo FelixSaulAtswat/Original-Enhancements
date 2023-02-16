@@ -1,0 +1,14 @@
+{
+  "credit": "Made with Blockbench",
+  "parent": "builtin/entity",
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "particle": "originalenhancement:block/apparatus/nature_apparatus_particle"
+  },
+
+  "texture_size": [
+    128,
+    128
+  ],
+  "display": {}
+}

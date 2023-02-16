@@ -1,5 +1,6 @@
 package io.github.originalenhancementsmain.oeblock.apparatusblock;
 
+import io.github.originalenhancementsmain.oeblock.OEBlocks;
 import io.github.originalenhancementsmain.oeblock.apparatusblock.interfaceprovider.INameableMenuProvider;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerPlayer;
@@ -81,6 +82,9 @@ public abstract class BaseApparatusBlock extends Block implements EntityBlock {
             if (te != null) {
                 te.getCapability(ForgeCapabilities.ITEM_HANDLER).ifPresent(inventory -> dropInventoryItems(state, worldIn, pos, inventory));
                 worldIn.updateNeighbourForOutputSignal(pos, this);
+                if (worldIn.getBlockState(pos.above()).is(OEBlocks.MODEL_PROVIDER_BLOCK.get())){
+                    worldIn.destroyBlock(pos.above(),false);
+                }
             }
         }
 

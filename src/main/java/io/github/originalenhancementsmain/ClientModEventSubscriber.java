@@ -6,6 +6,8 @@ import io.github.originalenhancementsmain.entity.models.DeathKnightModel;
 import io.github.originalenhancementsmain.entity.monster.DeathKnight;
 import io.github.originalenhancementsmain.item.OEItems;
 import io.github.originalenhancementsmain.mobrender.DeathKnightRender;
+import io.github.originalenhancementsmain.oeblock.OEBlockEntities;
+import io.github.originalenhancementsmain.oeblock.blockrenders.NatureApparatusRender;
 import net.minecraft.client.resources.model.BakedModel;
 import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.resources.ResourceLocation;
@@ -34,6 +36,8 @@ public class ClientModEventSubscriber {
     @SubscribeEvent
     public static void onRegisterRenderer(EntityRenderersEvent.RegisterRenderers event) {
         event.registerEntityRenderer(OEEntitiers.DEATH_KNIGHT_IMI.get(), DeathKnightRender::new);
+        event.registerBlockEntityRenderer(OEBlockEntities.NATURE_APPARATUS_CONTROLLER_BLOCK_ENTITY.get(), NatureApparatusRender::new);
+
     }
 
     //Mob's attribute

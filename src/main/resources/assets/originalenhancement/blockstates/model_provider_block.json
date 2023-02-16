@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "originalenhancement:block/model_provider_block"
+    }
+  }
+}

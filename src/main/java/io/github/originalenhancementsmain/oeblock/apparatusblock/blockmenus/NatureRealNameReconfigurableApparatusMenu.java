@@ -19,8 +19,6 @@ import net.minecraftforge.items.SlotItemHandler;
 
 public class NatureRealNameReconfigurableApparatusMenu extends BaseApparatusMenu<NatureRealNameReconfigurableApparatusBlockEntity> {
 
-    public static final ResourceLocation APPARATUS_FORMAT = OriginalEnhancementMain.getLocationResource("nature_apparatus");
-
     @Getter
     public boolean hasCoreSlot = false;
     @Getter

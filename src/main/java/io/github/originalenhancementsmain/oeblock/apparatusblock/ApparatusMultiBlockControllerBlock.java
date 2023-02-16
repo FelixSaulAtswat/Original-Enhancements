@@ -2,6 +2,7 @@ package io.github.originalenhancementsmain.oeblock.apparatusblock;
 
 import io.github.originalenhancementsmain.OriginalEnhancementMain;
 import io.github.originalenhancementsmain.data.tags.OETags;
+import io.github.originalenhancementsmain.oeblock.OEBlocks;
 import io.github.originalenhancementsmain.oeblock.apparatusblock.Components.EnergyConductorBlock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -12,6 +13,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
@@ -30,9 +32,13 @@ public abstract class ApparatusMultiBlockControllerBlock extends ApparatusContro
     @Override
     public BlockState getStateForPlacement(BlockPlaceContext context){
         BlockState state = super.getStateForPlacement(context);
+        Level level = context.getLevel();
+        BlockPos pos = context.getClickedPos();
+        BlockState sideState = level.getBlockState(pos.below());
 
         if (state != null){
-            return state.setValue(STRUCTURE_COMPOSITION, isValidEnergySource(context.getLevel().getBlockState(context.getClickedPos().below())));
+            context.getLevel().setBlock(context.getClickedPos().above(), isValidEnergySource(sideState) ? OEBlocks.MODEL_PROVIDER_BLOCK.get().defaultBlockState() : Blocks.AIR.defaultBlockState(), 3);
+            return state.setValue(STRUCTURE_COMPOSITION, isValidEnergySource(sideState));
         }
         return null;
     }
@@ -41,8 +47,8 @@ public abstract class ApparatusMultiBlockControllerBlock extends ApparatusContro
     @Override
     public BlockState updateShape(BlockState state, Direction direction, BlockState sideState, LevelAccessor levelAccessor, BlockPos pos, BlockPos sidePos) {
         if (direction == Direction.DOWN) {
-                return state.setValue(STRUCTURE_COMPOSITION, isValidEnergySource(sideState));
-
+            levelAccessor.setBlock(pos.above(), isValidEnergySource(sideState) ? OEBlocks.MODEL_PROVIDER_BLOCK.get().defaultBlockState() : Blocks.AIR.defaultBlockState(), 3);
+            return state.setValue(STRUCTURE_COMPOSITION, isValidEnergySource(sideState));
         }
         return state;
     }
