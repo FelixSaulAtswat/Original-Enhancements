@@ -10,29 +10,38 @@ import net.minecraft.world.level.block.Mirror;
 import net.minecraft.world.level.block.Rotation;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
+import net.minecraft.world.level.material.FluidState;
+import net.minecraft.world.level.material.Fluids;
 
 
-public abstract class ApparatusControllerBlock extends BaseApparatusBlock{
+public abstract class ApparatusControllerBlock extends BaseApparatusBlock {
     public static final BooleanProperty STRUCTURE_COMPOSITION = BooleanProperty.create("structure_composition");
     public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
     public static final BooleanProperty ACTIVE = BooleanProperty.create("active");
+    protected static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
 
     protected ApparatusControllerBlock(Properties properties){
         super(properties);
 
-        this.registerDefaultState(this.defaultBlockState().setValue(ACTIVE, false).setValue(STRUCTURE_COMPOSITION, false));
+        this.registerDefaultState(this.defaultBlockState().setValue(ACTIVE, false).setValue(STRUCTURE_COMPOSITION, false).setValue(WATERLOGGED, false));
     }
 
     @Override
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
-        builder.add(FACING, ACTIVE, STRUCTURE_COMPOSITION);
+        builder.add(FACING, ACTIVE, STRUCTURE_COMPOSITION, WATERLOGGED);
     }
 
     @Override
     public BlockState getStateForPlacement(BlockPlaceContext context){
         return this.defaultBlockState().setValue(FACING, context.getHorizontalDirection().getOpposite());
+    }
+
+    @Override
+    public FluidState getFluidState(BlockState state) {
+        return state.getValue(WATERLOGGED) ? Fluids.WATER.getSource(false) : super.getFluidState(state);
     }
 
     @SuppressWarnings("deprecation")
@@ -50,7 +59,7 @@ public abstract class ApparatusControllerBlock extends BaseApparatusBlock{
     }
 
     protected boolean canClickToOpen(BlockState state){
-        return  state.getValue(STRUCTURE_COMPOSITION);
+        return  state.getValue(STRUCTURE_COMPOSITION) && !state.getValue(WATERLOGGED);
     }
 
     protected boolean showStatus(BlockState state, BlockPos pos, Level level, Player player){

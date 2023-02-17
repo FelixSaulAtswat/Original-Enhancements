@@ -42,5 +42,6 @@
 
   "gui.originalenhancement.nature": "自然真名再构仪",
 
-  "multiblock.originalenhancement.apparatus.can_not_detection_structure": "仪器缺少正确的能量来源"
+  "multiblock.originalenhancement.apparatus.can_not_detection_structure": "仪器缺少正确的能量来源",
+  "multiblock.originalenhancement.apparatus.do_not_placed_in_water": "仪器的内部空间似乎被水填满了"
 }

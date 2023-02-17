@@ -4,28 +4,36 @@ import io.github.originalenhancementsmain.oeblock.OEBlocks;
 import io.github.originalenhancementsmain.oeblock.apparatusblock.ApparatusControllerBlock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.SimpleWaterloggedBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
+import net.minecraft.world.level.material.FluidState;
+import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
-public class ModelProviderBlock extends Block {
+public class ModelProviderBlock extends Block implements SimpleWaterloggedBlock {
 
     public static final BooleanProperty NATURE = BooleanProperty.create("nature");
+    private static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
+
 
     public ModelProviderBlock(Properties properties){
         super(properties);
-        this.registerDefaultState(this.getStateDefinition().any().setValue(NATURE, false));
+        this.registerDefaultState(this.getStateDefinition().any().setValue(NATURE, false).setValue(WATERLOGGED, false));
     }
 
     @Override
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
-        builder.add(NATURE);
+        builder.add(NATURE, WATERLOGGED);
     }
 
     protected VoxelShape ORIGINAL = box(0.0d, 0.0d, 0.0d, 16.0d, 16.0d, 16.0d);
@@ -80,6 +88,14 @@ public class ModelProviderBlock extends Block {
         return shape;
     }
 
+    public BlockState getStateForPlacement(BlockPlaceContext context) {
+        Level level = context.getLevel();
+        FluidState fluidState = level.getFluidState(context.getClickedPos());
+
+
+        return this.defaultBlockState().setValue(WATERLOGGED, fluidState.getType() == Fluids.WATER);
+    }
+
     private boolean checkAndUpdate(LevelAccessor level, BlockPos pos, Block block, BooleanProperty property){
         BlockState state = level.getBlockState(pos);
 
@@ -87,7 +103,13 @@ public class ModelProviderBlock extends Block {
     }
 
     @Override
+    public FluidState getFluidState(BlockState state) {
+        return state.getValue(WATERLOGGED) ? Fluids.WATER.getSource(false) : super.getFluidState(state);
+    }
+
+    @Override
     public BlockState updateShape(BlockState state, Direction direction, BlockState sideState, LevelAccessor levelAccessor, BlockPos pos, BlockPos sidePos){
-            return state.setValue(NATURE, checkAndUpdate(levelAccessor, pos.below(), OEBlocks.NATURE_REAL_NAME_RECONFIGURABLE_APPARATUS_BLOCK.get(), ApparatusControllerBlock.STRUCTURE_COMPOSITION));
+        if (state.getValue(WATERLOGGED)) levelAccessor.scheduleTick(pos, Fluids.WATER, Fluids.WATER.getTickDelay(levelAccessor));
+        return state.setValue(NATURE, checkAndUpdate(levelAccessor, pos.below(), OEBlocks.NATURE_REAL_NAME_RECONFIGURABLE_APPARATUS_BLOCK.get(), ApparatusControllerBlock.STRUCTURE_COMPOSITION));
     }
 }

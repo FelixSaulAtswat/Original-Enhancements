@@ -9,18 +9,24 @@ import net.minecraft.core.Direction;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.material.FluidState;
+import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.BlockHitResult;
+import org.jetbrains.annotations.Nullable;
 
 public abstract class ApparatusMultiBlockControllerBlock extends ApparatusControllerBlock {
 
     private static final Component CAN_NOT_DETECTION_STRUCTURE = OriginalEnhancementMain.getTranslationWay("multiblock", "apparatus.can_not_detection_structure");
+    private static final Component DO_NOT_PLACED_IN_WATER = OriginalEnhancementMain.getTranslationWay("multiblock", "apparatus.do_not_placed_in_water");
 
     protected ApparatusMultiBlockControllerBlock(Properties properties){
         super(properties);
@@ -33,15 +39,26 @@ public abstract class ApparatusMultiBlockControllerBlock extends ApparatusContro
     public BlockState getStateForPlacement(BlockPlaceContext context){
         BlockState state = super.getStateForPlacement(context);
         Level level = context.getLevel();
-        BlockPos pos = context.getClickedPos();
-        BlockState sideState = level.getBlockState(pos.below());
+        BlockState sideState = level.getBlockState(context.getClickedPos().below());
+        FluidState fluidState = level.getFluidState(context.getClickedPos());
 
         if (state != null){
-            context.getLevel().setBlock(context.getClickedPos().above(), isValidEnergySource(sideState) ? OEBlocks.MODEL_PROVIDER_BLOCK.get().defaultBlockState() : Blocks.AIR.defaultBlockState(), 3);
-            return state.setValue(STRUCTURE_COMPOSITION, isValidEnergySource(sideState));
+            return state.setValue(STRUCTURE_COMPOSITION, isValidEnergySource(sideState)).setValue(WATERLOGGED, fluidState.getType() == Fluids.WATER);
         }
+
         return null;
     }
+
+    @Override
+    public void setPlacedBy(Level level, BlockPos pos, BlockState state, @Nullable LivingEntity placer, ItemStack stack) {
+        if (!level.isClientSide()) {
+            BlockState downState = level.getBlockState(pos.below());
+
+            if (isValidEnergySource(downState)){
+                level.setBlock(pos.above(), OEBlocks.MODEL_PROVIDER_BLOCK.get().defaultBlockState(), 3);
+            }
+            }
+        }
 
     @SuppressWarnings("deprecation")
     @Override
@@ -50,6 +67,7 @@ public abstract class ApparatusMultiBlockControllerBlock extends ApparatusContro
             levelAccessor.setBlock(pos.above(), isValidEnergySource(sideState) ? OEBlocks.MODEL_PROVIDER_BLOCK.get().defaultBlockState() : Blocks.AIR.defaultBlockState(), 3);
             return state.setValue(STRUCTURE_COMPOSITION, isValidEnergySource(sideState));
         }
+        if (state.getValue(WATERLOGGED)) levelAccessor.scheduleTick(pos, Fluids.WATER, Fluids.WATER.getTickDelay(levelAccessor));
         return state;
     }
 
@@ -68,8 +86,13 @@ public abstract class ApparatusMultiBlockControllerBlock extends ApparatusContro
 
     @Override
     protected boolean showStatus(BlockState state, BlockPos pos, Level world, Player player) {
-        if (!world.isClientSide && !state.getValue(STRUCTURE_COMPOSITION)) {
-            player.displayClientMessage(CAN_NOT_DETECTION_STRUCTURE, true);
+        if (!world.isClientSide) {
+            if (!state.getValue(STRUCTURE_COMPOSITION)) {
+                player.displayClientMessage(CAN_NOT_DETECTION_STRUCTURE, true);
+            }
+            if (state.getValue(WATERLOGGED) && state.getValue(STRUCTURE_COMPOSITION)){
+                player.displayClientMessage(DO_NOT_PLACED_IN_WATER, true);
+            }
         }
         return true;
     }

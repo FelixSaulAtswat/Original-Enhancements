@@ -44,5 +44,6 @@
 
   "gui.originalenhancement.nature": "Nature Real Name Reconfigurable Apparatus",
 
-  "multiblock.originalenhancement.apparatus.can_not_detection_structure": "The apparatus lacks the correct source of energy"
+  "multiblock.originalenhancement.apparatus.can_not_detection_structure": "The apparatus lacks the correct source of energy",
+  "multiblock.originalenhancement.apparatus.do_not_placed_in_water": "The interior space of the apparatus seems to be filled with water"
 }

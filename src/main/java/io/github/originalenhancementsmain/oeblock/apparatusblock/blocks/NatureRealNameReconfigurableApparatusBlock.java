@@ -15,6 +15,7 @@ import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.RenderShape;
+import net.minecraft.world.level.block.SimpleWaterloggedBlock;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityTicker;
 import net.minecraft.world.level.block.entity.BlockEntityType;
@@ -25,7 +26,7 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 
 import javax.annotation.Nullable;
 
-public class NatureRealNameReconfigurableApparatusBlock extends ApparatusMultiBlockControllerBlock {
+public class NatureRealNameReconfigurableApparatusBlock extends ApparatusMultiBlockControllerBlock implements SimpleWaterloggedBlock {
 
     protected VoxelShape OGLDown1 = box(3.0d, 0.0d, 3.0d, 13.0d, 1.0d, 13.0d);
     protected VoxelShape OGLDown2 = box(5.0d, 1.0d, 5.0d, 11.0d, 2.0d, 11.0d);
