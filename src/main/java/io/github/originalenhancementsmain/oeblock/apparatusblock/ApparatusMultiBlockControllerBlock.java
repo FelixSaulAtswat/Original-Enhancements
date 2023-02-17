@@ -4,6 +4,7 @@ import io.github.originalenhancementsmain.OriginalEnhancementMain;
 import io.github.originalenhancementsmain.data.tags.OETags;
 import io.github.originalenhancementsmain.oeblock.OEBlocks;
 import io.github.originalenhancementsmain.oeblock.apparatusblock.Components.EnergyConductorBlock;
+import lombok.Getter;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.network.chat.Component;
@@ -22,6 +23,8 @@ import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.BlockHitResult;
 import org.jetbrains.annotations.Nullable;
+
+import java.util.Random;
 
 public abstract class ApparatusMultiBlockControllerBlock extends ApparatusControllerBlock {
 

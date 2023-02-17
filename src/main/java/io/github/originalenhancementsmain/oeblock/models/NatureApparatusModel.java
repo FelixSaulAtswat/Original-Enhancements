@@ -35,8 +35,19 @@ public class NatureApparatusModel extends AnimatedGeoModel<NatureRealNameReconfi
     public ResourceLocation getAnimationResource(NatureRealNameReconfigurableApparatusBlockEntity animatable) {
         BlockState state = animatable.getBlockState();
 
-        if (state.getValue(STRUCTURE_COMPOSITION)) {
+
+        if (state.getValue(STRUCTURE_COMPOSITION) && !state.getValue(ApparatusControllerBlock.ACTIVE)) {
             return OriginalEnhancementMain.getLocationResource("animations/nature_apparatus_booting.animation.json");
+        }
+        if (state.getValue(ApparatusControllerBlock.ACTIVE)) {
+
+            if (NatureRealNameReconfigurableApparatusBlockEntity.animatables == 1) {
+                return OriginalEnhancementMain.getLocationResource("animations/nature_apparatus_activating1.animation.json");
+            } else if (NatureRealNameReconfigurableApparatusBlockEntity.animatables == 2) {
+                return OriginalEnhancementMain.getLocationResource("animations/nature_apparatus_activating2.animation.json");
+            } else if (NatureRealNameReconfigurableApparatusBlockEntity.animatables == 3) {
+                return OriginalEnhancementMain.getLocationResource("animations/nature_apparatus_activating3.animation.json");
+            }
         }
         return OriginalEnhancementMain.getLocationResource("animations/nature_apparatus_original.animation.json");
     }

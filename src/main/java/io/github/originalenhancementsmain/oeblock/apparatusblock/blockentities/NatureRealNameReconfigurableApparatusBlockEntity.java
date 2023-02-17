@@ -41,6 +41,7 @@ import software.bernie.geckolib3.util.GeckoLibUtil;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import java.util.Optional;
+import java.util.Random;
 
 public class NatureRealNameReconfigurableApparatusBlockEntity extends ApparatusNameableMenuBlockEntity implements IAnimatable {
 
@@ -49,6 +50,10 @@ public class NatureRealNameReconfigurableApparatusBlockEntity extends ApparatusN
     private final AnimationFactory manager = GeckoLibUtil.createFactory(this);
 
     public static final Component NAME = OriginalEnhancementMain.getTranslationWay("gui", "nature");
+
+    private static boolean canChangeAnimatables = true;
+
+    public static int animatables = 0;
 
     private int progress = 0;
     private int AnimationProgress = 0;
@@ -69,7 +74,7 @@ public class NatureRealNameReconfigurableApparatusBlockEntity extends ApparatusN
     private <E extends IAnimatable>PlayState predicate (AnimationEvent<E> event){
         BlockState state = this.getBlockState();
 
-        AnimationBuilder builder;
+        AnimationBuilder builder = new AnimationBuilder();
         if (state.getValue(STRUCTURE_COMPOSITION) && !state.getValue(ACTIVE)) {
             builder = new AnimationBuilder().addAnimation("animation.nature_apparatus_booting", ILoopType.EDefaultLoopTypes.HOLD_ON_LAST_FRAME);
             this.AnimationProgress++;
@@ -79,7 +84,7 @@ public class NatureRealNameReconfigurableApparatusBlockEntity extends ApparatusN
             }
 
         }else if (state.getValue(ACTIVE)){
-            builder = new AnimationBuilder().addAnimation("animation.nature_apparatus_activiting", ILoopType.EDefaultLoopTypes.PLAY_ONCE);
+                builder = new AnimationBuilder().addAnimation("animation.nature_apparatus_activating", ILoopType.EDefaultLoopTypes.PLAY_ONCE);
         } else {
             builder = new AnimationBuilder().addAnimation("animation.nature_apparatus_original", ILoopType.EDefaultLoopTypes.HOLD_ON_LAST_FRAME);
             this.resetAnimation();
@@ -200,7 +205,6 @@ public class NatureRealNameReconfigurableApparatusBlockEntity extends ApparatusN
         return inventory.getItem(4).getItem() == output.getItem() || inventory.getItem(4).isEmpty();
     }
 
-
     public static void tick(Level level, BlockPos pos, BlockState state, NatureRealNameReconfigurableApparatusBlockEntity entity) {
         BlockPos west = pos.west();
         BlockPos east = pos.east();
@@ -209,11 +213,17 @@ public class NatureRealNameReconfigurableApparatusBlockEntity extends ApparatusN
 
         if (hasRecipe(entity) && state.getValue(STRUCTURE_COMPOSITION) && westState.is(Blocks.STONE) && eastState.is(Blocks.DIRT)) {
 
+            if (canChangeAnimatables){
+                Random random = new Random();
+                animatables = random.nextInt(3) + 1;
+                canChangeAnimatables = false;
+            }
             level.setBlockAndUpdate(pos, state.setValue(ApparatusControllerBlock.ACTIVE, true));
             entity.progress++;
             setChanged(level, pos, state);
             if (entity.progress > entity.maxProgress) {
                 materialItem(entity);
+                canChangeAnimatables = true;
             }
         } else {
 

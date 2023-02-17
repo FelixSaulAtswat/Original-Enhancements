@@ -7,6 +7,7 @@ import io.github.originalenhancementsmain.oeblock.OEBlocks;
 import io.github.originalenhancementsmain.oeblock.apparatusblock.ApparatusMultiBlockControllerBlock;
 import io.github.originalenhancementsmain.oeblock.apparatusblock.blockentities.NatureRealNameReconfigurableApparatusBlockEntity;
 import io.github.originalenhancementsmain.oeblock.blocks.ModelProviderBlock;
+import lombok.Getter;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.entity.LivingEntity;
@@ -34,18 +35,16 @@ public class NatureRealNameReconfigurableApparatusBlock extends ApparatusMultiBl
 
     protected VoxelShape ORIGINAL_SHAPE = Shapes.or(ODLMain, OGLDown1, OGLDown2);
 
-    protected VoxelShape core1 = box(2.0d, 2.0d, 2.0d, 14.0d, 3.0d, 14.0d);
-    protected VoxelShape core2 = box(3.5d, 2.75d, 3.5d, 12.5d, 3.25d, 12.5d);
-    protected VoxelShape core3 = box(5.0d, 4.25d, 5.0d, 11.0d, 5.75d, 11.0d);
-    protected VoxelShape core4 = box(6.5d, 5.75d, 6.5d, 9.5d, 10.25d, 9.5d);
-    protected VoxelShape core5 = box(5.75d, 10.25d, 5.75d, 10.25d, 11.0d, 10.25d);
-    protected VoxelShape core6 = box(6.5d, 11.0d, 5.75d, 9.5d, 11.75d, 6.5d);
-    protected VoxelShape core7 = box(5.75d, 11.0d, 5.75d, 6.5d, 11.75d, 10.25d);
-    protected VoxelShape core8 = box(6.5d, 11.0d, 9.5d, 9.5d, 11.75d, 10.25d);
-    protected VoxelShape core9 = box(9.5d, 11.0d, 5.75d, 10.25d, 11.75d, 10.25d);
-    protected VoxelShape core10 = box(7.25d, 11.0d, 7.25d, 8.75d, 14.0d, 8.75d);
-
-
+    protected VoxelShape core1 = box(2.0d, 2.0d + 0.15d, 2.0d, 14.0d, 3.0d - 0.28d, 14.0d);
+    protected VoxelShape core2 = box(3.5d, 2.25d, 3.5d, 12.5d, 4.2d, 12.5d);
+    protected VoxelShape core3 = box(5.0d, 4.25d - 0.08d, 5.0d, 11.0d, 5.75d - 0.05d, 11.0d);
+    protected VoxelShape core4 = box(6.5d, 5.75d - 0.05d, 6.5d, 9.5d, 10.25d - 0.05d, 9.5d);
+    protected VoxelShape core5 = box(5.75d, 10.25d - 0.05d, 5.75d, 10.25d, 11.0d - 0.05d, 10.25d);
+    protected VoxelShape core6 = box(6.5d, 11.0d - 0.05d, 5.75d, 9.5d, 11.75d - 0.05d, 6.5d);
+    protected VoxelShape core7 = box(5.75d, 11.0d - 0.05d, 5.75d, 6.5d, 11.75d - 0.05d, 10.25d);
+    protected VoxelShape core8 = box(6.5d, 11.0d - 0.05d, 9.5d, 9.5d, 11.75d - 0.05d, 10.25d);
+    protected VoxelShape core9 = box(9.5d, 11.0d - 0.05d, 5.75d, 10.25d, 11.75d - 0.05d, 10.25d);
+    protected VoxelShape core10 = box(7.25d, 11.0d - 0.05d, 7.25d, 8.75d, 14.0d - 0.05d, 8.75d);
 
     protected VoxelShape BOOTING_SHAPE = Shapes.or(OGLDown1, OGLDown2, core1, core2, core3, core4, core5, core6, core7, core8, core9, core10);
 

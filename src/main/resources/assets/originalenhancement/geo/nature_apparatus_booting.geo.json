@@ -4901,6 +4901,105 @@
 							}
 						}
 					]
+				},
+				{
+					"name": "runes",
+					"pivot": [-10, 7, 0]
+				},
+				{
+					"name": "1",
+					"parent": "runes",
+					"pivot": [3.5, 7, 0],
+					"cubes": [
+						{
+							"origin": [5, 7, 0],
+							"size": [0, 0.2, 0.2],
+							"uv": {
+								"north": {"uv": [0, 0], "uv_size": [0, 2]},
+								"east": {"uv": [75, 5.75], "uv_size": [2, 2]},
+								"south": {"uv": [0, 0], "uv_size": [0, 2]},
+								"west": {"uv": [77, 5.75], "uv_size": [-2, 2]},
+								"up": {"uv": [0, 0], "uv_size": [0, 2]},
+								"down": {"uv": [0, 2], "uv_size": [0, -2]}
+							}
+						}
+					]
+				},
+				{
+					"name": "2",
+					"parent": "runes",
+					"pivot": [3.5, 7, 0],
+					"cubes": [
+						{
+							"origin": [5, 7, 0],
+							"size": [0, 0.2, 0.2],
+							"uv": {
+								"north": {"uv": [0, 0], "uv_size": [0, 2]},
+								"east": {"uv": [75, 8], "uv_size": [2, 2]},
+								"south": {"uv": [0, 0], "uv_size": [0, 2]},
+								"west": {"uv": [10, 75], "uv_size": [2, 2]},
+								"up": {"uv": [0, 0], "uv_size": [0, 2]},
+								"down": {"uv": [0, 2], "uv_size": [0, -2]}
+							}
+						}
+					]
+				},
+				{
+					"name": "3",
+					"parent": "runes",
+					"pivot": [3.5, 7, 0],
+					"cubes": [
+						{
+							"origin": [5, 7, 0],
+							"size": [0, 0.2, 0.2],
+							"uv": {
+								"north": {"uv": [0, 0], "uv_size": [0, 2]},
+								"east": {"uv": [5, 75], "uv_size": [2, 2]},
+								"south": {"uv": [0, 0], "uv_size": [0, 2]},
+								"west": {"uv": [75, 19], "uv_size": [2, 2]},
+								"up": {"uv": [0, 0], "uv_size": [0, 2]},
+								"down": {"uv": [0, 2], "uv_size": [0, -2]}
+							}
+						}
+					]
+				},
+				{
+					"name": "4",
+					"parent": "runes",
+					"pivot": [3.5, 7, 0],
+					"cubes": [
+						{
+							"origin": [5, 7, 0],
+							"size": [0, 0.2, 0.2],
+							"uv": {
+								"north": {"uv": [0, 0], "uv_size": [0, 2]},
+								"east": {"uv": [21, 75], "uv_size": [2, 2]},
+								"south": {"uv": [0, 0], "uv_size": [0, 2]},
+								"west": {"uv": [75, 21], "uv_size": [2, 2]},
+								"up": {"uv": [0, 0], "uv_size": [0, 2]},
+								"down": {"uv": [0, 2], "uv_size": [0, -2]}
+							}
+						}
+					]
+				},
+				{
+					"name": "5",
+					"parent": "runes",
+					"pivot": [3.5, 7, 0],
+					"cubes": [
+						{
+							"origin": [5, 7, 0],
+							"size": [0, 0.2, 0.2],
+							"uv": {
+								"north": {"uv": [0, 0], "uv_size": [0, 2]},
+								"east": {"uv": [23, 75], "uv_size": [2, 2]},
+								"south": {"uv": [0, 0], "uv_size": [0, 2]},
+								"west": {"uv": [75, 23], "uv_size": [2, 2]},
+								"up": {"uv": [0, 0], "uv_size": [0, 2]},
+								"down": {"uv": [0, 2], "uv_size": [0, -2]}
+							}
+						}
+					]
 				}
 			]
 		}
