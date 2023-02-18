@@ -10,6 +10,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.SimpleContainer;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
@@ -64,7 +65,7 @@ public class NatureRealNameReconfigurableApparatusBlockEntity extends ApparatusN
 
     private LazyOptional<IItemHandler> lazyItemHandler = LazyOptional.empty();
 
-    private final ItemStackHandler itemHandler = new ItemStackHandler(5){
+    public final ItemStackHandler itemHandler = new ItemStackHandler(5){
         @Override
         protected void onContentsChanged(int slot) {
             setChanged();
@@ -104,6 +105,8 @@ public class NatureRealNameReconfigurableApparatusBlockEntity extends ApparatusN
 
     protected NatureRealNameReconfigurableApparatusBlockEntity(BlockEntityType<?> type, BlockPos pos, BlockState state){
         super(type, pos, state, NAME);
+
+
 
         this.data = new ContainerData() {
 

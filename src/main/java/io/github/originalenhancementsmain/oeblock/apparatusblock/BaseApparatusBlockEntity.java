@@ -1,15 +1,19 @@
 package io.github.originalenhancementsmain.oeblock.apparatusblock;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.NonNullList;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
+import net.minecraft.world.Container;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 
 import javax.annotation.Nullable;
 
-public class BaseApparatusBlockEntity extends BlockEntity {
+public class BaseApparatusBlockEntity extends BlockEntity{
 
     public BaseApparatusBlockEntity(BlockEntityType<?> entityType, BlockPos pos, BlockState state){
         super(entityType, pos, state);

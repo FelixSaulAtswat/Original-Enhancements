@@ -10,6 +10,8 @@ import io.github.originalenhancementsmain.item.OEItems;
 import io.github.originalenhancementsmain.oeblock.OEBlockEntities;
 import io.github.originalenhancementsmain.oeblock.OEBlocks;
 import io.github.originalenhancementsmain.oeblock.apparatusblock.OEMenus;
+import io.github.originalenhancementsmain.oeblock.apparatusblock.blockentities.NatureRealNameReconfigurableApparatusBlockEntity;
+import io.github.originalenhancementsmain.oeblock.blockrenders.NatureApparatusRender;
 import io.github.originalenhancementsmain.recipe.OERecipeTypes;
 import io.github.originalenhancementsmain.recipe.OERecipes;
 import net.minecraft.client.gui.screens.MenuScreens;
@@ -22,6 +24,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.client.RenderTypeHelper;
+import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -88,7 +91,11 @@ public class OriginalEnhancementMain {
     //Register screen
     private void clientSetup(final FMLClientSetupEvent event){
         MenuScreens.register(OEMenus.NATURE_APPARATUS_MENU.get(), NatureApparatusScreen :: new);
+    }
 
+    @SubscribeEvent
+    static void registerRenderers(EntityRenderersEvent.RegisterRenderers event){
+        event.registerBlockEntityRenderer(OEBlockEntities.NATURE_APPARATUS_CONTROLLER_BLOCK_ENTITY.get(), NatureApparatusRender::new);
     }
 
     public static ResourceLocation getLocationResource(String name){
