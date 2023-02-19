@@ -1,16 +1,18 @@
 package io.github.originalenhancementsmain.oeblock.apparatusblock.blockentities;
 
 import io.github.originalenhancementsmain.OriginalEnhancementMain;
+import io.github.originalenhancementsmain.data.util.Util;
 import io.github.originalenhancementsmain.oeblock.OEBlockEntities;
 import io.github.originalenhancementsmain.oeblock.apparatusblock.ApparatusControllerBlock;
 import io.github.originalenhancementsmain.oeblock.apparatusblock.ApparatusNameableMenuBlockEntity;
+import io.github.originalenhancementsmain.oeblock.apparatusblock.ConverterBlockEntity;
 import io.github.originalenhancementsmain.oeblock.apparatusblock.blockmenus.NatureRealNameReconfigurableApparatusMenu;
+import io.github.originalenhancementsmain.recipe.OERecipeTypes;
 import io.github.originalenhancementsmain.recipe.apparatusrecipes.NatureRealNameReconfigurableApparatusRecipes;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
-import net.minecraft.util.RandomSource;
 import net.minecraft.world.SimpleContainer;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
@@ -18,7 +20,7 @@ import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.ContainerData;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
@@ -28,7 +30,6 @@ import net.minecraftforge.common.util.LazyOptional;
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.ItemStackHandler;
 import org.jetbrains.annotations.NotNull;
-import org.openjdk.nashorn.api.tree.LoopTree;
 import software.bernie.geckolib3.core.IAnimatable;
 import software.bernie.geckolib3.core.PlayState;
 import software.bernie.geckolib3.core.builder.AnimationBuilder;
@@ -65,7 +66,7 @@ public class NatureRealNameReconfigurableApparatusBlockEntity extends ApparatusN
 
     private LazyOptional<IItemHandler> lazyItemHandler = LazyOptional.empty();
 
-    public final ItemStackHandler itemHandler = new ItemStackHandler(5){
+    public final ItemStackHandler itemHandler = new ItemStackHandler(3){
         @Override
         protected void onContentsChanged(int slot) {
             setChanged();
@@ -75,7 +76,8 @@ public class NatureRealNameReconfigurableApparatusBlockEntity extends ApparatusN
     private <E extends IAnimatable>PlayState predicate (AnimationEvent<E> event){
         BlockState state = this.getBlockState();
 
-        AnimationBuilder builder = new AnimationBuilder();
+        new AnimationBuilder();
+        AnimationBuilder builder;
         if (state.getValue(STRUCTURE_COMPOSITION) && !state.getValue(ACTIVE)) {
             builder = new AnimationBuilder().addAnimation("animation.nature_apparatus_booting", ILoopType.EDefaultLoopTypes.HOLD_ON_LAST_FRAME);
             this.AnimationProgress++;
@@ -149,72 +151,85 @@ public class NatureRealNameReconfigurableApparatusBlockEntity extends ApparatusN
         return super.getCapability(capability, side);
     }
 
-    public void neighborChanged(Direction direction){}
-
     private static boolean hasRecipe(NatureRealNameReconfigurableApparatusBlockEntity entity) {
         Level level = entity.level;
-        SimpleContainer inventory = new SimpleContainer(entity.itemHandler.getSlots());
+        BlockEntity leftEntity = Util.getSideBlockEntity(Util.LEFT, entity);
+        BlockEntity rightEntity = Util.getSideBlockEntity(Util.RIGHT, entity);
 
-        for (int i = 0; i < entity.itemHandler.getSlots(); i++) {
-            inventory.setItem(i, entity.itemHandler.getStackInSlot(i));
+        if (leftEntity instanceof ConverterBlockEntity && rightEntity instanceof ConverterBlockEntity) {
+
+            SimpleContainer inventory = new SimpleContainer(entity.itemHandler.getSlots() + 2);
+
+            inventory.setItem(0, ((ConverterBlockEntity) leftEntity).getItemHandler().getStackInSlot(0));
+            inventory.setItem(1, ((ConverterBlockEntity) rightEntity).getItemHandler().getStackInSlot(0));
+            inventory.setItem(2, entity.itemHandler.getStackInSlot(0));
+            inventory.setItem(3, entity.itemHandler.getStackInSlot(1));
+            inventory.setItem(4, entity.itemHandler.getStackInSlot(2));
+
+
+            Optional<NatureRealNameReconfigurableApparatusRecipes> match = level.getRecipeManager().getRecipeFor(OERecipeTypes.NATURE_APPARATUS_RECIPE.get(), inventory, level);
+
+            return match.isPresent() && canInsertItemIntoOutputSlot1(inventory, match.get().getResultItem()) && canInsertAmountIntoOutputSlot1(inventory)
+                    && canInsertAmountIntoOutputSlot2(inventory) && canInsertItemIntoOutputSlot2(inventory, match.get().getResultItem());
         }
-
-
-        Optional<NatureRealNameReconfigurableApparatusRecipes> match = level.getRecipeManager().getRecipeFor(NatureRealNameReconfigurableApparatusRecipes.Type.INSTANCE, inventory, level);
-
-        return match.isPresent() && canInsertAmountIntoOutputSlot3(inventory) && canInsertItemIntoOutputSlot3(inventory, match.get().getResultItem()) && canInsertAmountIntoOutputSlot4(inventory) && canInsertItemIntoOutputSlot4(inventory, match.get().getResultItem());
-
+        return false;
     }
 
     private static void materialItem(NatureRealNameReconfigurableApparatusBlockEntity entity){
         Level level = entity.level;
-        SimpleContainer inventory = new SimpleContainer(entity.itemHandler.getSlots());
+        BlockEntity leftEntity = Util.getSideBlockEntity(Util.LEFT,entity);
+        BlockEntity rightEntity = Util.getSideBlockEntity(Util.RIGHT,entity);
+        if (leftEntity instanceof ConverterBlockEntity && rightEntity instanceof ConverterBlockEntity) {
 
-        for (int i = 0; i < entity.itemHandler.getSlots(); i++) {
-            inventory.setItem(i, entity.itemHandler.getStackInSlot(i));
-        }
 
-        Optional<NatureRealNameReconfigurableApparatusRecipes> match = level.getRecipeManager().getRecipeFor(NatureRealNameReconfigurableApparatusRecipes.Type.INSTANCE, inventory, level);
-        if (match.isPresent()){
-            entity.itemHandler.extractItem(0, 1, false);
-            entity.itemHandler.extractItem(1, 1, false);
-            entity.itemHandler.extractItem(2, 1, false);
+            SimpleContainer inventory = new SimpleContainer(entity.itemHandler.getSlots() + 2);
 
-            entity.itemHandler.setStackInSlot(3, new ItemStack(match.get().getResultItem().getItem(),
-                    entity.itemHandler.getStackInSlot(3).getCount() + 1));
-            entity.itemHandler.setStackInSlot(4, new ItemStack(match.get().getResultItem().getItem(),
-                    entity.itemHandler.getStackInSlot(4).getCount() + 1));
-            entity.resetProgress();
+            inventory.setItem(0, ((ConverterBlockEntity) leftEntity).getItemHandler().getStackInSlot(0));
+            inventory.setItem(1, ((ConverterBlockEntity) rightEntity).getItemHandler().getStackInSlot(0));
+            inventory.setItem(2, entity.itemHandler.getStackInSlot(0));
+            inventory.setItem(3, entity.itemHandler.getStackInSlot(1));
+            inventory.setItem(4, entity.itemHandler.getStackInSlot(2));
+
+            Optional<NatureRealNameReconfigurableApparatusRecipes> match = level.getRecipeManager().getRecipeFor(OERecipeTypes.NATURE_APPARATUS_RECIPE.get(), inventory, level);
+
+            if (match.isPresent()) {
+                entity.itemHandler.extractItem(0, 1, false);
+                ((ConverterBlockEntity) leftEntity).getItemHandler().extractItem(0, 1, false);
+                ((ConverterBlockEntity) rightEntity).getItemHandler().extractItem(0, 1, false);
+
+                entity.itemHandler.setStackInSlot(1, new ItemStack(match.get().getResultItem().getItem(),
+                        entity.itemHandler.getStackInSlot(1).getCount() + 1));
+                entity.itemHandler.setStackInSlot(2, new ItemStack(match.get().getResultItem().getItem(),
+                        entity.itemHandler.getStackInSlot(2).getCount() + 1));
+                entity.resetProgress();
+            }
         }
     }
+
 
     private void resetProgress() {
         this.progress = 0;
     }
 
-    private static boolean canInsertAmountIntoOutputSlot3(SimpleContainer inventory) {
+    private static boolean canInsertAmountIntoOutputSlot1(SimpleContainer inventory) {
         return inventory.getItem(3).getMaxStackSize() > inventory.getItem(3).getCount();
     }
 
-    private static boolean canInsertItemIntoOutputSlot3(SimpleContainer inventory, ItemStack output) {
+    private static boolean canInsertItemIntoOutputSlot1(SimpleContainer inventory, ItemStack output) {
         return inventory.getItem(3).getItem() == output.getItem() || inventory.getItem(3).isEmpty();
     }
 
-    private static boolean canInsertAmountIntoOutputSlot4(SimpleContainer inventory) {
+    private static boolean canInsertAmountIntoOutputSlot2(SimpleContainer inventory) {
         return inventory.getItem(4).getMaxStackSize() > inventory.getItem(4).getCount();
     }
 
-    private static boolean canInsertItemIntoOutputSlot4(SimpleContainer inventory, ItemStack output) {
+    private static boolean canInsertItemIntoOutputSlot2(SimpleContainer inventory, ItemStack output) {
         return inventory.getItem(4).getItem() == output.getItem() || inventory.getItem(4).isEmpty();
     }
 
     public static void tick(Level level, BlockPos pos, BlockState state, NatureRealNameReconfigurableApparatusBlockEntity entity) {
-        BlockPos west = pos.west();
-        BlockPos east = pos.east();
-        BlockState westState = level.getBlockState(west);
-        BlockState eastState = level.getBlockState(east);
 
-        if (hasRecipe(entity) && state.getValue(STRUCTURE_COMPOSITION) && westState.is(Blocks.STONE) && eastState.is(Blocks.DIRT)) {
+        if (hasRecipe(entity) && state.getValue(STRUCTURE_COMPOSITION)) {
 
             if (canChangeAnimatables){
                 Random random = new Random();

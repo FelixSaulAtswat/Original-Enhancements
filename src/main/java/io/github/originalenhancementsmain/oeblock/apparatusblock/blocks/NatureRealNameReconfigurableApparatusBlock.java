@@ -35,7 +35,7 @@ public class NatureRealNameReconfigurableApparatusBlock extends ApparatusMultiBl
 
     protected VoxelShape ORIGINAL_SHAPE = Shapes.or(ODLMain, OGLDown1, OGLDown2);
 
-    protected VoxelShape core1 = box(2.0d, 2.0d + 0.15d, 2.0d, 14.0d, 3.0d - 0.28d, 14.0d);
+    protected VoxelShape core1 = box(2.0d, 2.0d + 0.05d, 2.0d, 14.0d, 3.0d - 0.28d, 14.0d);
     protected VoxelShape core2 = box(3.5d, 2.15d, 3.5d, 12.5d, 4.2d, 12.5d);
     protected VoxelShape core3 = box(5.0d, 4.25d - 0.08d, 5.0d, 11.0d, 5.75d - 0.05d, 11.0d);
     protected VoxelShape core4 = box(6.5d, 5.75d - 0.05d, 6.5d, 9.5d, 10.25d - 0.05d, 9.5d);
@@ -89,16 +89,6 @@ public class NatureRealNameReconfigurableApparatusBlock extends ApparatusMultiBl
         return pLevel.isClientSide ? null : BlockEntityUtil.castTicker(wanted, OEBlockEntities.NATURE_APPARATUS_CONTROLLER_BLOCK_ENTITY.get(), NatureRealNameReconfigurableApparatusBlockEntity::tick);
     }
 
-    @SuppressWarnings("deprecation")
-    @Override
-    public void neighborChanged(BlockState state, Level level, BlockPos pos, Block block, BlockPos fromPos, boolean isMoving){
-        Direction direction = Util.directionFromOffset(pos, fromPos);
-
-        if (direction != Direction.DOWN){
-            BlockEntityUtil.get(NatureRealNameReconfigurableApparatusBlockEntity.class, level, pos).ifPresent(nbe -> nbe.neighborChanged(direction));
-        }
-
-    }
 
     @Override
     public RenderShape getRenderShape(BlockState state) {

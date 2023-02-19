@@ -3,6 +3,8 @@ package io.github.originalenhancementsmain.recipe.apparatusrecipes;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import io.github.originalenhancementsmain.OriginalEnhancementMain;
+import io.github.originalenhancementsmain.recipe.OERecipeTypes;
+import io.github.originalenhancementsmain.recipe.OERecipes;
 import net.minecraft.core.NonNullList;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
@@ -56,23 +58,16 @@ public class NatureRealNameReconfigurableApparatusRecipes implements Recipe<Simp
 
     @Override
     public RecipeSerializer<?> getSerializer() {
-        return Serializer.INSTANCE;
+        return OERecipes.NATURE_APPARATUS_RECIPE.get();
     }
 
     @Override
     public RecipeType<?> getType() {
-        return Type.INSTANCE;
-    }
-
-    public static class Type implements RecipeType<NatureRealNameReconfigurableApparatusRecipes>{
-        private Type(){}
-        public static final Type INSTANCE = new Type();
-        public static final String ID = "nature_apparatus";
+        return OERecipeTypes.NATURE_APPARATUS_RECIPE.get();
     }
 
     public static class Serializer implements RecipeSerializer<NatureRealNameReconfigurableApparatusRecipes>{
         public static final Serializer INSTANCE = new Serializer();
-        public static final ResourceLocation ID = new ResourceLocation(OriginalEnhancementMain.MOD_ID, "nature_apparatus");
 
         @Override
         public @NotNull NatureRealNameReconfigurableApparatusRecipes fromJson(@NotNull ResourceLocation id, @NotNull JsonObject json){

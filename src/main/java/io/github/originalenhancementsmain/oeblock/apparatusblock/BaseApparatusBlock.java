@@ -1,7 +1,7 @@
 package io.github.originalenhancementsmain.oeblock.apparatusblock;
 
 import io.github.originalenhancementsmain.oeblock.OEBlocks;
-import io.github.originalenhancementsmain.oeblock.apparatusblock.interfaceprovider.INameableMenuProvider;
+import io.github.originalenhancementsmain.data.util.INameableMenuProvider;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.Containers;
@@ -74,7 +74,6 @@ public abstract class BaseApparatusBlock extends Block implements EntityBlock {
     }
 
     @SuppressWarnings("deprecation")
-    @Deprecated
     @Override
     public void onRemove(BlockState state, Level worldIn, BlockPos pos, BlockState newState, boolean isMoving) {
         if (state.getBlock() != newState.getBlock()) {

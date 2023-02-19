@@ -27,6 +27,14 @@ public class BaseApparatusBlockEntity extends BlockEntity{
         return false;
     }
 
+    public void setChangedFast() {
+        if (level != null) {
+            if (level.hasChunkAt(worldPosition)) {
+                level.getChunkAt(worldPosition).setUnsaved(true);
+            }
+        }
+    }
+
     @Override
     @Nullable
     public ClientboundBlockEntityDataPacket getUpdatePacket() {

@@ -18,7 +18,7 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
-public class EnergyConductorBlock extends TransferBlock implements SimpleWaterloggedBlock {
+public class EnergyConductorBlock extends TransferBlock{
 
     protected VoxelShape SHAPE_DOWN1 = box(4.0d, 0.0d, 4.0d, 12.0d, 1.0d, 12.0d);
     protected VoxelShape SHAPE_DOWN2 = box(5.0d, 1.0d, 5.0d, 11.0d, 2.0d, 11.0d);
@@ -39,7 +39,6 @@ public class EnergyConductorBlock extends TransferBlock implements SimpleWaterlo
 
     public EnergyConductorBlock(Properties properties) {
         super(properties);
-        this.registerDefaultState(this.defaultBlockState().setValue(WATERLOGGED, false));
     }
 
     @Override
@@ -55,42 +54,8 @@ public class EnergyConductorBlock extends TransferBlock implements SimpleWaterlo
         return shape;
     }
 
-    public boolean hasEnergySource(BlockState state) {
+    @Override
+    public boolean hasEnergySource(BlockState state){
         return state.is(OETags.Blocks.ENERGY_BLOCK);
-    }
-
-    @Override
-    public FluidState getFluidState(BlockState state) {
-        return state.getValue(WATERLOGGED) ? Fluids.WATER.getSource(false) : super.getFluidState(state);
-    }
-
-    @Override
-    protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
-        super.createBlockStateDefinition(builder);
-        builder.add(WATERLOGGED);
-    }
-
-    @Override
-    public BlockState getStateForPlacement(BlockPlaceContext context) {
-        Level level = context.getLevel();
-        BlockPos chickPos = context.getClickedPos();
-        FluidState fluidState = level.getFluidState(context.getClickedPos());
-
-
-        return this.defaultBlockState().setValue(NORTH, hasEnergySource(level.getBlockState(chickPos.north())))
-                .setValue(EAST, hasEnergySource(level.getBlockState(chickPos.east())))
-                .setValue(SOUTH, hasEnergySource(level.getBlockState(chickPos.south())))
-                .setValue(WEST, hasEnergySource(level.getBlockState(chickPos.west())))
-                .setValue(FACING, context.getHorizontalDirection().getOpposite())
-                .setValue(WATERLOGGED, fluidState.getType() == Fluids.WATER);
-    }
-
-    @Override
-    public BlockState updateShape(BlockState state, Direction direction, BlockState sideState, LevelAccessor levelAccessor, BlockPos pos, BlockPos sidePos){
-        if (state.getValue(WATERLOGGED)) levelAccessor.scheduleTick(pos, Fluids.WATER, Fluids.WATER.getTickDelay(levelAccessor));
-        return state.setValue(NORTH, hasEnergySource(levelAccessor.getBlockState(pos.north())))
-                .setValue(EAST, hasEnergySource(levelAccessor.getBlockState(pos.east())))
-                .setValue(SOUTH, hasEnergySource(levelAccessor.getBlockState(pos.south())))
-                .setValue(WEST, hasEnergySource(levelAccessor.getBlockState(pos.west())));
     }
 }

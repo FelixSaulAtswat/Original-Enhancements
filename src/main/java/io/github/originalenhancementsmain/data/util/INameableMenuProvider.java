@@ -1,4 +1,4 @@
-package io.github.originalenhancementsmain.oeblock.apparatusblock.interfaceprovider;
+package io.github.originalenhancementsmain.data.util;
 
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.MenuProvider;

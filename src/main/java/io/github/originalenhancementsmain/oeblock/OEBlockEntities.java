@@ -2,6 +2,7 @@ package io.github.originalenhancementsmain.oeblock;
 
 import com.mojang.datafixers.types.Type;
 import io.github.originalenhancementsmain.OriginalEnhancementMain;
+import io.github.originalenhancementsmain.oeblock.apparatusblock.blockentities.NatureConverterBlockEntity;
 import io.github.originalenhancementsmain.oeblock.apparatusblock.blockentities.NatureRealNameReconfigurableApparatusBlockEntity;
 import net.minecraft.Util;
 import net.minecraft.util.datafix.fixes.References;
@@ -21,6 +22,9 @@ public class OEBlockEntities {
 
     public static final RegistryObject<BlockEntityType<NatureRealNameReconfigurableApparatusBlockEntity>> NATURE_APPARATUS_CONTROLLER_BLOCK_ENTITY = registryBlockEntity("nature_real_name_reconfigurable_apparatus_block_entity",
             NatureRealNameReconfigurableApparatusBlockEntity :: new, OEBlocks.NATURE_REAL_NAME_RECONFIGURABLE_APPARATUS_BLOCK);
+
+    public static final RegistryObject<BlockEntityType<NatureConverterBlockEntity>> NATURE_CONVERTER_BLOCK_ENTITY = registryBlockEntity("nature_converter_block_entity",
+            NatureConverterBlockEntity :: new, OEBlocks.NATURE_CONVERTER_DISK);
 
     public static <T extends BlockEntity> RegistryObject<BlockEntityType<T>> registryBlockEntity(String name, BlockEntityType.BlockEntitySupplier<? extends T> blockEntity, Supplier<? extends Block> block){
         return BLOCK_ENTITIES.register(name, () ->  BlockEntityType.Builder.<T>of(blockEntity, block.get()).build(getType(name)));
