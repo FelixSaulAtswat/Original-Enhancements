@@ -2,6 +2,7 @@ package io.github.originalenhancementsmain.data.tags;
 
 import io.github.originalenhancementsmain.OriginalEnhancementMain;
 import io.github.originalenhancementsmain.item.OEItems;
+import io.github.originalenhancementsmain.oeblock.OEBlocks;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.tags.ItemTagsProvider;
 import net.minecraft.tags.TagKey;
@@ -21,6 +22,8 @@ public class OEItemTagProvider extends ItemTagsProvider {
 
         addItemTags(OETags.Items.UNBREAKABLE_ITEMS, OEItems.FROSTMOURNE);
         addItemTags(OETags.Items.INVENTORY_ITEMS, OEItems.FROSTMOURNE_SELF);
+        this.copy(OETags.Blocks.CONVERTER_Disk, OETags.Items.CONVERTER_Disk);
+        tag(OETags.Items.CONVERTER_Disk).add(OEBlocks.NATURE_CONVERTER_DISK.get().asItem());
     }
 
     @SafeVarargs

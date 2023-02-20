@@ -1,4 +1,4 @@
-package io.github.originalenhancementsmain.mobrender;
+package io.github.originalenhancementsmain.client.render.mobs;
 
 import io.github.originalenhancementsmain.OriginalEnhancementMain;
 import io.github.originalenhancementsmain.entity.models.DeathKnightModel;

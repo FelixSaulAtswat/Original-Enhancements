@@ -1,14 +1,17 @@
 package io.github.originalenhancementsmain.oeblock.apparatusblock.blockentities;
 
 import io.github.originalenhancementsmain.OriginalEnhancementMain;
+import io.github.originalenhancementsmain.data.util.BlockEntityUtil;
 import io.github.originalenhancementsmain.data.util.Util;
 import io.github.originalenhancementsmain.oeblock.OEBlockEntities;
 import io.github.originalenhancementsmain.oeblock.apparatusblock.ApparatusControllerBlock;
 import io.github.originalenhancementsmain.oeblock.apparatusblock.ApparatusNameableMenuBlockEntity;
-import io.github.originalenhancementsmain.oeblock.apparatusblock.ConverterBlockEntity;
+import io.github.originalenhancementsmain.oeblock.apparatusblock.InteractiveBlockEntity;
 import io.github.originalenhancementsmain.oeblock.apparatusblock.blockmenus.NatureRealNameReconfigurableApparatusMenu;
+import io.github.originalenhancementsmain.oeblock.apparatusblock.blocks.NatureRealNameReconfigurableApparatusBlock;
 import io.github.originalenhancementsmain.recipe.OERecipeTypes;
 import io.github.originalenhancementsmain.recipe.apparatusrecipes.NatureRealNameReconfigurableApparatusRecipes;
+import lombok.Getter;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
@@ -20,6 +23,7 @@ import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.ContainerData;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
@@ -58,9 +62,14 @@ public class NatureRealNameReconfigurableApparatusBlockEntity extends ApparatusN
     public static int animatables = 0;
 
     private int progress = 0;
-    private int AnimationProgress = 0;
+    public int AnimationProgress = 0;
 
     private int maxProgress = 20 * 100;
+
+    private double range = 0.0d;
+    public float angle = 0.0f;
+    @Getter
+    protected float f = 0.0f;
 
     protected final ContainerData data;
 
@@ -75,6 +84,7 @@ public class NatureRealNameReconfigurableApparatusBlockEntity extends ApparatusN
 
     private <E extends IAnimatable>PlayState predicate (AnimationEvent<E> event){
         BlockState state = this.getBlockState();
+        ItemStack stack = this.itemHandler.getStackInSlot(0);
 
         new AnimationBuilder();
         AnimationBuilder builder;
@@ -91,6 +101,18 @@ public class NatureRealNameReconfigurableApparatusBlockEntity extends ApparatusN
         } else {
             builder = new AnimationBuilder().addAnimation("animation.nature_apparatus_original", ILoopType.EDefaultLoopTypes.HOLD_ON_LAST_FRAME);
             this.resetAnimation();
+        }
+
+        if (!stack.isEmpty() && state.getValue(NatureRealNameReconfigurableApparatusBlock.STRUCTURE_COMPOSITION) && this.AnimationProgress > 13*20){
+            this.angle++;
+            this.range++;
+            this.f = (float) Math.sin(0.05d * this.range);
+            if (0.05d * this.range > Math.PI * 100000.0d){
+                this.range = 0.0d;
+            }
+            if (this.angle >= 360.0f){
+                this.angle = 0.0f;
+            }
         }
 
         event.getController().setAnimation(builder);
@@ -156,12 +178,14 @@ public class NatureRealNameReconfigurableApparatusBlockEntity extends ApparatusN
         BlockEntity leftEntity = Util.getSideBlockEntity(Util.LEFT, entity);
         BlockEntity rightEntity = Util.getSideBlockEntity(Util.RIGHT, entity);
 
-        if (leftEntity instanceof ConverterBlockEntity && rightEntity instanceof ConverterBlockEntity) {
+        if (leftEntity instanceof InteractiveBlockEntity && rightEntity instanceof InteractiveBlockEntity
+                && BlockEntityUtil.checkFaceBlock(leftEntity, entity) && BlockEntityUtil.checkFaceBlock(rightEntity, entity)
+                && BlockEntityUtil.checkState(leftEntity, STRUCTURE_COMPOSITION) && BlockEntityUtil.checkState(rightEntity, STRUCTURE_COMPOSITION)) {
 
             SimpleContainer inventory = new SimpleContainer(entity.itemHandler.getSlots() + 2);
 
-            inventory.setItem(0, ((ConverterBlockEntity) leftEntity).getItemHandler().getStackInSlot(0));
-            inventory.setItem(1, ((ConverterBlockEntity) rightEntity).getItemHandler().getStackInSlot(0));
+            inventory.setItem(0, ((InteractiveBlockEntity) leftEntity).getItemHandler().getStackInSlot(0));
+            inventory.setItem(1, ((InteractiveBlockEntity) rightEntity).getItemHandler().getStackInSlot(0));
             inventory.setItem(2, entity.itemHandler.getStackInSlot(0));
             inventory.setItem(3, entity.itemHandler.getStackInSlot(1));
             inventory.setItem(4, entity.itemHandler.getStackInSlot(2));
@@ -179,13 +203,13 @@ public class NatureRealNameReconfigurableApparatusBlockEntity extends ApparatusN
         Level level = entity.level;
         BlockEntity leftEntity = Util.getSideBlockEntity(Util.LEFT,entity);
         BlockEntity rightEntity = Util.getSideBlockEntity(Util.RIGHT,entity);
-        if (leftEntity instanceof ConverterBlockEntity && rightEntity instanceof ConverterBlockEntity) {
+        if (leftEntity instanceof InteractiveBlockEntity && rightEntity instanceof InteractiveBlockEntity) {
 
 
             SimpleContainer inventory = new SimpleContainer(entity.itemHandler.getSlots() + 2);
 
-            inventory.setItem(0, ((ConverterBlockEntity) leftEntity).getItemHandler().getStackInSlot(0));
-            inventory.setItem(1, ((ConverterBlockEntity) rightEntity).getItemHandler().getStackInSlot(0));
+            inventory.setItem(0, ((InteractiveBlockEntity) leftEntity).getItemHandler().getStackInSlot(0));
+            inventory.setItem(1, ((InteractiveBlockEntity) rightEntity).getItemHandler().getStackInSlot(0));
             inventory.setItem(2, entity.itemHandler.getStackInSlot(0));
             inventory.setItem(3, entity.itemHandler.getStackInSlot(1));
             inventory.setItem(4, entity.itemHandler.getStackInSlot(2));
@@ -194,8 +218,8 @@ public class NatureRealNameReconfigurableApparatusBlockEntity extends ApparatusN
 
             if (match.isPresent()) {
                 entity.itemHandler.extractItem(0, 1, false);
-                ((ConverterBlockEntity) leftEntity).getItemHandler().extractItem(0, 1, false);
-                ((ConverterBlockEntity) rightEntity).getItemHandler().extractItem(0, 1, false);
+                ((InteractiveBlockEntity) leftEntity).getItemHandler().extractItem(0, 1, false);
+                ((InteractiveBlockEntity) rightEntity).getItemHandler().extractItem(0, 1, false);
 
                 entity.itemHandler.setStackInSlot(1, new ItemStack(match.get().getResultItem().getItem(),
                         entity.itemHandler.getStackInSlot(1).getCount() + 1));

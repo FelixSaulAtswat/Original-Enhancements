@@ -5,6 +5,7 @@ import io.github.originalenhancementsmain.item.OEItems;
 import io.github.originalenhancementsmain.oeblock.apparatusblock.ApparatusControllerBlock;
 import io.github.originalenhancementsmain.oeblock.apparatusblock.Components.EnergyConductorBlock;
 import io.github.originalenhancementsmain.oeblock.apparatusblock.Components.NatureConverterDiskBlock;
+import io.github.originalenhancementsmain.oeblock.apparatusblock.InteractiveBlock;
 import io.github.originalenhancementsmain.oeblock.apparatusblock.blocks.NatureRealNameReconfigurableApparatusBlock;
 import io.github.originalenhancementsmain.oeblock.blocks.LadiaOreBlock;
 import io.github.originalenhancementsmain.oeblock.blocks.ModelProviderBlock;
@@ -48,7 +49,7 @@ public class OEBlocks {
     public static final RegistryObject<Block> NATURE_ENERGY_CONDUCTOR = registerBlock("nature_energy_conductor", ()-> new EnergyConductorBlock(BlockBehaviour.Properties.of(Material.AMETHYST, MaterialColor.COLOR_GREEN)
             .strength(10.0f, 30.0f).sound(SoundType.AMETHYST).requiresCorrectToolForDrops().noOcclusion()), OriginalEnhancementMain.OETab);
 
-    public static final RegistryObject<Block> NATURE_CONVERTER_DISK = registerBlock("nature_converter_disk", ()-> new NatureConverterDiskBlock(BlockBehaviour.Properties.copy(OEBlocks.NATURE_ENERGY_CONDUCTOR.get())), OriginalEnhancementMain.OETab);
+    public static final RegistryObject<InteractiveBlock> NATURE_CONVERTER_DISK = registerBlock("nature_converter_disk", ()-> new NatureConverterDiskBlock(BlockBehaviour.Properties.copy(OEBlocks.NATURE_ENERGY_CONDUCTOR.get())), OriginalEnhancementMain.OETab);
 
     public static final RegistryObject<Block> MODEL_PROVIDER_BLOCK = BLOCKS.register("model_provider_block", ()-> new ModelProviderBlock(BlockBehaviour.Properties.of(Material.AMETHYST, MaterialColor.COLOR_GRAY)
             .strength(10.0f, 30.0f).sound(SoundType.AMETHYST).requiresCorrectToolForDrops().noOcclusion()));

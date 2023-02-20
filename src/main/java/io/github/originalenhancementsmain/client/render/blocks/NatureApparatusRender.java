@@ -1,9 +1,11 @@
-package io.github.originalenhancementsmain.oeblock.blockrenders;
+package io.github.originalenhancementsmain.client.render.blocks;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.mojang.math.Vector3f;
+import io.github.originalenhancementsmain.oeblock.apparatusblock.blockentities.NatureConverterBlockEntity;
 import io.github.originalenhancementsmain.oeblock.apparatusblock.blockentities.NatureRealNameReconfigurableApparatusBlockEntity;
+import io.github.originalenhancementsmain.oeblock.apparatusblock.blocks.NatureRealNameReconfigurableApparatusBlock;
 import io.github.originalenhancementsmain.oeblock.models.NatureApparatusModel;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.MultiBufferSource;
@@ -20,9 +22,6 @@ import software.bernie.geckolib3.renderers.geo.GeoBlockRenderer;
 
 public class NatureApparatusRender extends GeoBlockRenderer<NatureRealNameReconfigurableApparatusBlockEntity> {
 
-    private double range = 0.0d;
-    private float angle = 0.0f;
-
     public NatureApparatusRender(BlockEntityRendererProvider.Context renderDispatcher){
         super(renderDispatcher, new NatureApparatusModel());
     }
@@ -36,26 +35,21 @@ public class NatureApparatusRender extends GeoBlockRenderer<NatureRealNameReconf
     @Override
     public void render(BlockEntity tile, float partialTicks, PoseStack pose, MultiBufferSource bufferSource, int packedLight, int packedOverlay) {
         super.render(tile, partialTicks, pose, bufferSource, packedLight, packedOverlay);
-        ItemStack stack = ((NatureRealNameReconfigurableApparatusBlockEntity) tile).itemHandler.getStackInSlot(1);
+        ItemStack stack = ((NatureRealNameReconfigurableApparatusBlockEntity) tile).itemHandler.getStackInSlot(0);
         ItemRenderer renderer = Minecraft.getInstance().getItemRenderer();
-        BakedModel bakedModel = renderer.getModel(stack, animatable.getLevel(), null, 1);
+        BakedModel bakedModel = renderer.getModel(stack, tile.getLevel(), null, stack.getCount());
 
-        if (!stack.isEmpty()) {
-            angle++;
-            range++;
-            float f = (float) Math.sin(0.05d * range);
-            if (0.05d * range > Math.PI * 100000.0d){
-                range = 0.0d;
-            }
-            if (angle >= 360.0f){
-                angle = 0.0f;
-            }
+        if (!stack.isEmpty() && tile.getBlockState().getValue(NatureRealNameReconfigurableApparatusBlock.STRUCTURE_COMPOSITION) && progress((NatureRealNameReconfigurableApparatusBlockEntity) tile) > 13*20){
 
             pose.pushPose();
-            pose.translate(0.5d, 1.3F + f * 0.1F, 0.5d);
-            pose.mulPose(Vector3f.YP.rotationDegrees(angle));
+            pose.translate(0.5d, 1.3F + ((NatureRealNameReconfigurableApparatusBlockEntity) tile).getF() * 0.1F, 0.5d);
+            pose.mulPose(Vector3f.YP.rotationDegrees(((NatureRealNameReconfigurableApparatusBlockEntity) tile).angle));
             renderer.render(stack, ItemTransforms.TransformType.GROUND, false, pose, bufferSource, packedLight, OverlayTexture.NO_OVERLAY, bakedModel);
             pose.popPose();
         }
+    }
+
+    private static int progress(NatureRealNameReconfigurableApparatusBlockEntity entity){
+        return entity.AnimationProgress;
     }
 }

@@ -55,7 +55,7 @@ public class EnergyConductorBlock extends TransferBlock{
     }
 
     @Override
-    public boolean hasEnergySource(BlockState state){
+    protected boolean hasEnergySource(BlockState state){
         return state.is(OETags.Blocks.ENERGY_BLOCK);
     }
 }

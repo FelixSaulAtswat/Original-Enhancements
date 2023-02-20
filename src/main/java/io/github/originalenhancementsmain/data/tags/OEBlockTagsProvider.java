@@ -4,7 +4,6 @@ import io.github.originalenhancementsmain.OriginalEnhancementMain;
 import io.github.originalenhancementsmain.oeblock.OEBlocks;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.tags.BlockTagsProvider;
-import net.minecraft.resources.ResourceKey;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.level.block.Block;
@@ -25,11 +24,12 @@ public class OEBlockTagsProvider extends BlockTagsProvider {
     protected void addTags() {
         addBlocksTag(BlockTags.MINEABLE_WITH_PICKAXE, OEBlocks.DEMON_ICE, OEBlocks.LADIA_ORE, OEBlocks.DEEPSLATE_LADIA_ORE,OEBlocks.NATURE_REAL_NAME_RECONFIGURABLE_APPARATUS_BLOCK,
                 OEBlocks.NATURE_ENERGY_CONDUCTOR);
-        addBlocksTag(OETags.Blocks.ENERGY_CRYSTAL, OEBlocks.NATURE_ENERGY_CONDUCTOR);
+        addBlocksTag(OETags.Blocks.ENERGY_PROVIDERS, OEBlocks.NATURE_ENERGY_CONDUCTOR);
         addBlocksTag(Tags.Blocks.NEEDS_NETHERITE_TOOL, OEBlocks.LADIA_ORE, OEBlocks.DEEPSLATE_LADIA_ORE);
         addBlocksTag(Tags.Blocks.NEEDS_GOLD_TOOL, OEBlocks.NATURE_ENERGY_CONDUCTOR, OEBlocks.NATURE_REAL_NAME_RECONFIGURABLE_APPARATUS_BLOCK);
         addBlocksTag(BlockTags.NEEDS_DIAMOND_TOOL, OEBlocks.DEMON_ICE);
         tag(OETags.Blocks.ENERGY_BLOCK).add(Blocks.AMETHYST_BLOCK);
+        addBlocksTag(OETags.Blocks.CONVERTER_Disk, OEBlocks.NATURE_CONVERTER_DISK);
     }
 
     @SafeVarargs

@@ -4,7 +4,6 @@ import io.github.originalenhancementsmain.OriginalEnhancementMain;
 import io.github.originalenhancementsmain.data.tags.OETags;
 import io.github.originalenhancementsmain.oeblock.OEBlocks;
 import io.github.originalenhancementsmain.oeblock.apparatusblock.Components.EnergyConductorBlock;
-import lombok.Getter;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.network.chat.Component;
@@ -24,8 +23,6 @@ import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.BlockHitResult;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.Random;
-
 public abstract class ApparatusMultiBlockControllerBlock extends ApparatusControllerBlock {
 
     private static final Component CAN_NOT_DETECTION_STRUCTURE = OriginalEnhancementMain.getTranslationWay("multiblock", "apparatus.can_not_detection_structure");
@@ -36,7 +33,7 @@ public abstract class ApparatusMultiBlockControllerBlock extends ApparatusContro
     }
 
     protected boolean isValidEnergySource(BlockState state){
-        return state.is(OETags.Blocks.ENERGY_CRYSTAL) && state.getValue(EnergyConductorBlock.NORTH) && state.getValue(EnergyConductorBlock.EAST) && state.getValue(EnergyConductorBlock.SOUTH) && state.getValue(EnergyConductorBlock.WEST);
+        return state.is(OETags.Blocks.ENERGY_PROVIDERS) && state.getValue(EnergyConductorBlock.NORTH) && state.getValue(EnergyConductorBlock.EAST) && state.getValue(EnergyConductorBlock.SOUTH) && state.getValue(EnergyConductorBlock.WEST);
     }
     @Override
     public BlockState getStateForPlacement(BlockPlaceContext context){
@@ -79,7 +76,9 @@ public abstract class ApparatusMultiBlockControllerBlock extends ApparatusContro
 
         if (!level.isClientSide()){
             BlockEntity entity = level.getBlockEntity(pos);
-
+            if (player.getItemInHand(hand).is(OETags.Items.CONVERTER_Disk)){
+                return InteractionResult.PASS;
+            }
             if (entity instanceof BaseApparatusBlockEntity){
                 return super.use(state, level, pos, player, hand, result);
             }

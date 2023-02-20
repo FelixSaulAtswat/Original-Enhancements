@@ -1,4 +1,4 @@
-package io.github.originalenhancementsmain.mobrender;
+package io.github.originalenhancementsmain.data.util;
 
 public class OEDamageSources {
     public static String oeSource(String name) {

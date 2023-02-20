@@ -4,7 +4,7 @@
 	"texture_size": [64, 64],
 	"textures": {
 		"0": "originalenhancement:block/apparatus/nature_energy_conductor_original",
-		"particle": "originalenhancement:block/apparatus/nature_energy_conductor_original"
+		"particle": "originalenhancement:block/apparatus/nature_apparatus_particle"
 	},
 	"elements": [
 		{

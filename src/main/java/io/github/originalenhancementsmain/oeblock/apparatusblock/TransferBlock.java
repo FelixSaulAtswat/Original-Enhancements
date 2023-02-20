@@ -68,7 +68,7 @@ public abstract class TransferBlock extends Block implements SimpleWaterloggedBl
         return state.setValue(FACING, mirror.mirror(state.getValue(FACING)));
     }
 
-    public boolean hasEnergySource(BlockState state) {
+    protected boolean hasEnergySource(BlockState state) {
         return false;
     }
 

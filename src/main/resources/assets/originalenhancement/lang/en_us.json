@@ -23,6 +23,7 @@
   "block.originalenhancement.ladia_ore": "Ladia Ore",
   "block.originalenhancement.nature_real_name_reconfigurable_apparatus": "Nature Real Name Reconfigurable Apparatus",
   "block.originalenhancement.nature_energy_conductor":"Nature Energy Conductor",
+  "block.originalenhancement.nature_converter_disk": "Nature Converter Disk",
 
   "item.originalenhancement.frostmourne.lore": "Abyss-level",
   "item.originalenhancement.frostmourne.lore2": "Frotmourne is a weapon that can manipulate the user's mind and corrupt the user, and cannot and should not be in the hands of ordinary people. This one is a replica of Frotmourne, and the runes on the sword give it great power and the ability to steal the soul of the enemy, which makes it still an evil weapon.",
@@ -45,5 +46,6 @@
   "gui.originalenhancement.nature": "Nature Real Name Reconfigurable Apparatus",
 
   "multiblock.originalenhancement.apparatus.can_not_detection_structure": "The apparatus lacks the correct source of energy",
-  "multiblock.originalenhancement.apparatus.do_not_placed_in_water": "The interior space of the apparatus seems to be filled with water"
+  "multiblock.originalenhancement.apparatus.do_not_placed_in_water": "The interior space of the apparatus seems to be filled with water",
+  "multiblock.originalenhancement.converter_disk.do_not_placed_in_water": "Items cannot be placed in the conversion disk in water"
 }

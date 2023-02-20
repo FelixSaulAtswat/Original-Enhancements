@@ -1,13 +1,14 @@
 package io.github.originalenhancementsmain;
 
 import io.github.originalenhancementsmain.client.bakemodel.OEBakeModel;
+import io.github.originalenhancementsmain.client.render.blocks.NatureConverterDiskRender;
 import io.github.originalenhancementsmain.entity.OEEntitiers;
 import io.github.originalenhancementsmain.entity.models.DeathKnightModel;
 import io.github.originalenhancementsmain.entity.monster.DeathKnight;
 import io.github.originalenhancementsmain.item.OEItems;
-import io.github.originalenhancementsmain.mobrender.DeathKnightRender;
+import io.github.originalenhancementsmain.client.render.mobs.DeathKnightRender;
 import io.github.originalenhancementsmain.oeblock.OEBlockEntities;
-import io.github.originalenhancementsmain.oeblock.blockrenders.NatureApparatusRender;
+import io.github.originalenhancementsmain.client.render.blocks.NatureApparatusRender;
 import net.minecraft.client.resources.model.BakedModel;
 import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.resources.ResourceLocation;
@@ -37,6 +38,7 @@ public class ClientModEventSubscriber {
     public static void onRegisterRenderer(EntityRenderersEvent.RegisterRenderers event) {
         event.registerEntityRenderer(OEEntitiers.DEATH_KNIGHT_IMI.get(), DeathKnightRender::new);
         event.registerBlockEntityRenderer(OEBlockEntities.NATURE_APPARATUS_CONTROLLER_BLOCK_ENTITY.get(), NatureApparatusRender::new);
+        event.registerBlockEntityRenderer(OEBlockEntities.NATURE_CONVERTER_BLOCK_ENTITY.get(), NatureConverterDiskRender::new);
 
     }
 
@@ -45,20 +47,21 @@ public class ClientModEventSubscriber {
     public static void onAttributeCreate(EntityAttributeCreationEvent event) {
         event.put(OEEntitiers.DEATH_KNIGHT_IMI.get(), DeathKnight.registerAttributes().build());
     }
+
     @SubscribeEvent
-    public static void onModelBaked(ModelEvent.BakingCompleted event){
+    public static void onModelBaked(ModelEvent.BakingCompleted event) {
         getBakedModel(OEItems.FROSTMOURNE, event);
     }
 
-    private static void getBakedModel(RegistryObject<Item> item, ModelEvent.BakingCompleted event){
+    private static void getBakedModel(RegistryObject<Item> item, ModelEvent.BakingCompleted event) {
         Map<ResourceLocation, BakedModel> modelRegistry = event.getModels();
         ModelResourceLocation resource = new ModelResourceLocation(Objects.requireNonNull(item.getId()), "inventory");
         BakedModel model = modelRegistry.get(resource);
-        if (model == null){
+        if (model == null) {
             throw new RuntimeException("Did not find model in register");
-        }else if (model instanceof OEBakeModel){
+        } else if (model instanceof OEBakeModel) {
             throw new RuntimeException("Attempt to replace the item model twice is hidden");
-        }else {
+        } else {
             OEBakeModel newModel = new OEBakeModel(model);
             event.getModels().put(resource, newModel);
         }

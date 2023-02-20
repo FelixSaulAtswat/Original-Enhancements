@@ -24,7 +24,8 @@
 							"vector": [0, 0, 0]
 						},
 						"2.5": {
-							"vector": [0, 17.6, 0]
+							"vector": [0, 17.6, 0],
+							"easing": "easeInOutQuart"
 						}
 					}
 				},
@@ -112,7 +113,8 @@
 							"vector": [0, 0, 0]
 						},
 						"2.5": {
-							"vector": [0, 17.6, 0]
+							"vector": [0, 17.6, 0],
+							"easing": "easeInOutQuart"
 						}
 					}
 				},
@@ -176,7 +178,8 @@
 							"vector": [0, 0, 0]
 						},
 						"2.5": {
-							"vector": [0, 17.6, 0]
+							"vector": [0, 17.6, 0],
+							"easing": "easeInOutQuart"
 						}
 					}
 				},
