@@ -1,6 +1,5 @@
 package io.github.originalenhancementsmain.oeblock.apparatusblock.blockentities;
 
-import io.github.originalenhancementsmain.item.OEItems;
 import io.github.originalenhancementsmain.oeblock.OEBlockEntities;
 import io.github.originalenhancementsmain.oeblock.apparatusblock.Components.NatureConverterDiskBlock;
 import io.github.originalenhancementsmain.oeblock.apparatusblock.DiskBlockEntity;
@@ -59,6 +58,7 @@ public class NatureConverterBlockEntity extends DiskBlockEntity implements IAnim
         }
         AnimationBuilder builder = new AnimationBuilder().addAnimation("animation.nature_converter_disk_original", ILoopType.EDefaultLoopTypes.HOLD_ON_LAST_FRAME);
         if (state.getValue(InteractiveBlock.STRUCTURE_COMPOSITION)){
+
             builder = new AnimationBuilder().addAnimation("animation.nature_converter_disk_in_structure", ILoopType.EDefaultLoopTypes.LOOP);
         }
 
@@ -75,4 +75,5 @@ public class NatureConverterBlockEntity extends DiskBlockEntity implements IAnim
     public AnimationFactory getFactory() {
         return this.manager;
     }
+
 }

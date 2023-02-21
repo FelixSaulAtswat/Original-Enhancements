@@ -2,21 +2,30 @@
   "advancement.originalenhancement.root.title": "The end is also the beginning of a new life",
   "advancement.originalenhancement.root.desc": "Eat the End Fruit(Can this thing be eaten?)",
 
+
+
   "entity.originalenhancement.deathknightimi": "Death Knight",
 
+
+
   "item.originalenhancement.magic_icecrystal": "Magic Icecrystal",
-  "item.originalenhancement.ladia_crystal": "Ladia Crystal",
   "item.originalenhancement.ladia_crystal_max": "Ladia Crystal",
-  "item.originalenhancement.ladia_crystal_max.lore1": "Treasure",
-  "item.originalenhancement.ladia_crystal_max.lore2": "Activated Ladia Crystals",
+  "item.originalenhancement.ladia_crystal": "Ladia Crystal",
+
+
+
   "item.originalenhancement.end_fruit": "End Fruit",
-  "item.originalenhancement.end_fruit.lore1": "Treasure",
-  "item.originalenhancement.end_fruit.lore2": "The fruit that appears with the fall of the ruler of The End, the energy contained in it will give the eater the end",
+
+
 
   "item.originalenhancement.death_knight_spawn_egg": "Death Knight Spawnegg",
   "item.originalenhancement.death_knight_scepter": "Zombie Scepter Twilight Cohomology",
   "item.originalenhancement.frostmourne": "(pseudomorph)Frotmourne",
   "item.originalenhancement.knightmetal_sword_twilighthomology": "Knightmetal Sword Twilighthomology",
+  "item.originalenhancement.nature_apparatus_core": "Nature Apparatus Core",
+  "item.originalenhancement.amethyst_plate": "Amethyst Plate",
+
+
 
   "block.originalenhancement.demon_ice": "Demon Ice",
   "block.originalenhancement.deepslate_ladia_ore": "Deepslate Ladia Ore",
@@ -24,28 +33,51 @@
   "block.originalenhancement.nature_real_name_reconfigurable_apparatus": "Nature Real Name Reconfigurable Apparatus",
   "block.originalenhancement.nature_energy_conductor":"Nature Energy Conductor",
   "block.originalenhancement.nature_converter_disk": "Nature Converter Disk",
+  "block.originalenhancement.amethyst_brick": "Amethyst Brick",
+  "block.originalenhancement.nature_apparatus_enclosure": "Nature Apparatus Enclosure",
+  "block.originalenhancement.nature_apparatus_pedestal": "Nature Apparatus Pedestal",
 
-  "item.originalenhancement.frostmourne.lore": "Abyss-level",
-  "item.originalenhancement.frostmourne.lore2": "Frotmourne is a weapon that can manipulate the user's mind and corrupt the user, and cannot and should not be in the hands of ordinary people. This one is a replica of Frotmourne, and the runes on the sword give it great power and the ability to steal the soul of the enemy, which makes it still an evil weapon.",
-  "item.originalenhancement.frostmourne.lore3": "Inflict heavy damage on non-undead mobs and heal users",
-  "item.originalenhancement.knightmetal_sword_twilighthomology.lore1": "Trivial-level",
-  "item.originalenhancement.knightmetal_sword_twilighthomology.lore2": "Higher extra damage to armored targets",
-  "item.originalenhancement.magic_icecrystal.lore1": "Treasure",
-  "item.originalenhancement.magic_icecrystal.lore2": "Icecrystal is full of magic",
+
+
+  "item.originalenhancement.nature_apparatus_core.lore1": "As the core of the apparatus, it controls the operation of the entire apparatus",
+  "item.originalenhancement.ladia_crystal_max.lore1": "Activated Ladia Crystals",
+  "item.originalenhancement.end_fruit.lore1": "The fruit that appears with the fall of the ruler of The End, the energy contained in it will give the eater the end",
+  "item.originalenhancement.frostmourne.lore1": "Frotmourne is a weapon that can manipulate the user's mind and corrupt the user, and cannot and should not be in the hands of ordinary people. This one is a replica of Frotmourne, and the runes on the sword give it great power and the ability to steal the soul of the enemy, which makes it still an evil weapon.",
+  "item.originalenhancement.frostmourne.lore2": "Inflict heavy damage on non-undead mobs and heal users",
+  "item.originalenhancement.knightmetal_sword_twilighthomology.lore1": "Higher extra damage to armored targets",
+  "item.originalenhancement.magic_icecrystal.lore1": "Icecrystal is full of magic",
+
+
 
   "effect.originalenhancement.frostmourne_effect": "Evil Sword Invasion(frost)",
+
+
 
   "oe.scepter_charges": "%d charges left",
   "oe.crystal_charges": "charge rank: %d",
 
+
+
   "itemGroup.originalenhancement.conventional": "Original Enhancement--Conventional Items",
   "itemGroup.originalenhancement.3d": "Original Enhancement--3d weapons",
 
+
+
   "container.virus_generator":"Virus Analyser",
+
+
 
   "gui.originalenhancement.nature": "Nature Real Name Reconfigurable Apparatus",
 
+
+
   "multiblock.originalenhancement.apparatus.can_not_detection_structure": "The apparatus lacks the correct source of energy",
   "multiblock.originalenhancement.apparatus.do_not_placed_in_water": "The interior space of the apparatus seems to be filled with water",
-  "multiblock.originalenhancement.converter_disk.do_not_placed_in_water": "Items cannot be placed in the conversion disk in water"
+  "multiblock.originalenhancement.converter_disk.do_not_placed_in_water": "Items cannot be placed in the conversion disk in water",
+
+
+
+  "rarity.originalenhancement.abyss": "Abyss-level",
+  "rarity.originalenhancement.treasure": "Treasure",
+  "rarity.originalenhancement.trivial": "Trivial"
 }

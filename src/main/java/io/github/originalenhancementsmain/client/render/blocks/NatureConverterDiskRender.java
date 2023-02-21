@@ -61,7 +61,7 @@ public class NatureConverterDiskRender extends GeoBlockRenderer<NatureConverterB
 
             }else {
                 pose.pushPose();
-                pose.translate(0.5d, 1.3d, 0.5d);
+                pose.translate(0.5d, 0.5d, 0.5d);
                 renderer.render(stack, ItemTransforms.TransformType.GROUND, false, pose, bufferSource, packedLight, OverlayTexture.NO_OVERLAY, bakedModel);
                 pose.popPose();
             }

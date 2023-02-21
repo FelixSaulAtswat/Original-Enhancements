@@ -4,10 +4,10 @@ import io.github.originalenhancementsmain.oeblock.OEBlocks;
 import io.github.originalenhancementsmain.oeblock.apparatusblock.ApparatusControllerBlock;
 import io.github.originalenhancementsmain.oeblock.apparatusblock.InteractiveBlock;
 import io.github.originalenhancementsmain.oeblock.apparatusblock.blockentities.NatureConverterBlockEntity;
-
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.item.context.BlockPlaceContext;
+import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.SimpleWaterloggedBlock;
@@ -15,14 +15,21 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
+import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.phys.shapes.Shapes;
+import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.Nullable;
 
 public class NatureConverterDiskBlock extends InteractiveBlock implements SimpleWaterloggedBlock {
-
     public boolean sideActive = false;
 
     public NatureConverterDiskBlock(Properties properties) {
         super(properties);
+    }
+
+    @Override
+    public VoxelShape getShape(BlockState state, BlockGetter getter, BlockPos pos, CollisionContext context){
+        return this.modelBuilder(state);
     }
 
     @Nullable
@@ -85,4 +92,25 @@ public class NatureConverterDiskBlock extends InteractiveBlock implements Simple
         }
         return state;
     }
+
+    public VoxelShape modelBuilder(BlockState state){
+
+        VoxelShape shape = this.ORIGINAL;
+        if (state.getValue(STRUCTURE_COMPOSITION)) {
+            shape = this.ORIGINAL_S;
+        }
+        return shape;
+    }
+
+    protected VoxelShape MIN = box(4.0d, 0.0d, 4.0d, 12.0d, 0.9d, 12.0d);
+    protected VoxelShape CORE = box(6.5d, 0.9d, 6.5d, 9.5d, 1.4d, 9.5d);
+
+
+    protected VoxelShape ORIGINAL = Shapes.or(MIN, CORE);
+
+    protected VoxelShape MIN_S = box(4.0d, 10.8d, 4.0d, 12.0d, 11.7d, 12.0d);
+    protected VoxelShape CORE_S = box(6.5d, 11.7d, 6.5d, 9.0d, 12.2d, 9.5d);
+    protected VoxelShape DOWN = box(6.5d, 9.7d, 6.5d, 9.5d, 11.7d, 9.5d);
+
+    protected VoxelShape ORIGINAL_S = Shapes.or(MIN_S, CORE_S, DOWN);
 }

@@ -5,6 +5,7 @@ import io.github.originalenhancementsmain.client.render.items.ItemStackTileEntit
 import io.github.originalenhancementsmain.effect.OEEffects;
 import io.github.originalenhancementsmain.item.CustomItemTier;
 import io.github.originalenhancementsmain.item.OEItems;
+import io.github.originalenhancementsmain.item.RarityProvider;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.renderer.BlockEntityWithoutLevelRenderer;
 import net.minecraft.core.NonNullList;
@@ -120,10 +121,10 @@ public class Frostmourne extends SwordItem {
     @OnlyIn(Dist.CLIENT)
     public void appendHoverText(@NotNull ItemStack stack, @Nullable Level level, @NotNull List<Component> lore, @NotNull TooltipFlag flag) {
         super.appendHoverText(stack, level, lore, flag);
-        lore.add(Component.translatable(getDescriptionId() + ".lore").withStyle(ChatFormatting.GOLD));
-        lore.add(Component.translatable(getDescriptionId()+".lore2").withStyle(ChatFormatting.RED));
+        lore.add(RarityProvider.ABYSS.getRarity());
+        lore.add(Component.translatable(getDescriptionId()+".lore1").withStyle(ChatFormatting.RED));
 
-        lore.add(Component.translatable(getDescriptionId()+".lore3").withStyle(ChatFormatting.GRAY));
+        lore.add(Component.translatable(getDescriptionId()+".lore2").withStyle(ChatFormatting.GRAY));
     }
 
     @Override

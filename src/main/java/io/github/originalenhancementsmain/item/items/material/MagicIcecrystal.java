@@ -27,7 +27,6 @@ public class MagicIcecrystal extends Item {
     @OnlyIn(Dist.CLIENT)
     public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> lore, TooltipFlag flag) {
         super.appendHoverText(stack, level, lore, flag);
-        lore.add(Component.translatable(getDescriptionId() + ".lore1").withStyle(ChatFormatting.DARK_BLUE));
-        lore.add(Component.translatable(getDescriptionId()+".lore2").withStyle(ChatFormatting.RED));
+        lore.add(Component.translatable(getDescriptionId()+".lore1").withStyle(ChatFormatting.AQUA));
     }
 }

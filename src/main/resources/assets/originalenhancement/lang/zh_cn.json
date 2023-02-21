@@ -2,21 +2,30 @@
   "advancement.originalenhancement.root.title": "终末亦是新生",
   "advancement.originalenhancement.root.desc": "吃下终末果实（这玩意能吃？）",
 
+
+
   "entity.originalenhancement.deathknightimi": "死亡骑士",
+
+
 
   "item.originalenhancement.magic_icecrystal": "魔能冰晶",
   "item.originalenhancement.ladia_crystal": "拉迪雅水晶",
   "item.originalenhancement.ladia_crystal_max": "拉迪雅水晶",
-  "item.originalenhancement.ladia_crystal_max.lore1": "珍奇",
-  "item.originalenhancement.ladia_crystal_max.lore2": "被激活的拉迪雅水晶",
+  "item.originalenhancement.nature_apparatus_core": "自然仪器核心",
+  "item.originalenhancement.amethyst_plate": "紫水晶板",
+
+
+
   "item.originalenhancement.end_fruit": "终末果实",
-  "item.originalenhancement.end_fruit.lore1": "珍奇",
-  "item.originalenhancement.end_fruit.lore2": "伴随着末地统治者的陨落而出现的果实，其内部蕴含的能量将会赐予食用者“终末”。",
+
+
 
   "item.originalenhancement.death_knight_scepter": "死亡骑士权杖",
   "item.originalenhancement.death_knight_spawn_egg": "死亡骑士怪物蛋",
   "item.originalenhancement.frostmourne": "(伪)霜之哀伤",
   "item.originalenhancement.knightmetal_sword_twilighthomology": "骑士剑 暮光同调",
+
+
 
   "block.originalenhancement.demon_ice": "魔冰",
   "block.originalenhancement.deepslate_ladia_ore": "深层拉迪雅矿石",
@@ -24,26 +33,47 @@
   "block.originalenhancement.nature_real_name_reconfigurable_apparatus": "自然真名再构仪",
   "block.originalenhancement.nature_energy_conductor":"自然能量传导器",
   "block.originalenhancement.nature_converter_disk": "自然转化盘",
+  "block.originalenhancement.amethyst_brick": "紫水晶砖",
+  "block.originalenhancement.nature_apparatus_enclosure": "自然仪器机箱",
+  "block.originalenhancement.nature_apparatus_pedestal": "自然仪器基座",
 
-  "item.originalenhancement.frostmourne.lore": "深渊",
-  "item.originalenhancement.frostmourne.lore2": "霜之哀伤是一把可以操控使用者的心智并腐化使用者的武器，不可能也不应该出现在平常人的手中。这一把乃是霜之哀伤的仿制品，剑身上的符文赋予了其强大的力量和窃取敌人灵魂的能力，这使得其任然是一件邪恶的武器",
-  "item.originalenhancement.frostmourne.lore3": "对非亡灵生物以重创并治疗使用者",
-  "item.originalenhancement.knightmetal_sword_twilighthomology.lore1": "平凡",
-  "item.originalenhancement.knightmetal_sword_twilighthomology.lore2": "对有护甲目标造成更高的额外伤害",
-  "item.originalenhancement.magic_icecrystal.lore1": "珍奇",
-  "item.originalenhancement.magic_icecrystal.lore2": "充满魔力的冰之结晶",
+
+
+  "item.originalenhancement.end_fruit.lore1": "伴随着末地统治者的陨落而出现的果实，其内部蕴含的能量将会赐予食用者“终末”。",
+  "item.originalenhancement.ladia_crystal_max.lore1": "被激活的拉迪雅水晶",
+  "item.originalenhancement.frostmourne.lore1": "霜之哀伤是一把可以操控使用者的心智并腐化使用者的武器，不可能也不应该出现在平常人的手中。这一把乃是霜之哀伤的仿制品，剑身上的符文赋予了其强大的力量和窃取敌人灵魂的能力，这使得其任然是一件邪恶的武器",
+  "item.originalenhancement.frostmourne.lore2": "对非亡灵生物以重创并治疗使用者",
+  "item.originalenhancement.knightmetal_sword_twilighthomology.lore1": "对有护甲目标造成更高的额外伤害",
+  "item.originalenhancement.magic_icecrystal.lore1": "充满魔力的冰之结晶",
+  "item.originalenhancement.nature_apparatus_core.lore1": "作为仪器的核心，控制着整个仪器的运行",
+
+
 
   "effect.originalenhancement.frostmourne_effect": "魔剑侵袭（霜）",
+
+
 
   "oe.scepter_charges": "剩余使用次数： %d",
   "oe.crystal_charges": "充能等级: %d",
 
+
+
   "itemGroup.originalenhancement.conventional": "原始增强--常规物品",
   "itemGroup.originalenhancement.3d": "原始增强--3D装备",
 
+
+
   "gui.originalenhancement.nature": "自然真名再构仪",
+
+
 
   "multiblock.originalenhancement.apparatus.can_not_detection_structure": "仪器缺少正确的能量来源",
   "multiblock.originalenhancement.apparatus.do_not_placed_in_water": "仪器的内部空间似乎被水填满了",
-  "multiblock.originalenhancement.converter_disk.do_not_placed_in_water": "无法在水里将物品放入转化盘"
+  "multiblock.originalenhancement.converter_disk.do_not_placed_in_water": "无法在水里将物品放入转化盘",
+
+
+
+  "rarity.originalenhancement.abyss": "深渊",
+  "rarity.originalenhancement.treasure": "珍奇",
+  "rarity.originalenhancement.trivial": "平凡"
 }

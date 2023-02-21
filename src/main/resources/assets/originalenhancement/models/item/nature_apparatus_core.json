@@ -1,0 +1,11 @@
+{
+  "parent": "minecraft:item/generated",
+  "emissive_layers": [
+    1
+  ],
+  "loader": "forge:item_layers",
+  "textures": {
+    "layer0": "originalenhancement:item/nature_apparatus_core1",
+    "layer1": "originalenhancement:item/nature_apparatus_core2"
+  }
+}

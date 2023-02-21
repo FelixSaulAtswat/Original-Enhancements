@@ -4,7 +4,8 @@
 	"textures": {
 		"1": "originalenhancement:gui/apparatus_components/left_arrow_forest_x",
 		"particle": "originalenhancement:gui/apparatus_components/left_arrow_forest_x",
-		"layer0": "originalenhancement:gui/apparatus_components/left_arrow_forest"
+		"layer0": "originalenhancement:gui/apparatus_components/left_arrow_forest",
+		"empty":"originalenhancement:block/model_provider_block"
 	},
 	"elements": [
 		{
@@ -13,11 +14,11 @@
 			"rotation": {"angle": 0, "axis": "y", "origin": [8.375, 8.375, 8]},
 			"faces": {
 				"north": {"uv": [7.625, 0, 16, 8.375], "texture": "#1"},
-				"east": {"uv": [0, 0, 2, 2], "texture": "#missing"},
+				"east": {"uv": [0, 0, 2, 2], "texture": "#empty"},
 				"south": {"uv": [0, 0, 8.375, 8.375], "texture": "#layer0"},
-				"west": {"uv": [0, 0, 2, 2], "texture": "#missing"},
-				"up": {"uv": [0, 0, 2, 2], "texture": "#missing"},
-				"down": {"uv": [0, 0, 2, 2], "texture": "#missing"}
+				"west": {"uv": [0, 0, 2, 2], "texture": "#empty"},
+				"up": {"uv": [0, 0, 2, 2], "texture": "#empty"},
+				"down": {"uv": [0, 0, 2, 2], "texture": "#empty"}
 			}
 		}
 	],

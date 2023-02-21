@@ -29,6 +29,7 @@ public class OEBlockTagsProvider extends BlockTagsProvider {
         addBlocksTag(Tags.Blocks.NEEDS_GOLD_TOOL, OEBlocks.NATURE_ENERGY_CONDUCTOR, OEBlocks.NATURE_REAL_NAME_RECONFIGURABLE_APPARATUS_BLOCK);
         addBlocksTag(BlockTags.NEEDS_DIAMOND_TOOL, OEBlocks.DEMON_ICE);
         tag(OETags.Blocks.ENERGY_BLOCK).add(Blocks.AMETHYST_BLOCK);
+        addBlocksTag(OETags.Blocks.ENERGY_BLOCK, OEBlocks.AMETHYST_BRICK);
         addBlocksTag(OETags.Blocks.CONVERTER_Disk, OEBlocks.NATURE_CONVERTER_DISK);
     }
 

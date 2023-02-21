@@ -2,6 +2,7 @@ package io.github.originalenhancementsmain.item.items.food;
 
 import io.github.originalenhancementsmain.OriginalEnhancementMain;
 import io.github.originalenhancementsmain.item.OEItems;
+import io.github.originalenhancementsmain.item.RarityProvider;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.multiplayer.chat.report.ReportEnvironment;
@@ -61,7 +62,7 @@ public class EndFruit extends Item {
     @OnlyIn(Dist.CLIENT)
     public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> lore, TooltipFlag flag) {
         super.appendHoverText(stack, level, lore, flag);
-        lore.add(Component.translatable(getDescriptionId() + ".lore1").withStyle(ChatFormatting.DARK_BLUE));
-        lore.add(Component.translatable(getDescriptionId()+".lore2").withStyle(ChatFormatting.RED));
+        lore.add(RarityProvider.TREASURE.getRarity());
+        lore.add(Component.translatable(getDescriptionId()+".lore1").withStyle(ChatFormatting.RED));
     }
 }

@@ -3,6 +3,7 @@ package io.github.originalenhancementsmain.item.items.weapon;
 import io.github.originalenhancementsmain.OriginalEnhancementMain;
 import io.github.originalenhancementsmain.item.CustomItemTier;
 import io.github.originalenhancementsmain.item.OEItems;
+import io.github.originalenhancementsmain.item.RarityProvider;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.protocol.game.ClientboundAnimatePacket;
@@ -54,8 +55,8 @@ public class KnightMetalSwordItemY extends SwordItem {
     @OnlyIn(Dist.CLIENT)
     public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> lore, TooltipFlag flag) {
         super.appendHoverText(stack, level, lore, flag);
-        lore.add(Component.translatable(getDescriptionId() + ".lore1").withStyle(ChatFormatting.WHITE));
-        lore.add(Component.translatable(getDescriptionId()+".lore2").withStyle(ChatFormatting.GRAY));
+        lore.add(RarityProvider.TRIVIAL.getRarity());
+        lore.add(Component.translatable(getDescriptionId()+".lore1").withStyle(ChatFormatting.GRAY));
     }
 
 

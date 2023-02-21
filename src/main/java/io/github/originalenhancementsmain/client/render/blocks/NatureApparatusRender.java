@@ -35,7 +35,7 @@ public class NatureApparatusRender extends GeoBlockRenderer<NatureRealNameReconf
     @Override
     public void render(BlockEntity tile, float partialTicks, PoseStack pose, MultiBufferSource bufferSource, int packedLight, int packedOverlay) {
         super.render(tile, partialTicks, pose, bufferSource, packedLight, packedOverlay);
-        ItemStack stack = ((NatureRealNameReconfigurableApparatusBlockEntity) tile).itemHandler.getStackInSlot(0);
+        ItemStack stack = ((NatureRealNameReconfigurableApparatusBlockEntity) tile).itemHandler.getStackInSlot(1);
         ItemRenderer renderer = Minecraft.getInstance().getItemRenderer();
         BakedModel bakedModel = renderer.getModel(stack, tile.getLevel(), null, stack.getCount());
 
