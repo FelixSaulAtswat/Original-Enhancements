@@ -25,6 +25,9 @@ public class OEItems {
     public static final RegistryObject<Item> MAGIC_ICECRYSTAL = register("magic_icecrystal", MagicIcecrystal::new);
     public static final RegistryObject<Item> LADIA_CRYSTASL = register("ladia_crystal", ()-> new Item(new Item.Properties().tab(OriginalEnhancementMain.OETab)));
     public static final RegistryObject<Item> LADA_CRYSTASL_MAX = register("ladia_crystal_max", LadiaCrystalMax::new);
+    public static final RegistryObject<Item> LADA_CRYSTASL_POWDER = register("ladia_crystal_powder", ()-> new Item(new Item.Properties().tab(OriginalEnhancementMain.OETab)));
+    public static final RegistryObject<Item> LADA_CRYSTASL_SHARD = register("ladia_crystal_shard", ()-> new Item(new Item.Properties().tab(OriginalEnhancementMain.OETab)));
+
     public static final RegistryObject<Item> AMETHYST_PLATE = register("amethyst_plate", ()-> new  Item(new Item.Properties().tab(OriginalEnhancementMain.OETab)));
     public static final RegistryObject<Item> NATURE_APPARATUS_CORE = register("nature_apparatus_core", NatureApprartusCoreItem::new);
 
