@@ -16,7 +16,7 @@ public class OEPlacedFeatures {
 
     public static final DeferredRegister<PlacedFeature> PLACED_FEATURE = DeferredRegister.create(Registry.PLACED_FEATURE_REGISTRY, OriginalEnhancementMain.MOD_ID);
 
-    public static final RegistryObject<PlacedFeature> LADIA_ORE_PLACED = PLACED_FEATURE.register("ladia_ore_placed", ()-> new PlacedFeature(OEConfiguredFeatures.LADIA_ORES.getHolder().get(), rareOrePlacement(1, HeightRangePlacement.triangle(VerticalAnchor.aboveBottom(-63), VerticalAnchor.aboveBottom(90)))));
+    public static final RegistryObject<PlacedFeature> LADIA_ORE_PLACED = PLACED_FEATURE.register("ladia_ore_placed", ()-> new PlacedFeature(OEConfiguredFeatures.LADIA_ORES.getHolder().get(), rareOrePlacement(1, HeightRangePlacement.triangle(VerticalAnchor.aboveBottom(-63), VerticalAnchor.aboveBottom(110)))));
 
     public static void register(IEventBus bus){
 

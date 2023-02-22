@@ -22,7 +22,7 @@ public class OEConfiguredFeatures {
             OreConfiguration.target(OreFeatures.STONE_ORE_REPLACEABLES, OEBlocks.LADIA_ORE.get().defaultBlockState()),
             OreConfiguration.target(OreFeatures.DEEPSLATE_ORE_REPLACEABLES, OEBlocks.DEEPSLATE_LADIA_ORE.get().defaultBlockState())));
 
-    public static final RegistryObject<ConfiguredFeature<?, ?>> LADIA_ORES = CONFIGURED_FEATURE.register("laida_ores", ()-> new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(WORLD_LADIA_ORE.get(), 3)));
+    public static final RegistryObject<ConfiguredFeature<?, ?>> LADIA_ORES = CONFIGURED_FEATURE.register("laida_ores", ()-> new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(WORLD_LADIA_ORE.get(), 4)));
 
     public static void register(IEventBus bus) {
         CONFIGURED_FEATURE.register(bus);
