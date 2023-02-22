@@ -26,6 +26,7 @@ public final class Util {
 
     public static final String LEFT = "left";
     public static final String RIGHT = "right";
+
     public static String getTranslationKey(String base, @Nullable ResourceLocation name) {
         return makeDescriptionId(base, name);
     }
