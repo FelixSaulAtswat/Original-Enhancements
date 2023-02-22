@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":[
+    "BAB",
+    "ACA",
+    "BAB"
+  ],
+  "key": {
+    "A": {"item": "originalenhancement:leylines_wood"},
+    "B": {"item": "minecraft:amethyst_shard"},
+    "C": {"item": "originalenhancement:ladia_crystal_shard"}
+  },
+  "result":
+  {
+    "item": "originalenhancement:nature_energy_transfer_station"
+  }
+}

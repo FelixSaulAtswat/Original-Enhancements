@@ -109,8 +109,8 @@ public class NatureConverterDiskBlock extends InteractiveBlock implements Simple
     protected VoxelShape ORIGINAL = Shapes.or(MIN, CORE);
 
     protected VoxelShape MIN_S = box(4.0d, 10.8d, 4.0d, 12.0d, 11.7d, 12.0d);
-    protected VoxelShape CORE_S = box(6.5d, 11.7d, 6.5d, 9.0d, 12.2d, 9.5d);
-    protected VoxelShape DOWN = box(6.5d, 9.7d, 6.5d, 9.5d, 11.7d, 9.5d);
+    protected VoxelShape CORE_S = box(6.5d, 11.7d, 6.5d, 9.5d, 12.2d, 9.5d);
+    protected VoxelShape DOWN = box(6.5d, 8.7d, 6.5d, 9.5d, 11.7d, 9.5d);
 
     protected VoxelShape ORIGINAL_S = Shapes.or(MIN_S, CORE_S, DOWN);
 }

@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "originalenhancement:block/nature_energy_transfer_station"
+    },
+    "facing=east": {
+      "model": "originalenhancement:block/nature_energy_transfer_station",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "originalenhancement:block/nature_energy_transfer_station",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "originalenhancement:block/nature_energy_transfer_station",
+      "y": 270
+    }
+  }
+}

@@ -12,10 +12,7 @@ import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.level.block.AbstractCandleBlock;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
@@ -34,38 +31,40 @@ public class OEBlocks {
 
     public static final RegistryObject<Block> DEMON_ICE = registerBlock("demon_ice", () -> new Block(BlockBehaviour.Properties.of(Material.ICE, MaterialColor.COLOR_PURPLE)
             .strength(10.0f, 3.0f).speedFactor(0.4F).sound(SoundType.GLASS).requiresCorrectToolForDrops()), OriginalEnhancementMain.OETab);
-    public static final RegistryObject<Block> AMETHYST_BRICK = registerBlock("amethyst_brick", ()-> new Block(BlockBehaviour.Properties.copy(Blocks.AMETHYST_BLOCK)), OriginalEnhancementMain.OETab);
-    public static final RegistryObject<Block> LADIA_ORE = registerBlock("ladia_ore",() -> new LadiaOreBlock(BlockBehaviour.Properties.of(Material.STONE)
-            .strength(100.0f,300.0f).sound(SoundType.STONE).requiresCorrectToolForDrops().noOcclusion(),UniformInt.of(10,20)), OriginalEnhancementMain.OETab);
-    public static final RegistryObject<Block> DEEPSLATE_LADIA_ORE = registerBlock("deepslate_ladia_ore",() -> new LadiaOreBlock(BlockBehaviour.Properties.of(Material.STONE,MaterialColor.DEEPSLATE)
-            .strength(100.0f,300.0f).sound(SoundType.DEEPSLATE).requiresCorrectToolForDrops().noOcclusion(),UniformInt.of(10,20)), OriginalEnhancementMain.OETab);
-
-
-    public static final RegistryObject<Block> NATURE_REAL_NAME_RECONFIGURABLE_APPARATUS_BLOCK = registerBlock("nature_real_name_reconfigurable_apparatus", ()-> new NatureRealNameReconfigurableApparatusBlock(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.COLOR_GRAY)
-            .strength(10.0f, 30.0f).sound(SoundType.WOOD).requiresCorrectToolForDrops().noOcclusion().lightLevel(canGlowing(ApparatusControllerBlock.STRUCTURE_COMPOSITION, 15))), OriginalEnhancementMain.OETab);
-    public static final RegistryObject<Block> NATURE_ENERGY_CONDUCTOR = registerBlock("nature_energy_conductor", ()-> new EnergyConductorBlock(BlockBehaviour.Properties.of(Material.AMETHYST, MaterialColor.COLOR_GREEN)
-            .strength(10.0f, 30.0f).sound(SoundType.WOOD).requiresCorrectToolForDrops().noOcclusion()), OriginalEnhancementMain.OETab);
-    public static final RegistryObject<InteractiveBlock> NATURE_CONVERTER_DISK = registerBlock("nature_converter_disk", ()-> new NatureConverterDiskBlock(BlockBehaviour.Properties.copy(OEBlocks.NATURE_ENERGY_CONDUCTOR.get())), OriginalEnhancementMain.OETab);
-    public static final RegistryObject<Block> NATURE_APPARATUS_PEDESTAL = registerBlock("nature_apparatus_pedestal", ()-> new NaturePedestalBlock(BlockBehaviour.Properties.copy(OEBlocks.NATURE_ENERGY_CONDUCTOR.get())), OriginalEnhancementMain.OETab);
-    public static final RegistryObject<Block> NATURE_APPARATUS_ENCLOSURE = registerBlock("nature_apparatus_enclosure", ()-> new Block(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD)), OriginalEnhancementMain.OETab);
-    public static final RegistryObject<Block> LEYLINES_WOOD = registerBlock("leylines_wood", ()-> new Block(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.WOOD)
+    public static final RegistryObject<Block> AMETHYST_BRICK = registerBlock("amethyst_brick", () -> new Block(BlockBehaviour.Properties.copy(Blocks.AMETHYST_BLOCK)), OriginalEnhancementMain.OETab);
+    public static final RegistryObject<Block> LADIA_ORE = registerBlock("ladia_ore", () -> new LadiaOreBlock(BlockBehaviour.Properties.of(Material.STONE)
+            .strength(100.0f, 300.0f).sound(SoundType.STONE).requiresCorrectToolForDrops().noOcclusion(), UniformInt.of(10, 20)), OriginalEnhancementMain.OETab);
+    public static final RegistryObject<Block> DEEPSLATE_LADIA_ORE = registerBlock("deepslate_ladia_ore", () -> new LadiaOreBlock(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.DEEPSLATE)
+            .strength(100.0f, 300.0f).sound(SoundType.DEEPSLATE).requiresCorrectToolForDrops().noOcclusion(), UniformInt.of(10, 20)), OriginalEnhancementMain.OETab);
+    public static final RegistryObject<Block> LEYLINES_WOOD = registerBlock("leylines_wood", () -> new OEWoodenBlock(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.WOOD)
             .strength(100.0f, 300.0f).sound(SoundType.WOOD).requiresCorrectToolForDrops()), OriginalEnhancementMain.OETab);
 
-    public static final RegistryObject<Block> MODEL_PROVIDER_BLOCK = BLOCKS.register("model_provider_block", ()-> new ModelProviderBlock(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.COLOR_GRAY)
+    public static final RegistryObject<Block> NATURE_REAL_NAME_RECONFIGURABLE_APPARATUS_BLOCK = registerBlock("nature_real_name_reconfigurable_apparatus", () -> new NatureRealNameReconfigurableApparatusBlock(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.COLOR_GRAY)
+            .strength(10.0f, 30.0f).sound(SoundType.WOOD).requiresCorrectToolForDrops().noOcclusion().lightLevel(canGlowing(ApparatusControllerBlock.STRUCTURE_COMPOSITION, 15))), OriginalEnhancementMain.OETab);
+    public static final RegistryObject<Block> NATURE_ENERGY_CONDUCTOR = registerBlock("nature_energy_conductor", () -> new EnergyConductorBlock(BlockBehaviour.Properties.of(Material.AMETHYST, MaterialColor.COLOR_GREEN)
+            .strength(10.0f, 30.0f).sound(SoundType.WOOD).requiresCorrectToolForDrops().noOcclusion()), OriginalEnhancementMain.OETab);
+    public static final RegistryObject<InteractiveBlock> NATURE_CONVERTER_DISK = registerBlock("nature_converter_disk", () -> new NatureConverterDiskBlock(BlockBehaviour.Properties.copy(OEBlocks.NATURE_ENERGY_CONDUCTOR.get())), OriginalEnhancementMain.OETab);
+    public static final RegistryObject<Block> NATURE_APPARATUS_PEDESTAL = registerBlock("nature_apparatus_pedestal", () -> new NaturePedestalBlock(BlockBehaviour.Properties.copy(OEBlocks.NATURE_ENERGY_CONDUCTOR.get())), OriginalEnhancementMain.OETab);
+    public static final RegistryObject<Block> NATURE_APPARATUS_ENCLOSURE = registerBlock("nature_apparatus_enclosure", () -> new Block(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD)), OriginalEnhancementMain.OETab);
+    public static final RegistryObject<Block> NATURE_ENERGY_TRANSFER_STATION = registerBlock("nature_energy_transfer_station", () -> new NatureTransferStationBlock(BlockBehaviour.Properties.copy(OEBlocks.NATURE_ENERGY_CONDUCTOR.get())), OriginalEnhancementMain.OETab);
+
+
+    public static final RegistryObject<Block> MODEL_PROVIDER_BLOCK = BLOCKS.register("model_provider_block", () -> new ModelProviderBlock(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.COLOR_GRAY)
             .strength(100000.0f, 300000.0f).sound(SoundType.WOOD).requiresCorrectToolForDrops().noOcclusion()));
-    public static final RegistryObject<Block> TEST_BLOCK = registerBlock("test_block", ()-> new TestBlocks(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.COLOR_GRAY)
+    public static final RegistryObject<Block> TEST_BLOCK = registerBlock("test_block", () -> new TestBlocks(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.COLOR_GRAY)
             .strength(1500.0f, 1500.0f).requiresCorrectToolForDrops().sound(SoundType.AMETHYST)), OriginalEnhancementMain.OETab);
+
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block, CreativeModeTab tab) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
         registerBlockItem(name, toReturn, tab);
         return toReturn;
     }
+
     private static <T extends Block> void registerBlockItem(String name, RegistryObject<T> block, CreativeModeTab tab) {
         OEItems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties().tab(tab)));
     }
 
-    private static ToIntFunction<BlockState> canGlowing(BooleanProperty property, int LightValue){
+    private static ToIntFunction<BlockState> canGlowing(BooleanProperty property, int LightValue) {
         return (state) -> state.getValue(property) ? LightValue : 0;
     }
-
 }

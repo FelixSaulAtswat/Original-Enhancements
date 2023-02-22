@@ -14,7 +14,7 @@ import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
 
-public class FacingBlock extends Block implements SimpleWaterloggedBlock {
+public abstract class FacingBlock extends Block implements SimpleWaterloggedBlock {
 
     protected static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
     protected static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;

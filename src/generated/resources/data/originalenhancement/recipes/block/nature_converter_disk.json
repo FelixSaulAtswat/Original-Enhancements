@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":[
+    " A ",
+    "BCB",
+    " A "
+  ],
+  "key": {
+    "A": {"item": "minecraft:amethyst_shard"},
+    "B": {"item": "originalenhancement:leylines_wood"},
+    "C": {"item": "originalenhancement:ladia_crystal_shard"}
+  },
+  "result":
+  {
+    "item": "originalenhancement:nature_converter_disk"
+  }
+}

@@ -7,7 +7,7 @@
 		"2": "originalenhancement:block/apparatus/nature_energy_conductor_2",
 		"3": "originalenhancement:block/apparatus/nature_energy_conductor_original",
 		"4": "originalenhancement:block/apparatus/nature_energy_conductor_3",
-		"particle": "originalenhancement:block/apparatus/nature_apparatus_particle","texture": "#empty"
+		"particle": "originalenhancement:block/apparatus/nature_apparatus_particle","empty":"originalenhancement:block/model_provider_block"
 	},
 	"elements": [
 		{
