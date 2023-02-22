@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients":[
+    {"item": "originalenhancement:nature_apparatus_pedestal"},
+    {"item": "originalenhancement:nature_apparatus_enclosure"},
+    {"item": "originalenhancement:nature_apparatus_core"},
+    {"item": "originalenhancement:amethyst_brick"}
+  ],
+  "result":
+  {
+    "item": "originalenhancement:nature_real_name_reconfigurable_apparatus"
+  }
+}

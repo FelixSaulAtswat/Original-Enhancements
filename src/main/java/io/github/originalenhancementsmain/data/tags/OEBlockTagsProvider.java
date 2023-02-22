@@ -31,12 +31,20 @@ public class OEBlockTagsProvider extends BlockTagsProvider {
         tag(OETags.Blocks.ENERGY_BLOCK).add(Blocks.AMETHYST_BLOCK);
         addBlocksTag(OETags.Blocks.ENERGY_BLOCK, OEBlocks.AMETHYST_BRICK);
         addBlocksTag(OETags.Blocks.CONVERTER_Disk, OEBlocks.NATURE_CONVERTER_DISK);
+        addBlocksTag(OETags.Blocks.WOOD, Blocks.OAK_WOOD, Blocks.ACACIA_WOOD,Blocks.DARK_OAK_WOOD, Blocks.JUNGLE_WOOD, Blocks.SPRUCE_WOOD, Blocks.MANGROVE_WOOD, Blocks.BIRCH_WOOD);
     }
 
     @SafeVarargs
     private void addBlocksTag(TagKey<Block> tag, Supplier<? extends Block>... blocks){
         for (Supplier<? extends Block> block : blocks){
             tag(tag).add(block.get());
+        }
+    }
+
+
+    private void addBlocksTag(TagKey<Block> tag, Block... block){
+        for (Block blocks : block){
+            tag(tag).add(block);
         }
     }
 

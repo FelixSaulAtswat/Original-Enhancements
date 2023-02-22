@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":[
+    "ACA",
+    "CBC",
+    "ACA"
+  ],
+  "key": {
+    "A": {"item": "minecraft:shulker_shell"},
+    "B": {"item": "minecraft:heart_of_the_sea"},
+    "C": {"item": "originalenhancement:ladia_crystal_powder"}
+  },
+  "result":
+  {
+    "item": "originalenhancement:nature_apparatus_core"
+  }
+}

@@ -48,9 +48,10 @@ public class OEBlocks {
     public static final RegistryObject<InteractiveBlock> NATURE_CONVERTER_DISK = registerBlock("nature_converter_disk", ()-> new NatureConverterDiskBlock(BlockBehaviour.Properties.copy(OEBlocks.NATURE_ENERGY_CONDUCTOR.get())), OriginalEnhancementMain.OETab);
     public static final RegistryObject<Block> NATURE_APPARATUS_PEDESTAL = registerBlock("nature_apparatus_pedestal", ()-> new NaturePedestalBlock(BlockBehaviour.Properties.copy(OEBlocks.NATURE_ENERGY_CONDUCTOR.get())), OriginalEnhancementMain.OETab);
     public static final RegistryObject<Block> NATURE_APPARATUS_ENCLOSURE = registerBlock("nature_apparatus_enclosure", ()-> new Block(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD)), OriginalEnhancementMain.OETab);
+    public static final RegistryObject<Block> LEYLINES_WOOD = registerBlock("leylines_wood", ()-> new Block(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.WOOD)
+            .strength(100.0f, 300.0f).sound(SoundType.WOOD).requiresCorrectToolForDrops()), OriginalEnhancementMain.OETab);
 
-
-    public static final RegistryObject<Block> MODEL_PROVIDER_BLOCK = BLOCKS.register("model_provider_block", ()-> new ModelProviderBlock(BlockBehaviour.Properties.of(Material.AMETHYST, MaterialColor.COLOR_GRAY)
+    public static final RegistryObject<Block> MODEL_PROVIDER_BLOCK = BLOCKS.register("model_provider_block", ()-> new ModelProviderBlock(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.COLOR_GRAY)
             .strength(100000.0f, 300000.0f).sound(SoundType.WOOD).requiresCorrectToolForDrops().noOcclusion()));
     public static final RegistryObject<Block> TEST_BLOCK = registerBlock("test_block", ()-> new TestBlocks(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.COLOR_GRAY)
             .strength(1500.0f, 1500.0f).requiresCorrectToolForDrops().sound(SoundType.AMETHYST)), OriginalEnhancementMain.OETab);

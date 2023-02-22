@@ -14,6 +14,7 @@
   "item.originalenhancement.nature_apparatus_core": "Nature Apparatus Core",
   "item.originalenhancement.ladia_crystal_powder": "Ladia Crystal Powder",
   "item.originalenhancement.ladia_crystal_shard": "Ladia Crystal Shard",
+  "item.originalenhancement.amethyst_plate": "Amethyst Plate",
 
 
 
@@ -25,7 +26,6 @@
   "item.originalenhancement.death_knight_scepter": "Zombie Scepter Twilight Cohomology",
   "item.originalenhancement.frostmourne": "(pseudomorph)Frotmourne",
   "item.originalenhancement.knightmetal_sword_twilighthomology": "Knightmetal Sword Twilighthomology",
-  "item.originalenhancement.amethyst_plate": "Amethyst Plate",
 
 
 
@@ -38,6 +38,7 @@
   "block.originalenhancement.amethyst_brick": "Amethyst Brick",
   "block.originalenhancement.nature_apparatus_enclosure": "Nature Apparatus Enclosure",
   "block.originalenhancement.nature_apparatus_pedestal": "Nature Apparatus Pedestal",
+  "block.originalenhancement.leylines_wood": "Leylines Wood",
 
 
 

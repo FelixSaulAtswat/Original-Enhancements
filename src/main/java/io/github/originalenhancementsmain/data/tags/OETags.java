@@ -16,6 +16,8 @@ public class OETags {
 
         public static final TagKey<Block> CONVERTER_Disk = tag("converter_disk");
 
+        public static final TagKey<Block> WOOD = tag("wood");
+
         public static TagKey<Block> tag(String name) {
             return BlockTags.create(OriginalEnhancementMain.getLocationResource(name));
         }
@@ -27,6 +29,7 @@ public class OETags {
         public static final TagKey<Item> INVENTORY_ITEMS = tag("inventory_items");
 
         public static final TagKey<Item> CONVERTER_Disk = tag("converter_disk");
+        public static final TagKey<Item> WOOD = tag("wood");
 
         public static TagKey<Item> tag(String name) {
             return ItemTags.create(OriginalEnhancementMain.getLocationResource(name));

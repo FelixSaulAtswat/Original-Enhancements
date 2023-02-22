@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":[
+    " A ",
+    "ABA",
+    "CCC"
+  ],
+  "key": {
+    "A": {"item": "minecraft:amethyst_shard"},
+    "B": {"type": "forge:nbt",
+      "item": "originalenhancement:ladia_crystal_max",
+      "count": 1,
+      "nbt": "{Damage:0}"},
+    "C": {"item": "originalenhancement:amethyst_plate"}
+  },
+  "result":
+  {
+    "item": "originalenhancement:nature_apparatus_enclosure"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "D": {"item": "originalenhancement:ladia_crystal_powder"},
+    "B": {"tag": "originalenhancement:wood"}
+  },
+  "pattern":[
+    "BBB",
+    "BDB",
+    "BBB"
+  ],
+  "result":
+  {
+    "item": "originalenhancement:leylines_wood",
+    "count": 4
+  }
+}

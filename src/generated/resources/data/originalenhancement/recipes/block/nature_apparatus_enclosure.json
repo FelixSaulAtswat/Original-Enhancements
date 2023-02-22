@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":[
+    "cBc",
+    "B B",
+    "cBc"
+  ],
+  "key": {
+    "B": {"item": "originalenhancement:leylines_wood"},
+    "c": {"item": "originalenhancement:ladia_crystal_shard"}
+  },
+  "result":
+  {
+    "item": "originalenhancement:nature_apparatus_enclosure"
+  }
+}

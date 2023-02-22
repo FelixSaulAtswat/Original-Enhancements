@@ -14,7 +14,7 @@ import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
 
-public abstract class FacingBlock extends Block implements SimpleWaterloggedBlock {
+public class FacingBlock extends Block implements SimpleWaterloggedBlock {
 
     protected static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
     protected static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
@@ -34,7 +34,8 @@ public abstract class FacingBlock extends Block implements SimpleWaterloggedBloc
         Level level = context.getLevel();
         FluidState fluidState = level.getFluidState(context.getClickedPos());
 
-        return this.defaultBlockState().setValue(WATERLOGGED, fluidState.getType() == Fluids.WATER);
+        return this.defaultBlockState().setValue(WATERLOGGED, fluidState.getType() == Fluids.WATER)
+                .setValue(FACING, context.getHorizontalDirection().getOpposite());
     }
 
     @Override
