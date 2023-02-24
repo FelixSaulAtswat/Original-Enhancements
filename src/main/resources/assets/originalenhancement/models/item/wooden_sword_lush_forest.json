@@ -1,0 +1,11 @@
+{
+	"parent": "minecraft:item/handheld",
+	"emissive_layers": [
+		1
+	],
+	"loader": "forge:item_layers",
+	"textures": {
+		"layer0": "originalenhancement:item/wooden_sword_lush_forest",
+		"layer1": "originalenhancement:item/wooden_sword_lush_forest_e"
+	}
+}

@@ -9,13 +9,17 @@ import io.github.originalenhancementsmain.item.OEItems;
 import io.github.originalenhancementsmain.client.render.mobs.DeathKnightRender;
 import io.github.originalenhancementsmain.oeblock.OEBlockEntities;
 import io.github.originalenhancementsmain.client.render.blocks.NatureApparatusRender;
+import io.github.originalenhancementsmain.particle.OEParticles;
+import io.github.originalenhancementsmain.particle.particles.GrassParticle;
 import net.minecraft.client.resources.model.BakedModel;
 import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.client.event.ModelEvent;
+import net.minecraftforge.client.event.RegisterParticleProvidersEvent;
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -65,5 +69,11 @@ public class ClientModEventSubscriber {
             OEBakeModel newModel = new OEBakeModel(model);
             event.getModels().put(resource, newModel);
         }
+    }
+
+    @OnlyIn(Dist.CLIENT)
+    @SubscribeEvent
+    public static void registerFactories(RegisterParticleProvidersEvent event){
+        event.register(OEParticles.GRASS.get(), GrassParticle.Factory::new);
     }
 }

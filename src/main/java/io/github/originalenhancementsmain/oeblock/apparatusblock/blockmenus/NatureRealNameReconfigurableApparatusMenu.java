@@ -12,6 +12,7 @@ import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.inventory.ContainerData;
 import net.minecraft.world.inventory.SimpleContainerData;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraftforge.common.capabilities.ForgeCapabilities;
 import net.minecraftforge.items.SlotItemHandler;
@@ -24,6 +25,12 @@ public class NatureRealNameReconfigurableApparatusMenu extends BaseApparatusMenu
     @Getter
     public boolean hasCrystalSlot = false;
 
+    @Getter
+    public ItemStack leftStack = ItemStack.EMPTY;
+
+    @Getter
+    public ItemStack rightStack = ItemStack.EMPTY;
+
     public NatureRealNameReconfigurableApparatusMenu(int id, Inventory inventory, NatureRealNameReconfigurableApparatusBlockEntity natureApparatus, ContainerData data) {
         super(id, OEMenus.NATURE_APPARATUS_MENU.get(), inventory, natureApparatus, data);
 
@@ -32,9 +39,18 @@ public class NatureRealNameReconfigurableApparatusMenu extends BaseApparatusMenu
 
             BlockEntity leftEntity = Util.getSideBlockEntity(Util.LEFT, natureApparatus);
             BlockEntity rightEntity = Util.getSideBlockEntity(Util.RIGHT, natureApparatus);
-            hasCoreSlot = leftEntity instanceof InteractiveBlockEntity && BlockEntityUtil.checkFaceBlock(leftEntity, natureApparatus) && BlockEntityUtil.checkState(leftEntity, STRUCTURE_COMPOSITION);
-            hasCrystalSlot = rightEntity instanceof InteractiveBlockEntity && BlockEntityUtil.checkFaceBlock(rightEntity, natureApparatus) && BlockEntityUtil.checkState(rightEntity, STRUCTURE_COMPOSITION);
-
+            if (leftEntity instanceof InteractiveBlockEntity) {
+                hasCoreSlot = BlockEntityUtil.checkFaceBlock(leftEntity, natureApparatus) && BlockEntityUtil.checkState(leftEntity, STRUCTURE_COMPOSITION);
+                if (this.hasCoreSlot){
+                    this.leftStack = ((InteractiveBlockEntity)leftEntity).getItemHandler().getStackInSlot(0);
+                }
+            }
+            if (rightEntity instanceof  InteractiveBlockEntity) {
+                hasCrystalSlot = BlockEntityUtil.checkFaceBlock(rightEntity, natureApparatus) && BlockEntityUtil.checkState(rightEntity, STRUCTURE_COMPOSITION);
+                if (this.hasCrystalSlot){
+                    this.rightStack = ((InteractiveBlockEntity) rightEntity).getItemHandler().getStackInSlot(0);
+                }
+            }
 
             natureApparatus.getCapability(ForgeCapabilities.ITEM_HANDLER).ifPresent(handler -> {
                 this.addSlot(new SlotItemHandler(handler, 0, 80, 81));

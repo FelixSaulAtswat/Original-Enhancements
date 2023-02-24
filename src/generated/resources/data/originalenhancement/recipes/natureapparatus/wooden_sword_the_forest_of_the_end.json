@@ -1,0 +1,22 @@
+{
+  "type": "originalenhancement:nature_apparatus",
+  "ingredients":[
+    {
+      "type": "forge:nbt",
+      "item": "originalenhancement:ladia_crystal_max",
+      "count": 1,
+      "nbt": "{Damage:3}"
+    },
+    {
+      "item": "originalenhancement:chorus_extract"
+    },
+    {
+      "item": "originalenhancement:wooden_sword_original"
+    }
+
+  ],
+  "output":
+  {
+    "item": "originalenhancement:wooden_sword_the_forest_of_the_end"
+  }
+}

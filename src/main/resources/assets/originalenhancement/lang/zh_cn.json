@@ -15,17 +15,22 @@
   "item.originalenhancement.amethyst_plate": "紫水晶板",
   "item.originalenhancement.ladia_crystal_powder": "拉迪雅水晶粉末",
   "item.originalenhancement.ladia_crystal_shard": "拉迪雅水晶碎片",
+  "item.originalenhancement.chorus_cluster": "紫颂果堆",
 
 
 
   "item.originalenhancement.end_fruit": "终末果实",
+  "item.originalenhancement.forest_extract": "森林精华",
+  "item.originalenhancement.chorus_extract": "紫颂精华",
 
 
 
   "item.originalenhancement.death_knight_scepter": "死亡骑士权杖",
   "item.originalenhancement.death_knight_spawn_egg": "死亡骑士怪物蛋",
   "item.originalenhancement.frostmourne": "(伪)霜之哀伤",
-  "item.originalenhancement.knightmetal_sword_twilighthomology": "骑士剑 暮光同调",
+  "item.originalenhancement.wooden_sword_original": "木剑--原始化",
+  "item.originalenhancement.wooden_sword_lush_forest": "木剑--郁郁之森",
+  "item.originalenhancement.wooden_sword_the_forest_of_the_end": "木剑--终末之林",
 
 
 
@@ -43,17 +48,26 @@
 
 
 
+  "item.originalenhancement.effect": "效果:",
   "item.originalenhancement.end_fruit.lore1": "伴随着末地统治者的陨落而出现的果实，其内部蕴含的能量将会赐予食用者“终末”。",
   "item.originalenhancement.ladia_crystal_max.lore1": "被激活的拉迪雅水晶",
   "item.originalenhancement.frostmourne.lore1": "霜之哀伤是一把可以操控使用者的心智并腐化使用者的武器，不可能也不应该出现在平常人的手中。这一把乃是霜之哀伤的仿制品，剑身上的符文赋予了其强大的力量和窃取敌人灵魂的能力，这使得其任然是一件邪恶的武器",
   "item.originalenhancement.frostmourne.lore2": "对非亡灵生物以重创并治疗使用者",
-  "item.originalenhancement.knightmetal_sword_twilighthomology.lore1": "对有护甲目标造成更高的额外伤害",
   "item.originalenhancement.magic_icecrystal.lore1": "充满魔力的冰之结晶",
   "item.originalenhancement.nature_apparatus_core.lore1": "作为仪器的核心，控制着整个仪器的运行",
+  "item.originalenhancement.wooden_sword_lush_forest.lore1": "象征着拥有强大生命力的现世森林，它可以运用自身能量保护持有者",
+  "item.originalenhancement.wooden_sword_lush_forest.lore2": "当持有者被攻击时为其添加繁盛效果",
+  "item.originalenhancement.wooden_sword_the_forest_of_the_end.lore1": "象征着末地的紫颂树林的木剑吗，被它击中的生物将会陷入终末。",
+  "item.originalenhancement.wooden_sword_the_forest_of_the_end.lore2": "攻击附加终末效果",
+  "item.originalenhancement.forest_extract.lore1": "繁盛(0:30)",
+  "item.originalenhancement.chorus_extract.lore1": "终末(0:30)",
+
 
 
 
   "effect.originalenhancement.frostmourne_effect": "魔剑侵袭（霜）",
+  "effect.originalenhancement.lush": "繁盛",
+  "effect.originalenhancement.the_end": "终末",
 
 
 
@@ -79,5 +93,6 @@
 
   "rarity.originalenhancement.abyss": "深渊",
   "rarity.originalenhancement.treasure": "珍奇",
-  "rarity.originalenhancement.trivial": "平凡"
+  "rarity.originalenhancement.trivial": "平凡",
+  "rarity.originalenhancement.rarity": "稀有"
 }

@@ -34,9 +34,9 @@ public class OEMobEffect extends MobEffect {
     }
 
     @Override
-    public void applyEffectTick(LivingEntity entity, int amplifier) {
+    public void applyEffectTick(LivingEntity entity, int level) {
         if (isInstantenous()) {
-            applyInstantenousEffect(null, null, entity, amplifier, 1.0d);
+            applyInstantenousEffect(null, null, entity, level, 1.0d);
         }
     }
 

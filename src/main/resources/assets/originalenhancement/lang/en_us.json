@@ -15,17 +15,22 @@
   "item.originalenhancement.ladia_crystal_powder": "Ladia Crystal Powder",
   "item.originalenhancement.ladia_crystal_shard": "Ladia Crystal Shard",
   "item.originalenhancement.amethyst_plate": "Amethyst Plate",
+  "item.originalenhancement.chorus_cluster": "Chorus Cluster",
 
 
 
   "item.originalenhancement.end_fruit": "End Fruit",
+  "item.originalenhancement.forest_extract": "Forest Extract",
+  "item.originalenhancement.chorus_extract": "Chorus Extract",
 
 
 
   "item.originalenhancement.death_knight_spawn_egg": "Death Knight Spawnegg",
   "item.originalenhancement.death_knight_scepter": "Zombie Scepter Twilight Cohomology",
   "item.originalenhancement.frostmourne": "(pseudomorph)Frotmourne",
-  "item.originalenhancement.knightmetal_sword_twilighthomology": "Knightmetal Sword Twilighthomology",
+  "item.originalenhancement.wooden_sword_original": "Wooden Sored--Original",
+  "item.originalenhancement.wooden_sword_lush_forest": "Wooden Sored--Lush Forest",
+  "item.originalenhancement.wooden_sword_the_forest_of_the_end": "Wooden Sored--The Forest Of The End",
 
 
 
@@ -43,18 +48,25 @@
 
 
 
-
+  "item.originalenhancement.effect": "Effect:",
   "item.originalenhancement.nature_apparatus_core.lore1": "As the core of the apparatus, it controls the operation of the entire apparatus",
   "item.originalenhancement.ladia_crystal_max.lore1": "Activated Ladia Crystals",
   "item.originalenhancement.end_fruit.lore1": "The fruit that appears with the fall of the ruler of The End, the energy contained in it will give the eater the end",
   "item.originalenhancement.frostmourne.lore1": "Frotmourne is a weapon that can manipulate the user's mind and corrupt the user, and cannot and should not be in the hands of ordinary people. This one is a replica of Frotmourne, and the runes on the sword give it great power and the ability to steal the soul of the enemy, which makes it still an evil weapon.",
   "item.originalenhancement.frostmourne.lore2": "Inflict heavy damage on non-undead mobs and heal users",
-  "item.originalenhancement.knightmetal_sword_twilighthomology.lore1": "Higher extra damage to armored targets",
   "item.originalenhancement.magic_icecrystal.lore1": "Icecrystal is full of magic",
+  "item.originalenhancement.wooden_sword_lush_forest.lore1": "A forest that symbolizes the real world with strong vitality, and it can use its own energy to protect its holders",
+  "item.originalenhancement.wooden_sword_lush_forest.lore2": "Add a flourishing effect for holders when they are attacked",
+  "item.originalenhancement.wooden_sword_the_forest_of_the_end.lore1": "The wooden sword of the Purple Song Forest symbolizing the End Place, the creatures hit by it will enter the End State",
+  "item.originalenhancement.wooden_sword_the_forest_of_the_end.lore2": "Attack have an additional The End effect",
+  "item.originalenhancement.forest_extract.lore1": "Lush(0:30)",
+  "item.originalenhancement.chorus_extract.lore1": "The End(0:30)",
 
 
 
   "effect.originalenhancement.frostmourne_effect": "Evil Sword Invasion(frost)",
+  "effect.originalenhancement.lush": "Lush",
+  "effect.originalenhancement.the_end": "The End",
 
 
 
@@ -84,5 +96,6 @@
 
   "rarity.originalenhancement.abyss": "Abyss-level",
   "rarity.originalenhancement.treasure": "Treasure",
-  "rarity.originalenhancement.trivial": "Trivial"
+  "rarity.originalenhancement.trivial": "Trivial",
+  "rarity.originalenhancement.rarity": "Rarity"
 }

@@ -3,6 +3,7 @@ package io.github.originalenhancementsmain.oeblock.apparatusblock.blockentities;
 import io.github.originalenhancementsmain.OriginalEnhancementMain;
 import io.github.originalenhancementsmain.data.util.BlockEntityUtil;
 import io.github.originalenhancementsmain.data.util.Util;
+import io.github.originalenhancementsmain.item.OEItems;
 import io.github.originalenhancementsmain.oeblock.OEBlockEntities;
 import io.github.originalenhancementsmain.oeblock.apparatusblock.ApparatusControllerBlock;
 import io.github.originalenhancementsmain.oeblock.apparatusblock.ApparatusNameableMenuBlockEntity;
@@ -84,7 +85,7 @@ public class NatureRealNameReconfigurableApparatusBlockEntity extends ApparatusN
 
     private <E extends IAnimatable>PlayState predicate (AnimationEvent<E> event){
         BlockState state = this.getBlockState();
-        ItemStack stack = this.itemHandler.getStackInSlot(0);
+        ItemStack stack = this.itemHandler.getStackInSlot(1);
 
         new AnimationBuilder();
         AnimationBuilder builder;
@@ -217,14 +218,17 @@ public class NatureRealNameReconfigurableApparatusBlockEntity extends ApparatusN
             Optional<NatureRealNameReconfigurableApparatusRecipes> match = level.getRecipeManager().getRecipeFor(OERecipeTypes.NATURE_APPARATUS_RECIPE.get(), inventory, level);
 
             if (match.isPresent()) {
+                Random random = new Random();
+                int i = random.nextInt(3) + 1;
+
                 entity.itemHandler.extractItem(0, 1, false);
                 ((InteractiveBlockEntity) leftEntity).getItemHandler().extractItem(0, 1, false);
                 ((InteractiveBlockEntity) rightEntity).getItemHandler().extractItem(0, 1, false);
 
                 entity.itemHandler.setStackInSlot(1, new ItemStack(match.get().getResultItem().getItem(),
                         entity.itemHandler.getStackInSlot(1).getCount() + 1));
-                entity.itemHandler.setStackInSlot(2, new ItemStack(match.get().getResultItem().getItem(),
-                        entity.itemHandler.getStackInSlot(2).getCount() + 1));
+                entity.itemHandler.setStackInSlot(2, new ItemStack(OEItems.LADA_CRYSTASL_POWDER.get(),
+                        entity.itemHandler.getStackInSlot(2).getCount() + i));
                 entity.resetProgress();
             }
         }

@@ -11,6 +11,7 @@ import io.github.originalenhancementsmain.item.OEItems;
 import io.github.originalenhancementsmain.oeblock.OEBlockEntities;
 import io.github.originalenhancementsmain.oeblock.OEBlocks;
 import io.github.originalenhancementsmain.oeblock.apparatusblock.OEMenus;
+import io.github.originalenhancementsmain.particle.OEParticles;
 import io.github.originalenhancementsmain.recipe.OERecipeTypes;
 import io.github.originalenhancementsmain.recipe.OERecipes;
 import net.minecraft.client.gui.screens.MenuScreens;
@@ -28,6 +29,7 @@ import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
+import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -79,7 +81,9 @@ public class OriginalEnhancementMain {
         OERecipes.register(bus);
         OERecipeTypes.register(bus);
         OEMenus.register(bus);
+        OEParticles.register(bus);
         bus.addListener(this::clientSetup);
+        bus.addListener(this::setup);
         OENetwork.setup();
 
         MinecraftForge.EVENT_BUS.register(this);
@@ -91,6 +95,9 @@ public class OriginalEnhancementMain {
         MenuScreens.register(OEMenus.NATURE_APPARATUS_MENU.get(), NatureApparatusScreen :: new);
     }
 
+    private void setup(final FMLCommonSetupEvent event) {
+        RegisterBrewingRecipe.init();
+    }
 
     public static ResourceLocation getLocationResource(String name){
         return new ResourceLocation(MOD_ID, name);

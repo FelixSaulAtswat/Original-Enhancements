@@ -32,11 +32,13 @@ public class NatureApparatusScreen extends BaseApparatusScreen<NatureRealNameRec
         if (menu.isHasCoreSlot()){
             ITEM_SLOT1.draw(poseStack, x + 11, y + 89);
             itemRenderer.renderAndDecorateItem(new ItemStack(OEItems.RIGHT_ARROW_FOREST.get()), x + rightArrowPosX + 24, y + arrowPosY + 26);
+            itemRenderer.renderAndDecorateItem(menu.leftStack, x + 12, y + 90);
         }
         GuiUtil.settings(TEXTURES);
         if (menu.isHasCrystalSlot()){
             ITEM_SLOT2.draw(poseStack, x + 147, y + 89);
             itemRenderer.renderAndDecorateItem( new ItemStack(OEItems.LEFT_ARROW_FOREST.get()), x + leftArrowPosX + 24, y + arrowPosY + 27);
+            itemRenderer.renderAndDecorateItem(menu.rightStack, x + 148, y + 90);
         }
     }
 

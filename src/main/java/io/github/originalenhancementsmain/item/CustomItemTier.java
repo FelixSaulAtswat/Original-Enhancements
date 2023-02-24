@@ -11,8 +11,10 @@ public enum CustomItemTier implements Tier {
 
     MythologicalTools(4, 6000, 10.0F, 10.0F, 100, () ->
             Ingredient.of(Items.NETHERITE_INGOT)),
-    RareTools(2,250,6.0F,2.0F,20,() ->
-            Ingredient.of(Items.IRON_INGOT));
+    OriginalTools(2,1000,20.0F,10.0F,20,() ->
+            Ingredient.of(Items.AMETHYST_SHARD)),
+    RarityTools(3, 2000, 30.0F, 10.0F, 40, ()->
+            Ingredient.of(OEItems.LADA_CRYSTASL_SHARD.get()));
 
 
 

@@ -1,0 +1,11 @@
+{
+  "parent": "minecraft:item/handheld",
+  "emissive_layers": [
+    1
+  ],
+  "loader": "forge:item_layers",
+  "textures": {
+    "layer0": "originalenhancement:item/wooden_sword_the_forest_of_the_end",
+    "layer1": "originalenhancement:item/wooden_sword_the_forest_of_the_end_e"
+  }
+}

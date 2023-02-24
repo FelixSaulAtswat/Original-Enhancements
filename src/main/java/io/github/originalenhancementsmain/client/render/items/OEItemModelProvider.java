@@ -20,7 +20,7 @@ public class OEItemModelProvider extends ItemModelProvider {
     @Override
     protected void registerModels() {
 
-        luminousWeapon(OEItems.KNIGHTMETAL_SWORD_ITEMY, 1);
+        luminousWeapon(OEItems.WOODEN_SWORD_O, 1);
         luminousWeapon(OEItems.LADA_CRYSTASL_MAX, 0);
     }
 

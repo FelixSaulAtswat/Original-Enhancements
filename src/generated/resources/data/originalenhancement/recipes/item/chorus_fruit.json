@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients":[
+    {"item": "originalenhancement:chorus_cluster"}
+  ],
+  "result":
+  {
+    "item": "minecraft:chorus_fruit",
+    "count": 9
+  }
+}

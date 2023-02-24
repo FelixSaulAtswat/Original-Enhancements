@@ -1,0 +1,18 @@
+{
+  "type": "originalenhancement:nature_apparatus",
+  "ingredients":[
+    {
+      "item": "minecraft:nether_star"
+    },
+    {"item": "minecraft:end_crystal"
+    },
+    {
+      "item": "minecraft:wooden_sword"
+    }
+
+  ],
+  "output":
+  {
+    "item": "originalenhancement:wooden_sword_original"
+  }
+}

@@ -14,6 +14,7 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.network.protocol.game.ClientboundAnimatePacket;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.MobType;
 import net.minecraft.world.item.*;
@@ -50,42 +51,7 @@ public class Frostmourne extends SwordItem {
         });
     }
 
-    @SubscribeEvent
-    public static void extraDamage(LivingHurtEvent event) {
-        LivingEntity entity = event.getEntity();
-        MobType type = entity.getMobType();
 
-        if(!entity.level.isClientSide && event.getSource().getDirectEntity() instanceof LivingEntity player) {
-            ItemStack stack = player.getMainHandItem();
-
-            if (!stack.isEmpty()){
-                if ((stack.is(OEItems.FROSTMOURNE.get()))) {
-                    if (type != MobType.UNDEAD) {
-                        event.setAmount(event.getAmount() + EXTRA_DAMAGE);
-                    }
-                }
-            }
-        }
-
-    }
-
-    @SubscribeEvent
-    public static void extraHeal(LivingDeathEvent deathEvent){
-        LivingEntity death = deathEvent.getEntity();
-        MobType type = death.getMobType();
-
-        if(!death.level.isClientSide && deathEvent.getSource().getDirectEntity() instanceof LivingEntity player){
-            ItemStack item = player.getMainHandItem();
-
-            if (!item.isEmpty()) {
-                if ((item.is(OEItems.FROSTMOURNE.get()))) {
-                    if (type != MobType.UNDEAD) {
-                        player.heal(30);
-                    }
-                }
-            }
-        }
-    }
 
     @Override
     public boolean hurtEnemy(@NotNull ItemStack stack, @NotNull LivingEntity entity, @NotNull LivingEntity user) {
