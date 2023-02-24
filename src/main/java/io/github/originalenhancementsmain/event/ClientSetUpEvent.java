@@ -1,6 +1,8 @@
-package io.github.originalenhancementsmain;
+package io.github.originalenhancementsmain.event;
 
 
+import io.github.originalenhancementsmain.OriginalEnhancementMain;
+import io.github.originalenhancementsmain.client.render.effects.SoulBarningRenderLayer;
 import io.github.originalenhancementsmain.client.render.effects.TheEndRenderLayer;
 import net.minecraft.client.model.EntityModel;
 import net.minecraft.client.renderer.entity.EntityRenderer;
@@ -12,7 +14,6 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 
 import java.lang.reflect.Field;
 import java.util.Map;
@@ -51,6 +52,7 @@ public class ClientSetUpEvent {
 
     private static <T extends LivingEntity, M extends EntityModel<T>> void addRenderLayers(LivingEntityRenderer<T, M> renderer) {
         renderer.addLayer(new TheEndRenderLayer<>(renderer));
+        renderer.addLayer(new SoulBarningRenderLayer<>(renderer));
     }
 
 }

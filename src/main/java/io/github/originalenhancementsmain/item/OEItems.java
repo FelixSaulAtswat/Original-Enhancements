@@ -44,6 +44,7 @@ public class OEItems {
     public static final RegistryObject<Item> WOODEN_SWORD_O = register("wooden_sword_original", WoodenSwordOItem::new);
     public static final RegistryObject<Item> WOODEN_SWORD_LF = register("wooden_sword_lush_forest", WoodenSwordLFItem::new);
     public static final RegistryObject<Item> WOODEN_SWORD_TFOTE = register("wooden_sword_the_forest_of_the_end", WoodenSwordTFOTEItem::new);
+    public static final RegistryObject<Item> WOODEN_SWORD_BF = register("wooden_sword_bathfire_forest", WoodenSwordBFItem::new);
 
 
 

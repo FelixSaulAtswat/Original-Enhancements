@@ -3,6 +3,7 @@ package io.github.originalenhancementsmain.effect;
 import io.github.originalenhancementsmain.OriginalEnhancementMain;
 import io.github.originalenhancementsmain.effect.effects.FrostmourneEffect;
 import io.github.originalenhancementsmain.effect.effects.LushEffect;
+import io.github.originalenhancementsmain.effect.effects.SoulBurningEffect;
 import io.github.originalenhancementsmain.effect.effects.TheEndEffect;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;
@@ -12,6 +13,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
+import java.util.Random;
 import java.util.UUID;
 
 import static io.github.originalenhancementsmain.effect.effects.TheEndEffect.THEEND_UUID;
@@ -30,6 +32,9 @@ public class OEEffects {
             .addAttributeModifier(Attributes.ATTACK_DAMAGE, TheEndEffect.THEEND_UUID.toString(), -0.2F, AttributeModifier.Operation.MULTIPLY_TOTAL)
             .addAttributeModifier(Attributes.ATTACK_SPEED, TheEndEffect.THEEND_UUID.toString(), -0.2F, AttributeModifier.Operation.MULTIPLY_TOTAL)
             .addAttributeModifier(Attributes.MOVEMENT_SPEED, TheEndEffect.THEEND_UUID.toString(), -0.2F, AttributeModifier.Operation.MULTIPLY_TOTAL));
+
+    public static final RegistryObject<MobEffect> SOUL_BURNING = EFFECTS.register("soul_burning", ()-> new SoulBurningEffect(MobEffectCategory.HARMFUL, 0x301721, false)
+            .addAttributeModifier(Attributes.MAX_HEALTH, SoulBurningEffect.SOUL_BURNING_UUID.toString(), 0.0F, AttributeModifier.Operation.ADDITION));
 }
 
 

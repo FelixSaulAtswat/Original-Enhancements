@@ -31,6 +31,7 @@
   "item.originalenhancement.wooden_sword_original": "木剑--原始化",
   "item.originalenhancement.wooden_sword_lush_forest": "木剑--郁郁之森",
   "item.originalenhancement.wooden_sword_the_forest_of_the_end": "木剑--终末之林",
+  "item.originalenhancement.wooden_sword_bathfire_forest": "木剑--浴火之森",
 
 
 
@@ -55,19 +56,25 @@
   "item.originalenhancement.frostmourne.lore2": "对非亡灵生物以重创并治疗使用者",
   "item.originalenhancement.magic_icecrystal.lore1": "充满魔力的冰之结晶",
   "item.originalenhancement.nature_apparatus_core.lore1": "作为仪器的核心，控制着整个仪器的运行",
-  "item.originalenhancement.wooden_sword_lush_forest.lore1": "象征着拥有强大生命力的现世森林，它可以运用自身能量保护持有者",
+  "item.originalenhancement.wooden_sword_lush_forest.lore1": "象征着拥有强大生命力的现世森林的剑，它可以运用自身能量保护持有者",
   "item.originalenhancement.wooden_sword_lush_forest.lore2": "当持有者被攻击时为其添加繁盛效果",
-  "item.originalenhancement.wooden_sword_the_forest_of_the_end.lore1": "象征着末地的紫颂树林的木剑吗，被它击中的生物将会陷入终末。",
+  "item.originalenhancement.wooden_sword_the_forest_of_the_end.lore1": "象征着末地的紫颂树林的剑，被它击中的生物将会陷入终末",
   "item.originalenhancement.wooden_sword_the_forest_of_the_end.lore2": "攻击附加终末效果",
   "item.originalenhancement.forest_extract.lore1": "繁盛(0:30)",
   "item.originalenhancement.chorus_extract.lore1": "终末(0:30)",
+  "item.originalenhancement.wooden_sword_bathfire_forest.lore1": "象征着下界的绯红森林与诡异森林的剑，两大力量的交织将会产生足以燃尽敌人灵魂的火焰",
+  "item.originalenhancement.wooden_sword_bathfire_forest.lore2": "攻击将会灼烧目标灵魂",
 
+
+
+  "death.attack.originalenhancement.soul_burning": "%1$s的灵魂已经燃烧殆尽",
 
 
 
   "effect.originalenhancement.frostmourne_effect": "魔剑侵袭（霜）",
   "effect.originalenhancement.lush": "繁盛",
   "effect.originalenhancement.the_end": "终末",
+  "effect.originalenhancement.soul_burning": "灵魂灼烧",
 
 
 

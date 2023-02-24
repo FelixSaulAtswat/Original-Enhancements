@@ -31,6 +31,7 @@
   "item.originalenhancement.wooden_sword_original": "Wooden Sored--Original",
   "item.originalenhancement.wooden_sword_lush_forest": "Wooden Sored--Lush Forest",
   "item.originalenhancement.wooden_sword_the_forest_of_the_end": "Wooden Sored--The Forest Of The End",
+  "item.originalenhancement.wooden_sword_bathfire_forest": "Wooden Sored--Bathfire Forest",
 
 
 
@@ -55,18 +56,25 @@
   "item.originalenhancement.frostmourne.lore1": "Frotmourne is a weapon that can manipulate the user's mind and corrupt the user, and cannot and should not be in the hands of ordinary people. This one is a replica of Frotmourne, and the runes on the sword give it great power and the ability to steal the soul of the enemy, which makes it still an evil weapon.",
   "item.originalenhancement.frostmourne.lore2": "Inflict heavy damage on non-undead mobs and heal users",
   "item.originalenhancement.magic_icecrystal.lore1": "Icecrystal is full of magic",
-  "item.originalenhancement.wooden_sword_lush_forest.lore1": "A forest that symbolizes the real world with strong vitality, and it can use its own energy to protect its holders",
+  "item.originalenhancement.wooden_sword_lush_forest.lore1": "A sword that symbolizes the powerful vitality of the earthly forest, and it can use its own energy to protect its holder",
   "item.originalenhancement.wooden_sword_lush_forest.lore2": "Add a flourishing effect for holders when they are attacked",
-  "item.originalenhancement.wooden_sword_the_forest_of_the_end.lore1": "The wooden sword of the Purple Song Forest symbolizing the End Place, the creatures hit by it will enter the End State",
+  "item.originalenhancement.wooden_sword_the_forest_of_the_end.lore1": "The sword of the Purple Song Forest symbolizing the End, the creatures hit by it will enter the End State",
   "item.originalenhancement.wooden_sword_the_forest_of_the_end.lore2": "Attack have an additional The End effect",
   "item.originalenhancement.forest_extract.lore1": "Lush(0:30)",
   "item.originalenhancement.chorus_extract.lore1": "The End(0:30)",
+  "item.originalenhancement.wooden_sword_bathfire_forest.lore1": "The sword symbolizing the Crimson Forest and the Warped Forest in the Nether, the interweaving of the two forces will produce a flame that is enough to burn the soul of the enemy",
+  "item.originalenhancement.wooden_sword_bathfire_forest.lore2": "The attack will burn the target's soul",
+
+
+
+  "death.attack.originalenhancement.soul_burning": "%1$s soul was burned out",
 
 
 
   "effect.originalenhancement.frostmourne_effect": "Evil Sword Invasion(frost)",
   "effect.originalenhancement.lush": "Lush",
   "effect.originalenhancement.the_end": "The End",
+  "effect.originalenhancement.soul_burning": "Soul Burning",
 
 
 

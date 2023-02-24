@@ -1,5 +1,6 @@
-package io.github.originalenhancementsmain;
+package io.github.originalenhancementsmain.event;
 
+import io.github.originalenhancementsmain.OriginalEnhancementMain;
 import io.github.originalenhancementsmain.effect.OEEffects;
 import io.github.originalenhancementsmain.effect.effects.LushEffect;
 import io.github.originalenhancementsmain.particle.OEParticles;

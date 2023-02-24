@@ -18,6 +18,7 @@ import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
@@ -110,6 +111,10 @@ public class OriginalEnhancementMain {
 
     public static String getTranslationKey(String base, String name) {
         return Util.getTranslationKey(base, getLocationResource(name));
+    }
+
+    public static DamageSource getDamageSource(String name){
+        return new DamageSource(MOD_ID + "." + name);
     }
 
 }
