@@ -36,6 +36,8 @@ public class OEItems {
     public static final RegistryObject<Item> END_FRUIT = register("end_fruit", EndFruit::new);
     public static final RegistryObject<Item> FOREST_EXTRACT = register("forest_extract", () -> new DrinkItem(OEEffects.LUSH.get(), false));
     public static final RegistryObject<Item> CHORUS_EXTRACT = register("chorus_extract", ()-> new DrinkItem(OEEffects.THE_END.get(), true));
+    public static final RegistryObject<Item> CRIMSON_EXTRACT = register("crimson_extract", ()-> new DrinkItem(OEEffects.SOUL_BURNING.get(), true));
+    public static final RegistryObject<Item> WARPED_EXTRACT = register("warped_extract", ()-> new DrinkItem(OEEffects.SOUL_BURNING.get(), true));
 
 
 

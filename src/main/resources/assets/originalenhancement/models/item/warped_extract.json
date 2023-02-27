@@ -1,0 +1,12 @@
+{
+	"parent": "minecraft:item/generated",
+	"emissive_layers": [
+		1
+	],
+	"loader": "forge:item_layers",
+	"render_types": {},
+	"textures": {
+		"layer0": "originalenhancement:item/extract_glass_bottle",
+		"layer1": "originalenhancement:item/warped_extract"
+	}
+}

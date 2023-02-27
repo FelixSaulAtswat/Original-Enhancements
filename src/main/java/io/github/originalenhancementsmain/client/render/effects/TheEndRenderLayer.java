@@ -2,6 +2,7 @@ package io.github.originalenhancementsmain.client.render.effects;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.math.Vector3f;
+import io.github.originalenhancementsmain.data.util.RenderUtil;
 import io.github.originalenhancementsmain.effect.OEEffects;
 import io.github.originalenhancementsmain.effect.OEMobEffect;
 import io.github.originalenhancementsmain.effect.effects.TheEndEffect;
@@ -16,6 +17,8 @@ import net.minecraft.client.renderer.entity.RenderLayerParent;
 import net.minecraft.client.renderer.entity.layers.RenderLayer;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.client.resources.model.BakedModel;
+import net.minecraft.nbt.CompoundTag;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.item.ItemStack;
@@ -40,10 +43,15 @@ public class TheEndRenderLayer<T extends LivingEntity, M extends EntityModel<T>>
         ItemRenderer renderer = Minecraft.getInstance().getItemRenderer();
         BakedModel model = renderer.getModel(stack, null, null, 1);
 
-        pose.pushPose();
         float dw = entity.getBbWidth();
         float dh = entity.getBbHeight();
-        pose.translate(0, -dh/2, dw);
+
+        pose.pushPose();
+        if (RenderUtil.checkHasSize(entity)){
+            pose.translate(0, -dh/(2 * RenderUtil.getSize(entity)), dw / RenderUtil.getSize(entity));
+        }else {
+            pose.translate(0, -dh/2, dw);
+        }
         pose.scale(2, 2, 2);
         pose.mulPose(Vector3f.XP.rotationDegrees(30));
         renderer.render(stack, ItemTransforms.TransformType.GROUND, false, pose, buffer, light, OverlayTexture.NO_OVERLAY, model);

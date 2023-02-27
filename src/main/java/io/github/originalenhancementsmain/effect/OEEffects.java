@@ -33,7 +33,7 @@ public class OEEffects {
             .addAttributeModifier(Attributes.ATTACK_SPEED, TheEndEffect.THEEND_UUID.toString(), -0.2F, AttributeModifier.Operation.MULTIPLY_TOTAL)
             .addAttributeModifier(Attributes.MOVEMENT_SPEED, TheEndEffect.THEEND_UUID.toString(), -0.2F, AttributeModifier.Operation.MULTIPLY_TOTAL));
 
-    public static final RegistryObject<MobEffect> SOUL_BURNING = EFFECTS.register("soul_burning", ()-> new SoulBurningEffect(MobEffectCategory.HARMFUL, 0x301721, false)
+    public static final RegistryObject<MobEffect> SOUL_BURNING = EFFECTS.register("soul_burning", ()-> new SoulBurningEffect(MobEffectCategory.HARMFUL, 0x23c0c6, false)
             .addAttributeModifier(Attributes.MAX_HEALTH, SoulBurningEffect.SOUL_BURNING_UUID.toString(), 0.0F, AttributeModifier.Operation.ADDITION));
 }
 

@@ -1,0 +1,19 @@
+{
+  "type": "originalenhancement:nature_apparatus",
+  "ingredients":[
+    {
+      "item": "originalenhancement:crimson_extract"
+    },
+    {
+      "item": "originalenhancement:warped_extract"
+    },
+    {
+      "item": "originalenhancement:wooden_sword_original"
+    }
+
+  ],
+  "output":
+  {
+    "item": "originalenhancement:wooden_sword_bathfire_forest"
+  }
+}

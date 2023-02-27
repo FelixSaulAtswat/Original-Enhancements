@@ -13,9 +13,10 @@ import net.minecraftforge.common.brewing.BrewingRecipeRegistry;
 public class RegisterBrewingRecipe {
 
     public static void init(){
-        register(Items.POTION, Potions.THICK, OEItems.CHORUS_CLUSTER.get(), null, null, OEItems.CHORUS_EXTRACT.get());
-        register(Items.POTION, Potions.THICK, Items.GOLDEN_APPLE, null, null, OEItems.FOREST_EXTRACT.get());
-
+        register(Items.DRAGON_BREATH, OEItems.CHORUS_CLUSTER.get(), OEItems.CHORUS_EXTRACT.get());
+        register(Items.POTION, Potions.HEALING, Items.GOLDEN_APPLE, null, null, OEItems.FOREST_EXTRACT.get());
+        register(Items.POTION, Potions.FIRE_RESISTANCE, Items.CRIMSON_FUNGUS, null, null, OEItems.CRIMSON_EXTRACT.get());
+        register(Items.POTION, Potions.FIRE_RESISTANCE, Items.WARPED_FUNGUS, null, null, OEItems.WARPED_EXTRACT.get());
     }
 
     private static void register(ItemLike inputItem, ItemLike ingredient, ItemLike outputItem){

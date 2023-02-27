@@ -24,6 +24,7 @@ import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
+import net.minecraftforge.client.event.RenderPlayerEvent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -84,11 +85,20 @@ public class OriginalEnhancementMain {
         OEMenus.register(bus);
         OEParticles.register(bus);
         bus.addListener(this::clientSetup);
-        bus.addListener(this::setup);
+        bus.addListener(this::commonSetup);
         OENetwork.setup();
 
         MinecraftForge.EVENT_BUS.register(this);
 
+    }
+
+    @SubscribeEvent
+    public static void onPlayerRender(RenderPlayerEvent.Pre event){
+        Player player = event.getEntity();
+        ItemStack stack = player.getMainHandItem();
+        if (stack.is(OEItems.THE_END_EYE.get())){
+            event.setCanceled(true);
+        }
     }
 
     //Register screen
@@ -96,7 +106,7 @@ public class OriginalEnhancementMain {
         MenuScreens.register(OEMenus.NATURE_APPARATUS_MENU.get(), NatureApparatusScreen :: new);
     }
 
-    private void setup(final FMLCommonSetupEvent event) {
+    private void commonSetup(final FMLCommonSetupEvent event) {
         RegisterBrewingRecipe.init();
     }
 

@@ -22,6 +22,8 @@
   "item.originalenhancement.end_fruit": "End Fruit",
   "item.originalenhancement.forest_extract": "Forest Extract",
   "item.originalenhancement.chorus_extract": "Chorus Extract",
+  "item.originalenhancement.crimson_extract": "Crimson Extract",
+  "item.originalenhancement.warped_extract": "Warped Extract",
 
 
 
@@ -64,6 +66,8 @@
   "item.originalenhancement.chorus_extract.lore1": "The End(0:30)",
   "item.originalenhancement.wooden_sword_bathfire_forest.lore1": "The sword symbolizing the Crimson Forest and the Warped Forest in the Nether, the interweaving of the two forces will produce a flame that is enough to burn the soul of the enemy",
   "item.originalenhancement.wooden_sword_bathfire_forest.lore2": "The attack will burn the target's soul",
+  "item.originalenhancement.crimson_extract.lore1": "Soul Burning(0:30)",
+  "item.originalenhancement.warped_extract.lore1": "Soul Burning(0:30)",
 
 
 
