@@ -20,12 +20,12 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import software.bernie.geckolib3.renderers.geo.GeoBlockRenderer;
 
-public class NatureConverterDiskRender extends GeoBlockRenderer<NatureConverterBlockEntity> {
+public class NatureConverterDiskRenderer extends GeoBlockRenderer<NatureConverterBlockEntity> {
 
     private double range = 0.0d;
     private float volume = 1000.0f;
 
-    public NatureConverterDiskRender(BlockEntityRendererProvider.Context rendererProvider) {
+    public NatureConverterDiskRenderer(BlockEntityRendererProvider.Context rendererProvider) {
         super(rendererProvider, new NatureConverterDiskModel());
     }
 

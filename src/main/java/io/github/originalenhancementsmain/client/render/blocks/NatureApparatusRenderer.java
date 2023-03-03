@@ -3,7 +3,6 @@ package io.github.originalenhancementsmain.client.render.blocks;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.mojang.math.Vector3f;
-import io.github.originalenhancementsmain.oeblock.apparatusblock.blockentities.NatureConverterBlockEntity;
 import io.github.originalenhancementsmain.oeblock.apparatusblock.blockentities.NatureRealNameReconfigurableApparatusBlockEntity;
 import io.github.originalenhancementsmain.oeblock.apparatusblock.blocks.NatureRealNameReconfigurableApparatusBlock;
 import io.github.originalenhancementsmain.oeblock.models.NatureApparatusModel;
@@ -20,9 +19,9 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import software.bernie.geckolib3.renderers.geo.GeoBlockRenderer;
 
-public class NatureApparatusRender extends GeoBlockRenderer<NatureRealNameReconfigurableApparatusBlockEntity> {
+public class NatureApparatusRenderer extends GeoBlockRenderer<NatureRealNameReconfigurableApparatusBlockEntity> {
 
-    public NatureApparatusRender(BlockEntityRendererProvider.Context renderDispatcher){
+    public NatureApparatusRenderer(BlockEntityRendererProvider.Context renderDispatcher){
         super(renderDispatcher, new NatureApparatusModel());
     }
 

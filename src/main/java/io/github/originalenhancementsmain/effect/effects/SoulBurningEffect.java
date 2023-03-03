@@ -26,9 +26,9 @@ public class SoulBurningEffect extends OEMobEffect {
     @Override
     public void applyEffectTick(LivingEntity entity, int i) {
         i++;
-        entity.hurt(OriginalEnhancementMain.getDamageSource("soul_burning").bypassArmor(), 6.0F * i);
-        if (entity.getMaxHealth() - 6.0f >= 5.0f) {
-            Objects.requireNonNull(entity.getAttribute(Attributes.MAX_HEALTH)).setBaseValue(entity.getMaxHealth() - 3.0f);
+        entity.hurt(OriginalEnhancementMain.getDamageSource("soul_burning").bypassArmor(), 3.0F * i);
+        if (entity.getMaxHealth() - 3.0f * i >= 5.0f) {
+            Objects.requireNonNull(entity.getAttribute(Attributes.MAX_HEALTH)).setBaseValue(entity.getMaxHealth() - 3.0f * i);
         }
     }
     @Override

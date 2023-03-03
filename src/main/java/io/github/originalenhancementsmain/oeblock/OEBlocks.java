@@ -44,7 +44,7 @@ public class OEBlocks {
     public static final RegistryObject<Block> NATURE_ENERGY_CONDUCTOR = registerBlock("nature_energy_conductor", () -> new EnergyConductorBlock(BlockBehaviour.Properties.of(Material.AMETHYST, MaterialColor.COLOR_GREEN)
             .strength(10.0f, 30.0f).sound(SoundType.WOOD).requiresCorrectToolForDrops().noOcclusion()), OriginalEnhancementMain.OETab);
     public static final RegistryObject<InteractiveBlock> NATURE_CONVERTER_DISK = registerBlock("nature_converter_disk", () -> new NatureConverterDiskBlock(BlockBehaviour.Properties.copy(OEBlocks.NATURE_ENERGY_CONDUCTOR.get())), OriginalEnhancementMain.OETab);
-    public static final RegistryObject<Block> NATURE_APPARATUS_PEDESTAL = registerBlock("nature_apparatus_pedestal", () -> new NaturePedestalBlock(BlockBehaviour.Properties.copy(OEBlocks.NATURE_ENERGY_CONDUCTOR.get())), OriginalEnhancementMain.OETab);
+    public static final RegistryObject<Block> NATURE_APPARATUS_PEDESTAL = registerBlock("nature_apparatus_pedestal", () -> new NaturePedestalBlock(BlockBehaviour.Properties.copy(OEBlocks.NATURE_ENERGY_CONDUCTOR.get()).sound(SoundType.AMETHYST)), OriginalEnhancementMain.OETab);
     public static final RegistryObject<Block> NATURE_APPARATUS_ENCLOSURE = registerBlock("nature_apparatus_enclosure", () -> new Block(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD)), OriginalEnhancementMain.OETab);
     public static final RegistryObject<Block> NATURE_ENERGY_TRANSFER_STATION = registerBlock("nature_energy_transfer_station", () -> new NatureTransferStationBlock(BlockBehaviour.Properties.copy(OEBlocks.NATURE_ENERGY_CONDUCTOR.get())), OriginalEnhancementMain.OETab);
 

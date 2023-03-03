@@ -20,7 +20,7 @@ import java.util.List;
 public class WoodenSwordBFItem extends SwordItem {
 
     public WoodenSwordBFItem(){
-        super(CustomItemTier.OriginalTools,14,-1.8f, new Properties().tab(OriginalEnhancementMain.OETab).rarity(Rarity.create("wooden_sword_lush_forest", ChatFormatting.AQUA)));
+        super(CustomItemTier.OriginalTools,19,-1.8f, new Properties().tab(OriginalEnhancementMain.OETab).rarity(Rarity.create("wooden_sword_lush_forest", ChatFormatting.AQUA)));
     }
 
     @Override
